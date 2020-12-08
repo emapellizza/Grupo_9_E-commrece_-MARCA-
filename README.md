@@ -23,6 +23,7 @@ Este es mi primer estudio formal en el area y espero poder insertarme en este ca
 
 ### Mariano Pedrini
 
+Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. Siempre fui muy amante de la tecnologia y del diseño (estudie 3 años de diseño industrial) y mi idea a futuro es poder trabajar diseñando y desarrollando sitios web y/o aplicaciónes.
 
 
 -------------------------------------------------------
