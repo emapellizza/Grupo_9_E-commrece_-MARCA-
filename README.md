@@ -7,7 +7,7 @@ Nuestro proyecto será para una compañía de retail deportivo. Trabajaremos con
 -------------------------------------------------------
 ## A quienes apuntamos:
 
-Apuntamos a orientados a adolescentes y adultos que gusten vestir bien y a la moda. 
+Apuntamos a adolescentes y adultos que gusten vestir bien y a la moda. 
 
 -------------------------------------------------------
 ## Integrantes:
