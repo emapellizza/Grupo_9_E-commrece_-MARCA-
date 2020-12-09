@@ -42,14 +42,15 @@ Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. S
 -------------------------------------------------------
 ## Paleta de Colores:
 
-* Color
-* Color
-* Color
+* ![#977a58](https://via.placeholder.com/15/977a58/000000?text=+) `#977a58`
+* ![#eeeded](https://via.placeholder.com/15/eeeded/000000?text=+) `#eeeded`
+* ![#000000](https://via.placeholder.com/15/000000/000000?text=+) `#000000`
+* ![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `#ffffff`
 
 -------------------------------------------------------
 ## Tipografía:
 
-* Font
+* Robot Condensed 
 * Font
 * Font
 
