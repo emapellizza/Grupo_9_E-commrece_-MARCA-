@@ -7,7 +7,7 @@ Nuestro proyecto sera crear una tienda de retail de productos deportivos que cue
 -------------------------------------------------------
 ## A quienes apuntamos:
 
-Nuestro publico objetivo va desde los adolescentes de 18 años hasta adultos jovenes de 45 años, personas que estan informados sobre los últimos desarrollos y presentaciones de productos deportivos, que buscan no solo performance, si no también diseño. 
+Nuestro publico objetivo va desde los adolescentes de 18 años hasta adultos jovenes de 45 años, personas que están informados sobre los últimos desarrollos y presentaciones de productos deportivos, que buscan no solo performance, si no también diseño. 
 
 -------------------------------------------------------
 ## Integrantes:
