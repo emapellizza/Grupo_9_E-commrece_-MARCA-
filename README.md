@@ -18,7 +18,7 @@ Hola, tengo 37 años, estudié Adm. de Empresas y trabajo actualmente en Comerci
 Este es mi primer estudio formal en el area y espero poder insertarme en este campo laboral.
 
 ### Emanuel Pelliza
-
+Tengo 29 años,soy estudiante de ing. electronica (UTN Frba),tengo conocimiento en el area de programacion ya que en la carrera vi c y c++, pero quiero aprender desarrollo web para poder sumar conocimiento en nuevo leguajes y poder desallorame profesionalmente en un futuro
 
 
 ### Mariano Pedrini
