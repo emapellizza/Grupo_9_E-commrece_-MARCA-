@@ -51,8 +51,7 @@ Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. S
 ## Tipografía:
 
 * Robot Condensed 
-* Font
-* Font
+* Open Sans
 
 -------------------------------------------------------
 ## Logo:
