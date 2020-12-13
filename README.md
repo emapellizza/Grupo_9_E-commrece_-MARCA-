@@ -2,12 +2,12 @@
 -------------------------------------------------------
 ## Acerca del proyecto:
 
-Nuestra tienda online se dedica a ....
+Nuestro proyecto será para una compañía de retail deportivo. Trabajaremos con una gran cantidad de marcas reconocidas para poder ofrecerle a los clientes una mayor variedad de productos de primera calidad.
 
 -------------------------------------------------------
 ## A quienes apuntamos:
 
-Apuntamos al público...
+Apuntamos a adolescentes y adultos que gusten vestir bien y a la moda. 
 
 -------------------------------------------------------
 ## Integrantes:
@@ -18,12 +18,12 @@ Hola, tengo 37 años, estudié Adm. de Empresas y trabajo actualmente en Comerci
 Este es mi primer estudio formal en el area y espero poder insertarme en este campo laboral.
 
 ### Emanuel Pelliza
-
+Tengo 29 años,soy estudiante de ing. electronica (UTN Frba),tengo conocimiento en el area de programacion ya que en la carrera vi c y c++, pero quiero aprender desarrollo web para poder sumar conocimiento en nuevo leguajes y poder desallorame profesionalmente en un futuro
 
 
 ### Mariano Pedrini
 
-Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. Siempre fui muy amante de la tecnologia y del diseño (estudie 3 años de diseño industrial) y mi idea a futuro es poder trabajar diseñando y desarrollando sitios web y/o aplicaciónes.
+Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. Siempre fui muy amante de la tecnologia y del diseño (estudie 3 años diseño industrial) y mi idea a futuro es poder trabajar diseñando y desarrollando sitios web y/o aplicaciónes.
 
 
 -------------------------------------------------------
@@ -31,27 +31,27 @@ Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. S
 
 * [ADIDAS](http://www.adidas.com.ar) - Nos intereso este sitio por el diseño...
 
-* [PAGINA](http://www.....) 
+* [NIKE](https://www.nike.com/) - El diseño minimalista y sencillo del sitio.
 
-* [PAGINA](http://www.....) 
+* [GRID](https://www.grid.com.ar/) - Es interesante que el sitio se muy intuitivo y atractivo. Es el lider del rubro al que apuntamos.
 
-* [PAGINA](http://www.....) 
+* [MOOV](https://www.moovbydexter.com.ar/home) - 
 
 * [PAGINA](http://www.....) 
 
 -------------------------------------------------------
 ## Paleta de Colores:
 
-* Color
-* Color
-* Color
+* ![#977a58](https://via.placeholder.com/15/977a58/000000?text=+) `#977a58`
+* ![#eeeded](https://via.placeholder.com/15/eeeded/000000?text=+) `#eeeded`
+* ![#000000](https://via.placeholder.com/15/000000/000000?text=+) `#000000`
+* ![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `#ffffff`
 
 -------------------------------------------------------
 ## Tipografía:
 
-* Font
-* Font
-* Font
+* Robot Condensed 
+* Open Sans
 
 -------------------------------------------------------
 ## Logo:
