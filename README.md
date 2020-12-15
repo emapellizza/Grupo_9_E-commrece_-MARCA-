@@ -1,4 +1,5 @@
-# Grupo_9_Tienda_MARCA
+# Grupo_9_EOS
+
 -------------------------------------------------------
 ## Acerca del proyecto:
 
@@ -29,15 +30,25 @@ Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. S
 -------------------------------------------------------
 ## Sitios referentes:
 
-* [ADIDAS](http://www.adidas.com.ar) - Es la marca lider en Argentina y su sitio es una referencia para todas las demas marcas.
-
-* [NIKE](https://www.nike.com/) - Nos gustó el diseño minimalista y sencillo del sitio.
-
 * [GRID](https://www.grid.com.ar/) - Es interesante que el sitio sea muy intuitivo y atractivo. Es el lider del rubro al que apuntamos.
+
+![GRID](/Diseño/Imagenes/grid.jpg)
 
 * [MOOV](https://www.moovbydexter.com.ar/home) - Tiene un diseño no tan recargado y muy eficiente. 
 
+![MOOV](/Diseño/Imagenes/moov.jpg)
+
+* [ADIDAS](http://www.adidas.com.ar) - Es la marca lider en Argentina y su sitio es una referencia para todas las demas marcas.
+
+![ADIDAS](/Diseño/Imagenes/adidas.jpgg)
+
+* [NIKE](https://www.nike.com/) - Nos gustó el diseño minimalista y sencillo del sitio.
+
+![NIKE](/Diseño/Imagenes/nike.jpg)
+
 * [TEMPLO DEL FUTBOL](http://www.templodelfutbol.com.ar) - Este sitio a diferencia de otros se centra en un solo nicho de mercado, en este caso el futbol.  
+
+![TEMPLO DEL FUTBOL](/Diseño/Imagenes/templo.jpg)
 
 -------------------------------------------------------
 ## Paleta de Colores:
