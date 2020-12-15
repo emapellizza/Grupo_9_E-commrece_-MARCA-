@@ -40,7 +40,7 @@ Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. S
 
 * [ADIDAS](http://www.adidas.com.ar) - Es la marca lider en Argentina y su sitio es una referencia para todas las demas marcas.
 
-![ADIDAS](/Diseño/Imagenes/adidas.jpgg)
+![ADIDAS](/Diseño/Imagenes/adidas.jpg)
 
 * [NIKE](https://www.nike.com/) - Nos gustó el diseño minimalista y sencillo del sitio.
 
