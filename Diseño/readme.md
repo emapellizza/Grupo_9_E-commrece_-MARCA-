@@ -1,4 +1,4 @@
-#Datos de diseño
+# Datos de diseño
 
 ## Paleta de Colores:
 
