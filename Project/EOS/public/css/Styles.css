@@ -1,0 +1,28 @@
+
+body{
+ 
+    background-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+form{
+    position: relative;
+    left:60%;
+    
+}
+
+header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+footer{
+    background-color: #eeeded;
+}
+
+form{
+
+    
+}
