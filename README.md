@@ -51,3 +51,7 @@ Tengo 24 años y este curso es mi primer contacto con el desarrollo fullstack. S
 ![TEMPLO DEL FUTBOL](/Diseño/Imagenes/templo.jpg)
 
 -------------------------------------------------------
+## TRELLO:
+
+[Tablero](https://trello.com/b/5EPoh7Bw/eos)
+
