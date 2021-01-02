@@ -1,59 +1,106 @@
-
-body{
- 
-    background-color: white;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-form{
-    position: relative;
-    left:60%;
-    
+* {
+  box-sizing: border-box;
 }
 
-header
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+body {
+  background-color: white;
+  font-family: "Roboto Condensed", sans-serif;
+}
+form {
+  position: relative;
+  left: 60%;
 }
 
-
-footer{
-    background-color: #eeeded;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-form{
-
-    
+form {
 }
 
-header img{
-
+header img {
 }
 
-.zapatillas{
-
+.zapatillas {
 }
 
-.banner{
-    
+.banner {
 }
 
-.logo-1{
+.logo-1 {
+}
+.logo-2 {
+}
+.logo-3 {
+}
+.logo-4 {
+}
+.logo-5 {
+}
+.logo-6 {
+}
 
+/*
+Estilos Footer
+*/
+.footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
 }
-.logo-2{
-    
+.footer ul {
+  padding: 0;
+  list-style: none;
 }
-.logo-3{
-    
+
+.footer ul li {
+  margin: 10px 0 10px 0;
 }
-.logo-4{
-    
+
+.footer a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
 }
-.logo-5{
-    
+
+.logo-eos-footer {
+  max-width: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.logo-6{
-    
+
+.contenedor-logos-footer {
+  padding: 0 20px 0 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo-redes-footer i {
+  font-size: 50px;
+  color: black;
+  margin: 15px;
+}
+
+.circulo {
+  width: 70px;
+  height: 70px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #977a58;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.twitter {
+  padding: 5px 0 0 5px;
 }
