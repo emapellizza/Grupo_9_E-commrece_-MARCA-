@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
 body {
   background-color: white;
   font-family: "Roboto Condensed", sans-serif;
@@ -43,54 +49,64 @@ header img {
 }
 
 /*
-Estilos Footer
+--------------Estilos Footer--------------
 */
-.footer {
+footer {
   background-color: black;
-  padding: 20px;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 60px 10px 60px;
+}
+footer ul a {
+  color: #977a58;
+}
+footer ul {
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
-.footer ul {
-  padding: 0;
-  list-style: none;
+footer li {
+  margin: 5px 0 5px 0;
+  min-width: 139px;
 }
 
-.footer ul li {
-  margin: 10px 0 10px 0;
-}
-
-.footer a:link,
-a:visited,
-a:active {
-  text-decoration: none;
-  color: white;
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.logo-eos-footer {
-  max-width: 80px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.contenedor-logos-footer {
-  padding: 0 20px 0 20px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+.contenedor-logo-eos-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+.logo-eos-footer {
+  width: 50px;
+}
+.contenedor-logo-y-redes-footer {
+  width: 50%;
 }
 
-.logo-redes-footer i {
-  font-size: 50px;
+.nav-footer {
+  /* border: blue 1px solid;*/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.contenedor-redes-footer {
+  /* border: brown 1px solid; */
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.logo-redes-footer {
   color: black;
-  margin: 15px;
 }
 
 .circulo {
-  width: 70px;
-  height: 70px;
+  width: 30px;
+  height: 30px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -101,6 +117,31 @@ a:active {
   margin: 5px;
 }
 
-.twitter {
-  padding: 5px 0 0 5px;
+.copyright {
+  color: grey;
+  font-size: 10px;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+@media (min-width: 481px) {
+  /* Footer */
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+  }
+  .contenedor-logo-redes-footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-footer {
+    min-width: 134px;
+    flex-grow: 0.5;
+  }
+  .copyright {
+    align-self: flex-start;
+    padding-bottom: 5px;
+  }
 }
