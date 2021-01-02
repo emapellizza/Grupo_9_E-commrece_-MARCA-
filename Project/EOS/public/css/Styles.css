@@ -85,8 +85,6 @@ footer li {
 }
 
 .nav-footer {
-  /* border: blue 1px solid;*/
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +93,6 @@ footer li {
 }
 
 .contenedor-redes-footer {
-  /* border: brown 1px solid; */
   display: flex;
   justify-content: center;
   margin-top: 5px;
