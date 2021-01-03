@@ -49,11 +49,159 @@ header img {
 }
 
 /*
---------------Estilos Cart--------------
+-----------------------Estilos Cart-----------------------
 */
+.main-carrito {
+  padding: 0 10px 0 10px;
+}
+.titulo-carrito {
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.container-productos-detallecompra {
+  display: flex;
+}
+.producto-carrito {
+  display: flex;
+  align-items: center;
+  max-height: 100px;
+  margin: 10px 0 10px 0;
+}
+.img-producto {
+  height: 100px;
+  border: 1px solid black;
+}
+.descripcion-producto-carrito {
+  height: 100px;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.articulo,
+.talle-carrito,
+.precio {
+  padding-left: 5px;
+  margin: 0;
+}
+.talle-carrito {
+  color: grey;
+}
+.precio {
+  align-self: flex-end;
+  font-weight: 700;
+}
+
+.linea-separadora {
+  border-top: 1px solid grey;
+  height: 2px;
+  padding: 0;
+  margin: 0px auto 0 auto;
+}
+/* Detalle de Compra*/
+.contenedor-detalle-compra {
+  margin: 20px 50px;
+}
+.detalle {
+  font-size: 20px;
+  font-weight: 900;
+}
+.linea-separadora-detalle {
+  border-top: 1px solid grey;
+  height: 2px;
+  padding: 0;
+  margin: 0px auto 0 auto;
+}
+.contenedor-detalle-compra {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-right: 10px;
+}
+.contenedor-detalle-compra p {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+.subtotal,
+.envio,
+.total-compra {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.subtotal {
+  padding-top: 10px;
+}
+.total-compra {
+  padding: 10px 0;
+}
+.boton-descuento {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  margin-bottom: 5px;
+}
+.cupon-descuento {
+  font-size: 12px;
+  border: solid 1px grey;
+  text-align: center;
+  width: 210px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+.precio-total {
+  font-weight: 900;
+}
+
+.boton-contenedor {
+  margin-left: auto;
+
+  text-align: right;
+  margin-top: 10px;
+}
+.finalizar-compra {
+  border: none;
+  color: #977a58;
+  background-color: black;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.ver-mas-titulo {
+  font-weight: 800;
+  text-align: center;
+}
+
+.ver-mas-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.articulo-vermas {
+  margin: 10px;
+}
+.articulo-vermas img {
+  width: 130px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.articulo-vermas p {
+  margin: 0;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 800;
+}
 
 /*
---------------Estilos Footer--------------
+-----------------------Estilos Footer-----------------------
 */
 footer {
   background-color: black;
@@ -62,7 +210,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 60px 10px 60px;
+  padding: 25px 60px 10px 60px;
 }
 footer ul a {
   color: #977a58;
