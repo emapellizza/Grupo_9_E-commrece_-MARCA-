@@ -64,28 +64,12 @@ section {
   flex-direction: column;
 }
 
-main section.articulos img {
+.articulos {
   display: flex;
   width:50%;
   margin: auto;
   margin-bottom: 10px;
     
-}
-
-.logo-2 {
-  
-}
-.logo-3 {
-  
-}
-.logo-4 {
-  
-}
-.logo-5 {
-  
-}
-.logo-6 {
-  
 }
 
 /*
@@ -97,46 +81,41 @@ main section.articulos img {
 --------------Estilos Login--------------
 */
 
-main {
-  width: 40%;
-  display: block; 
-  text-align: center;
-  align-items: center;
-  padding: 30px 0;
+.login-registro {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 25px;
+ 
+  
 }
-
-main form div {
-  display: block;
+.login-registro-formulario {
+  display: flex;
+  width: 90%;
   flex-direction: column;
   align-items: center;
-  width: 180px;
-  margin-top: 5px;
+    
 }
 
-main form div label,
-main form div a {
-  display: flex;
-  text-align: center;
-  align-items: center;
+.login-registro-boton {
+  margin: auto;
 }
 
-main form div a.link {
+.login-registro-link {
   color: black;
   font-weight: 700;
- 
+  font-size: 15px;
+  text-align: right;
 }
 
-.boton {
-  width: 100%;
-}
-
-main form div.checkbox {
+.login-registro-checkbox {
   display: flex;
   flex-direction: row;
   padding-top: 10px;
   font-size: 15px;
   margin-bottom: 10px;
 }
+
 
 
 /*
