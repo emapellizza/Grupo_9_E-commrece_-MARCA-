@@ -14,7 +14,10 @@ header {
   display: flex;
   background-color: black;
   max-width: 1349px;
+  width: 100%;
+  justify-content: space-between;
 }
+
 
 .logoEOS {
   width: 100px;
@@ -46,12 +49,7 @@ form {
   width: 15px;
 }
 
-header {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 
 
 .zapatillas {
