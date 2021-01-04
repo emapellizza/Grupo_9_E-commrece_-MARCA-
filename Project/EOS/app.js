@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 
-app.listen(3000,()=>{ console.log('server ML run')});
+app.listen(3000,()=>{ console.log('server EOS run')});
 
 const publicFolderPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicFolderPath));
