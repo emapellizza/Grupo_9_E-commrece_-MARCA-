@@ -417,10 +417,15 @@ footer li {
 }
 
 @media (min-width: 1200px) {
+  
   /* Carrito */
   .main-carrito {
     padding-right: 15vw;
     padding-left: 15vw;
+  }
+
+  .titulo-carrito{
+    font-size: 30px;
   }
 
   .container-productos-detallecompra {
