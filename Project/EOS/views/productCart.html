@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Compras-EOS</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -18,69 +19,127 @@
   </head>
   <body>
     <header></header>
-    <!--
-    <main>
-      <h3 class="titulo-carrito">CARRITO</h3>
-      <section class="container-productos-carrito">
-        <article class="producto-carrito">
-          <img
-            class="img-producto"
-            src="/images/zapatillasVans.jfif"
-            alt="zapatillas vans"
-          />
-          <div class="descripcion-producto-carrito">
-            <h4 class="articulo">Zapatillas Vans Old Skool</h4>
-            <p class="talle-carrito">Talle 43</p>
-            <p class="precio">$ 10.900,00</p>
-          </div>
-        </article>
 
-        <article class="producto-carrito">
-          <img
-            class="img-producto"
-            src="/images/camperaNike.jfif"
-            alt="zapatillas vans"
-          />
-          <div class="descripcion-producto-carrito">
-            <h4 class="articulo">
-              Campera Nike Sportswear Heritage Windrunner
-            </h4>
-            <p class="talle-carrito">Talle M</p>
-            <p class="precio">$ 4999,00</p>
-          </div>
-        </article>
-      </section>
+    <!-- MAIN -->
+    <main class="main-carrito">
+      <h2 class="titulo-carrito">CARRITO</h2>
 
-      <section class="contenedor-detalle-compra">
-        <p class="detalle">Detalle</p>
-        <div class="subtotal">
-          <p>Subtotal</p>
-          <p>$ 15.899,00</p>
-        </div>
-        <div class="envio">
-          <p>Envío</p>
-          <p>$ 400</p>
-        </div>
-        <div class="total-compra">
-          <p>TOTAL</p>
-          <p>$ 16299</p>
-        </div>
-      </section>
-      <div class="contenedor-button">
-        <input
-          class="finalizar-compra"
-          type="button"
-          value="FINALIZAR COMPRA"
-        />
+      <div class="container-productos-detallecompra">
+        <section class="container-productos-carrito">
+          <article class="producto-carrito">
+            <img
+              class="img-producto"
+              src="/images/zapatillasVans.jfif"
+              alt="zapatillas vans"
+            />
+            <div class="descripcion-producto-carrito">
+              <h4 class="articulo">Zapatillas Vans Old Skool</h4>
+              <p class="talle-carrito">Talle 43</p>
+              <p class="precio">$ 10.900</p>
+            </div>
+          </article>
+
+          <div class="linea-separadora"></div>
+
+          <article class="producto-carrito">
+            <img
+              class="img-producto"
+              src="/images/camperaNike.jfif"
+              alt="zapatillas vans"
+            />
+            <div class="descripcion-producto-carrito">
+              <h4 class="articulo">Campera Nike Sportswear</h4>
+              <p class="talle-carrito">Talle M</p>
+              <p class="precio">$ 4999</p>
+            </div>
+          </article>
+
+          <div class="linea-separadora"></div>
+        </section>
+
+        <div class="vl"></div>
+
+        <section class="contenedor-detalle-compra">
+          <p class="detalle">Detalle</p>
+          <div class="linea-separadora-detalle"></div>
+          <div class="subtotal">
+            <p>Subtotal</p>
+            <p>$ 15.899</p>
+          </div>
+          <div class="envio">
+            <p>Envío</p>
+            <p>$ 400</p>
+          </div>
+
+          <div class="boton-descuento">
+            <input
+              class="cupon-descuento"
+              type="text"
+              placeholder="INGRESA CUPÓN DE DESCUENTO"
+              minlength="4"
+              maxlength="8"
+            />
+          </div>
+
+          <div class="linea-separadora-detalle"></div>
+          <div class="total-compra">
+            <p>TOTAL</p>
+            <p class="precio-total">$ 16299</p>
+          </div>
+          <div class="linea-separadora-detalle"></div>
+          <div class="boton-contenedor">
+            <input
+              class="finalizar-compra"
+              type="button"
+              value="FINALIZAR COMPRA"
+            />
+          </div>
+        </section>
       </div>
-    </main>
-    -->
+      <div class="linea-separadora"></div>
 
+      <!-- Ver Mas -->
+      <section>
+        <p class="ver-mas-titulo">Podria interesarte</p>
+        <div class="ver-mas-productos">
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/buzo-underarmour.jfif" alt="" />
+              <p>Buzo Under Armour</p>
+              <p>$6199</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/medias-nike.jfif" alt="" />
+              <p>Medias Nike</p>
+              <p>$1399</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/remera-nike.jfif" alt="" />
+              <p>Remera Nike</p>
+              <p>$3.999</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/pantalon-nike.jpeg" alt="" />
+              <p>Pantalon Nike</p>
+              <p>$7500</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
       <div class="footer">
         <div class="contenedor-logo-y-redes-footer">
           <div class="contenedor-logo-eos-footer">
-            <a href="/index">
+            <a href="/">
               <img
                 class="logo-eos-footer"
                 src="images/EOS-gold.svg"
