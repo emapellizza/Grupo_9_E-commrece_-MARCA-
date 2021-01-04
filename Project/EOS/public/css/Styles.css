@@ -10,6 +10,13 @@ a:active {
   text-decoration: none;
 }
 
+body {
+  background-color: white;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/*----------------------Header-----------------------*/
+
 header {
   display: flex;
   background-color: black;
@@ -17,7 +24,6 @@ header {
   width: 100%;
   justify-content: space-between;
 }
-
 
 .logoEOS {
   width: 100px;
@@ -36,11 +42,6 @@ header {
 
 }
 
-body {
-  background-color: white;
-  font-family: "Roboto Condensed", sans-serif;
-}
-
 form {
   position: relative;
   left: 60%;
@@ -49,9 +50,14 @@ form {
   width: 15px;
 }
 
+/* ----------------------Estilos index-----------------------*/
 
-
-
+.main-index{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
 .zapatillas {
   width: 100%;
   margin:auto;
@@ -62,14 +68,22 @@ form {
   margin: auto;
 }
 
-
 .linkLogo{
   width: 20%;
 }
+/*----------------------Estilos ProductDetail-----------------------*/
 
-/*
------------------------Estilos Cart-----------------------
-*/
+.main-Detail{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+
+
+
+/*-----------------------Estilos Cart-------------------------------*/
 .main-carrito {
   margin-top: 5vh;
   padding: 0 10px 0 10px;
@@ -103,8 +117,7 @@ form {
   align-items: space-between;
   justify-content: space-between;
 }
-.articulo,
-.talle-carrito,
+
 .precio {
   padding-left: 5px;
   margin: 0;
@@ -123,7 +136,7 @@ form {
   padding: 0;
   margin: 0px auto 0 auto;
 }
-/* Detalle de Compra*/
+/* ---------------------Detalle de Compra----------------*/
 .contenedor-detalle-compra {
   margin: 20px 50px;
 }
@@ -147,8 +160,7 @@ form {
   margin: 0;
   padding: 0 0 0 20px;
 }
-.subtotal,
-.envio,
+
 .total-compra {
   display: flex;
   justify-content: space-between;
