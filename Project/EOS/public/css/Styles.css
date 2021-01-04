@@ -12,6 +12,8 @@ a:active {
 
 header {
   display: flex;
+  background-color: black;
+  max-width: 1349px;
 }
 
 .logoEOS {
@@ -19,9 +21,16 @@ header {
   padding: 20px;
 }
 
-.busqueda,
+.busqueda{
+  position: relative;
+  left: 20%;
+}
+
 .menu {
-  display: flex;
+  position: relative;
+  right: 5%;
+  justify-content: space-between;
+
 }
 
 body {
@@ -33,6 +42,9 @@ form {
   position: relative;
   left: 60%;
 }
+.logoLupa{
+  width: 15px;
+}
 
 header {
   display: flex;
@@ -41,14 +53,10 @@ header {
   justify-content: space-between;
 }
 
-form {
-}
-
-header img {
-}
 
 .zapatillas {
   width: 100%;
+  margin:auto;
 }
 
 .banner {
@@ -56,19 +64,9 @@ header img {
   margin: auto;
 }
 
-/*  Darle una clase asi no modifica todos los html por igual
-section {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-*/
 
-.articulos {
-  display: flex;
-  width: 50%;
-  margin: auto;
-  margin-bottom: 10px;
+.linkLogo{
+  width: 20%;
 }
 
 /*
@@ -340,7 +338,11 @@ footer li {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 481px) {
+@media (min-width: 360px) {
+  /*Header*/
+
+  
+
   /* Footer */
   .footer {
     flex-direction: row;
@@ -370,7 +372,10 @@ footer li {
 }
 
 @media (min-width: 769px) {
+
+
   /* Footer */
+ 
   .footer {
     max-width: 800px;
   }
@@ -417,15 +422,11 @@ footer li {
 }
 
 @media (min-width: 1200px) {
-  
+
   /* Carrito */
   .main-carrito {
     padding-right: 15vw;
     padding-left: 15vw;
-  }
-
-  .titulo-carrito{
-    font-size: 30px;
   }
 
   .container-productos-detallecompra {
