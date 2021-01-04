@@ -12,7 +12,6 @@ a:active {
 
 header {
   display: flex;
-  
 }
 
 .logoEOS {
@@ -23,7 +22,6 @@ header {
 .busqueda,
 .menu {
   display: flex;
-   
 }
 
 body {
@@ -58,33 +56,38 @@ header img {
   margin: auto;
 }
 
+/*  Darle una clase asi no modifica todos los html por igual
 section {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
+*/
 
 .articulos {
   display: flex;
-  width:50%;
+  width: 50%;
   margin: auto;
   margin-bottom: 10px;
-    
 }
 
 /*
 -----------------------Estilos Cart-----------------------
 */
 .main-carrito {
+  margin-top: 5vh;
   padding: 0 10px 0 10px;
+  margin-bottom: 5vh;
 }
 .titulo-carrito {
-  font-size: 25px;
-  font-weight: 800;
   margin-bottom: 0;
 }
 .container-productos-detallecompra {
   display: flex;
+  flex-direction: column;
+}
+.container-productos-carrito {
+  max-width: 400px;
 }
 .producto-carrito {
   display: flex;
@@ -142,6 +145,7 @@ section {
   margin-top: 50px;
   margin-bottom: 50px;
   padding-right: 10px;
+  max-width: 300px;
 }
 .contenedor-detalle-compra p {
   margin: 0;
@@ -224,7 +228,6 @@ section {
   font-weight: 800;
 }
 
-
 /*
 --------------Estilos Login--------------
 */
@@ -234,15 +237,12 @@ section {
   flex-direction: column;
   width: 50%;
   margin-bottom: 25px;
- 
-  
 }
 .login-registro-formulario {
   display: flex;
   width: 90%;
   flex-direction: column;
   align-items: center;
-    
 }
 
 .login-registro-boton {
@@ -263,8 +263,6 @@ section {
   font-size: 15px;
   margin-bottom: 10px;
 }
-
-
 
 /*
 -----------------------Estilos Footer-----------------------
@@ -362,6 +360,13 @@ footer li {
     align-self: flex-start;
     padding-bottom: 5px;
   }
+  /* Carrito */
+  .container-productos-detallecompra {
+    align-items: center;
+  }
+  .contenedor-detalle-compra {
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -388,4 +393,37 @@ footer li {
   footer ul {
     text-align: left;
   }
+
+  /* Carrito */
+  .main-carrito {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .container-productos-detallecompra {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .container-productos-carrito {
+    max-width: 60%;
+  }
+  .vl {
+    border-left: 1px solid black;
+    height: 300px;
+    margin: 20px;
+  }
+  .contenedor-detalle-compra {
+    margin-left: 10px;
+  }
 }
+
+@media (min-width: 1200px) {
+  /* Carrito */
+  .main-carrito {
+    padding-right: 15vw;
+    padding-left: 15vw;
+  }
+
+  .container-productos-detallecompra {
+    margin-bottom: 10vh;
+    padding-right: 50px;
+  }
