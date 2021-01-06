@@ -54,33 +54,43 @@ form {
 
 .main-index{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
+  flex-flow: row wrap;
+  justify-content: center;
 }
+
 .zapatillas {
   width: 100%;
-  margin:auto;
 }
 
 .banner {
   width: 100%;
-  margin: auto;
 }
 
 .linkLogo{
+  
   width: 20%;
 }
 /*----------------------Estilos ProductDetail-----------------------*/
 
 .main-Detail{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
+  flex-flow: column wrap;
+ 
+  
+}
+.logoMarca{
+  
+  width:15%;
 }
 
+.principal{
+  width: 30%;
+ 
+}
 
+.contenedor-detalles{
+
+}
 
 
 /*-----------------------Estilos Cart-------------------------------*/
