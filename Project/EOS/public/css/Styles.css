@@ -126,19 +126,23 @@ form {
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
+  padding: 5px;
+}
+
+.talle-carrito {
+  color: grey;
+}
+.unidades-producto{
+  width: 100%;
 }
 
 .precio {
   padding-left: 5px;
   margin: 0;
-}
-.talle-carrito {
-  color: grey;
-}
-.precio {
   align-self: flex-end;
   font-weight: 700;
 }
+
 
 .linea-separadora {
   border-top: 1px solid grey;
