@@ -1,12 +1,12 @@
 const { mainModule } = require("process");
 
-const indexController = {
+const mainController = {
     index: function(req,res){
         return res.render ('index');
     },
-    detalle: function(req,res){
+    /*detalle: function(req,res){
         return res.render ('detalleMenu');
-    },
+    },*/
 }
 
-module.exports = indexController;
+module.exports = mainController;
