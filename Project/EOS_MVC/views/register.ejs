@@ -1,148 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro-EOS</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
+  
+  <%- include("./partials/head.ejs") %>
+  
   <body>
-    <header>
-      <img src="images/EOS-gold.svg" class="logoEOS" />
-
-      <form action="#" method="GET" class="busqueda">
-        <input type="search" placeholder="Buscar productos" name="search" />
-        <button type="submit"><img src="images/buscar.png" alt="buscar" class="logoLupa"></button>
-      </form>
-
-      <nav class="menu">
-        <a href="/" class="parte-4">|Home|</a>
-        <a href="/register" class="parte-1">|Creár cuenta|</a>
-        <a href="/login" class="parte-2">|Ingresár|</a>
-        <a href="/productCart" class="parte-3">|Mis compras|</a>
-      </nav>
-    </header>
+    
+    <%- include("./partials/header.ejs") %>
 
     <main class="login-registro">
-      <h2>Creá una cuenta</h2>  
-      <form action="/guardar-usuario" method="POST" class="login-registro-formulario">
-        <div>
-          <label>Nombre</label>
-        </div>
-        <div>
-          <input type="text" name="nombre" id="nombre">
-        </div>
-        <div>
-          <label>Apellido</label>
-        </div>
-        <div>
-          <input type="text" name="apellido" id="apellido">
-        </div>
-        <div>
-          <label>Fecha de Nacimiento</label>
-        </div>
-        <div>
-          <input type="date" name="fecha" id="apellido">
-        </div>
-        <div>
-          <label>Correo Electrónico</label>
-        </div>
-        <div>
-          <input type="email" name="email" id="email">
-        </div>
-        <div>
-          <label>Contraseña</label>
-        </div>
-        <div>
-          <input type="password" name="contraseña" id="contraseña">
-        </div>
-        <div>
-          <label>Repetir Contraseña</label>
-        </div>
-        <div>
-          <input type="password" name="contraseña2" id="contraseña2">
-        </div>
+        <h2>Creá una cuenta</h2>  
+        <form action="/guardar-usuario" method="POST" class="login-registro-formulario">
+          <div>
+            <label>Nombre</label>
+          </div>
+          <div>
+            <input type="text" name="nombre" id="nombre">
+          </div>
+          <div>
+            <label>Apellido</label>
+          </div>
+          <div>
+            <input type="text" name="apellido" id="apellido">
+          </div>
+          <div>
+            <label>Fecha de Nacimiento</label>
+          </div>
+          <div>
+            <input type="date" name="fecha" id="apellido">
+          </div>
+          <div>
+            <label>Correo Electrónico</label>
+          </div>
+          <div>
+            <input type="email" name="email" id="email">
+          </div>
+          <div>
+            <label>Contraseña</label>
+          </div>
+          <div>
+            <input type="password" name="contraseña" id="contraseña">
+          </div>
+          <div>
+            <label>Repetir Contraseña</label>
+          </div>
+          <div>
+            <input type="password" name="contraseña2" id="contraseña2">
+          </div>
+            <div class="login-registro-checkbox">
+            <input type="checkbox" name="newsletter" id="newsletter">
+            <label>Deseo recibir correo con novedades y ofertas.</label>
+          </div>
           <div class="login-registro-checkbox">
           <input type="checkbox" name="newsletter" id="newsletter">
-          <label>Deseo recibir correo con novedades y ofertas.</label>
-        </div>
-      </div>
-      <div class="login-registro-checkbox">
-      <input type="checkbox" name="newsletter" id="newsletter">
-      <label>Acepto los terminos y condiciones.</label>
-    </div>
-        <div>
-          <button type="submit" class="login-registro-boton">Crear Cuenta</button>
-        </div>
-      </form>
+          <div>
+            <label>Acepto los terminos y condiciones.</label>
+          </div>
+          <div>
+            <button type="reset" class="login-registro-boton">Borrar</button>
+            <button type="submit" class="login-registro-boton">Crear Cuenta</button>
+          </div>
+
+        </form>
     </main>
 
-
-    <footer>
-      <div class="footer">
-        <div class="contenedor-logo-y-redes-footer">
-          <div class="contenedor-logo-eos-footer">
-            <a href="/index">
-              <img
-                class="logo-eos-footer"
-                src="images/EOS-gold.svg"
-                alt="logo eos"
-            /></a>
-          </div>
-
-          <div class="contenedor-redes-footer">
-            <a class="logo-redes-footer" href="#">
-              <div class="circulo">
-                <i class="fab fa-instagram"></i>
-              </div>
-            </a>
-            <a class="logo-redes-footer" href="#">
-              <div class="circulo">
-                <i class="fab fa-facebook-f"></i>
-              </div>
-            </a>
-            <a class="logo-redes-footer" href="#">
-              <div class="circulo">
-                <i class="fab fa-twitter twitter"></i>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <nav class="nav-footer">
-          <ul>
-            <li>
-              <a href="#">Sobre Nosotros</a>
-            </li>
-            <li>
-              <a href="#">Contacto</a>
-            </li>
-            <li>
-              <a href="#">Preguntas frecuentes</a>
-            </li>
-            <li>
-              <a href="#">Registrate</a>
-            </li>
-            <li>
-              <a href="#">Locales más cercanos</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div>
-        <p class="copyright">Copyright © 2020-2021 EOS S.R.L.</p>
-      </div>
-    </footer>
+    <%- include("./partials/footer.ejs") %> 
+    
   </body>
 </html>
