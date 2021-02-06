@@ -17,45 +17,72 @@ body {
 
 /*----------------------Header-----------------------*/
 
-header {
+.header {
   display: flex;
-  background-color: black;
-  max-width: 1349px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px black solid;
 }
 
 .logoEOS {
-  width: 100px;
-  padding: 20px;
+  width: 60px;
+  padding: 20px 10px;
 }
 
-.busqueda{
-  position: relative;
-  left: 20%;
+.header input,
+button {
+  border: none;
 }
 
-.menu {
-  position: relative;
-  right: 5%;
+.header button,
+input {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.busqueda-header input:focus {
+  outline: none;
+}
+.busqueda-header button:focus {
+  outline: none;
+}
+
+.busqueda-header {
+  display: flex;
   justify-content: space-between;
-
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px #977a58 solid;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+.busqueda-header input {
+  width: 85%;
+}
+.logoLupa {
+  padding-right: 5px;
+  width: 5%;
+  color: #977a58;
 }
 
-form {
-  position: relative;
-  left: 60%;
+.menu-hamburguesa-footer {
+  color: #977a58;
+  font-size: 25px;
 }
-.logoLupa{
-  width: 15px;
+
+.menu-header {
+  display: none;
+  color: #977a58;
 }
 
 /* ----------------------Estilos index-----------------------*/
 
-.main-index{
+.main-index {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .zapatillas {
@@ -64,34 +91,49 @@ form {
 
 .banner {
   width: 100%;
+  max-width: 800px;
 }
 
-.linkLogo{
-  
-  width: 20%;
+.contenedor-marcas-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 0 10px 0;
 }
+.contenedor-marcas-index article {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 2vh 0;
+}
+.marcas img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.contenedor-banner-index {
+  height: 100%;
+}
+
 /*----------------------Estilos ProductDetail-----------------------*/
 
-.main-Detail{
+.main-Detail {
   display: flex;
   flex-flow: column wrap;
- 
-  
 }
-.logoMarca{
-  
-  width:15%;
+.logoMarca {
+  width: 15%;
 }
 
-.principal{
+.principal {
   width: 30%;
- 
 }
 
-.contenedor-detalles{
-
+.contenedor-detalles {
 }
-
 
 /*-----------------------Estilos Cart-------------------------------*/
 .main-carrito {
@@ -132,7 +174,7 @@ form {
 .talle-carrito {
   color: grey;
 }
-.unidades-producto{
+.unidades-producto {
   width: 100%;
 }
 
@@ -142,7 +184,6 @@ form {
   align-self: flex-end;
   font-weight: 700;
 }
-
 
 .linea-separadora {
   border-top: 1px solid grey;
@@ -296,7 +337,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px 60px 10px 60px;
+  padding: 15px 30px 10px 30px;
 }
 footer ul a {
   color: #977a58;
@@ -307,6 +348,7 @@ footer ul {
   text-align: center;
 }
 footer li {
+  list-style: none;
   margin: 5px 0 5px 0;
   min-width: 142px;
 }
@@ -319,6 +361,8 @@ footer li {
   width: 50px;
 }
 .contenedor-logo-y-redes-footer {
+  display: flex;
+  flex-direction: column;
   width: 50%;
 }
 
@@ -326,9 +370,10 @@ footer li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+
   width: 50%;
   font-weight: 400;
+  font-size: 12px;
 }
 
 .contenedor-redes-footer {
@@ -363,10 +408,6 @@ footer li {
 /* MEDIA QUERIES */
 
 @media (min-width: 360px) {
-  /*Header*/
-
-  
-
   /* Footer */
   .footer {
     flex-direction: row;
@@ -396,31 +437,59 @@ footer li {
 }
 
 @media (min-width: 769px) {
+  /* Header */
 
+  .menu-hamburguesa-footer {
+    display: none;
+  }
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 40%;
+  }
+
+  .menu-header a {
+    color: black;
+    font-size: 14px;
+  }
+
+  .logoLupa {
+    width: 10%;
+    color: #977a58;
+  }
+
+  .busqueda-header {
+    width: 40%;
+  }
 
   /* Footer */
- 
+
   .footer {
     max-width: 800px;
+    height: 120px;
+    padding-top: 30px;
   }
   .logo-eos-footer {
-    width: 80px;
+    width: 60px;
   }
   .circulo {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
   .nav-footer {
-    font-size: 18px;
-  }
-  .contenedor-logo-eos-footer {
-    padding-top: 20px;
+    font-size: 14px;
   }
   .contenedor-redes-footer {
-    font-size: 25px;
+    font-size: 20px;
   }
   footer ul {
     text-align: left;
+  }
+
+  /* Index */
+  .contenedor-marcas-index article.marcas {
+    width: 30%;
   }
 
   /* Carrito */
@@ -446,6 +515,46 @@ footer li {
 }
 
 @media (min-width: 1200px) {
+  /* Header */
+  .header {
+    margin: auto;
+    padding: 0 15vw;
+    justify-content: space-around;
+  }
+  .logoEOS {
+    width: 80px;
+  }
+  .busqueda-header input {
+    width: 90%;
+  }
+  .busqueda-header input:focus {
+    border: none;
+  }
+
+  .busqueda-header {
+    margin-left: 30px;
+    width: 40%;
+  }
+  .menu-header {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    margin-left: 3vw;
+    padding: 0;
+  }
+
+  .menu-header a:hover {
+    color: #977a58;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .menu-header a {
+    width: 100%;
+    font-size: 18px;
+  }
 
   /* Carrito */
   .main-carrito {
@@ -457,3 +566,4 @@ footer li {
     margin-bottom: 10vh;
     padding-right: 50px;
   }
+}

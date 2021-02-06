@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <%- include("./partials/head.ejs") %>
-  
+
   <body>
-    
     <%- include("./partials/header.ejs") %>
 
-    <main>
+    <main class="main-index">
       <section>
-        <img src="/images/bannerAhora12.png" class="banner" />
-        <img src="images/zapatillasNike.jpg" class="zapatillas"/>
+        <img src="images/zapatillasNike.jpg" class="zapatillas" />
       </section>
-      <section>
-       
-        <a href="/productDetail" >
-          <img src="images/logo-vans.png" class="linkLogo"/>
-        </a>
 
-        <a href="/productDetail" >
-          <img src="images/logo-underArmour.png" class="linkLogo"/>
-        </a>
+      <section class="contenedor-marcas-index">
+        <article class="marcas">
+          <a href="/productDetail">
+            <img src="images/logo-vans.png" />
+          </a>
+        </article>
 
-        <a href="/productDetail" >
-          <img src="images/logo-nike.png" class="linkLogo"/>
-        </a>
+        <article class="marcas">
+          <a href="/productDetail">
+            <img src="images/logo-underArmour.png" />
+          </a>
+        </article>
 
-        <a href="/productDetail" >
-          <img src="images/logo-puma.png" class="linkLogo"/>
-        </a>
+        <article class="marcas">
+          <a href="/productDetail">
+            <img src="images/logo-nike.png" />
+          </a>
+        </article>
 
-        <a href="/productDetail">
-          <img src="images/logo-adidas.png" class="linkLogo"/>
-        </a>
+        <article class="marcas">
+          <a href="/productDetail">
+            <img src="images/logo-puma.png" />
+          </a>
+        </article>
 
-        <a href="/productDetail">
-          <img src="images/logo-newBalance.png"class="linkLogo"/>
-        </a>
+        <article class="marcas">
+          <a href="/productDetail">
+            <img src="images/logo-adidas.png" />
+          </a>
+        </article>
+
+        <article class="marcas">
+          <a href="/productDetail">
+            <img src="images/logo-newBalance.png" />
+          </a>
+        </article>
+      </section>
+
+      <section class="contenedor-banner-index">
+        <img src="/images/bannerAhora12.png" class="banner" />
       </section>
     </main>
 
-    <%- include("./partials/footer.ejs") %> 
-    
+    <%- include("./partials/footer.ejs") %>
   </body>
 </html>
