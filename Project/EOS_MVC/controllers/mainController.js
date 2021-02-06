@@ -1,24 +1,27 @@
 const mainController = {
-    index: function(req,res){
-        return res.render ('index');
-    },
-   
-    login: function(req,res){
-        return res.render ('login');
-    },
+  index: function (req, res) {
+    return res.render("index");
+  },
 
-    productCart: function(req,res){
-        return res.render ('productCart');
-    },
+  login: function (req, res) {
+    return res.render("login");
+  },
 
-    productDetail: function(req,res){
-        return res.render ('ProductDetail');
-    },
+  productCart: function (req, res) {
+    return res.render("productCart");
+  },
 
-    register: function(req,res){
-        return res.render ('register');
-    }
+  productDetail: function (req, res) {
+    return res.render("productDetail");
+  },
 
-}
+  register: function (req, res) {
+    return res.render("register");
+  },
+
+  newProduct: function (req, res) {
+    return res.render("newProduct");
+  },
+};
 
 module.exports = mainController;
