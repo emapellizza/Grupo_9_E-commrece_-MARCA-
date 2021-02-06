@@ -23,7 +23,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 0 10px;
-  border-bottom: 1px black solid;
+  border-bottom: 1px #977a58 solid;
 }
 
 .logoEOS {
@@ -137,12 +137,13 @@ input {
 
 /*-----------------------Estilos Cart-------------------------------*/
 .main-carrito {
-  margin-top: 5vh;
+  margin-top: 3vh;
   padding: 0 10px 0 10px;
   margin-bottom: 5vh;
 }
 .titulo-carrito {
-  margin-bottom: 0;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .container-productos-detallecompra {
   display: flex;
@@ -243,7 +244,6 @@ input {
   margin-top: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding-top: 3px;
 }
 .precio-total {
   font-weight: 900;
@@ -251,7 +251,6 @@ input {
 
 .boton-contenedor {
   margin-left: auto;
-
   text-align: right;
   margin-top: 10px;
 }
@@ -262,6 +261,15 @@ input {
   padding: 10px 40px;
   border-radius: 10px;
   font-weight: 800;
+}
+.finalizar-compra:hover {
+  background-color: #977a58;
+  color: black;
+  transition: 0.4s;
+}
+
+.finalizar-compra:focus {
+  outline: none;
 }
 
 .ver-mas-titulo {
@@ -291,9 +299,7 @@ input {
   font-weight: 800;
 }
 
-/*
---------------Estilos Login--------------
-*/
+/* --------------Estilos Login-------------- */
 
 .login-registro {
   display: flex;
@@ -327,9 +333,64 @@ input {
   margin-bottom: 10px;
 }
 
-/*
------------------------Estilos Footer-----------------------
-*/
+/* --------------Estilos newProduct-------------- */
+
+.main-newProduct {
+  padding: 10px 0;
+}
+.titulo-newProduct {
+  text-align: center;
+  margin: 8px 0 15px 0;
+}
+.main-newProduct form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: %;
+  padding: 0 10px;
+}
+.contenedor-campos-newProduct {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 5px;
+}
+.main-newProduct form input,
+select {
+  border: solid 1px grey;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 30px;
+}
+.main-newProduct form label {
+  font-weight: 600;
+  font-size: 20px;
+}
+.contenedor-campos-newProduct textarea {
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+.boton-newProduct {
+  align-self: center;
+  border: none;
+  color: #977a58;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  font-weight: 400;
+  width: 80%;
+  height: 40px;
+}
+.boton-newProduct:hover {
+  background-color: #977a58;
+  color: black;
+  transition: 0.4s;
+}
+
+/* -----------------------Estilos Footer----------------------- */
 footer {
   background-color: black;
 }
@@ -404,6 +465,8 @@ footer li {
   margin: 10px 0 0 0;
   text-align: center;
 }
+
+/* ----------------------Estilos pagina ERROR-----------------------*/
 
 /* MEDIA QUERIES */
 
@@ -545,10 +608,14 @@ footer li {
     padding: 0;
   }
 
-  .menu-header a:hover {
+  .items-menu-header {
+    color: black;
+    font-weight: 400;
+  }
+
+  .items-menu-header:hover {
     color: #977a58;
-    text-decoration: underline;
-    font-weight: bold;
+    transition: 0.5s;
   }
 
   .menu-header a {
