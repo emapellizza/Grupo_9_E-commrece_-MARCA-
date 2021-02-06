@@ -346,7 +346,6 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: %;
   padding: 0 10px;
 }
 .contenedor-campos-newProduct {
