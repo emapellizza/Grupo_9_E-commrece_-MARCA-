@@ -132,9 +132,6 @@ input {
   width: 30%;
 }
 
-.contenedor-detalles {
-}
-
 /*-----------------------Estilos Cart-------------------------------*/
 .main-carrito {
   margin-top: 3vh;
@@ -336,6 +333,7 @@ input {
 /* --------------Estilos newProduct-------------- */
 
 .main-newProduct {
+  background-color: rgba(192, 179, 163, 0.2);
   padding: 10px 0;
 }
 .titulo-newProduct {
@@ -343,24 +341,27 @@ input {
   margin: 8px 0 15px 0;
 }
 .main-newProduct form {
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 10px;
+  margin: 10px 15px;
+  padding: 10px 0;
 }
 .contenedor-campos-newProduct {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin-bottom: 5px;
+  width: 90%;
+  margin: 5px 0;
 }
 .main-newProduct form input,
 select {
+  background-color: white;
   border: solid 1px grey;
   margin-top: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 0 5px;
   height: 30px;
 }
 .main-newProduct form label {
@@ -467,7 +468,29 @@ footer li {
 
 /* ----------------------Estilos pagina ERROR-----------------------*/
 
-/* MEDIA QUERIES */
+.main-error {
+  margin: 15vh 12vw 25vh 12vw;
+}
+
+.main-error img {
+  height: 100%;
+  width: 80px;
+}
+.main-error h2 {
+  font-size: 23px;
+  margin: 10px 0px;
+}
+.main-error h3 {
+  font-weight: 400;
+}
+
+.main-error a {
+  color: #977a58;
+}
+
+/*----------*/
+/*----------------- MEDIA QUERIES ---------------- */
+/*----------*/
 
 @media (min-width: 360px) {
   /* Footer */
@@ -500,7 +523,9 @@ footer li {
 
 @media (min-width: 769px) {
   /* Header */
-
+  .header {
+    height: 8vh;
+  }
   .menu-hamburguesa-footer {
     display: none;
   }
@@ -574,6 +599,23 @@ footer li {
   .contenedor-detalle-compra {
     margin-left: 10px;
   }
+
+  /* New Product*/
+  .main-newProduct form {
+    margin: auto;
+    max-width: 70vw;
+  }
+  .main-newProduct {
+    margin: auto;
+    width: 80vw;
+    max-width: 550px;
+  }
+
+  /* Error */
+  .main-error {
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -619,7 +661,7 @@ footer li {
 
   .menu-header a {
     width: 100%;
-    font-size: 18px;
+    font-size: 17px;
   }
 
   /* Carrito */
@@ -631,5 +673,28 @@ footer li {
   .container-productos-detallecompra {
     margin-bottom: 10vh;
     padding-right: 50px;
+  }
+  /* New Product*/
+
+  .main-newProduct {
+    width: 550px;
+    margin: auto;
+  }
+
+  /* Error*/
+  .main-error {
+    margin: 15vh 30vw 25vh 35vw;
+    max-width: 400px;
+  }
+
+  .main-error img {
+    width: 150px;
+  }
+  .main-error h2 {
+    font-size: 30px;
+  }
+  .main-error h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
   }
 }
