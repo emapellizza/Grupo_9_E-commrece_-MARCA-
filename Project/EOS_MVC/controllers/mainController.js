@@ -18,9 +18,13 @@ const mainController = {
   register: function (req, res) {
     return res.render("register");
   },
-
+  // logica momentanea para previzualizar las vistas
   newProduct: function (req, res) {
     return res.render("newProduct");
+  },
+
+  updateProduct: function (req, res) {
+    return res.render("updateProduct");
   },
 };
 

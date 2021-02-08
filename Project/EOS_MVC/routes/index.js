@@ -12,7 +12,8 @@ router.get("/productDetail", mainController.productDetail);
 
 router.get("/register", mainController.register);
 
-// Solo para ver el form newProduct
+// Solo para ver los form de nuevoProduct y acutalizarProducto
 router.get("/newProduct", mainController.newProduct);
+router.get("/updateProduct", mainController.updateProduct);
 
 module.exports = router;
