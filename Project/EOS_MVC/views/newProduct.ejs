@@ -6,7 +6,7 @@
     <%- include("./partials/header.ejs") %>
 
     <main class="main-newProduct">
-      <h2 class="titulo-newProduct">NUEVO PRODUCTO</h2>
+      <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
       <form action="/product/new" method="POST" enctype="multipart/form-data">
         <div class="contenedor-campos-newProduct">
           <label for="imagenProducto">• Imagen/es</label>
@@ -19,8 +19,9 @@
           />
         </div>
 
+        
         <div class="contenedor-campos-newProduct">
-          <label for="tituloProducto">• Titulo</label>
+          <label for="tituloProducto">• Código</label>
           <input type="text" name="tituloProducto" id="tituloProducto" />
         </div>
 
@@ -34,6 +35,11 @@
             <option value="vans">Vans</option>
             <option value="underArmour">Under Armour</option>
           </select>
+        </div>
+
+        <div class="contenedor-campos-newProduct">
+          <label for="modeloProducto">• Modelo</label>
+          <input type="text" name="modeloProducto" id="modeloProducto"/>
         </div>
 
         <div class="contenedor-campos-newProduct">
@@ -67,8 +73,14 @@
         </div>
 
         <div class="contenedor-campos-newProduct">
-          <label for="tallesProducto">• Talles</label>
-          <input type="text" name="tallesProducto" id="tallesProducto" />
+          <label for="tallesProducto">• Talle</label>
+          <select name="tallesProducto" id="tallesProducto">
+              <option disabled selected>Seleccionar</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="Unico">Unico</option>
+            </select>
         </div>
 
         <div class="contenedor-campos-newProduct">

@@ -11,6 +11,10 @@ const productsController = {
   newProduct: function (req, res) {
     return res.render("newProduct");
   },
+
+  saveProduct: function (req, res) {
+    return res.render("newProduct");
+  },
   
   updateProduct: function (req, res) {
     return res.render("updateProduct");
@@ -18,5 +22,5 @@ const productsController = {
 
 };
   
-  module.exports = productsController;
+module.exports = productsController;
   
