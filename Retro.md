@@ -1,4 +1,4 @@
-# Conclusiones del Sprint 2
+# Conclusiones del Sprint 3
 
 Siguiendo la dinamica de la retrospectiva de estrella de mar podemos enumerar que:
 
