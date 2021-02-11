@@ -10,6 +10,6 @@ Siguiendo la dinamica de la retrospectiva de estrella de mar podemos enumerar qu
 
 * Algo que por ahí debemos corregir es prestar atención a pequeños errores de diseño y de no olvidar ningun detalle de los solicitados en las consigas.
 
-* Lo que no debemos repetir es intentar agregar soluciones para las cuales todavia no tenemos los conocimientos necesarios y pueden complicarnos o retrasarnos con el desarrollo. 
+* Lo que debejos dejar de hacer es por ahi trabajar mucho un fin de semana y luego no hacer nada por un par de semanas porque se pierde continuidad con el proyecto. 
 
 ### En resumen, un gran trabajo en equipo, con una auto evaluación satisfactoria de como se esta desarrollando el proyecto y a la espera de las devoluciones de los profesores. 
