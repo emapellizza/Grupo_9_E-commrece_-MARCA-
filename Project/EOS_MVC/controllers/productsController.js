@@ -18,10 +18,15 @@ const productsController = {
   },
   
   updateProduct: function (req, res) {
+    return res.render("./products/updateProduct");
+  },
+
+  productToUpdate: function (req, res) {
     //Aca va el codigo que dice que hace con la info de actualizar producto.
     let producto = req.params.idProduct;
     return res.send("updateProduct: " + producto);
   }
+
 
 };
   

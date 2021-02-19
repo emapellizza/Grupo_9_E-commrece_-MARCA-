@@ -13,7 +13,10 @@ router.post("/newProduct", productsController.saveProduct);
 
 
 //Rutas para guardar actualizar un producto:
-router.get("/updateProduct/:idProduct", productsController.updateProduct);
+
+router.get("/updateProduct", productsController.updateProduct);
+
+router.get("/updateProduct/:idProduct", productsController.productToUpdate);
 
     // Aca va la ruta a una nueva pagina "producto a actualizar" o algo asi
 
