@@ -6,92 +6,95 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-newProduct">
-      <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
-      <form action="/product/new" method="POST" enctype="multipart/form-data">
-        <div class="contenedor-campos-newProduct">
-          <label for="imagenProducto">• Imagen/es</label>
-          <input
-            type="file"
-            id="imagenProducto"
-            name="imagenProducto"
-            accept=".png, .jpg, .jpeg"
-            multiple
-          />
-        </div>
-
+      <div class="container-newProduct">
         
-        <div class="contenedor-campos-newProduct">
-          <label for="codigoProducto">• Código</label>
-          <input type="text" name="codigoProducto" id="codigoProducto" />
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="marcaProducto">• Marca</label>
-          <select name="marcaProducto" id="marcaProducto">
-            <option disabled selected>Seleccionar</option>
-            <option value="nike">Nike</option>
-            <option value="adidas">Adidas</option>
-            <option value="newBalance">New Balance</option>
-            <option value="vans">Vans</option>
-            <option value="underArmour">Under Armour</option>
-          </select>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="modeloProducto">• Modelo</label>
-          <input type="text" name="modeloProducto" id="modeloProducto"/>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="precioProducto">• Precio</label>
-          <input type="number" name="precioProducto" min="0" id="precioProducto" placeholder="7000"/>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="categoriaProducto">• Categoria</label>
-          <select name="categoriaProducto" id="categoriaProducto">
+        <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
+        <form action="/product/new" method="POST" enctype="multipart/form-data">
+          <div class="contenedor-campos-newProduct">
+            <label for="imagenProducto">• Imagen/es</label>
+            <input
+              type="file"
+              id="imagenProducto"
+              name="imagenProducto"
+              accept=".png, .jpg, .jpeg"
+              multiple
+            />
+          </div>
+  
+          
+          <div class="contenedor-campos-newProduct">
+            <label for="codigoProducto">• Código</label>
+            <input type="text" name="codigoProducto" id="codigoProducto" />
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="marcaProducto">• Marca</label>
+            <select name="marcaProducto" id="marcaProducto">
               <option disabled selected>Seleccionar</option>
-              <option value="indumentaria">Indumentaria</option>
-              <option value="calzado">Calzado</option>
-              <option value="accesorios">Accesorios</option>
-          </select>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="generoProducto">• Género</label>
-          <select value="generoProducto" id="generoProducto">
-            <option disabled selected>Seleccionar</option>
-            <option value="masculino">Masculo</option>
-            <option value="femenino">Femenino</option>
-            <option value="unisex">Unisex</option>
-          </select>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="descripcionProducto">• Descripción</label>
-          <textarea name="descripcionProducto" id="descripcionProducto" cols="10" rows="10">Descripción breve del producto</textarea>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="tallesProducto">• Talle</label>
-          <select name="tallesProducto" id="tallesProducto">
-              <option disabled selected>Seleccionar</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="Unico">Unico</option>
+              <option value="nike">Nike</option>
+              <option value="adidas">Adidas</option>
+              <option value="newBalance">New Balance</option>
+              <option value="vans">Vans</option>
+              <option value="underArmour">Under Armour</option>
             </select>
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <label for="coloresProducto">• Colores</label>
-          <input type="text" name="coloresProducto" id="coloresProducto" />
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <button type="submit" class="boton-newProduct">Siguiente</button>
-
-      </form>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="modeloProducto">• Modelo</label>
+            <input type="text" name="modeloProducto" id="modeloProducto"/>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="precioProducto">• Precio</label>
+            <input type="number" name="precioProducto" min="0" id="precioProducto" placeholder="7000"/>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="categoriaProducto">• Categoria</label>
+            <select name="categoriaProducto" id="categoriaProducto">
+                <option disabled selected>Seleccionar</option>
+                <option value="indumentaria">Indumentaria</option>
+                <option value="calzado">Calzado</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="generoProducto">• Género</label>
+            <select value="generoProducto" id="generoProducto">
+              <option disabled selected>Seleccionar</option>
+              <option value="masculino">Masculo</option>
+              <option value="femenino">Femenino</option>
+              <option value="unisex">Unisex</option>
+            </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="descripcionProducto">• Descripción</label>
+            <textarea name="descripcionProducto" id="descripcionProducto" cols="10" rows="10" placeholder="Descripción breve del producto"></textarea>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="tallesProducto">• Talle</label>
+            <select name="tallesProducto" id="tallesProducto">
+                <option disabled selected>Seleccionar</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="Unico">Unico</option>
+              </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="coloresProducto">• Colores</label>
+            <input type="text" name="coloresProducto" id="coloresProducto" />
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <button type="submit" class="boton-newProduct">CONTINUAR</button>
+  
+        </form>
+      </div>
     </main>
 
     <!-- Footer-->

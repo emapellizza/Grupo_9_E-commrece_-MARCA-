@@ -296,65 +296,130 @@ input {
   font-weight: 800;
 }
 
-/* --------------Estilos Login-------------- */
+/* --------------Estilos Register/login-------------- */
 
-.login-registro {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-bottom: 25px;
-}
-.login-registro-formulario {
-  display: flex;
-  width: 90%;
-  flex-direction: column;
-  align-items: center;
-}
-
-.login-registro-boton {
-  margin: auto;
-}
-
-.login-registro-link {
-  color: black;
-  font-weight: 700;
-  font-size: 15px;
-  text-align: right;
-}
-
-.login-registro-checkbox {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-/* --------------Estilos newProduct-------------- */
-
-.main-newProduct {
+.main-reg-log {
   background-color: rgba(192, 179, 163, 0.2);
-  padding: 10px 0;
+  padding-top: 10px;
 }
-.titulo-newProduct {
+.main-reg-log h2 {
   text-align: center;
-  margin: 8px 0 15px 0;
+  margin-top: 8px;
 }
-.main-newProduct form {
+
+.main-reg-log form {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 15px;
+  margin: 0 15px;
+  padding: 10px 0 15px 0;
+}
+.contenedor-campos-reg-log {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 2px 0;
+  font-size: 20px;
+}
+
+.main-reg-log form input {
+  background-color: white;
+  border: solid 1px grey;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 0 5px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.main-reg-log form label {
+  font-weight: 400;
+}
+.checkbox-reg-log {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.checkbox-reg-log input {
+  margin: 10px;
+}
+
+.text-checkbox-reg-log {
+  font-size: 18px;
+  color: rgba(71, 71, 71, 0.692);
+}
+
+.checkbox-reg-log a {
+  color: rgba(0, 0, 255, 0.753);
+}
+
+.boton-reg-log {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.boton-reg-log button {
+  align-self: center;
+  color: #977a58;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+}
+
+.boton-reg-log button:hover {
+  background-color: #977a58;
+  color: black;
+  transition: 0.4s;
+}
+
+.main-log {
+  background-color: rgba(192, 179, 163, 0.2);
+  padding-top: 10px;
+}
+
+.log-textcenter {
+  text-align: center;
+}
+
+.boton-log {
+  margin: 0;
+}
+.text-log {
+  margin-top: 10px;
+}
+
+/* --------------Estilos newProduct-------------- */
+
+.container-newProduct {
+  background-color: rgba(192, 179, 163, 0.521);
   padding: 10px 0;
+}
+.titulo-newProduct {
+  text-align: center;
+  padding-top: 8px;
+}
+.container-newProduct form {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+  padding: 10px 0 15px 0;
 }
 .contenedor-campos-newProduct {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 5px 0;
+  margin: 2px 0;
 }
-.main-newProduct form input,
+.container-newProduct form input,
 select {
   background-color: white;
   border: solid 1px grey;
@@ -363,13 +428,16 @@ select {
   border-radius: 5px;
   padding: 0 5px;
   height: 30px;
+  font-size: 15px;
 }
-.main-newProduct form label {
-  font-weight: 600;
+
+.container-newProduct form label {
+  font-weight: 400;
   font-size: 20px;
 }
+
 .contenedor-campos-newProduct textarea {
-  margin-top: 5px;
+  margin: 6px 0;
   border-radius: 5px;
   border: 1px solid grey;
   padding: 10px;
@@ -601,14 +669,21 @@ footer li {
   }
 
   /* New Product*/
-  .main-newProduct form {
-    margin: auto;
-    max-width: 70vw;
-  }
+
   .main-newProduct {
+    padding: 1vh 0;
+  }
+
+  .container-newProduct {
     margin: auto;
     width: 80vw;
     max-width: 550px;
+    border-radius: 20px;
+  }
+
+  .container-newProduct form {
+    margin: auto;
+    max-width: 70vw;
   }
 
   /* Error */
@@ -677,8 +752,14 @@ footer li {
   /* New Product*/
 
   .main-newProduct {
+    background-image: url(../images/traffic-1149857.jpg);
+    background-size: 100% 100%;
+  }
+
+  .container-newProduct {
     width: 550px;
     margin: auto;
+    background-color: rgba(192, 179, 163, 0.8);
   }
 
   /* Error*/

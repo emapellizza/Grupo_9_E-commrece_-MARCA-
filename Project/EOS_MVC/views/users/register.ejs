@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <%- include("../partials/head.ejs") %>
-  
+
   <body>
-    
     <%- include("../partials/header.ejs") %>
 
-    <main class="login-registro">
-        <h2>Creá una cuenta</h2>  
-        <form action="/guardar-usuario" method="POST" class="login-registro-formulario">
-          <div>
-            <label>Nombre</label>
-          </div>
-          <div>
-            <input type="text" name="nombre" id="nombre">
-          </div>
-          <div>
-            <label>Apellido</label>
-          </div>
-          <div>
-            <input type="text" name="apellido" id="apellido">
-          </div>
-          <div>
-            <label>Fecha de Nacimiento</label>
-          </div>
-          <div>
-            <input type="date" name="fecha" id="apellido">
-          </div>
-          <div>
-            <label>Correo Electrónico</label>
-          </div>
-          <div>
-            <input type="email" name="email" id="email">
-          </div>
-          <div>
-            <label>Contraseña</label>
-          </div>
-          <div>
-            <input type="password" name="contraseña" id="contraseña">
-          </div>
-          <div>
-            <label>Repetir Contraseña</label>
-          </div>
-          <div>
-            <input type="password" name="contraseña2" id="contraseña2">
-          </div>
-            <div class="login-registro-checkbox">
-            <input type="checkbox" name="newsletter" id="newsletter">
-            <label>Deseo recibir correo con novedades y ofertas.</label>
-          </div>
-          <div class="login-registro-checkbox">
-          <input type="checkbox" name="newsletter" id="newsletter">
-          <div>
-            <label>Acepto los terminos y condiciones.</label>
-          </div>
-          <div>
-            <button type="reset" class="login-registro-boton">Borrar</button>
-            <button type="submit" class="login-registro-boton">Crear Cuenta</button>
-          </div>
+    <main class="main-reg-log">
+      <h2>CREÁ TU CUENTA</h2>
+      <form action="/guardar-usuario" method="POST">
+        <div class="contenedor-campos-reg-log">
+          <label for="nombre-usuario">Nombre</label>
+          <input type="text" name="nombre-usuario" id="nombre-usuario" />
+        </div>
 
-        </form>
+        <div class="contenedor-campos-reg-log">
+          <label for="apellido-usuario">Apellido</label>
+          <input type="text" name="apellido-usuario" id="apellido-usuario" />
+        </div>
+
+        <div class="contenedor-campos-reg-log">
+          <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+          <input type="date" name="fecha-nacimiento" id="fecha-nacimiento" />
+        </div>
+
+        <div class="contenedor-campos-reg-log">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" name="email" id="email" />
+        </div>
+
+        <div class="contenedor-campos-reg-log">
+          <label for="contraseña">Contraseña</label>
+          <input type="password" name="contraseña" id="contraseña" />
+        </div>
+
+        <div class="contenedor-campos-reg-log">
+          <label for="contraseña2">Repetir Contraseña</label>
+          <input type="password" name="contraseña2" id="contraseña2" />
+        </div>
+
+        <div class="checkbox-reg-log">
+          <input type="checkbox" name="newsletter" id="newsletter" />
+          <label class="text-checkbox-reg-log">Suscribirse al newsletter</label>
+        </div>
+
+        <div class="checkbox-reg-log">
+          <input
+            type="checkbox"
+            name="terminos-condiciones"
+            id="terminos-condiciones"
+            required
+          />
+          <label class="text-checkbox-reg-log"
+            >Acepto los <a href="#">Términos y Condiciones</a></label
+          >
+        </div>
+
+        <div class="boton-reg-log">
+          <button type="submit">CREAR CUENTA</button>
+        </div>
+      </form>
     </main>
 
-    <%- include("../partials/footer.ejs") %> 
-    
+    <%- include("../partials/footer.ejs") %>
   </body>
 </html>
