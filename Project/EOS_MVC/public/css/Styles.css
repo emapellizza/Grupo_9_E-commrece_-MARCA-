@@ -4,6 +4,23 @@
   padding: 0px;
 }
 
+/* FOOTER SIEMPRE ABAJO */
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 160px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 160px;
+  width: 100%;
+}
+/* FOOTER SIEMPRE ABAJO */
+
 a:link,
 a:visited,
 a:active {
