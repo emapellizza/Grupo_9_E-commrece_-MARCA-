@@ -1,5 +1,6 @@
+const fs = require("fs");
+
 const usersController = {
-    
   login: function (req, res) {
     return res.render("./users/login");
   },
@@ -9,10 +10,23 @@ const usersController = {
   },
 
   create: function (req, res) {
-      //Aca va el codigo para crear usuario
-    return res.redirect("index");
-  }
-    
+    // Falta la validación
+
+    // Almaceno los datos del usuario
+    let user = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      dateOfBirth: req.body.dateOfBirth,
+      email: req.body.email,
+      password: req.body.password,
+    };
+
+    // Guardar usuario
+    let usuarioJSON = JSON.stringify(user);
+    fs.writeFileSync("./data/usuarios.json", usuarioJSON);
+
+    res.send(user);
+  },
 };
 
 module.exports = usersController;
