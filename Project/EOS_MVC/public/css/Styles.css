@@ -16,8 +16,8 @@ body {
 footer {
   position: absolute;
   bottom: 0;
-  height: 160px;
   width: 100%;
+  height: 140px;
 }
 /* FOOTER SIEMPRE ABAJO */
 
@@ -547,11 +547,53 @@ footer li {
 .copyright {
   color: grey;
   font-size: 10px;
-  margin: 10px 0 0 0;
   text-align: center;
 }
 
-/* ----------------------Estilos pagina ERROR-----------------------*/
+/*----------------------Productos-----------------------*/
+.navbar-products {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+}
+.filter-products {
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 15px;
+}
+.filter-products button {
+  display: flex;
+  padding: 6px 15px 6px 20px;
+  background-color: rgba(128, 128, 128, 0);
+  border-radius: 15px;
+}
+.filter-products i {
+  margin-left: 5px;
+  margin-top: -2px;
+}
+.all-products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.container-product {
+  width: 50vw;
+}
+.container-product img {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid red;
+}
+.product-descpription {
+  padding: 10px;
+  padding-top: 0px;
+}
+.product-descpription h3 {
+  font-weight: 400;
+}
+
+/*----------------------Estilos pagina ERROR-----------------------*/
 
 .main-error {
   margin: 15vh 12vw 25vh 12vw;
@@ -620,23 +662,19 @@ footer li {
     padding: 0 20px;
     width: 40%;
   }
-
   .menu-header a {
     color: black;
     font-size: 14px;
   }
-
   .logoLupa {
     width: 10%;
     color: #977a58;
   }
-
   .busqueda-header {
     width: 40%;
   }
 
   /* Footer */
-
   .footer {
     max-width: 800px;
     height: 120px;
@@ -690,17 +728,22 @@ footer li {
   .main-newProduct {
     padding: 1vh 0;
   }
-
   .container-newProduct {
     margin: auto;
     width: 80vw;
     max-width: 550px;
     border-radius: 20px;
   }
-
   .container-newProduct form {
     margin: auto;
     max-width: 70vw;
+  }
+  /* Productos */
+  .container-product {
+    width: 33vw;
+  }
+  .navbar-products {
+    margin-top: 15px;
   }
 
   /* Error */
@@ -794,5 +837,13 @@ footer li {
   .main-error h3 {
     font-size: 22px;
     margin-bottom: 5px;
+  }
+
+  /* Productos */
+  .all-products-main {
+    padding: 0 15vw;
+  }
+  .container-product {
+    width: 20vw;
   }
 }
