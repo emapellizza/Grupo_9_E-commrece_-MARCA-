@@ -25,7 +25,7 @@ const usersController = {
     let usuarioJSON = JSON.stringify(user);
     fs.writeFileSync("./data/usuarios.json", usuarioJSON);
 
-    res.send(user);
+    res.redirect("/login");
   },
 };
 
