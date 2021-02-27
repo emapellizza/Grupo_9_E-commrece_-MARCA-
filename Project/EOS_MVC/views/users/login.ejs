@@ -6,47 +6,54 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-reg-log">
-      <h2>INGRESÁ</h2>
-      <form
-        action="/guardar-usuario"
-        method="POST"
-        class="login-registro-formulario"
-      >
-        <div class="contenedor-campos-reg-log log-textcenter">
-          <label>Correo electrónico</label>
-          <input type="email" name="email" id="email" class="log-textcenter" />
-        </div>
+      <div class="container-all-reg-log">
+        <h2>INGRESÁ</h2>
+        <form
+          action="/guardar-usuario"
+          method="POST"
+          class="login-registro-formulario"
+        >
+          <div class="contenedor-campos-reg-log log-textcenter">
+            <label>Correo electrónico</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="log-textcenter"
+            />
+          </div>
 
-        <div class="contenedor-campos-reg-log log-textcenter">
-          <label>Contraseña</label>
-          <input
-            type="password"
-            name="contraseña"
-            id="contraseña"
-            class="log-textcenter"
-          />
-        </div>
+          <div class="contenedor-campos-reg-log log-textcenter">
+            <label>Contraseña</label>
+            <input
+              type="password"
+              name="contraseña"
+              id="contraseña"
+              class="log-textcenter"
+            />
+          </div>
 
-        <div>
-          <a href="#">Olvidaste tu contraseña?</a>
-        </div>
+          <div>
+            <a href="#">Olvidaste tu contraseña?</a>
+          </div>
 
-        <div class="checkbox-reg-log">
-          <input type="checkbox" name="conectado" id="conectado" />
-          <label>Permanecer conectado</label>
-        </div>
+          <div class="checkbox-reg-log">
+            <input type="checkbox" name="conectado" id="conectado" />
+            <label>Permanecer conectado</label>
+          </div>
 
-        <div class="boton-reg-log boton-log">
-          <button type="submit">INGRESAR</button>
-        </div>
+          <div class="boton-reg-log boton-log">
+            <button type="submit">INGRESAR</button>
+          </div>
 
-        <div class="text-log">
-          <p>
-            No tenes cuenta?
-            <a href="#" class="login-registro-link">Creá una</a>
-          </p>
-        </div>
-      </form>
+          <div class="text-log">
+            <p>
+              No tenes cuenta?
+              <a href="#" class="login-registro-link">Creá una</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </main>
 
     <%- include("../partials/footer.ejs") %>

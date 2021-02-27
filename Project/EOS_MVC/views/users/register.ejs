@@ -6,59 +6,63 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-reg-log">
-      <h2>CREÁ TU CUENTA</h2>
-      <form action="/register" method="POST">
-        <div class="contenedor-campos-reg-log">
-          <label for="firstName">Nombre</label>
-          <input type="text" name="firstName" id="firstName" />
-        </div>
+      <div class="container-all-reg-log">
+        <h2>CREÁ TU CUENTA</h2>
+        <form action="/register" method="POST">
+          <div class="contenedor-campos-reg-log">
+            <label for="firstName">Nombre</label>
+            <input type="text" name="firstName" id="firstName" />
+          </div>
 
-        <div class="contenedor-campos-reg-log">
-          <label for="lastName">Apellido</label>
-          <input type="text" name="lastName" id="lastName" />
-        </div>
+          <div class="contenedor-campos-reg-log">
+            <label for="lastName">Apellido</label>
+            <input type="text" name="lastName" id="lastName" />
+          </div>
 
-        <div class="contenedor-campos-reg-log">
-          <label for="dateOfBirth">Fecha de Nacimiento</label>
-          <input type="date" name="dateOfBirth" id="dateOfBirth" />
-        </div>
+          <div class="contenedor-campos-reg-log">
+            <label for="dateOfBirth">Fecha de Nacimiento</label>
+            <input type="date" name="dateOfBirth" id="dateOfBirth" />
+          </div>
 
-        <div class="contenedor-campos-reg-log">
-          <label for="email">Correo Electrónico</label>
-          <input type="email" name="email" id="email" />
-        </div>
+          <div class="contenedor-campos-reg-log">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="email" id="email" />
+          </div>
 
-        <div class="contenedor-campos-reg-log">
-          <label for="contraseña">Contraseña</label>
-          <input type="password" name="password" id="password" />
-        </div>
+          <div class="contenedor-campos-reg-log">
+            <label for="contraseña">Contraseña</label>
+            <input type="password" name="password" id="password" />
+          </div>
 
-        <div class="contenedor-campos-reg-log">
-          <label for="password2">Repetir Contraseña</label>
-          <input type="password" name="password2" id="password2" />
-        </div>
+          <div class="contenedor-campos-reg-log">
+            <label for="password2">Repetir Contraseña</label>
+            <input type="password" name="password2" id="password2" />
+          </div>
 
-        <div class="checkbox-reg-log">
-          <input type="checkbox" name="newsletter" id="newsletter" />
-          <label class="text-checkbox-reg-log">Suscribirse al newsletter</label>
-        </div>
+          <div class="checkbox-reg-log">
+            <input type="checkbox" name="newsletter" id="newsletter" />
+            <label class="text-checkbox-reg-log"
+              >Suscribirse al newsletter</label
+            >
+          </div>
 
-        <div class="checkbox-reg-log">
-          <input
-            type="checkbox"
-            name="terminos-condiciones"
-            id="terminos-condiciones"
-            required
-          />
-          <label class="text-checkbox-reg-log"
-            >Acepto los <a href="#">Términos y Condiciones</a></label
-          >
-        </div>
+          <div class="checkbox-reg-log">
+            <input
+              type="checkbox"
+              name="terminos-condiciones"
+              id="terminos-condiciones"
+              required
+            />
+            <label class="text-checkbox-reg-log"
+              >Acepto los <a href="#">Términos y Condiciones</a></label
+            >
+          </div>
 
-        <div class="boton-reg-log">
-          <button type="submit">CREAR CUENTA</button>
-        </div>
-      </form>
+          <div class="boton-reg-log">
+            <button type="submit">CREAR CUENTA</button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <%- include("../partials/footer.ejs") %>
