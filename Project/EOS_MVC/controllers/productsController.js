@@ -33,9 +33,8 @@ const productsController = {
     };
 
 
-     const productsJSON = JSON.stringify(producto);
- 
-     fs.appendFileSync("./data/productos.json", productsJSON);
+    const productsJSON = JSON.stringify(producto);
+    fs.appendFileSync("./data/productos.json", productsJSON);
 
     res.redirect("/products");//cada producto se tiene agregar a la vista de productList
   },
