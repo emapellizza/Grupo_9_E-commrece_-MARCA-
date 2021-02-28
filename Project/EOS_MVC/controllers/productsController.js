@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 const productsController = {
   products: function (req, res) {
     return res.render("./products/productList");
@@ -16,8 +18,26 @@ const productsController = {
   },
 
   saveProduct: function (req, res) {
-    //Aca va el codigo para cuando se guarda un producto.
-    return res.send("Producto guardado");
+ 
+    const producto = {
+      imagen: req.body.imagenProducto,
+      codigo: req.body.codigoProducto,
+      marca: req.body.marcaProducto,
+      modelo: req.body.modeloProducto,
+      precio: req.body.precioProducto,
+      categoria: req.body.categoriaProducto,
+      genero: req.body.generoProducto,
+      descripcion: req.body.descripcionProducto,
+      talle: req.body.talleProducto,
+      colores: req.body.coloresProducto,
+    };
+
+
+     const productsJSON = JSON.stringify(producto);
+ 
+     fs.appendFileSync("./data/productos.json", productsJSON);
+
+    res.redirect("/products");//cada producto se tiene agregar a la vista de productList
   },
 
   updateProduct: function (req, res) {

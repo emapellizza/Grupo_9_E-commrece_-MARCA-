@@ -23,7 +23,7 @@ const usersController = {
 
     // Guardar usuario
     let usuarioJSON = JSON.stringify(user);
-    fs.writeFileSync("./data/usuarios.json", usuarioJSON);
+    fs.appendFileSync("./data/usuarios.json", usuarioJSON);
 
     res.redirect("/login");
   },
