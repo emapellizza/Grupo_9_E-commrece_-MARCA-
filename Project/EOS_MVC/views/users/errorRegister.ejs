@@ -11,7 +11,9 @@
         <h3>Intentalo de nuevo ;)<h3>
         <a href="/register">Volver</a>
 
-        
+        <% errors.forEach(error => { %>
+          <p><%= error.msg %></p>
+        <% }) %>
 
     </main>
 

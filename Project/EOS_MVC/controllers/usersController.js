@@ -37,7 +37,7 @@ const usersController = {
 
     }  else {
 
-      res.render("./users/errorRegister",{ errors: errors.array() });
+      return res.render("./users/register",{ errors: errors.mapped() });
       }
     
   }

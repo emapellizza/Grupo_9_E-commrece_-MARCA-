@@ -20,7 +20,7 @@ const productsController = {
   saveProduct: function (req, res) {
  
     const producto = {
-      imagen: req.body.imagenProducto,
+      imagen: req.file.filename,
       codigo: req.body.codigoProducto,
       marca: req.body.marcaProducto,
       modelo: req.body.modeloProducto,
