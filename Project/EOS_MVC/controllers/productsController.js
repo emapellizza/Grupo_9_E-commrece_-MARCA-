@@ -2,7 +2,11 @@ const fs = require("fs");
 
 const productsController = {
   listAll: function (req, res) {
-    return res.render("./products/list");
+    let productsJSON = fs.readFileSync("./data/products.json", {
+      encoding: "utf-8",
+    });
+    let products = JSON.parse(productsJSON);
+    return res.render("./products/list", { products: products });
   },
 
   productCart: function (req, res) {
@@ -30,15 +34,15 @@ const productsController = {
       colores: req.body.coloresProducto,
     };
 
-    let archivoUsuario = fs.readFileSync("./data/products.json", {
+    let productsFile = fs.readFileSync("./data/products.json", {
       encoding: "utf-8",
     });
 
     let products;
-    if (archivoUsuario == "") {
+    if (productsFile == "") {
       products = [];
     } else {
-      products = JSON.parse(archivoUsuario);
+      products = JSON.parse(productsFile);
     }
     // Agrego el usuario a la lista
     products.push(product);

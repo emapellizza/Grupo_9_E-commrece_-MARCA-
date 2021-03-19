@@ -19,14 +19,22 @@
       </section>
 
       <section class="all-products-container">
+        <% for (let i = 0; i< products.length; i++) { %>
         <article class="container-product">
-          <img src="images/index/product-default.png" alt="imagen producto" />
+          <img
+            src="./images/products/<%= products[i].imagen %>"
+            alt="imagen producto"
+          />
           <div class="product-descpription">
-            <h3>Titulo Producto</h3>
-            <p>Descripcion producto</p>
-            <p>$9000</p>
+            <h3><%= products[i].marca + " " + products[i].modelo %></h3>
+            <p><%=products[i].descripcion %></p>
+            <p>$<%=products[i].precio %></p>
           </div>
         </article>
+        <% } %>
+
+        <!-- 
+
 
         <article class="container-product">
           <img src="images/index/product-default.png" alt="imagen producto" />
@@ -72,6 +80,7 @@
             <p>$9000</p>
           </div>
         </article>
+        -->
       </section>
     </main>
 

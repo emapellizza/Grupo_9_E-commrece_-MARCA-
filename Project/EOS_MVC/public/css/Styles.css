@@ -618,6 +618,7 @@ footer li {
   border: 1px solid red;
 }
 .product-descpription {
+  text-transform: capitalize;
   padding: 10px;
   padding-top: 0px;
 }
