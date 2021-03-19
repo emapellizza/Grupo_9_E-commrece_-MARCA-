@@ -20,26 +20,25 @@ const productsController = {
   saveProduct: function (req, res) {
     const product = {
       imagen: req.file.filename,
-      codigo: req.body.codigoProducto,
       marca: req.body.marcaProducto,
       modelo: req.body.modeloProducto,
       precio: req.body.precioProducto,
       categoria: req.body.categoriaProducto,
       genero: req.body.generoProducto,
       descripcion: req.body.descripcionProducto,
-      talle: req.body.talleProducto,
+      talle: req.body.tallesProducto,
       colores: req.body.coloresProducto,
     };
 
-    let fileProducts = fs.readFileSync("./data/products.json", {
+    let archivoUsuario = fs.readFileSync("./data/products.json", {
       encoding: "utf-8",
     });
 
     let products;
-    if (fileProducts == "") {
+    if (archivoUsuario == "") {
       products = [];
     } else {
-      products = JSON.parse(fileProducts);
+      products = JSON.parse(archivoUsuario);
     }
     // Agrego el usuario a la lista
     products.push(product);
