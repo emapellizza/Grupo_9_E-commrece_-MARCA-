@@ -158,17 +158,27 @@ input {
   padding: 15px 5% 10px 2%;
 }
 /*----------------------Estilos ProductDetail-----------------------*/
-
-.main-Detail {
+.main-productDetail {
+  padding: 2vh 0;
+}
+.container-productDetail {
+  width: 95vw;
+  margin: auto;
+}
+.container-productDetail img {
+  width: 100%;
+}
+.container-caract-productDetail {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
 }
-.logoMarca {
-  width: 15%;
+.container-caract-productDetail h3 {
+  font-weight: 400;
 }
 
-.principal {
-  width: 30%;
+.precio-productDetail {
+  font-size: 35px;
+  font-weight: 600;
 }
 
 /*-----------------------Estilos Cart-------------------------------*/
@@ -575,6 +585,9 @@ footer li {
   align-items: center;
   margin: 5px;
 }
+.twitter {
+  padding-left: 2px;
+}
 
 .copyright {
   color: grey;
@@ -610,17 +623,19 @@ footer li {
   justify-content: space-around;
 }
 .container-product {
-  width: 50vw;
+  width: 49vw;
+  border: 1px solid #977a58;
+  margin-bottom: 3vh;
 }
 .container-product img {
   width: 100%;
   padding: 20px;
-  border: 1px solid red;
+  border-bottom: 1px solid grey;
 }
 .product-descpription {
   text-transform: capitalize;
   padding: 10px;
-  padding-top: 0px;
+  padding-top: 5px;
 }
 .product-descpription h3 {
   font-weight: 400;
@@ -795,6 +810,19 @@ footer li {
   .main-error {
     margin-left: 20vw;
     margin-right: 20vw;
+  }
+  /* Product Detail*/
+  .container-productDetail {
+    display: flex;
+    width: 60vw;
+    margin: auto;
+  }
+  .container-productDetail img {
+    width: 50%;
+  }
+  .container-caract-productDetail {
+    width: 50%;
+    justify-content: space-around;
   }
 }
 

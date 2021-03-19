@@ -4,6 +4,7 @@ const multer = require("multer");
 const path = require("path");
 const productsController = require("../controllers/productsController");
 
+// Multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, "../public/images/products"));
@@ -13,7 +14,6 @@ const storage = multer.diskStorage({
     cb(null, fileName);
   },
 });
-
 const upload = multer({ storage });
 
 // Listado de productos
@@ -23,7 +23,7 @@ router.get("/", productsController.listAll);
 router.get("/cart", productsController.productCart);
 
 // Detalle de producto
-router.get("/detail", productsController.productDetail);
+router.get("/detail/:idProduct", productsController.productDetail);
 
 // Crear un nuevo producto:
 router.get("/new", productsController.newProduct);
@@ -33,9 +33,8 @@ router.post(
   productsController.saveProduct
 );
 
-//R utas para guardar actualizar un producto:
-router.get("/update", productsController.updateProduct);
-router.get("/update/:idProduct", productsController.productToUpdate);
+//Rutas para actualizar un producto:
+router.get("/update/:idProduct", productsController.updateProduct);
 
 // Aca va la ruta a una nueva pagina "producto a actualizar" o algo asi
 

@@ -1,10 +1,12 @@
 const fs = require("fs");
 
+// Lectura del archivo JSON (luego se debe parsear)
+let productsJSON = fs.readFileSync("./data/products.json", {
+  encoding: "utf-8",
+});
+
 const productsController = {
   listAll: function (req, res) {
-    let productsJSON = fs.readFileSync("./data/products.json", {
-      encoding: "utf-8",
-    });
     let products = JSON.parse(productsJSON);
     return res.render("./products/list", { products: products });
   },
@@ -14,7 +16,10 @@ const productsController = {
   },
 
   productDetail: function (req, res) {
-    return res.render("./products/detail");
+    let products = JSON.parse(productsJSON);
+    let idProduct = req.params.idProduct;
+    let productDetail = products[idProduct];
+    return res.render("./products/detail", { productDetail: productDetail });
   },
 
   newProduct: function (req, res) {
@@ -30,19 +35,15 @@ const productsController = {
       categoria: req.body.categoriaProducto,
       genero: req.body.generoProducto,
       descripcion: req.body.descripcionProducto,
-      talle: req.body.tallesProducto,
+      talles: req.body.tallesProducto,
       colores: req.body.coloresProducto,
     };
 
-    let productsFile = fs.readFileSync("./data/products.json", {
-      encoding: "utf-8",
-    });
-
     let products;
-    if (productsFile == "") {
+    if (productsJSON == "") {
       products = [];
     } else {
-      products = JSON.parse(productsFile);
+      products = JSON.parse(productsJSON);
     }
     // Agrego el usuario a la lista
     products.push(product);
@@ -55,13 +56,10 @@ const productsController = {
   },
 
   updateProduct: function (req, res) {
-    return res.render("./products/update");
-  },
-
-  productToUpdate: function (req, res) {
-    //Aca va el codigo que dice que hace con la info de actualizar producto.
-    let producto = req.params.idProduct;
-    return res.send("update: " + producto);
+    let products = JSON.parse(productsJSON);
+    let idProduct = req.params.idProduct;
+    let productDetail = products[idProduct];
+    return res.render("./products/update", { productDetail: productDetail });
   },
 };
 

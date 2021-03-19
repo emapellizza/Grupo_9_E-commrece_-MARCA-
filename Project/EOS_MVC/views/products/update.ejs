@@ -6,18 +6,91 @@
     <%- include("../partials/header.ejs") %>
 
     <main class="main-newProduct">
-      <h2 class="titulo-newProduct">ACTUALIZAR PRODUCTO</h2>
-      <form action="/product/update" method="PUT" enctype="multipart/form-data">
+      <div class="container-newProduct">
         
-        <div class="contenedor-campos-newProduct">
-          <label for="tituloProducto">• Código</label>
-          <input type="text" name="codigoProducto" id="codigoProducto" />
-        </div>
-
-        <div class="contenedor-campos-newProduct">
-          <button type="submit" class="boton-newProduct">Siguiente</button>
-
-      </form>
+        <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
+        <form action="/products/new" method="POST" enctype="multipart/form-data">
+          
+          <div class="contenedor-campos-newProduct">
+            <label for="imagenProducto">• Imagen/es</label>
+            <input
+              type="file"
+              id="imagenProducto"
+              name="imagenProducto"
+              accept=".png, .jpg, .jpeg"
+              multiple
+            />
+          </div>
+   
+          <div class="contenedor-campos-newProduct">
+            <label for="marcaProducto">• Marca</label>
+            <select name="marcaProducto" id="marcaProducto">
+              <option disabled selected>Seleccionar</option>
+              <option value="Nike">Nike</option>
+              <option value="Adidas">Adidas</option>
+              <option value="Puma">Puma</option>
+              <option value="New Balance">New Balance</option>
+              <option value="Vans">Vans</option>
+              <option value="Under Armour">Under Armour</option>
+            </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="modeloProducto">• Modelo</label>
+            <input type="text" name="modeloProducto" id="modeloProducto"/>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="precioProducto">• Precio</label>
+            <input type="number" name="precioProducto" min="0" id="precioProducto" placeholder="$$$$"/>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="categoriaProducto">• Categoria</label>
+            <select name="categoriaProducto" id="categoriaProducto">
+                <option disabled selected>Seleccionar</option>
+                <option value="indumentaria">Indumentaria</option>
+                <option value="calzado">Calzado</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="generoProducto">• Género</label>
+            <select name="generoProducto" id="generoProducto">
+              <option disabled selected>Seleccionar</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+              <option value="unisex">Unisex</option>
+            </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="descripcionProducto">• Descripción</label>
+            <textarea name="descripcionProducto" id="descripcionProducto" cols="10" rows="10" placeholder="Descripción breve del producto"></textarea>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="tallesProducto">• Talles</label>
+            <select name="tallesProducto" id="tallesProducto">
+                <option disabled selected>Seleccionar</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="Unico">Unico</option>
+              </select>
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <label for="coloresProducto">• Colores</label>
+            <input type="text" name="coloresProducto" id="coloresProducto" />
+          </div>
+  
+          <div class="contenedor-campos-newProduct">
+            <button type="submit" class="boton-newProduct">CONTINUAR</button>
+  
+        </form>
+      </div>
     </main>
 
     <!-- Footer-->

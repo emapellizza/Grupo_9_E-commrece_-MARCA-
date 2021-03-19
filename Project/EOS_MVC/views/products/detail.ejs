@@ -1,75 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <%- include("../partials/head.ejs") %>
-  
+
   <body>
-    
     <%- include("../partials/header.ejs") %>
+    <main class="main-productDetail">
+      <article class="container-productDetail">
 
-    <main class="main-Detail">
-      
-      <img src="images/logo-underArmour.png" class="logoMarca">  
-      <img src="images/buzo-underarmour.jfif" class="principal">
-       
-     <!-- Ver Mas -->
-     <div class="linea-separadora"></div>
-     <section>
-      <p class="ver-mas-titulo">Podria interesarte</p>
-      <div class="ver-mas-productos">
-        <div class="articulo-vermas">
-          <a href="#">
-            <img src="images/camperaNike.jfif" />
-            <p>Campera Nike</p>
-            <p>$8199</p>
-          </a>
+        <img src="/images/products/<%= productDetail.imagen %>" alt="">
+        <div class="container-caract-productDetail">
+          <h3><%= productDetail.modelo + " " + productDetail.marca %></h3>
+          <p class="precio-productDetail">$<%= productDetail.precio%></p>
+          <p><%= productDetail.descripcion%></p>
+          <p>Talles disponibles: <%= productDetail.talles%></p>
+          <p>Colores disponibles: <%= productDetail.colores%></p>
         </div>
-        <div class="articulo-vermas">
-          <a href="#">
-            <img src="/images/medias-nike.jfif" alt="" />
-            <p>Medias Nike</p>
-            <p>$1399</p>
-          </a>
-        </div>
-        <div class="articulo-vermas">
-          <a href="#">
-            <img src="/images/remera-nike.jfif" alt="" />
-            <p>Remera Nike</p>
-            <p>$3.999</p>
-          </a>
-        </div>
-        <div class="articulo-vermas">
-          <a href="#">
-            <img src="/images/pantalon-nike.jpeg" alt="" />
-            <p>Pantalon Nike</p>
-            <p>$7500</p>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div><h1>Buzo Under Armour</h1></div>
-      <p>$6199</p>
-      <!-- talle-->
-      <section class="cotenedro-detalles">
-        <label for="Seleccionar color">Seleccionar color</label>
-        <label for="color">color A</label>
-        <input type="radio" name="color" value="A">
-        <label for="color">color B</label>
-        <input type="radio" name="color" value="B">
-      </section>
-        
-       
-  
-      
-      
+      </article>
 
-    </section>
-
-     
     </main>
 
-    <%- include("../partials/footer.ejs") %> 
-    
+
+      <!-- Ver Mas 
+      <div class="linea-separadora"></div>
+      <section>
+        <p class="ver-mas-titulo">Podria interesarte</p>
+        <div class="ver-mas-productos">
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/camperaNike.jfif" />
+              <p>Campera Nike</p>
+              <p>$8199</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/medias-nike.jfif" alt="" />
+              <p>Medias Nike</p>
+              <p>$1399</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/remera-nike.jfif" alt="" />
+              <p>Remera Nike</p>
+              <p>$3.999</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="#">
+              <img src="/images/pantalon-nike.jpeg" alt="" />
+              <p>Pantalon Nike</p>
+              <p>$7500</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      -->
+
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
   </body>
 </html>
