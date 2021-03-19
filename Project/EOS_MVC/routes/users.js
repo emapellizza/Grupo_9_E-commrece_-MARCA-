@@ -28,7 +28,7 @@ const validateRegister = [
     .notEmpty()
     .isLength({ min: 6 })
     .withMessage("Debes completar un password de al menos seis caracteres"),
-  body("password2")
+  body("confirmPassword")
     .notEmpty()
     .isLength({ min: 6 })
     .withMessage("Debes completar un password de al menos seis caracteres"),
@@ -41,8 +41,9 @@ router.post(
   "/register",
   uploadUser.single("imagenUsuario"),
   validateRegister,
-  usersController.create
+  usersController.store
 );
+
 router.get("/userCreated", usersController.userCreated);
 
 module.exports = router;
