@@ -42,7 +42,6 @@ body {
   padding: 0 10px;
   border-bottom: 1px #977a58 solid;
 }
-
 .logoEOS {
   width: 60px;
   padding: 20px 10px;
@@ -104,6 +103,7 @@ input {
 
 .zapatillas {
   width: 100%;
+  margin: auto;
 }
 
 .banner {
@@ -135,6 +135,28 @@ input {
   height: 100%;
 }
 
+/*----------------------Estilos About Us-----------------------*/
+.aboutUs-container {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.preguntas-about {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 1vh;
+}
+.preguntas-about h2 {
+  padding: 15px 5% 0 1%;
+  text-transform: uppercase;
+}
+.preguntas-about p {
+  padding: 15px 5% 10px 2%;
+}
 /*----------------------Estilos ProductDetail-----------------------*/
 
 .main-Detail {
@@ -819,6 +841,10 @@ footer li {
   .menu-header a {
     width: 100%;
     font-size: 17px;
+  }
+
+  .zapatillas {
+    max-width: 80vw;
   }
 
   /* Carrito */

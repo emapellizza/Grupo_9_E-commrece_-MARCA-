@@ -9,7 +9,7 @@
       <div class="container-newProduct">
         
         <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
-        <form action="/newProduct" method="POST" enctype="multipart/form-data">
+        <form action="/products/new" method="POST" enctype="multipart/form-data">
           
           <div class="contenedor-campos-newProduct">
             <label for="imagenProducto">• Imagen/es</label>
@@ -21,13 +21,7 @@
               multiple
             />
           </div>
-  
-          
-          <div class="contenedor-campos-newProduct">
-            <label for="codigoProducto">• Código</label>
-            <input type="text" name="codigoProducto" id="codigoProducto" />
-          </div>
-  
+   
           <div class="contenedor-campos-newProduct">
             <label for="marcaProducto">• Marca</label>
             <select name="marcaProducto" id="marcaProducto">
@@ -62,7 +56,7 @@
   
           <div class="contenedor-campos-newProduct">
             <label for="generoProducto">• Género</label>
-            <select value="generoProducto" id="generoProducto">
+            <select name="generoProducto" id="generoProducto">
               <option disabled selected>Seleccionar</option>
               <option value="masculino">Masculo</option>
               <option value="femenino">Femenino</option>

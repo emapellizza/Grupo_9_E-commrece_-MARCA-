@@ -1,25 +1,24 @@
 const fs = require("fs");
 
 const productsController = {
-  products: function (req, res) {
-    return res.render("./products/productList");
+  listAll: function (req, res) {
+    return res.render("./products/list");
   },
 
   productCart: function (req, res) {
-    return res.render("./products/productCart");
+    return res.render("./products/cart");
   },
 
   productDetail: function (req, res) {
-    return res.render("./products/productDetail");
+    return res.render("./products/detail");
   },
 
   newProduct: function (req, res) {
-    return res.render("./products/newProduct");
+    return res.render("./products/new");
   },
 
   saveProduct: function (req, res) {
- 
-    const producto = {
+    const product = {
       imagen: req.file.filename,
       codigo: req.body.codigoProducto,
       marca: req.body.marcaProducto,
@@ -32,21 +31,34 @@ const productsController = {
       colores: req.body.coloresProducto,
     };
 
+    let fileProducts = fs.readFileSync("./data/products.json", {
+      encoding: "utf-8",
+    });
 
-    const productsJSON = JSON.stringify(producto);
-    fs.appendFileSync("./data/productos.json", productsJSON);
+    let products;
+    if (fileProducts == "") {
+      products = [];
+    } else {
+      products = JSON.parse(fileProducts);
+    }
+    // Agrego el usuario a la lista
+    products.push(product);
 
-    res.redirect("/products");//cada producto se tiene agregar a la vista de productList
+    //Stringify y guardado
+    productsJSON = JSON.stringify(products);
+    fs.writeFileSync("./data/products.json", productsJSON);
+
+    res.redirect("/products");
   },
 
   updateProduct: function (req, res) {
-    return res.render("./products/updateProduct");
+    return res.render("./products/update");
   },
 
   productToUpdate: function (req, res) {
     //Aca va el codigo que dice que hace con la info de actualizar producto.
     let producto = req.params.idProduct;
-    return res.send("updateProduct: " + producto);
+    return res.send("update: " + producto);
   },
 };
 
