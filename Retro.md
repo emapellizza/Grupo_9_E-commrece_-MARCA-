@@ -1,15 +1,15 @@
-# Conclusiones del Sprint 3
+# Conclusiones del Sprint 4
 
 Siguiendo la dinamica de la retrospectiva de estrella de mar podemos enumerar que:
 
-* Debido a que la complejidad de las tareas va aumentando, debemos comenzar a realizar weeklys para realizar un seguimiento mas detallado de los cambios implementados.
+* Es primordial implementar el testeo mas profundo de las funcionalidades para detectar errores tempranamente.
 
-* Tenemos que agregar mas funcionalidades de las aprendidas en clase, como validación de formularios o manejos de errores. 
+* Tenemos que continuar por al senda de la mejora continua del sitio y el desarrollo de nuevas ideas. 
 
-* Debemos continuar con la buena comunicación dentro del equipo y con la ayuda constante a superar los problemas. 
+* Debemos continuar teniendo las sesiones de consultas con los profesores ya que nos despejan dudas que a veces nos tienen mucho tiempo demorados. 
 
-* Debemos corregir los tiempos de dedicación al proyecto, ser mas constantes durante la semana y no meterle mucho trabajo en un finde y luego dejar varios dias sin tocarlo porque se pierde continuidad.
+* Hay que reducir los tiempos muertos entre sprint y sprint para no pderder continuidad con el trabajo integrador. 
 
-* Lo que no debemos hacer es restarle importancia al tablero de control del proyecto ya que ayuda a no olvidar ningun detalle de las tareas y tener certeza de que está haciendo cada uno.
+* Lo que no tenemos que hacer es relajarnos en cuanto al trabajo integrador, ya que el ritmo del curso es bastante elevado y eso sumado a la vida diaria de cada uno hace que el tiempo que se le pueda aportar no siempre es el suficiente.
 
 ### En resumen, un gran trabajo en equipo, con una auto evaluación satisfactoria de como se esta desarrollando el proyecto y a la espera de las devoluciones de los profesores. 
