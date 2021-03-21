@@ -4,20 +4,6 @@
     "lastName": "Suarez",
     "dateOfBirth": "2021-03-03",
     "email": "a@a.com",
-    "password": "123456"
-  },
-  {
-    "firstName": "PAblo",
-    "lastName": "Perez",
-    "dateOfBirth": "2021-03-09",
-    "email": "a@a.com",
-    "password": "123456"
-  },
-  {
-    "firstName": "Diego",
-    "lastName": "Diaz",
-    "dateOfBirth": "2021-03-09",
-    "email": "a@a.com",
-    "password": "123456"
+    "password": "$2b$10$Zh4rX1E5jwpovcWS.DsZJODsXNMyHgE4PssaUv.AaFnfLgmp8QIZ6"
   }
 ]

@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
     cb(null, path.join(__dirname, "../public/images/users"));
   },
   filename: (req, file, cb) => {
-    const fileName = "user-" + Date.now() + path.extname(file.originalname);
+    const fileName = "user-" + Date.now();
     cb(null, fileName);
   },
 });
@@ -26,13 +26,13 @@ const validateRegister = [
     .withMessage("Debes completar el Email con una dirección válida"),
   body("password")
     .notEmpty()
-    .isLength({ min: 6 })
-    .withMessage("Debes completar un password de al menos seis caracteres"),
+    .isLength({ min: 6, max: 16 })
+    .withMessage("Debes completar un password de entre 6 y 16 caracteres"),
   body("confirmPassword")
     .notEmpty()
-    .isLength({ min: 6 })
-    .withMessage("Debes completar un password de al menos seis caracteres"),
-];
+    .isLength({ min: 6, max: 16 })
+    .withMessage("Las contraseñas no coinciden"),
+  ];
 
 router.get("/login", usersController.login);
 

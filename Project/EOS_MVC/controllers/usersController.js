@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcrypt");
 
 // Lectura del archivo JSON (luego se debe parsear)
 let usersJSON = fs.readFileSync("./data/users.json", {
@@ -33,7 +34,7 @@ const usersController = {
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
-        password: req.body.password,
+        password: bcrypt.hashSync(req.body.password,10),
       };
 
       let users;
