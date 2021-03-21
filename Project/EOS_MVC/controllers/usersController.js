@@ -1,13 +1,18 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 
+// Lectura del archivo JSON (luego se debe parsear)
+let usersJSON = fs.readFileSync("./data/users.json", {
+  encoding: "utf-8",
+});
+
 const usersController = {
   login: function (req, res) {
-    return res.render("users/login");
+    return res.render("./users/login");
   },
 
   register: function (req, res) {
-    return res.render("users/register");
+    return res.render("./users/register");
   },
 
   userCreated: function (req, res) {
@@ -15,23 +20,38 @@ const usersController = {
   },
 
   store: function (req, res) {
+
     //Validación
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
+
       // Almaceno los datos del usuario
       const user = {
-        //imageUser: req.file.fileName,
+        imageUser: req.file.fileName,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
         password: req.body.password,
       };
+
+      let users;
+      if (usersJSON == "") {
+        users = [];
+      } else {
+        users = JSON.parse(usersJSON);
+      }
+      // Agrego el usuario a la lista
+      users.push(user);
+
       // Guardar usuario
-      let usuarioJSON = JSON.stringify(user);
-      fs.appendFileSync("./data/usuarios.json", usuarioJSON);
-      res.redirect("/userCreated");
+      usersJSON = JSON.stringify(users, null, 2);
+      fs.writeFileSync("./data/users.json", usersJSON);
+
+      res.redirect("userCreated");
+
+
     } else {
       return res.render("users/register", {
         errors: errors.array(),

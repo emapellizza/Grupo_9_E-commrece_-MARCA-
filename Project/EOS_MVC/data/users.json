@@ -1,0 +1,23 @@
+[
+  {
+    "firstName": "Mariano",
+    "lastName": "Suarez",
+    "dateOfBirth": "2021-03-03",
+    "email": "a@a.com",
+    "password": "123456"
+  },
+  {
+    "firstName": "PAblo",
+    "lastName": "Perez",
+    "dateOfBirth": "2021-03-09",
+    "email": "a@a.com",
+    "password": "123456"
+  },
+  {
+    "firstName": "Diego",
+    "lastName": "Diaz",
+    "dateOfBirth": "2021-03-09",
+    "email": "a@a.com",
+    "password": "123456"
+  }
+]

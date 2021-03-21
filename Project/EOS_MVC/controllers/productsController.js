@@ -45,11 +45,11 @@ const productsController = {
     } else {
       products = JSON.parse(productsJSON);
     }
-    // Agrego el usuario a la lista
+    // Agrego el producto a la lista
     products.push(product);
 
     //Stringify y guardado
-    productsJSON = JSON.stringify(products);
+    productsJSON = JSON.stringify(products, null, 2);
     fs.writeFileSync("./data/products.json", productsJSON);
 
     res.redirect("/products");
