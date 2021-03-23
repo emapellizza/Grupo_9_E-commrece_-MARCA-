@@ -51,7 +51,7 @@ const usersController = {
       res.redirect("userCreated");
     } else {
       return res.render("users/register", {
-        errors: errors.array(),
+        errors: errors.mapped(),
         old: req.body,
       });
     }

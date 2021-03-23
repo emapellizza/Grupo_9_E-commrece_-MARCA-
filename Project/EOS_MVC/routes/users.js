@@ -20,19 +20,20 @@ const uploadUser = multer({ storage });
 
 //Validaciones del formulario de Registro
 const validateRegister = [
-  body("firstName").notEmpty().withMessage("Debes completar el nombre"),
-  body("lastName").notEmpty().withMessage("Debes completar el apellido"),
+  body("firstName").notEmpty().withMessage("* Debes completar el nombre"),
+  body("lastName").notEmpty().withMessage("* Debes completar el apellido"),
+  body("dateOfBirth").isDate().withMessage("* Debes ingresar una fecha válida"),
   body("email")
     .isEmail()
-    .withMessage("Debes completar el Email con una dirección válida"),
+    .withMessage("* Debes completar el Email con una dirección válida"),
   body("password")
     .notEmpty()
     .isLength({ min: 6, max: 16 })
-    .withMessage("Debes completar un password de entre 6 y 16 caracteres"),
+    .withMessage("* Debes completar un password de entre 6 y 16 caracteres"),
   body("confirmPassword")
     .notEmpty()
     .isLength({ min: 6, max: 16 })
-    .withMessage("Las contraseñas no coinciden"),
+    .withMessage("* Las contraseñas no coinciden"),
 ];
 
 router.get("/login", usersController.login);

@@ -137,6 +137,8 @@ input {
 /*----------------------Estilos About Us-----------------------*/
 .main-about {
   background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+  background-position: center;
+  background-size: cover;
   height: 78vh;
   display: flex;
   justify-content: center;
@@ -152,18 +154,18 @@ input {
 }
 
 .aboutUs-container h2 {
-  width: 50%;
+  width: 70%;
   color: white;
   padding: 25px 5% 0 5%;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 25px;
   margin: auto;
 }
 .aboutUs-container p {
-  width: 50%;
+  width: 80%;
   color: white;
   padding: 10px 5% 20px 5%;
-  font-size: 20px;
+  font-size: 18px;
   margin: auto;
 }
 /*----------------------Estilos ProductDetail-----------------------*/
@@ -355,6 +357,11 @@ input {
 }
 
 /* --------------Estilos Register/login-------------- */
+.text-danger {
+  color: red;
+  align-self: flex-start;
+  font-size: 15px;
+}
 
 .main-reg-log {
   /*
@@ -393,14 +400,14 @@ input {
   background-color: white;
   border: solid 1px grey;
   margin-top: 5px;
-  margin-bottom: 10px;
   border-radius: 5px;
   padding: 0 5px;
   height: 30px;
   font-size: 15px;
 }
 
-.main-reg-log form label {
+.label-reg-log {
+  margin-top: 10px;
   font-weight: 400;
 }
 .checkbox-reg-log {
@@ -528,6 +535,7 @@ select {
 
 /* -----------------------Estilos Footer----------------------- */
 footer {
+  border-top: 1px solid #977a5885;
   background-color: black;
 }
 .footer {
@@ -835,6 +843,20 @@ footer li {
   .container-caract-productDetail {
     width: 50%;
     justify-content: space-around;
+  }
+
+  /* About Us*/
+  .main-about {
+    background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+    height: 78vh;
+  }
+  .aboutUs-container h2 {
+    font-size: 30px;
+    width: 50%;
+  }
+  .aboutUs-container p {
+    width: 50%;
+    font-size: 20px;
   }
 }
 
