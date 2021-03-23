@@ -18,6 +18,17 @@
           enctype="multipart/form-data"
         >
           <div class="contenedor-campos-reg-log">
+            <label for="imagenUsuario">Imagen</label>
+            <input
+              type="file"
+              id="imagenUsuario"
+              name="imagenUsuario"
+              accept=".png, .jpg, .jpeg"
+              required
+            />
+          </div>
+
+          <div class="contenedor-campos-reg-log">
             <label for="firstName">Nombre</label>
             <input
               type="text"
@@ -34,17 +45,6 @@
               name="lastName"
               id="lastName"
               value="<%= locals.old && old.lastName ? old.lastName : ''%>"
-            />
-          </div>
-
-          <div class="contenedor-campos-reg-log">
-            <label for="imagenUsuario">• Imagen</label>
-            <input
-              type="file"
-              id="imagenUsuario"
-              name="imagenUsuario"
-              accept=".png, .jpg, .jpeg"
-              required
             />
           </div>
 

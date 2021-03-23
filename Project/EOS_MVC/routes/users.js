@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
     cb(null, path.join(__dirname, "../public/images/users"));
   },
   filename: (req, file, cb) => {
-    const fileName = "user-" + Date.now();
+    const fileName = "user-" + Date.now() + path.extname(file.originalname);
     cb(null, fileName);
   },
 });
@@ -32,7 +32,7 @@ const validateRegister = [
     .notEmpty()
     .isLength({ min: 6, max: 16 })
     .withMessage("Las contraseñas no coinciden"),
-  ];
+];
 
 router.get("/login", usersController.login);
 
