@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 
 // Lectura del archivo JSON (luego se debe parsear)
 let productsJSON = fs.readFileSync("./data/products.json", {
@@ -27,32 +28,43 @@ const productsController = {
   },
 
   saveProduct: function (req, res) {
-    const product = {
-      imagen: req.file.filename,
-      marca: req.body.marcaProducto,
-      modelo: req.body.modeloProducto,
-      precio: req.body.precioProducto,
-      categoria: req.body.categoriaProducto,
-      genero: req.body.generoProducto,
-      descripcion: req.body.descripcionProducto,
-      talles: req.body.tallesProducto,
-      colores: req.body.coloresProducto,
-    };
+    // Validacion
+    let errors = validationResult(req);
 
-    let products;
-    if (productsJSON == "") {
-      products = [];
+    if (errors.isEmpty()) {
+      // Almaceno los datos del producto
+      const product = {
+        imagen: req.file.filename,
+        marca: req.body.marcaProducto,
+        modelo: req.body.modeloProducto,
+        precio: req.body.precioProducto,
+        categoria: req.body.categoriaProducto,
+        genero: req.body.generoProducto,
+        descripcion: req.body.descripcionProducto,
+        talles: req.body.tallesProducto,
+        colores: req.body.coloresProducto,
+      };
+
+      let products;
+      if (productsJSON == "") {
+        products = [];
+      } else {
+        products = JSON.parse(productsJSON);
+      }
+      // Agrego el producto a la lista
+      products.push(product);
+
+      //Stringify y guardado
+      productsJSON = JSON.stringify(products, null, 2);
+      fs.writeFileSync("./data/products.json", productsJSON);
+
+      res.redirect("/products");
     } else {
-      products = JSON.parse(productsJSON);
+      return res.render("products/new", {
+        errors: errors.array(),
+        old: req.body,
+      });
     }
-    // Agrego el producto a la lista
-    products.push(product);
-
-    //Stringify y guardado
-    productsJSON = JSON.stringify(products, null, 2);
-    fs.writeFileSync("./data/products.json", productsJSON);
-
-    res.redirect("/products");
   },
 
   updateProduct: function (req, res) {

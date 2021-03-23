@@ -21,12 +21,10 @@ const usersController = {
   },
 
   store: function (req, res) {
-
-    //Validación
+    // Validación
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-
       // Almaceno los datos del usuario
       const user = {
         imageUser: req.file.fileName,
@@ -34,7 +32,7 @@ const usersController = {
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password,10),
+        password: bcrypt.hashSync(req.body.password, 10),
       };
 
       let users;
@@ -51,8 +49,6 @@ const usersController = {
       fs.writeFileSync("./data/users.json", usersJSON);
 
       res.redirect("userCreated");
-
-
     } else {
       return res.render("users/register", {
         errors: errors.array(),

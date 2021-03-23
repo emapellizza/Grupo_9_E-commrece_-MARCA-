@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { body } = require("express-validator");
 const multer = require("multer");
 const path = require("path");
 const productsController = require("../controllers/productsController");
@@ -14,7 +15,26 @@ const storage = multer.diskStorage({
     cb(null, fileName);
   },
 });
-const upload = multer({ storage });
+
+const uploadProduct = multer({ storage });
+
+//Validaciones del formulario de Registro
+const validateRegister = [
+  body("marcaProducto").notEmpty().withMessage("Debes seleccionar una Marca"),
+  body("modeloProducto").notEmpty().withMessage("Debes ingresar un modelo"),
+  body("precioProducto").notEmpty().withMessage("Debes ingresar un precio"),
+  body("categoriaProducto")
+    .notEmpty()
+    .withMessage("Debes ingresar seleccionar una categoria"),
+  body("generoProducto").notEmpty().withMessage("Debes seleccionar un genero"),
+  body("descripcionProducto")
+    .notEmpty()
+    .withMessage("Debes agregar una descripcion"),
+  body("tallesProducto").notEmpty().withMessage("Debes seleccionar los talles"),
+  body("coloresProducto")
+    .notEmpty()
+    .withMessage("Debes seleccionar los colores"),
+];
 
 // Listado de productos
 router.get("/", productsController.listAll);
@@ -29,7 +49,8 @@ router.get("/detail/:idProduct", productsController.productDetail);
 router.get("/new", productsController.newProduct);
 router.post(
   "/new",
-  upload.single("imagenProducto"),
+  uploadProduct.single("imagenProducto"),
+  validateRegister,
   productsController.saveProduct
 );
 

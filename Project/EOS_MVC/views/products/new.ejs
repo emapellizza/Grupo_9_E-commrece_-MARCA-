@@ -9,6 +9,9 @@
       <div class="container-newProduct">
         
         <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
+        <% if (locals.errors) { errors.forEach(error => { %>
+          <p><%= error.msg %></p>
+          <% }) }%>
         <form action="/products/new" method="POST" enctype="multipart/form-data">
           
           <div class="contenedor-campos-newProduct">
@@ -24,7 +27,7 @@
    
           <div class="contenedor-campos-newProduct">
             <label for="marcaProducto">• Marca</label>
-            <select name="marcaProducto" id="marcaProducto">
+            <select name="marcaProducto" id="marcaProducto" >
               <option disabled selected>Seleccionar</option>
               <option value="Nike">Nike</option>
               <option value="Adidas">Adidas</option>
@@ -37,12 +40,14 @@
   
           <div class="contenedor-campos-newProduct">
             <label for="modeloProducto">• Modelo</label>
-            <input type="text" name="modeloProducto" id="modeloProducto"/>
+            <input type="text" name="modeloProducto" id="modeloProducto"
+            value="<%= locals.old && old.modeloProducto ? old.modeloProducto : ''%>"/>
           </div>
   
           <div class="contenedor-campos-newProduct">
             <label for="precioProducto">• Precio</label>
-            <input type="number" name="precioProducto" min="0" id="precioProducto" placeholder="$$$$"/>
+            <input type="number" name="precioProducto" min="0" id="precioProducto" 
+            value="<%= locals.old && old.precioProducto ? old.precioProducto : ''%>"placeholder="$$$$"/>
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -67,7 +72,7 @@
   
           <div class="contenedor-campos-newProduct">
             <label for="descripcionProducto">• Descripción</label>
-            <textarea name="descripcionProducto" id="descripcionProducto" cols="10" rows="10" placeholder="Descripción breve del producto"></textarea>
+            <textarea name="descripcionProducto" id="descripcionProducto" cols="10" rows="10" placeholder="Descripción breve del producto" ></textarea>
           </div>
   
           <div class="contenedor-campos-newProduct">
