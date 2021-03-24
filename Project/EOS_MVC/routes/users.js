@@ -24,16 +24,12 @@ const validateRegister = [
   body("lastName").notEmpty().withMessage("* Debes completar el apellido"),
   body("dateOfBirth").isDate().withMessage("* Debes ingresar una fecha válida"),
   body("email")
-    .isEmail()
-    .withMessage("* Debes completar el Email con una dirección válida"),
+    .isEmail().withMessage("* Debes completar el Email con una dirección válida"),
   body("password")
-    .notEmpty()
-    .isLength({ min: 6, max: 16 })
-    .withMessage("* Debes completar un password de entre 6 y 16 caracteres"),
+    .notEmpty().withMessage(" Debes completar la contraseña").bail()
+    .isLength({ min: 6, max: 16 }).withMessage("* La contraseña debe tener entre 6 y 16 caracteres"),
   body("confirmPassword")
-    .notEmpty()
-    .isLength({ min: 6, max: 16 })
-    .withMessage("* Las contraseñas no coinciden"),
+  .notEmpty().withMessage(" Debes repetir la contraseña"),
 ];
 
 router.get("/login", usersController.login);

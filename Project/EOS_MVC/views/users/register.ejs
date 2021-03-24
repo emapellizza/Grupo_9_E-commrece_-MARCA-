@@ -26,6 +26,7 @@
               id="imagenUsuario"
               name="imagenUsuario"
               accept=".png, .jpg, .jpeg"
+              required
             />
           </div>
 
@@ -65,6 +66,7 @@
               name="dateOfBirth"
               id="dateOfBirth"
               value="<%= locals.old && old.dateOfBirth ? old.dateOfBirth : ''%>"
+              required
             />
           </div>
           <% if (locals.errors && errors.dateOfBirth) { %>
@@ -102,6 +104,9 @@
               id="confirmPassword"
             />
           </div>
+          <% if (locals.errors && errors.password2) { %>
+            <div class="text-danger"><%= errors.password2.msg %></div>
+            <% } %>
 
           <div class="checkbox-reg-log">
             <input type="checkbox" name="newsletter" id="newsletter" />

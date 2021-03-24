@@ -2,15 +2,9 @@
   {
     "firstName": "Mariano",
     "lastName": "Suarez",
-    "dateOfBirth": "2021-03-03",
-    "email": "a@a.com",
-    "password": "$2b$10$Zh4rX1E5jwpovcWS.DsZJODsXNMyHgE4PssaUv.AaFnfLgmp8QIZ6"
-  },
-  {
-    "firstName": "Aang",
-    "lastName": "Airbender",
-    "dateOfBirth": "1990-02-02",
-    "email": "aang@airbender.com",
-    "password": "$2b$10$60vxWJQOMXGYJGUay7p8TOZSsApA11bo0k57m8ia8fOTh3O5ygTTe"
+    "dateOfBirth": "2021-03-10",
+    "email": "asd@fds.com",
+    "password": "$2b$10$P.gEBfxx9BzINlBb83ng1.iUesYAakev5.l54yh1Tk6qbBDioybd.",
+    "password2": "$2b$10$OWF1GV2Ih3E/T2frdXVKFe1GqNl48CNPWnzpRcsi2aqv8SjNHHtfy"
   }
 ]
