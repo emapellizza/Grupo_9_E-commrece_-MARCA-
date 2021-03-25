@@ -6,7 +6,8 @@
     "precio": "8900",
     "categoria": "calzado",
     "genero": "unisex",
-    "descripcion": "Nuevas Zapatillas Vans",
+    "shortDescripcion": "Nuevas Zapatillas Vans",
+    "longDescripcion": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.",
     "talles": "M",
     "colores": "Varios"
   },
@@ -17,7 +18,7 @@
     "precio": "4500",
     "categoria": "indumentaria",
     "genero": "femenino",
-    "descripcion": "Pantalon Nike 100% algodon",
+    "shortDescripcion": "Pantalon Nike 100% algodon",
     "talles": "M",
     "colores": "Blanco"
   },
@@ -28,7 +29,7 @@
     "precio": "8000",
     "categoria": "indumentaria",
     "genero": "masculino",
-    "descripcion": "Camperon adidas AFA temporada 2020",
+    "shortDescripcion": "Camperon adidas AFA temporada 2020",
     "talles": "M",
     "colores": "Azul"
   },
@@ -39,7 +40,7 @@
     "precio": "9500",
     "categoria": "calzado",
     "genero": "unisex",
-    "descripcion": "Nuevas zapatillas Under Armour Breathe Trainer",
+    "shortDescripcion": "Nuevas zapatillas Under Armour Breathe Trainer",
     "talles": "L",
     "colores": "Negro"
   },
@@ -50,7 +51,7 @@
     "precio": "2400",
     "categoria": "indumentaria",
     "genero": "masculino",
-    "descripcion": "",
+    "shortDescripcion": "",
     "talles": "M",
     "colores": "Negro"
   },
@@ -61,7 +62,7 @@
     "precio": "3000",
     "categoria": "indumentaria",
     "genero": "unisex",
-    "descripcion": "Remera nike Heritage 100% algodon.",
+    "shortDescripcion": "Remera nike Heritage 100% algodon.",
     "talles": "S",
     "colores": "Blanco"
   },
@@ -72,7 +73,7 @@
     "precio": "3500",
     "categoria": "indumentaria",
     "genero": "masculino",
-    "descripcion": "",
+    "shortDescripcion": "",
     "talles": "M",
     "colores": "Negro"
   },
@@ -83,7 +84,7 @@
     "precio": "9500",
     "categoria": "calzado",
     "genero": "femenino",
-    "descripcion": "",
+    "shortDescripcion": "",
     "talles": "M",
     "colores": "Blancas"
   },
@@ -94,8 +95,20 @@
     "precio": "4000",
     "categoria": "indumentaria",
     "genero": "unisex",
-    "descripcion": "100% algodon",
+    "shortDescripcion": "100% algodon",
     "talles": "M",
     "colores": "Blanco"
+  },
+  {
+    "imagen": "product-1616688643533.JPG",
+    "marca": "Under Armour",
+    "modelo": "Huddle Snapback",
+    "precio": "1500",
+    "categoria": "accesorios",
+    "genero": "unisex",
+    "shortDescripcion": "Gorra Under Armour Huddle Snapback",
+    "longDescripcion": "Posee un ajuste reforzado, que mantiene la forma con una visera ligeramente más alta y plana para un diseño moderno.\r\nAjuste regulable.",
+    "talles": "Unico",
+    "colores": "Negro"
   }
 ]

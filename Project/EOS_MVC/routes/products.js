@@ -27,7 +27,10 @@ const validateRegister = [
     .notEmpty()
     .withMessage("Debes ingresar seleccionar una categoria"),
   body("generoProducto").notEmpty().withMessage("Debes seleccionar un genero"),
-  body("descripcionProducto")
+  body("shortDescripcion")
+    .notEmpty()
+    .withMessage("Debes agregar una breve descripcion"),
+  body("longDescripcion")
     .notEmpty()
     .withMessage("Debes agregar una descripcion"),
   body("tallesProducto").notEmpty().withMessage("Debes seleccionar los talles"),

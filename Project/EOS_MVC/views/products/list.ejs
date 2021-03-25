@@ -28,9 +28,13 @@
               alt="imagen producto"
             />
             <div class="product-descpription">
-              <h3><%= products[i].marca + " " + products[i].modelo %></h3>
-              <p><%=products[i].descripcion %></p>
-              <p>$<%=products[i].precio %></p>
+              <h3>
+                <strong
+                  ><%= products[i].marca + " " + products[i].modelo %></strong
+                >
+              </h3>
+              <p><%=products[i].shortDescripcion %></p>
+              <p><strong>$<%=products[i].precio %></strong></p>
             </div>
           </a>
         </article>

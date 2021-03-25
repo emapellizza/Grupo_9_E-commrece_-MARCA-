@@ -39,7 +39,8 @@ const productsController = {
         precio: req.body.precioProducto,
         categoria: req.body.categoriaProducto,
         genero: req.body.generoProducto,
-        descripcion: req.body.descripcionProducto,
+        shortDescripcion: req.body.shortDescripcion,
+        longDescripcion: req.body.longDescripcion,
         talles: req.body.tallesProducto,
         colores: req.body.coloresProducto,
       };

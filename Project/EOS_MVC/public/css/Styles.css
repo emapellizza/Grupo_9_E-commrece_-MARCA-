@@ -204,6 +204,12 @@ input {
   width: 100%;
 }
 
+.container-productDetail-bottom {
+  text-align: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-bottom: 3vh;
+}
 .container-productDetail-bottom h4 {
   padding: 10px 0;
   border-top: 1px solid #977a58;
@@ -663,11 +669,12 @@ footer li {
   width: 49vw;
   border: 1px solid #977a58;
   margin-bottom: 3vh;
+  border-radius: 5px;
 }
 .container-product img {
   width: 100%;
   padding: 20px;
-  border-bottom: 1px solid grey;
+  border-bottom: 2px solid #ddc4a7;
 }
 .product-descpription {
   text-transform: capitalize;
@@ -889,16 +896,19 @@ footer li {
     font-size: 40px;
   }
   .container-productDetail-bottom {
-    text-align: center;
+    text-align: start;
     display: flex;
     flex-direction: column;
     width: 60vw;
     margin: auto;
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
   }
   .container-productDetail-bottom p {
     margin: auto;
-    width: 60%;
+    width: 90%;
+    padding: 0 2vw;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
   }
 
   /* About Us*/
