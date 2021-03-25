@@ -8,8 +8,11 @@
     <main class="main-newProduct">
       <div class="container-newProduct">
         
-        <h2 class="titulo-newProduct">CREAR PRODUCTO</h2>
-        <form action="/products/new" method="POST" enctype="multipart/form-data">
+        <h2 class="titulo-newProduct">EDITAR PRODUCTO</h2>
+        <% if (locals.errors) { errors.forEach(error => { %>
+          <p><%= error.msg %></p>
+          <% }) }%>
+        <form action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
           
           <div class="contenedor-campos-newProduct">
             <label for="imagenProducto">• Imagen/es</label>
@@ -24,7 +27,7 @@
    
           <div class="contenedor-campos-newProduct">
             <label for="marcaProducto">• Marca</label>
-            <select name="marcaProducto" id="marcaProducto">
+            <select name="marcaProducto" id="marcaProducto" >
               <option disabled selected>Seleccionar</option>
               <option value="Nike">Nike</option>
               <option value="Adidas">Adidas</option>
@@ -37,12 +40,14 @@
   
           <div class="contenedor-campos-newProduct">
             <label for="modeloProducto">• Modelo</label>
-            <input type="text" name="modeloProducto" id="modeloProducto"/>
+            <input type="text" name="modeloProducto" id="modeloProducto"
+            value="<%= productToEdit.modelo %>"/>
           </div>
   
           <div class="contenedor-campos-newProduct">
             <label for="precioProducto">• Precio</label>
-            <input type="number" name="precioProducto" min="0" id="precioProducto" placeholder="$$$$"/>
+            <input type="number" name="precioProducto" min="0" id="precioProducto" 
+            value="<%= productToEdit.precio %>" placeholder="$$$$"/>
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -64,10 +69,16 @@
               <option value="unisex">Unisex</option>
             </select>
           </div>
+
+          <div class="contenedor-campos-newProduct">
+            <label for="shortDescripcion">• Descripción Breve</label>
+            <textarea name="shortDescripcion" id="shortDescripcion" cols="1" rows="2" maxlength="60" placeholder="Descripción breve del producto"><%= productToEdit.shortDescripcion %>
+            </textarea>
+          </div>
   
           <div class="contenedor-campos-newProduct">
-            <label for="descripcionProducto">• Descripción</label>
-            <textarea name="descripcionProducto" id="descripcionProducto" cols="10" rows="10" placeholder="Descripción breve del producto"></textarea>
+            <label for="longDescripcion">• Descripción Completa</label>
+            <textarea name="longDescripcion" id="longDescripcion" cols="10" rows="10" placeholder="Descripción del producto"><%= productToEdit.longDescripcion %></textarea>
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -83,7 +94,7 @@
   
           <div class="contenedor-campos-newProduct">
             <label for="coloresProducto">• Colores</label>
-            <input type="text" name="coloresProducto" id="coloresProducto" />
+            <input type="text" name="coloresProducto" id="coloresProducto" value="<%= productToEdit.colores %>"/>
           </div>
   
           <div class="contenedor-campos-newProduct">

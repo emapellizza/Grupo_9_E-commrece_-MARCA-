@@ -67,10 +67,13 @@ const productsController = {
     }
   },
 
-  updateProduct: function (req, res) {
+  edit: function (req, res) {
     let idProduct = req.params.idProduct;
-    let productDetail = products[idProduct];
-    return res.render("./products/update", { productDetail: productDetail });
+    let productToEdit = products[idProduct];
+    return res.render("./products/update", { productToEdit: productDetail });
+  },
+  update: function (req, res) {
+    res.send("Editado");
   },
 };
 
