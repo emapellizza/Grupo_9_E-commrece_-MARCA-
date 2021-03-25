@@ -5,10 +5,10 @@ const { validationResult } = require("express-validator");
 let productsJSON = fs.readFileSync("./data/products.json", {
   encoding: "utf-8",
 });
+let products = JSON.parse(productsJSON);
 
 const productsController = {
   listAll: function (req, res) {
-    let products = JSON.parse(productsJSON);
     return res.render("./products/list", { products: products });
   },
 
@@ -17,7 +17,6 @@ const productsController = {
   },
 
   productDetail: function (req, res) {
-    let products = JSON.parse(productsJSON);
     let idProduct = req.params.idProduct;
     let productDetail = products[idProduct];
     return res.render("./products/detail", { productDetail: productDetail });
@@ -68,7 +67,6 @@ const productsController = {
   },
 
   updateProduct: function (req, res) {
-    let products = JSON.parse(productsJSON);
     let idProduct = req.params.idProduct;
     let productDetail = products[idProduct];
     return res.render("./products/update", { productDetail: productDetail });

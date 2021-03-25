@@ -86,5 +86,16 @@
     "descripcion": "",
     "talles": "M",
     "colores": "Blancas"
+  },
+  {
+    "imagen": "product-1616644133305.jpg",
+    "marca": "Vans",
+    "modelo": "Remera basica con logo",
+    "precio": "4000",
+    "categoria": "indumentaria",
+    "genero": "unisex",
+    "descripcion": "100% algodon",
+    "talles": "M",
+    "colores": "Blanco"
   }
 ]
