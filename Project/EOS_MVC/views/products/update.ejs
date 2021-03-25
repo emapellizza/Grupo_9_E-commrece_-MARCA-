@@ -7,13 +7,15 @@
 
     <main class="main-newProduct">
       <div class="container-newProduct">
-        
         <h2 class="titulo-newProduct">EDITAR PRODUCTO</h2>
         <% if (locals.errors) { errors.forEach(error => { %>
-          <p><%= error.msg %></p>
-          <% }) }%>
-        <form action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-          
+        <p><%= error.msg %></p>
+        <% }) }%>
+        <form
+          action="/products/edit?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <div class="contenedor-campos-newProduct">
             <label for="imagenProducto">• Imagen/es</label>
             <input
@@ -24,10 +26,10 @@
               multiple
             />
           </div>
-   
+
           <div class="contenedor-campos-newProduct">
             <label for="marcaProducto">• Marca</label>
-            <select name="marcaProducto" id="marcaProducto" >
+            <select name="marcaProducto" id="marcaProducto">
               <option disabled selected>Seleccionar</option>
               <option value="Nike">Nike</option>
               <option value="Adidas">Adidas</option>
@@ -37,29 +39,39 @@
               <option value="Under Armour">Under Armour</option>
             </select>
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="modeloProducto">• Modelo</label>
-            <input type="text" name="modeloProducto" id="modeloProducto"
-            value="<%= productToEdit.modelo %>"/>
+            <input
+              type="text"
+              name="modeloProducto"
+              id="modeloProducto"
+              value="<%= productToEdit.modelo %>"
+            />
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="precioProducto">• Precio</label>
-            <input type="number" name="precioProducto" min="0" id="precioProducto" 
-            value="<%= productToEdit.precio %>" placeholder="$$$$"/>
+            <input
+              type="number"
+              name="precioProducto"
+              min="0"
+              id="precioProducto"
+              value="<%= productToEdit.precio %>"
+              placeholder="$$$$"
+            />
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="categoriaProducto">• Categoria</label>
             <select name="categoriaProducto" id="categoriaProducto">
-                <option disabled selected>Seleccionar</option>
-                <option value="indumentaria">Indumentaria</option>
-                <option value="calzado">Calzado</option>
-                <option value="accesorios">Accesorios</option>
+              <option disabled selected>Seleccionar</option>
+              <option value="indumentaria">Indumentaria</option>
+              <option value="calzado">Calzado</option>
+              <option value="accesorios">Accesorios</option>
             </select>
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="generoProducto">• Género</label>
             <select name="generoProducto" id="generoProducto">
@@ -72,34 +84,63 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="shortDescripcion">• Descripción Breve</label>
-            <textarea name="shortDescripcion" id="shortDescripcion" cols="1" rows="2" maxlength="60" placeholder="Descripción breve del producto"><%= productToEdit.shortDescripcion %>
+            <textarea
+              name="shortDescripcion"
+              id="shortDescripcion"
+              cols="1"
+              rows="2"
+              maxlength="60"
+              placeholder="Descripción breve del producto"
+            >
+<%= productToEdit.shortDescripcion %>
             </textarea>
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="longDescripcion">• Descripción Completa</label>
-            <textarea name="longDescripcion" id="longDescripcion" cols="10" rows="10" placeholder="Descripción del producto"><%= productToEdit.longDescripcion %></textarea>
+            <textarea
+              name="longDescripcion"
+              id="longDescripcion"
+              cols="10"
+              rows="10"
+              placeholder="Descripción del producto"
+            >
+<%= productToEdit.longDescripcion %></textarea
+            >
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="tallesProducto">• Talles</label>
             <select name="tallesProducto" id="tallesProducto">
-                <option disabled selected>Seleccionar</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="Unico">Unico</option>
-              </select>
+              <option disabled selected>Seleccionar</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="Unico">Unico</option>
+            </select>
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <label for="coloresProducto">• Colores</label>
-            <input type="text" name="coloresProducto" id="coloresProducto" value="<%= productToEdit.colores %>"/>
+            <input
+              type="text"
+              name="coloresProducto"
+              id="coloresProducto"
+              value="<%= productToEdit.colores %>"
+            />
           </div>
-  
+
           <div class="contenedor-campos-newProduct">
             <button type="submit" class="boton-newProduct">CONTINUAR</button>
-  
+          </div>
+          <!--    METODO DELETE 
+
+            <form action="/products/delete/?_method=DELETE" method="POST">
+              <div class="contenedor-campos-newProduct">
+                <button type="submit" class="boton-newProduct">ELIMINAR</button>
+              </div>
+            </form>
+           -->
         </form>
       </div>
     </main>

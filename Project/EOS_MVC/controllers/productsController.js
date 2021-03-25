@@ -70,7 +70,7 @@ const productsController = {
   edit: function (req, res) {
     let idProduct = req.params.idProduct;
     let productToEdit = products[idProduct];
-    return res.render("./products/update", { productToEdit: productDetail });
+    return res.render("./products/update", { productToEdit: productToEdit });
   },
   update: function (req, res) {
     res.send("Editado");
