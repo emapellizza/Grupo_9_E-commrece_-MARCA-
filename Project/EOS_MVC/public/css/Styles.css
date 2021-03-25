@@ -184,12 +184,31 @@ input {
   flex-direction: column;
 }
 .container-caract-productDetail h3 {
-  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .precio-productDetail {
   font-size: 35px;
   font-weight: 600;
+  padding: 1vh 0;
+}
+.container-caract-productDetail p {
+  margin: 2px 0;
+}
+.main-productDetail .boton-contenedor {
+  text-align: center;
+  margin: 1vh 0 3vh 0;
+}
+.main-productDetail .boton-contenedor .finalizar-compra {
+  width: 100%;
+}
+
+.container-productDetail-bottom h4 {
+  padding: 10px 0;
+  border-top: 1px solid #977a58;
+  font-size: 25px;
+  text-align: center;
 }
 
 /*-----------------------Estilos Cart-------------------------------*/
@@ -755,11 +774,17 @@ footer li {
   .nav-footer {
     font-size: 14px;
   }
+  .nav-footer a:hover {
+    color: #b1997f;
+  }
   .contenedor-redes-footer {
     font-size: 20px;
   }
   footer ul {
     text-align: left;
+  }
+  .logo-redes-footer .circulo:hover {
+    background-color: #b1997f;
   }
 
   /* Index */
@@ -831,18 +856,38 @@ footer li {
     margin-left: 20vw;
     margin-right: 20vw;
   }
+
   /* Product Detail*/
   .container-productDetail {
     display: flex;
     width: 60vw;
     margin: auto;
+    align-items: center;
   }
   .container-productDetail img {
     width: 50%;
   }
   .container-caract-productDetail {
+    height: 80%;
     width: 50%;
-    justify-content: space-around;
+    display: flex;
+  }
+  .main-productDetail .boton-contenedor {
+    text-align: start;
+  }
+  .container-caract-productDetail h3 {
+    font-size: 40px;
+  }
+  .container-productDetail-bottom {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin: auto;
+  }
+  .container-productDetail-bottom p {
+    margin: auto;
+    width: 60%;
   }
 
   /* About Us*/
@@ -898,7 +943,7 @@ footer li {
 
   .items-menu-header:hover {
     color: #977a58;
-    transition: 0.5s;
+    transition: 0.15s;
   }
 
   .menu-header a {
@@ -933,7 +978,6 @@ footer li {
     margin: 15vh 30vw 25vh 35vw;
     max-width: 400px;
   }
-
   .main-error img {
     width: 150px;
   }
@@ -951,5 +995,9 @@ footer li {
   }
   .container-product {
     width: 20vw;
+  }
+  /* Produc Detail*/
+  .main-productDetail .boton-contenedor .finalizar-compra {
+    width: 80%;
   }
 }

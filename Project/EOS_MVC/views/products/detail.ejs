@@ -6,57 +6,33 @@
     <%- include("../partials/header.ejs") %>
     <main class="main-productDetail">
       <article class="container-productDetail">
-
-        <img src="/images/products/<%= productDetail.imagen %>" alt="">
+        <img src="/images/products/<%= productDetail.imagen %>" alt="" />
         <div class="container-caract-productDetail">
-          <h3><%= productDetail.modelo + " " + productDetail.marca %></h3>
+          <h3><%= productDetail.marca + " " + productDetail.modelo %></h3>
+          <div>
+            <p>Talles disponibles:</p>
+            <p><%= productDetail.talles%></p>
+          </div>
+          <div>
+            <p>Colores disponibles:</p>
+            <p><%= productDetail.colores%></p>
+          </div>
           <p class="precio-productDetail">$<%= productDetail.precio%></p>
-          <p><%= productDetail.descripcion%></p>
-          <p>Talles disponibles: <%= productDetail.talles%></p>
-          <p>Colores disponibles: <%= productDetail.colores%></p>
+
+          <div class="boton-contenedor">
+            <input
+              class="finalizar-compra"
+              type="button"
+              value="AGREGAR AL CARRITO"
+            />
+          </div>
         </div>
       </article>
 
-    </main>
-
-
-      <!-- Ver Mas 
-      <div class="linea-separadora"></div>
-      <section>
-        <p class="ver-mas-titulo">Podria interesarte</p>
-        <div class="ver-mas-productos">
-          <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/camperaNike.jfif" />
-              <p>Campera Nike</p>
-              <p>$8199</p>
-            </a>
-          </div>
-          <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/medias-nike.jfif" alt="" />
-              <p>Medias Nike</p>
-              <p>$1399</p>
-            </a>
-          </div>
-          <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/remera-nike.jfif" alt="" />
-              <p>Remera Nike</p>
-              <p>$3.999</p>
-            </a>
-          </div>
-          <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/pantalon-nike.jpeg" alt="" />
-              <p>Pantalon Nike</p>
-              <p>$7500</p>
-            </a>
-          </div>
-        </div>
-      </section>
-      -->
-
+      <article class="container-productDetail-bottom">
+        <h4>• Descripción •</h4>
+        <p><%= productDetail.descripcion%></p>
+      </article>
     </main>
 
     <%- include("../partials/footer.ejs") %>
