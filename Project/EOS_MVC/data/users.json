@@ -1,10 +1,29 @@
 [
   {
+    "id": 1,
     "firstName": "Mariano",
     "lastName": "Suarez",
     "dateOfBirth": "2021-03-10",
     "email": "asd@fds.com",
     "password": "$2b$10$P.gEBfxx9BzINlBb83ng1.iUesYAakev5.l54yh1Tk6qbBDioybd.",
     "password2": "$2b$10$OWF1GV2Ih3E/T2frdXVKFe1GqNl48CNPWnzpRcsi2aqv8SjNHHtfy"
+  },
+  {
+    "id": 2,
+    "firstName": "Emanuel",
+    "lastName": "Pellizza",
+    "dateOfBirth": "2021-03-14",
+    "email": "emapellizza@gmail.com",
+    "password": "$2b$10$lxswwb0AciPF7t5fmn5/uu/I2sa8AxID0SHU3Alsi.ItTcYzgvAne",
+    "password2": "$2b$10$HobhlKEPHtkohMLqyxweDOD0LJOHL9FKuvixbA.xJeI5OSuAhnere"
+  },
+  {
+    "id": 3,
+    "firstName": "pablo",
+    "lastName": "marmol",
+    "dateOfBirth": "2021-03-14",
+    "email": "pabmar@dh.com",
+    "password": "$2b$10$p5XYSvU2/9HyBIvF8228EOL74hk6REQzmZ3SKlU5zywxihVjvAFsa",
+    "password2": "$2b$10$PahuzWNzrX84vg8EyNK5iObTalxYa1q4aokjHgj71b/kBTWdnzRWS"
   }
 ]

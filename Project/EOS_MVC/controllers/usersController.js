@@ -42,12 +42,17 @@ const usersController = {
       } else {
         users = JSON.parse(usersJSON);
       }
+      let newUser = {
+        id: usersController.generateId(), 
+        ...user
+      }
+      
       // Agrego el usuario a la lista
-      users.push(user);
+      users.push(newUser);
 
       // Guardar usuario
-      usersJSON = JSON.stringify(users, null, 2);
-      fs.writeFileSync("./data/users.json", usersJSON);
+    
+      fs.writeFileSync("./data/users.json",JSON.stringify(users, null, 2));
 
       res.redirect("userCreated");
     } else {
@@ -57,6 +62,14 @@ const usersController = {
       });
     }
   },
+  generateId: function(){
+    let usersList = JSON.parse(usersJSON);
+     let lastUser = usersList.pop();
+     if(lastUser){
+       return lastUser.id + 1;
+     }
+     return 1;
+   },
 };
 
 module.exports = usersController;
