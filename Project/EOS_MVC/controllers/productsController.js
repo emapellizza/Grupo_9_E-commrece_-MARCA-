@@ -1,25 +1,25 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
+const tablaJson = require('../data/jsonManager');
 
-// Lectura del archivo JSON (luego se debe parsear)
-let productsJSON = fs.readFileSync("./data/products.json", {
-  encoding: "utf-8",
-});
-let products = JSON.parse(productsJSON);
+const productsJson = tablaJson("products")
+
 
 const productsController = {
   listAll: function (req, res) {
-    return res.render("./products/list", { products: products });
+    let products = productsJson.all()
+
+    return res.render("./products/list", { products });
   },
 
+  
   productCart: function (req, res) {
     return res.render("./products/cart");
   },
 
   productDetail: function (req, res) {
-    let idProduct = req.params.idProduct;
-    let productDetail = products[idProduct];
-    return res.render("./products/detail", { productDetail: productDetail });
+    let productDetail = productsJson.find(req.params.idProduct);
+    return res.render("./products/detail", { productDetail });
   },
 
   newProduct: function (req, res) {
@@ -45,20 +45,9 @@ const productsController = {
         colores: req.body.coloresProducto,
       };
 
-      let products;
-      if (productsJSON == "") {
-        products = [];
-      } else {
-        products = JSON.parse(productsJSON);
-      }
-      // Agrego el producto a la lista
-      products.push(product);
+      productId = productsJson.create(product);
 
-      //Stringify y guardado
-      productsJSON = JSON.stringify(products, null, 2);
-      fs.writeFileSync("./data/products.json", productsJSON);
-
-      res.redirect("/products");
+      res.redirect("/products/" + productId);
     } else {
       return res.render("products/new", {
         errors: errors.array(),
@@ -66,6 +55,12 @@ const productsController = {
       });
     }
   },
+
+  show: (req, res) => {
+    let product = productsJson.find(req.params.id);
+
+    res.render('products/detail', { product });
+},
 
   edit: function (req, res) {
     let idProduct = req.params.idProduct;

@@ -58,8 +58,8 @@ router.post(
 );
 
 //Rutas para actualizar un producto:
-router.get("/edit/:idProduct", productsController.edit);
-router.put("/edit", productsController.update);
+router.get("/:idProduct", productsController.show);
+
 
 // Aca va la ruta a una nueva pagina "producto a actualizar" o algo asi
 

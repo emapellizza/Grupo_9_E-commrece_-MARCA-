@@ -1,114 +1,15 @@
 [
   {
-    "imagen": "product-1616166522042.jpg",
+    "imagen": "product-1616848424518.jpg",
     "marca": "Vans",
-    "modelo": "Old Skool",
-    "precio": "8900",
+    "modelo": "Street",
+    "precio": "7500",
     "categoria": "calzado",
     "genero": "unisex",
-    "shortDescripcion": "Nuevas Zapatillas Vans",
-    "longDescripcion": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.",
+    "shortDescripcion": "Street",
+    "longDescripcion": "Street",
     "talles": "M",
-    "colores": "Varios"
-  },
-  {
-    "imagen": "product-1616166591396.JPG",
-    "marca": "Nike",
-    "modelo": "Pantalon deportivo",
-    "precio": "4500",
-    "categoria": "indumentaria",
-    "genero": "femenino",
-    "shortDescripcion": "Pantalon Nike 100% algodon",
-    "talles": "M",
-    "colores": "Blanco"
-  },
-  {
-    "imagen": "product-1616166789052.jpg",
-    "marca": "Adidas",
-    "modelo": "Camperon AFA 2020",
-    "precio": "8000",
-    "categoria": "indumentaria",
-    "genero": "masculino",
-    "shortDescripcion": "Camperon adidas AFA temporada 2020",
-    "talles": "M",
-    "colores": "Azul"
-  },
-  {
-    "imagen": "product-1616167233018.jpg",
-    "marca": "Under Armour",
-    "modelo": "Charged Pursuit 2",
-    "precio": "9500",
-    "categoria": "calzado",
-    "genero": "unisex",
-    "shortDescripcion": "Nuevas zapatillas Under Armour Breathe Trainer",
-    "talles": "L",
-    "colores": "Negro"
-  },
-  {
-    "imagen": "product-1616170729628.JPG",
-    "marca": "Puma",
-    "modelo": "Essencial Header",
-    "precio": "2400",
-    "categoria": "indumentaria",
-    "genero": "masculino",
-    "shortDescripcion": "",
-    "talles": "M",
-    "colores": "Negro"
-  },
-  {
-    "imagen": "product-1616172142274.JPG",
-    "marca": "Nike",
-    "modelo": "Heritage",
-    "precio": "3000",
-    "categoria": "indumentaria",
-    "genero": "unisex",
-    "shortDescripcion": "Remera nike Heritage 100% algodon.",
-    "talles": "S",
-    "colores": "Blanco"
-  },
-  {
-    "imagen": "product-1616172540023.JPG",
-    "marca": "Under Armour",
-    "modelo": "Tech 2.0",
-    "precio": "3500",
-    "categoria": "indumentaria",
-    "genero": "masculino",
-    "shortDescripcion": "",
-    "talles": "M",
-    "colores": "Negro"
-  },
-  {
-    "imagen": "product-1616200564746.jpg",
-    "marca": "Adidas",
-    "modelo": "Superstar",
-    "precio": "9500",
-    "categoria": "calzado",
-    "genero": "femenino",
-    "shortDescripcion": "",
-    "talles": "M",
-    "colores": "Blancas"
-  },
-  {
-    "imagen": "product-1616644133305.jpg",
-    "marca": "Vans",
-    "modelo": "Remera basica con logo",
-    "precio": "4000",
-    "categoria": "indumentaria",
-    "genero": "unisex",
-    "shortDescripcion": "100% algodon",
-    "talles": "M",
-    "colores": "Blanco"
-  },
-  {
-    "imagen": "product-1616688643533.JPG",
-    "marca": "Under Armour",
-    "modelo": "Huddle Snapback",
-    "precio": "1500",
-    "categoria": "accesorios",
-    "genero": "unisex",
-    "shortDescripcion": "Gorra Under Armour Huddle Snapback",
-    "longDescripcion": "Posee un ajuste reforzado, que mantiene la forma con una visera ligeramente más alta y plana para un diseño moderno.\r\nAjuste regulable.",
-    "talles": "Unico",
-    "colores": "Negro"
+    "colores": "Azul",
+    "id": 1
   }
 ]
