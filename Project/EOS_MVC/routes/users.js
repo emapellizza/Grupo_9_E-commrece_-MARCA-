@@ -28,8 +28,7 @@ const validateRegister = [
   body("password")
     .notEmpty().withMessage(" Debes completar la contraseña").bail()
     .isLength({ min: 6, max: 16 }).withMessage("* La contraseña debe tener entre 6 y 16 caracteres"),
-  body("confirmPassword")
-  .notEmpty().withMessage(" Debes repetir la contraseña"),
+  
 ];
 
 router.get("/login", usersController.login);
@@ -38,8 +37,8 @@ router.get("/register", usersController.register);
 router.post(
   "/register",
   uploadUser.single("imagenUsuario"),
-  validateRegister,
-  usersController.store
+  validateRegister, 
+  usersController.store, 
 );
 
 router.get("/userCreated", usersController.userCreated);

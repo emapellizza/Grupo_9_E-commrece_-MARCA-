@@ -45,9 +45,9 @@ const productsController = {
         colores: req.body.coloresProducto,
       };
 
-      productId = productsJson.create(product);
+      let nombre = productsJson.create(product);
 
-      res.redirect("/products/" + productId);
+      res.redirect("/products/");
     } else {
       return res.render("products/new", {
         errors: errors.array(),
