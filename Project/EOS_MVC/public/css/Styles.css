@@ -991,6 +991,7 @@ footer li {
     margin: auto;
   }
   .container-userDetail {
+    margin-top: 2vh;
     padding: 15px 45px;
   }
 }
