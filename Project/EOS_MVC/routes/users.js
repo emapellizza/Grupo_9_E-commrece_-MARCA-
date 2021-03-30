@@ -4,6 +4,7 @@ const { body } = require("express-validator");
 const multer = require("multer");
 const path = require("path");
 const usersController = require("../controllers/usersController");
+const loginController = require("../controllers/loginController");
 
 // Multer
 const storage = multer.diskStorage({
@@ -31,16 +32,11 @@ const validateRegister = [
   
 ];
 
-router.get("/login", usersController.login);
+router.get("/login", loginController.login);
+router.post("/login", loginController.loginProcess);
 
 router.get("/register", usersController.register);
-router.post(
-  "/register",
-  uploadUser.single("imagenUsuario"),
-  validateRegister, 
-  usersController.store, 
-);
-
+router.post("/register",uploadUser.single("imagenUsuario"),validateRegister, usersController.saveUser, );
 router.get("/userCreated", usersController.userCreated);
 
 module.exports = router;

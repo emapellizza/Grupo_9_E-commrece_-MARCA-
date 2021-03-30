@@ -11,5 +11,44 @@
     "talles": "M",
     "colores": "Azul",
     "id": 1
+  },
+  {
+    "imagen": "product-1617128625714.png",
+    "marca": "Adidas",
+    "modelo": "algo",
+    "precio": "12333",
+    "categoria": "indumentaria",
+    "genero": "unisex",
+    "shortDescripcion": "123123",
+    "longDescripcion": "123123",
+    "talles": "M",
+    "colores": "rojo",
+    "id": 2
+  },
+  {
+    "imagen": "product-1617128759449.png",
+    "marca": "Adidas",
+    "modelo": "algo",
+    "precio": "12333",
+    "categoria": "indumentaria",
+    "genero": "unisex",
+    "shortDescripcion": "123123",
+    "longDescripcion": "123123",
+    "talles": "M",
+    "colores": "rojo",
+    "id": 3
+  },
+  {
+    "imagen": "product-1617128811011.png",
+    "marca": "Adidas",
+    "modelo": "algo",
+    "precio": "12333",
+    "categoria": "indumentaria",
+    "genero": "unisex",
+    "shortDescripcion": "123123",
+    "longDescripcion": "123123",
+    "talles": "M",
+    "colores": "rojo",
+    "id": 4
   }
 ]

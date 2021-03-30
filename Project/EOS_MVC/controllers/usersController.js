@@ -1,15 +1,18 @@
-const fs = require("fs");
+
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
+const tablaJson = require('../data/jsonManager');
 
-// Lectura del archivo JSON (luego se debe parsear)
-let usersJSON = fs.readFileSync("./data/users.json", {
-  encoding: "utf-8",
-});
+const userJson = tablaJson("users");
+
 
 const usersController = {
-  login: function (req, res) {
-    return res.render("./users/login");
+
+
+  listAll: function (req, res) {
+    let users = userJson.all()
+
+    return res.render("./products/list", { users });
   },
 
   register: function (req, res) {
@@ -20,12 +23,25 @@ const usersController = {
     return res.render("./users/userCreated");
   },
 
-  store: function (req, res) {
-    // Validación
+  saveUser: function (req, res) {
+    // Validacion
     let errors = validationResult(req);
 
+    let userInDb = userJson.findByField("email",req.body.email);
+    if(userInDb){
+      return res.render("users/register",{
+        errors: {
+          email: {
+            msg: "Este email ya esta registrado"
+          }
+        },
+        oldData: req.body
+
+      });
+    }
+
     if (errors.isEmpty()) {
-      // Almaceno los datos del usuario
+      // Almaceno los datos del producto
       const user = {
         imageUser: req.file.fileName,
         firstName: req.body.firstName,
@@ -36,40 +52,32 @@ const usersController = {
         password2: bcrypt.hashSync(req.body.confirmPassword, 10),
       };
 
-      let users;
-      if (usersJSON == "") {
-        users = [];
-      } else {
-        users = JSON.parse(usersJSON);
-      }
-      let newUser = {
-        id: usersController.generateId(), 
-        ...user
-      }
-      
-      // Agrego el usuario a la lista
-      users.push(newUser);
-
-      // Guardar usuario
-    
-      fs.writeFileSync("./data/users.json",JSON.stringify(users, null, 2));
+      let nombre = userJson.create(user);
 
       res.redirect("userCreated");
     } else {
       return res.render("users/register", {
-        errors: errors.mapped(),
+        errors: errors.array(),
         old: req.body,
       });
     }
   },
-  generateId: function(){
-    let usersList = JSON.parse(usersJSON);
-     let lastUser = usersList.pop();
-     if(lastUser){
-       return lastUser.id + 1;
-     }
-     return 1;
-   },
+
+/*
+  show: (req, res) => {
+    let product = productsJson.find(req.params.id);
+
+    res.render('products/detail', { product });
+},
+
+  edit: function (req, res) {
+    let idProduct = req.params.idProduct;
+    let productToEdit = products[idProduct];
+    return res.render("./products/update", { productToEdit: productToEdit });
+  },
+  update: function (req, res) {
+    res.send("Editado");
+  },*/
 };
 
 module.exports = usersController;
