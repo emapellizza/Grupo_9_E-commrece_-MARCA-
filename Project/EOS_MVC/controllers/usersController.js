@@ -62,6 +62,10 @@ const usersController = {
       });
     }
   },
+  profile:function(req,res) {
+    res.render("users/profile");
+
+  },
 
 /*
   show: (req, res) => {

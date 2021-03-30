@@ -1,16 +1,46 @@
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcrypt");
 const tablaJson = require('../data/jsonManager');
-const userJson = tablaJson("users");
+const userList = tablaJson("users");
 
 
 const loginController = {
+
     login: function (req, res) {
+
         return res.render("./users/login");
     },
 
     loginProcess: function(req,res){
-       res.send(req.body);
+       //agregar validaciones
+       //1 ver si estoy registrado
+       let userToLog = userList.findByField("email",req.body.email);
+      
+       if(userToLog){
+           let checkPassword = bcrypt.compareSync(req.body.password,userToLog.password);
+           if(checkPassword){
+               delete userToLog.password;//por seguridad
+               req.session.userLogged = userToLog;//registro de session 
+               return res.redirect("/");
+           
+       }
+        return res.render("./users/login",{ 
+            errors:{
+                email: {
+                    msg: "password invalida"
+                }
+            }
+        });
+    }
+     return res.render("./users/login",{ 
+           errors:{
+               email: {
+                   msg: " Usuario no registrado"
+               }
+           }
+       })
     },
+
       
 
 };

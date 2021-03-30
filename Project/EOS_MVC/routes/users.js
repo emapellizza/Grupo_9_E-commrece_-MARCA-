@@ -38,5 +38,6 @@ router.post("/login", loginController.loginProcess);
 router.get("/register", usersController.register);
 router.post("/register",uploadUser.single("imagenUsuario"),validateRegister, usersController.saveUser, );
 router.get("/userCreated", usersController.userCreated);
+router.get("/profile", usersController.profile);
 
 module.exports = router;
