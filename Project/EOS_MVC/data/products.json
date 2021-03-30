@@ -113,5 +113,19 @@
     "colores": "Blanco",
     "estado": "activo",
     "id": 8
+  },
+  {
+    "imagen": "product-1617147997887.jpg",
+    "marca": "Nike",
+    "modelo": "AIR FORCE 1 REACT",
+    "precio": "15000",
+    "categoria": "calzado",
+    "genero": "masculino",
+    "shortDescripcion": "Zapatillas Nike AIR FORCE 1 REACT",
+    "longDescripcion": "Entra en un nuevo mundo AF1 con el Nike Air Force 1 React, una cuota de rubor en el diseño de contracultura, con un icónico estilo del básquetbol de Nike.",
+    "talles": "M",
+    "colores": "Negro",
+    "estado": "activo",
+    "id": 9
   }
 ]
