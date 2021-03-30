@@ -60,7 +60,6 @@ router.post(
 //Rutas para actualizar un producto:
 router.get("/:idProduct", productsController.show);
 
-
 // Aca va la ruta a una nueva pagina "producto a actualizar" o algo asi
 
 module.exports = router;
