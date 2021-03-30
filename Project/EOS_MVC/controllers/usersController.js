@@ -1,11 +1,9 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
+const tablaJson = require('../data/jsonManager');
 
-// Lectura del archivo JSON (luego se debe parsear)
-let usersJSON = fs.readFileSync("./data/users.json", {
-  encoding: "utf-8",
-});
+const usersJson = tablaJson("users")
 
 const usersController = {
   login: function (req, res) {
@@ -17,59 +15,46 @@ const usersController = {
   },
 
   userCreated: function (req, res) {
-    return res.render("./users/userCreated");
+    let userDetail = usersJson.find(req.params.idUser);
+    
+   res.render("./users/userCreated", { userDetail });
+  },
+
+  show: (req, res) => {
+    let userDetail = usersJson.find(req.params.idUser);
+    
+   res.render("./users/detail", { userDetail });
   },
 
   store: function (req, res) {
+
     // Validación
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
+
       // Almaceno los datos del usuario
       const user = {
-        imageUser: req.file.fileName,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        dateOfBirth: req.body.dateOfBirth,
+        imagenUsuario: req.file.fileName,
+        nombre: req.body.firstName,
+        apellido: req.body.lastName,
+        fechaDeNacimiento: req.body.dateOfBirth,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         password2: bcrypt.hashSync(req.body.confirmPassword, 10),
+        estado: "activo"
       };
 
-      let users;
-      if (usersJSON == "") {
-        users = [];
-      } else {
-        users = JSON.parse(usersJSON);
-      }
-      let newUser = {
-        id: usersController.generateId(), 
-        ...user
-      }
-      
-      // Agrego el usuario a la lista
-      users.push(newUser);
+      let userId = usersJson.create(user);
 
-      // Guardar usuario
-    
-      fs.writeFileSync("./data/users.json",JSON.stringify(users, null, 2));
-
-      res.redirect("userCreated");
+      res.redirect("./userCreated/" + userId);
     } else {
       return res.render("users/register", {
         errors: errors.mapped(),
         old: req.body,
       });
     }
-  },
-  generateId: function(){
-    let usersList = JSON.parse(usersJSON);
-     let lastUser = usersList.pop();
-     if(lastUser){
-       return lastUser.id + 1;
-     }
-     return 1;
-   },
+  }
 };
 
 module.exports = usersController;

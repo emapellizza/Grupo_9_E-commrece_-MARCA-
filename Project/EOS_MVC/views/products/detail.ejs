@@ -4,22 +4,20 @@
 
   <body>
     <%- include("../partials/header.ejs") %>
-    <main >
+    <main class="main-productDetail">
       <article class="container-productDetail">
-        
+        <img src="/images/products/<%= productDetail.imagen %>" alt="" />
         <div class="container-caract-productDetail">
-          
-          <div>Hola</div>>
-
+          <h3><%= productDetail.marca + " " + productDetail.modelo %></h3>
           <div>
             <p>Talles disponibles:</p>
-           
+            <p><%= productDetail.talles%></p>
           </div>
           <div>
             <p>Colores disponibles:</p>
-            
+            <p><%= productDetail.colores%></p>
           </div>
-          
+          <p class="precio-productDetail">$<%= productDetail.precio%></p>
 
           <div class="boton-contenedor">
             <input
@@ -33,7 +31,7 @@
 
       <article class="container-productDetail-bottom">
         <h4>• Descripción •</h4>
-       
+        <p><%= productDetail.longDescripcion%></p>
       </article>
     </main>
 

@@ -12,14 +12,14 @@ const productsController = {
     return res.render("./products/list", { products });
   },
 
-  
-  productCart: function (req, res) {
-    return res.render("./products/cart");
+  show: (req, res) => {
+    let productDetail = productsJson.find(req.params.idProduct);
+
+    res.render("./products/detail", { productDetail });
   },
 
-  productDetail: function (req, res) {
-    let productDetail = productsJson.find(req.params.idProduct);
-    return res.render("./products/detail", { productDetail });
+  productCart: function (req, res) {
+    return res.render("./products/cart");
   },
 
   newProduct: function (req, res) {
@@ -27,10 +27,12 @@ const productsController = {
   },
 
   saveProduct: function (req, res) {
+    
     // Validacion
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
+
       // Almaceno los datos del producto
       const product = {
         imagen: req.file.filename,
@@ -43,33 +45,23 @@ const productsController = {
         longDescripcion: req.body.longDescripcion,
         talles: req.body.tallesProducto,
         colores: req.body.coloresProducto,
+        estado: "activo",
       };
 
-      let nombre = productsJson.create(product);
+      let productId = productsJson.create(product);
 
-      res.redirect("/products/");
+      res.redirect("./detail/" + productId);
     } else {
-      return res.render("products/new", {
+        return res.render("products/new", {
         errors: errors.array(),
         old: req.body,
       });
     }
   },
 
-  show: (req, res) => {
-    let product = productsJson.find(req.params.id);
+ 
 
-    res.render('products/detail', { product });
-},
 
-  edit: function (req, res) {
-    let idProduct = req.params.idProduct;
-    let productToEdit = products[idProduct];
-    return res.render("./products/update", { productToEdit: productToEdit });
-  },
-  update: function (req, res) {
-    res.send("Editado");
-  },
 };
 
 module.exports = productsController;

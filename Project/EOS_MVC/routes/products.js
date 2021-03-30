@@ -46,7 +46,7 @@ router.get("/", productsController.listAll);
 router.get("/cart", productsController.productCart);
 
 // Detalle de producto
-router.get("/detail/:idProduct", productsController.productDetail);
+router.get("/detail/:idProduct", productsController.show);
 
 // Crear un nuevo producto:
 router.get("/new", productsController.newProduct);

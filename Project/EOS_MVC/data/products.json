@@ -9,7 +9,8 @@
     "shortDescripcion": "Street",
     "longDescripcion": "Street",
     "talles": "M",
-    "colores": "Azul",
+    "colores": "234",
+    "state": "activo",
     "id": 1
   }
 ]

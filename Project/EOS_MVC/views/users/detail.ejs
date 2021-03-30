@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main class="main-productDetail">
+      <article class="container-productDetail">
+        
+        <div class="container-caract-productDetail">
+          <h3><%= userDetail.nombre + " " + userDetail.apellido %></h3>
+          <div>
+            
+            <p><%= userDetail.fechaDeNacimiento%></p>
+          </div>
+         
+          <a href="/#">Ir a la tienda</a>
+
+          
+        </div>
+      </article>
+
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

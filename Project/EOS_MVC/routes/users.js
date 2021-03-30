@@ -41,6 +41,8 @@ router.post(
   usersController.store, 
 );
 
-router.get("/userCreated", usersController.userCreated);
+router.get("/userCreated/:idUser", usersController.userCreated);
+
+router.get("/detail/:idUser", usersController.show);
 
 module.exports = router;
