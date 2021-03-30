@@ -151,6 +151,50 @@ input {
   width: 40%;
 }
 
+/*----------------------Estilos Faq-----------------------*/
+.faq-about {
+  background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faq-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+}
+
+.faq-container h2 {
+  width: 70%;
+  color: white;
+  padding: 25px 5% 0 5%;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin: auto;
+}
+.faq-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+}
+
+.faq-container li, 
+.faq-container p {
+  width: 80%;
+  color: white;
+  padding: 8px;
+  font-size: 18px;
+  margin: auto;
+  text-align: justify;
+}
+
 /*----------------------Estilos About Us-----------------------*/
 .main-about {
   background-image: url(../images/skyscrapers-blue-sky-1.jpg);
@@ -185,6 +229,8 @@ input {
   font-size: 18px;
   margin: auto;
 }
+
+
 /*----------------------Estilos ProductDetail-----------------------*/
 .main-productDetail {
   padding: 2vh 0;
