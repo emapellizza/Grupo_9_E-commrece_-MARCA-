@@ -702,6 +702,42 @@ footer li {
   font-weight: 400;
 }
 
+/*---------------------- Detalle de usuario -----------------------*/
+.container-userDetail {
+  display: flex;
+  flex-direction: column;
+  padding: 4vh 6vw;
+}
+.userDetail-name-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b6b5b3;
+}
+.userDetail-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  width: 70%;
+}
+
+.userDetail-name-img img {
+  max-width: 80px;
+  width: 30%;
+}
+.userDetail-row {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0;
+  border-bottom: 1px solid #b6b5b3;
+}
+.userDetail-row .grey-title {
+  color: #88827d;
+  padding-bottom: 1vh;
+}
+.user-data {
+  font-size: 20px;
+}
 /*----------------------Estilos pagina ERROR-----------------------*/
 
 .main-error {
@@ -724,9 +760,13 @@ footer li {
   color: #977a58;
 }
 
-/*----------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
 /*----------------- MEDIA QUERIES ---------------- */
-/*----------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
 
 @media (min-width: 360px) {
   /* Footer */
@@ -944,6 +984,14 @@ footer li {
   .aboutUs-container p {
     width: 50%;
     font-size: 20px;
+  }
+  /* User Detail*/
+  .container-userDetail {
+    max-width: 500px;
+    margin: auto;
+  }
+  .container-userDetail {
+    padding: 15px 45px;
   }
 }
 

@@ -4,22 +4,42 @@
 
   <body>
     <%- include("../partials/header.ejs") %>
-    <main class="main-productDetail">
-      <article class="container-productDetail">
-        
-        <div class="container-caract-productDetail">
-          <h3><%= userDetail.nombre + " " + userDetail.apellido %></h3>
-          <div>
-            
-            <p><%= userDetail.fechaDeNacimiento%></p>
+    <main>
+      <article class="container-userDetail">
+        <div class="userDetail-name-img">
+          <div class="userDetail-name">
+            <h4><%= userDetail.nombre %></h4>
+            <h4><%= userDetail.apellido %></h4>
           </div>
-         
-          <a href="/#">Ir a la tienda</a>
+          <img src="/images/users/default-user-icon.png" alt="" />
+        </div>
 
-          
+        <div class="userDetail-more">
+          <div class="userDetail-row">
+            <p class="grey-title">Fecha de nacimiento</p>
+            <p class="user-data"><%= userDetail.fechaDeNacimiento%></p>
+          </div>
+          <div class="userDetail-row">
+            <p class="grey-title">Email</p>
+            <p class="user-data"><%= userDetail.email%></p>
+          </div>
+          <div class="userDetail-row">
+            <p class="grey-title">Número de teléfono</p>
+            <p class="user-data">"+54 11 1234-5678"</p>
+          </div>
+          <div class="userDetail-row">
+            <p class="grey-title">Contraseña</p>
+            <p class="user-data">**********</p>
+          </div>
+          <div class="userDetail-row">
+            <p class="grey-title">Historial de compras</p>
+            <a href="#" class="user-data">Ir al historial</a>
+          </div>
+        </div>
+        <div class="boton-reg-log">
+          <button>Guardar Cambios</button>
         </div>
       </article>
-
     </main>
 
     <%- include("../partials/footer.ejs") %>
