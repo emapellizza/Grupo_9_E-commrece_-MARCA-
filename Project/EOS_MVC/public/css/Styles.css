@@ -106,8 +106,28 @@ input {
 }
 
 .banner {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.container-banner-tienda {
   width: 100%;
-  max-width: 800px;
+}
+
+.banner-tienda {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 7vh;
+  width: 100%;
+  padding: 2vw 0;
+}
+
+.banner-tienda h3 {
+  font-size: calc(1rem + 1vw);
 }
 
 .contenedor-marcas-index {
@@ -129,9 +149,6 @@ input {
   justify-content: center;
   align-items: center;
   width: 40%;
-}
-.contenedor-banner-index {
-  height: 100%;
 }
 
 /*----------------------Estilos About Us-----------------------*/
@@ -796,6 +813,10 @@ footer li {
   }
 
   /* Index */
+  .contenedor-marcas-index {
+    justify-content: space-between;
+    padding: 5vh 0;
+  }
   .contenedor-marcas-index article.marcas {
     width: 30%;
   }
