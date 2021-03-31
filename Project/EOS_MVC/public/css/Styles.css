@@ -469,7 +469,9 @@ input {
 .finalizar-compra:hover {
   background-color: #977a58;
   color: black;
-  transition: 0.4s;
+}
+.finalizar-compra:active {
+  transform: translateY(2px);
 }
 
 .finalizar-compra:focus {
@@ -598,7 +600,10 @@ input {
 .boton-reg-log button:hover {
   background-color: #977a58;
   color: black;
-  transition: 0.4s;
+}
+.boton-reg-log button:active {
+  transform: translateY(2px);
+  outline: none;
 }
 
 .main-log {
@@ -678,7 +683,10 @@ select {
 .boton-newProduct:hover {
   background-color: #977a58;
   color: black;
-  transition: 0.4s;
+}
+.boton-newProduct:active {
+  transform: translateY(2px);
+  outline: none;
 }
 
 /* -----------------------Estilos Footer----------------------- */
