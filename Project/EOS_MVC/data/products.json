@@ -127,5 +127,19 @@
     "colores": "Negro",
     "estado": "activo",
     "id": 9
+  },
+  {
+    "imagen": "product-1617206032928.JPG",
+    "marca": "Under Armour",
+    "modelo": "Huddle Snapback",
+    "precio": "1500",
+    "categoria": "indumentaria",
+    "genero": "unisex",
+    "shortDescripcion": "Gorra Under Armour Huddle Snapback",
+    "longDescripcion": "Posee un ajuste reforzado, que mantiene la forma con una visera ligeramente más alta y plana para un diseño moderno.\r\nAjuste regulable.",
+    "talles": "Unico",
+    "colores": "Negro",
+    "estado": "activo",
+    "id": 10
   }
 ]

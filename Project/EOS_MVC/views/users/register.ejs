@@ -8,6 +8,7 @@
     <main class="main-reg-log">
       <div class="container-all-reg-log">
         <h2>CREÁ TU CUENTA</h2>
+
         <!-- 
           <% if (locals.errors) { %> <% for (let oneError in errors){ %>
           <p><%= errors[oneError].msg %></p>
@@ -65,7 +66,6 @@
               name="dateOfBirth"
               id="dateOfBirth"
               value="<%= locals.old && old.dateOfBirth ? old.dateOfBirth : ''%>"
-              required
             />
           </div>
           <% if (locals.errors && errors.dateOfBirth) { %>
@@ -104,8 +104,8 @@
             />
           </div>
           <% if (locals.errors && errors.password2) { %>
-            <div class="text-danger"><%= errors.password2.msg %></div>
-            <% } %>
+          <div class="text-danger"><%= errors.password2.msg %></div>
+          <% } %>
 
           <div class="checkbox-reg-log">
             <input type="checkbox" name="newsletter" id="newsletter" />

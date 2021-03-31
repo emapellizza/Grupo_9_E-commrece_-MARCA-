@@ -20,23 +20,19 @@ const uploadProduct = multer({ storage });
 
 //Validaciones del formulario de Registro
 const validateRegister = [
-  body("marcaProducto").notEmpty().withMessage("Debes seleccionar una Marca"),
-  body("modeloProducto").notEmpty().withMessage("Debes ingresar un modelo"),
-  body("precioProducto").notEmpty().withMessage("Debes ingresar un precio"),
-  body("categoriaProducto")
+  body("marca").notEmpty().withMessage("* Debes seleccionar una Marca"),
+  body("modelo").notEmpty().withMessage("* Debes ingresar un modelo"),
+  body("precio").notEmpty().withMessage("* Debes ingresar un precio"),
+  body("categoria").notEmpty().withMessage("* Debes seleccionar una categoria"),
+  body("genero").notEmpty().withMessage("* Debes seleccionar un genero"),
+  body("shortDescription")
     .notEmpty()
-    .withMessage("Debes ingresar seleccionar una categoria"),
-  body("generoProducto").notEmpty().withMessage("Debes seleccionar un genero"),
-  body("shortDescripcion")
+    .withMessage("* Debes agregar una breve descripcion"),
+  body("longDescription")
     .notEmpty()
-    .withMessage("Debes agregar una breve descripcion"),
-  body("longDescripcion")
-    .notEmpty()
-    .withMessage("Debes agregar una descripcion"),
-  body("tallesProducto").notEmpty().withMessage("Debes seleccionar los talles"),
-  body("coloresProducto")
-    .notEmpty()
-    .withMessage("Debes seleccionar los colores"),
+    .withMessage("* Debes agregar una descripcion"),
+  body("talles").notEmpty().withMessage("* Debes seleccionar los talles"),
+  body("colores").notEmpty().withMessage("* Debes seleccionar los colores"),
 ];
 
 // Listado de productos

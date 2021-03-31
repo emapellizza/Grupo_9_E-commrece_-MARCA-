@@ -1,13 +1,12 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
-const tablaJson = require('../data/jsonManager');
+const tablaJson = require("../data/jsonManager");
 
-const productsJson = tablaJson("products")
-
+const productsJson = tablaJson("products");
 
 const productsController = {
   listAll: function (req, res) {
-    let products = productsJson.all()
+    let products = productsJson.all();
 
     return res.render("./products/list", { products });
   },
@@ -27,24 +26,22 @@ const productsController = {
   },
 
   saveProduct: function (req, res) {
-    
     // Validacion
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-
       // Almaceno los datos del producto
       const product = {
         imagen: req.file.filename,
-        marca: req.body.marcaProducto,
-        modelo: req.body.modeloProducto,
-        precio: req.body.precioProducto,
-        categoria: req.body.categoriaProducto,
-        genero: req.body.generoProducto,
-        shortDescripcion: req.body.shortDescripcion,
-        longDescripcion: req.body.longDescripcion,
-        talles: req.body.tallesProducto,
-        colores: req.body.coloresProducto,
+        marca: req.body.marca,
+        modelo: req.body.modelo,
+        precio: req.body.precio,
+        categoria: req.body.categoria,
+        genero: req.body.genero,
+        shortDescripcion: req.body.shortDescription,
+        longDescripcion: req.body.longDescription,
+        talles: req.body.talles,
+        colores: req.body.colores,
         estado: "activo",
       };
 
@@ -52,16 +49,12 @@ const productsController = {
 
       res.redirect("./detail/" + productId);
     } else {
-        return res.render("products/new", {
-        errors: errors.array(),
+      return res.render("products/new", {
+        errors: errors.mapped(),
         old: req.body,
       });
     }
   },
-
- 
-
-
 };
 
 module.exports = productsController;
