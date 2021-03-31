@@ -8,6 +8,9 @@ const mainController = {
   faq: function (req, res) {
     return res.render("faq");
   },
+  contact: function (req, res) {
+    return res.render("contact");
+  },
 };
 
 module.exports = mainController;

@@ -165,9 +165,10 @@ input {
 
 .faq-container {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 10px 20px 10px;
   text-align: center;
+  border-radius: 5px;
 }
 
 .faq-container h2 {
@@ -178,14 +179,8 @@ input {
   font-size: 25px;
   margin: auto;
 }
-.faq-container {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 10px 20px 10px;
-  text-align: center;
-}
 
-.faq-container li, 
+.faq-container li,
 .faq-container p {
   width: 80%;
   color: white;
@@ -195,6 +190,69 @@ input {
   text-align: justify;
 }
 
+/*----------------------Estilos Contact-----------------------*/
+
+.main-contact {
+  background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 2vw 20px 2vw;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  border-radius: 5px;
+}
+.contact-container h3 {
+  font-size: 30px;
+}
+.contact-name-email {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container form label {
+  text-align: start;
+  padding: 2vh 0 1vh 0;
+}
+.contact-container form input {
+  color: #977a58;
+  border: 1px solid white;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+
+.contact-container form textarea {
+  border: 1px solid white;
+  background-color: #00000000;
+  padding: 5px;
+  color: #977a58;
+  border-radius: 5px;
+}
+.contact-container .boton-reg-log {
+  border-radius: 10px;
+  padding-top: 2vh;
+  margin: auto;
+}
+.contact-container .boton-reg-log button {
+  background-color: rgb(202, 202, 202);
+  font-weight: 600;
+}
 /*----------------------Estilos About Us-----------------------*/
 .main-about {
   background-image: url(../images/skyscrapers-blue-sky-1.jpg);
@@ -209,9 +267,10 @@ input {
 
 .aboutUs-container {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 10px 20px 10px;
   text-align: center;
+  border-radius: 5px;
 }
 
 .aboutUs-container h2 {
@@ -229,7 +288,6 @@ input {
   font-size: 18px;
   margin: auto;
 }
-
 
 /*----------------------Estilos ProductDetail-----------------------*/
 .main-productDetail {
@@ -961,7 +1019,7 @@ footer li {
   .container-all-reg-log {
     background-color: rgba(192, 179, 163, 0.8);
     border: 1px solid rgba(128, 128, 128, 0);
-    border-radius: 15px;
+    border-radius: 10px;
   }
 
   /* Productos */

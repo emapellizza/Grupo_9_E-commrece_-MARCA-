@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/headerOnlyEos.ejs") %>
+    <main class="main-contact">
+      <section class="contact-container">
+        <h3>CONTACTO</h3>
+        <form action="#">
+          <div class="contact-name-email">
+            <label for="name">NOMBRE</label>
+            <input type="text" id="name" name="name" />
+
+            <label for="email">EMAIL</label>
+            <input type="text" id="email" name="email" />
+          </div>
+
+          <label for="mensaje">MENSAJE</label>
+          <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+        </form>
+        <div class="boton-reg-log">
+          <button>Enviar</button>
+        </div>
+      </section>
+    </main>
+  </body>
+  <%- include("./partials/footer.ejs") %>
+</html>
