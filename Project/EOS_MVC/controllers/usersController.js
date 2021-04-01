@@ -1,13 +1,9 @@
-
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const tablaJson = require('../data/jsonManager');
-
 const userJson = tablaJson("users");
 
-
 const usersController = {
-
 
   listAll: function (req, res) {
     let users = userJson.all()
@@ -68,6 +64,11 @@ const usersController = {
       user: req.session.userLogged
     });
 
+  },
+
+  logout: function(req,res){
+    req.session.destroy();//borra la session
+    return res.redirect("/");
   },
 
 };
