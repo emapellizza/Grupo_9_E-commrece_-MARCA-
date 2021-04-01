@@ -6,9 +6,13 @@
 
 
     <main >
-
-        <h2>en el perfil del Usuario</h2>
-        <a href="/#">Ir a la tienda</a>
+        <div class="contenedor-Usuario">
+            <h2>Hola! <%= user.firstName %></h2>  
+            <img src="/images/users/<%= user.imageUser %> " class="imagen-perfil">
+            <br>
+            <br>
+            <div><%= user.email%></div>
+        </div>
 
     </main>
 

@@ -1,38 +1,22 @@
 [
   {
-    "id": 1,
-    "firstName": "Mariano",
-    "lastName": "Suarez",
-    "dateOfBirth": "2021-03-10",
-    "email": "asd@fds.com",
-    "password": "$2b$10$P.gEBfxx9BzINlBb83ng1.iUesYAakev5.l54yh1Tk6qbBDioybd.",
-    "password2": "$2b$10$OWF1GV2Ih3E/T2frdXVKFe1GqNl48CNPWnzpRcsi2aqv8SjNHHtfy"
-  },
-  {
+    "imageUser": "user-1617287960884.jpg",
     "firstName": "Emanuel",
     "lastName": "Pellizza",
-    "dateOfBirth": "2021-03-02",
+    "dateOfBirth": "1991-11-28",
     "email": "emapellizza@gmail.com",
-    "password": "$2b$10$jDJKVov75eWQ5dsGC28TtOUo0Ah5VtvvyNxOe/Z2XpQhdUBjg.bm6",
-    "password2": "$2b$10$J/axcpQL1ChNOMvaDkSJkOHrEOnApIxrnOMumZDHObtM.vO9/EwQu",
+    "password": "$2b$10$MLGOE86lHtQ1tsqJNUL3UeEH40iZC7yV01qCV7aYgGfnIkj9eAoWq",
+    "password2": "$2b$10$VdP2uXfpmHh7O.iQKxIbW.cGLd5Yil00BDdfpYvfeBSJjD5Z5WP1e",
+    "id": 1
+  },
+  {
+    "imageUser": "user-1617288270731.png",
+    "firstName": "cosme",
+    "lastName": "fulani",
+    "dateOfBirth": "2021-04-04",
+    "email": "cfulanito@dh.com",
+    "password": "$2b$10$ND6px4udUrBMGwv4yuE13Oad2ccOWoZF2Cy.ollZjRpeGn5xwcFUm",
+    "password2": "$2b$10$CK66nyAoCjJgMCjw8VeMLebODbcIiw.N3noC3fN3rDXs6VFsi5i0K",
     "id": 2
-  },
-  {
-    "firstName": "pedro",
-    "lastName": "Pellizza",
-    "dateOfBirth": "2021-03-10",
-    "email": "pepin@dh.com",
-    "password": "$2b$10$2JG8Pci8bMv9p71xYi8WHeTR3641QAuI8L4g5YOxT0pYM3TkUrhmS",
-    "password2": "$2b$10$KKx8OkihpCRqLG/wvIzir.BDZZ14ullvvsBC4E1u9FtIPfGM2/yzS",
-    "id": 3
-  },
-  {
-    "firstName": "steve",
-    "lastName": "vaughan",
-    "dateOfBirth": "2021-03-26",
-    "email": "algo@dh.com",
-    "password": "$2b$10$KjOy5g1JM2KYKG/j3NiGUuNQUzAb4isRMsGV8zA8HgBm7yGOTcrey",
-    "password2": "$2b$10$xoaXrT4AwcrXq4nkT4AcLe7jwKiD56MCaUqBeB9tD9E9uhR3kU7Le",
-    "id": 4
   }
 ]

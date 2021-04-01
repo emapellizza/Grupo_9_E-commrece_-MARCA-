@@ -20,7 +20,8 @@ const loginController = {
            let checkPassword = bcrypt.compareSync(req.body.password,userToLog.password);
            if(checkPassword){
                delete userToLog.password;//por seguridad
-               req.session.userLogged = userToLog;//registro de session 
+               delete userToLog.password2;
+               req.session.userLogged = userToLog;//registro de 
                return res.redirect("/");
            
        }
@@ -32,13 +33,15 @@ const loginController = {
             }
         });
     }
-     return res.render("./users/login",{ 
+    
+       return res.render("./users/login",{ 
            errors:{
                email: {
                    msg: " Usuario no registrado"
                }
            }
        })
+
     },
 
       

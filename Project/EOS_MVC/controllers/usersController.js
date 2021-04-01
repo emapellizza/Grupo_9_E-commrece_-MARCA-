@@ -43,7 +43,7 @@ const usersController = {
     if (errors.isEmpty()) {
       // Almaceno los datos del producto
       const user = {
-        imageUser: req.file.fileName,
+        imageUser: req.file.filename,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
@@ -54,7 +54,7 @@ const usersController = {
 
       let nombre = userJson.create(user);
 
-      res.redirect("userCreated");
+      res.redirect("profile");
     } else {
       return res.render("users/register", {
         errors: errors.array(),
@@ -62,8 +62,13 @@ const usersController = {
       });
     }
   },
+
   profile:function(req,res) {
-    res.render("users/profile");
+   // console.log("estas en profile");
+   // console.log(req.session);
+    res.render("users/profile",{
+      user: req.session.userLogged
+    });
 
   },
 
