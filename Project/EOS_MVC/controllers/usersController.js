@@ -64,29 +64,12 @@ const usersController = {
   },
 
   profile:function(req,res) {
-   // console.log("estas en profile");
-   // console.log(req.session);
     res.render("users/profile",{
       user: req.session.userLogged
     });
 
   },
 
-/*
-  show: (req, res) => {
-    let product = productsJson.find(req.params.id);
-
-    res.render('products/detail', { product });
-},
-
-  edit: function (req, res) {
-    let idProduct = req.params.idProduct;
-    let productToEdit = products[idProduct];
-    return res.render("./products/update", { productToEdit: productToEdit });
-  },
-  update: function (req, res) {
-    res.send("Editado");
-  },*/
 };
 
 module.exports = usersController;
