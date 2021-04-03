@@ -7,7 +7,7 @@
     "email": "pablo@perez.com",
     "password": "$2b$10$nLLCLVb1vj03O95NTgrFYe/Pk2188V5BSulApqlrjxndGmOzSxWwK",
     "password2": "$2b$10$vc.WeP5rugoqcHr9Pf/IGOq9NzgFUTTZ16z05WGgxfrUunCJLxFYa",
-    "estado": "activo",
+    "state": "activo",
     "id": 1
   }
 ]
