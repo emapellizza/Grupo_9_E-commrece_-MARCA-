@@ -10,7 +10,7 @@
         <h2>INGRESÁ</h2>
 
         <form
-          action="/guardar-usuario"
+          action="/users/login"
           method="POST"
           class="login-registro-formulario"
         >
@@ -22,6 +22,11 @@
               id="email"
               class="log-textcenter"
             />
+            <% if (locals.errors && errors.email){%>
+                <div class="text-danger"> 
+                   <%=errors.email.msg%>
+                </div>
+              <%}%>
           </div>
 
           <div class="contenedor-campos-reg-log log-textcenter">
@@ -37,12 +42,13 @@
           <div>
             <a href="#">Olvidaste tu contraseña?</a>
           </div>
-
+          <!--
           <div class="checkbox-reg-log">
             <input type="checkbox" name="conectado" id="conectado" />
             <label for="conectado">Permanecer conectado</label>
-          </div>
-
+          </div>-->
+          <hr>
+          <hr>
           <div class="boton-reg-log boton-log">
             <button type="submit">INGRESAR</button>
           </div>

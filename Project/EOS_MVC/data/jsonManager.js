@@ -40,6 +40,12 @@ let model = function(tableName) {
             return file.find(row => row.id == id)
         },
 
+        findByField (field,text) {
+            let allUsers = this.all();
+            let userFound = allUsers.find(oneUser => oneUser[field] === text );
+            return (userFound);
+        },
+
         create(row) {
             let file = this.readFile();
             row.id = this.generateId();

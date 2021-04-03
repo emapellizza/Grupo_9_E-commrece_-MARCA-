@@ -1,4 +1,3 @@
-const fs = require("fs");
 const { validationResult } = require("express-validator");
 const tablaJson = require("../data/jsonManager");
 

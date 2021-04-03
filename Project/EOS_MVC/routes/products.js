@@ -46,12 +46,7 @@ router.get("/detail/:idProduct", productsController.show);
 
 // Crear un nuevo producto:
 router.get("/new", productsController.newProduct);
-router.post(
-  "/new",
-  uploadProduct.single("imagenProducto"),
-  validateRegister,
-  productsController.saveProduct
-);
+router.post("/new",uploadProduct.single("imagenProducto"),validateRegister,productsController.saveProduct);
 
 //Rutas para actualizar un producto:
 router.get("/:idProduct", productsController.show);

@@ -1,13 +1,14 @@
-const fs = require("fs");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const tablaJson = require('../data/jsonManager');
-
-const usersJson = tablaJson("users")
+const userJson = tablaJson("users");
 
 const usersController = {
-  login: function (req, res) {
-    return res.render("./users/login");
+
+  listAll: function (req, res) {
+    let users = userJson.all()
+
+    return res.render("./products/list", { users });
   },
 
   register: function (req, res) {
@@ -26,35 +27,59 @@ const usersController = {
    res.render("./users/detail", { userDetail });
   },
 
-  store: function (req, res) {
-
-    // Validación
+  saveUser: function (req, res) {
+    // Validacion
     let errors = validationResult(req);
 
-    if (errors.isEmpty()) {
+    let userInDb = userJson.findByField("email",req.body.email);
+    if(userInDb){
+      return res.render("users/register",{
+        errors: {
+          email: {
+            msg: "Este email ya esta registrado"
+          }
+        },
+        oldData: req.body
 
-      // Almaceno los datos del usuario
+      });
+    }
+
+    if (errors.isEmpty()) {
+      // Almaceno los datos del producto
       const user = {
-        imagenUsuario: req.file.fileName,
-        nombre: req.body.firstName,
-        apellido: req.body.lastName,
-        fechaDeNacimiento: req.body.dateOfBirth,
+        imageUser: req.file.filename,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         password2: bcrypt.hashSync(req.body.confirmPassword, 10),
         estado: "activo"
       };
 
-      let userId = usersJson.create(user);
+      let nombre = userJson.create(user);
 
-      res.redirect("./userCreated/" + userId);
+      res.redirect("profile");
     } else {
       return res.render("users/register", {
-        errors: errors.mapped(),
+        errors: errors.array(),
         old: req.body,
       });
     }
-  }
+  },
+
+  profile:function(req,res) {
+    res.render("users/profile",{
+      user: req.session.userLogged
+    });
+
+  },
+
+  logout: function(req,res){
+    req.session.destroy();//borra la session
+    return res.redirect("/");
+  },
+
 };
 
 module.exports = usersController;
