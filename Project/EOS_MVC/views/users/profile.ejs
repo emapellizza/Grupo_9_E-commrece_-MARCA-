@@ -6,13 +6,43 @@
 
 
     <main >
-        <div class="contenedor-Usuario">
-            <h2>Hola! <%= user.firstName %></h2>  
-            <img src="/images/users/<%= user.imageUser %> " class="imagen-perfil">
-            <br>
-            <br>
-            <div><%= user.email%></div>
-        </div>
+        
+        <article class="container-userDetail">
+          <div class="userDetail-name-img">
+            <div class="userDetail-name">
+              <h4>Hola! <%= user.firstName %></h4>
+              <h4><%= user.lastName %></h4>
+            </div>
+            <img src="/images/users/<%= user.imageUser %> " alt="" />
+          </div>
+  
+          <div class="userDetail-more">
+            <div class="userDetail-row">
+              <p class="grey-title">Fecha de nacimiento</p>
+              <p class="user-data"><%= user.dateOfBirth%></p>
+            </div>
+            <div class="userDetail-row">
+              <p class="grey-title">Email</p>
+              <p class="user-data"><%= user.email%></p>
+            </div>
+            <div class="userDetail-row">
+              <p class="grey-title">Número de teléfono</p>
+              <p class="user-data">"+54 11 1234-5678"</p>
+            </div>
+            <div class="userDetail-row">
+              <p class="grey-title">Contraseña</p>
+              <p class="user-data">**********</p>
+            </div>
+            <div class="userDetail-row">
+              <p class="grey-title">Historial de compras</p>
+              <a href="#" class="user-data">Ir al historial</a>
+            </div>
+          </div>
+          <div class="boton-reg-log">
+            <button>Guardar Cambios</button>
+          </div>
+        </article>
+
 
     </main>
 
