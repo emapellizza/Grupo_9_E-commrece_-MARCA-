@@ -470,7 +470,7 @@ input {
   background-color: #977a58;
   color: black;
 }
-.finalizar-compra:active {
+.finalizar-compra button:active {
   transform: translateY(2px);
 }
 
@@ -603,7 +603,6 @@ input {
 }
 .boton-reg-log button:active {
   transform: translateY(2px);
-  outline: none;
 }
 
 .main-log {
@@ -684,11 +683,9 @@ select {
   background-color: #977a58;
   color: black;
 }
-.boton-newProduct:active {
+.boton-newProduct button:active {
   transform: translateY(2px);
-  outline: none;
 }
-
 /* -----------------------Estilos Footer----------------------- */
 footer {
   border-top: 1px solid #977a5885;
