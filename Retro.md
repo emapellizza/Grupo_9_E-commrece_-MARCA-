@@ -1,15 +1,15 @@
-# Conclusiones del Sprint 4
+# Conclusiones del Sprint 5
 
 Siguiendo la dinamica de la retrospectiva de estrella de mar podemos enumerar que:
 
-* Es primordial implementar el testeo mas profundo de las funcionalidades para detectar errores tempranamente.
+* Tenemos que empezar a consultar a los profesores cuando un problema nos está trabando para no perder tanto tiempo investigando. 
 
-* Tenemos que continuar por al senda de la mejora continua del sitio y el desarrollo de nuevas ideas. 
+* Tenemos que realizar mas sesiones de codeo en conjunto ya que de ahí salieron buenas soluciones e ideas.
 
-* Debemos continuar teniendo las sesiones de consultas con los profesores ya que nos despejan dudas que a veces nos tienen mucho tiempo demorados. 
+* Debemos seguir por este camino de evolución radical que tuvo el pryecto en las ultimas semanas.
 
-* Hay que reducir los tiempos muertos entre sprint y sprint para no pderder continuidad con el trabajo integrador. 
+* Hay que dejar menos de lado el tablero de Trello y anotar cada idea y cosa que queda pendiente para no olvidarla. 
 
-* Lo que no tenemos que hacer es relajarnos en cuanto al trabajo integrador, ya que el ritmo del curso es bastante elevado y eso sumado a la vida diaria de cada uno hace que el tiempo que se le pueda aportar no siempre es el suficiente.
+* No debemos dormirnos en cuanto al proyecto ya que el tiempo pasa rapido y los temas que vemos en clase avanzan muy rapido. 
 
-### En resumen, un gran trabajo en equipo, con una auto evaluación satisfactoria de como se esta desarrollando el proyecto y a la espera de las devoluciones de los profesores. 
+### En resumen, un gran trabajo en equipo y con un proyecto que avanza cada vez mejor.  
