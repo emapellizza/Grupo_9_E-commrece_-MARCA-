@@ -22,11 +22,6 @@
               id="email"
               class="log-textcenter"
             />
-            <% if (locals.errors && errors.email){%>
-                <div class="text-danger"> 
-                   <%=errors.email.msg%>
-                </div>
-              <%}%>
           </div>
 
           <div class="contenedor-campos-reg-log log-textcenter">
@@ -38,6 +33,11 @@
               class="log-textcenter"
             />
           </div>
+          <% if (locals.errors && errors.email){%>
+            <div class="text-danger"> 
+               <%=errors.email.msg%>
+            </div>
+          <%}%>
 
           <div>
             <a href="#">Olvidaste tu contraseña?</a>

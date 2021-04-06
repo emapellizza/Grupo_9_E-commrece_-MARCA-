@@ -9,12 +9,6 @@
       <div class="container-all-reg-log">
         <h2>CREÁ TU CUENTA</h2>
 
-        <!-- 
-          <% if (locals.errors) { %> <% for (let oneError in errors){ %>
-          <p><%= errors[oneError].msg %></p>
-          <% }%> <% } %>
-         -->
-
         <form
           action="/users/register"
           method="POST"
@@ -39,6 +33,7 @@
               value="<%= locals.old && old.firstName ? old.firstName : ''%>"
             />
 
+           
             <% if (locals.errors && errors.firstName) { %>
             <div class="text-danger"><%= errors.firstName.msg %></div>
             <% } %>

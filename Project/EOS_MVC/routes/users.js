@@ -15,12 +15,8 @@ router.post("/register",uploadUser.single("imagenUsuario"),validateRegister, use
 router.get("/login",guestMiddleware, loginController.login);
 router.post("/login", loginController.loginProcess);
 router.get("/profile",authMiddleware, usersController.profile);
-router.get("/userCreated", usersController.userCreated);
+
 
 router.get('/logout',usersController.logout);
-/*
-router.get("/userCreated/:idUser", usersController.userCreated);
 
-router.get("/detail/:idUser", usersController.show);
-*/
 module.exports = router;

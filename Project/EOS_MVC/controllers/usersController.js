@@ -1,12 +1,12 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const tablaJson = require('../data/jsonManager');
-const userJson = tablaJson("users");
+const usersJson = tablaJson("users");
 
 const usersController = {
 
   listAll: function (req, res) {
-    let users = userJson.all()
+    let users = usersJson.all()
 
     return res.render("./products/list", { users });
   },
@@ -15,23 +15,11 @@ const usersController = {
     return res.render("./users/register");
   },
 
-  userCreated: function (req, res) {
-    let userDetail = usersJson.find(req.params.idUser);
-    
-   res.render("./users/userCreated", { userDetail });
-  },
-
-  show: (req, res) => {
-    let userDetail = usersJson.find(req.params.idUser);
-    
-   res.render("./users/detail", { userDetail });
-  },
-
   saveUser: function (req, res) {
     // Validacion
     let errors = validationResult(req);
 
-    let userInDb = userJson.findByField("email",req.body.email);
+    let userInDb = usersJson.findByField("email",req.body.email);
     if(userInDb){
       return res.render("users/register",{
         errors: {
@@ -57,12 +45,12 @@ const usersController = {
         state: "activo"
       };
 
-      let nombre = userJson.create(user);
+      usersJson.create(user);
 
       res.redirect("profile");
     } else {
       return res.render("users/register", {
-        errors: errors.array(),
+        errors: errors.mapped(),
         old: req.body,
       });
     }

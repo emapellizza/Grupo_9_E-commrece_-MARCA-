@@ -1,3 +1,7 @@
+const tablaJson = require("../data/jsonManager");
+const messagesJson = tablaJson("messages");
+
+
 const mainController = {
   index: function (req, res) {
     return res.render("index");
@@ -11,6 +15,21 @@ const mainController = {
   contact: function (req, res) {
     return res.render("contact");
   },
+  newMessage: function (req, res) {
+
+    const message = {
+      name: req.body.name,
+      email: req.body.email,
+      message: req.body.mensaje,
+    };
+
+    messagesJson.create(message);
+
+    res.redirect("messageOk");
+  },
+  messageOk: function (req, res) {
+    return res.render("messageOk");
+  }
 };
 
 module.exports = mainController;
