@@ -15,8 +15,8 @@ Nuestro publico objetivo va desde los adolescentes de 18 años hasta adultos jov
 
 ### Mariano Suarez
 
-Hola, tengo 37 años, estudié Adm. de Empresas y trabajo actualmente en Comercio Exterior, pero siempre me gustó el mundo de la programación y la tecnología.
-Este es mi primer estudio formal en el area y espero poder insertarme en este campo laboral.
+Hola, tengo 38 años, estudié Adm. de Empresas y hasta el día de hoy me desempeño en ese campo, llegando a ser responsable de distintos sectores y liderando pequeños equipos. La tecnología es algo que siempre me apasionó y estudiar programación era una tarea pendiente hasta que el año 2020 y la pandemia me empujaron a decidirme a hacer lo que me gusta y es mi deseo reiniciar todo y empezar mi carrera laboral en este apasionante mundo.
+
 
 ### Emanuel Pelliza
 Tengo 29 años, soy estudiante de Ing. Electrónica (UTN FRBA), tengo conocimiento en el area de programació ya que en la carrera vi C y C++, pero quiero aprender desarrollo web para poder sumar conocimientos en nuevos lenguajes y poder desarrollarme profesionalmente en el futuro.
