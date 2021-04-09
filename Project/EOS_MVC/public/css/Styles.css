@@ -153,7 +153,7 @@ input {
 
 /*----------------------Estilos Faq-----------------------*/
 .faq-about {
-  background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+  background-image: url(../images/index/skyscrapers-blue-sky-1.jpg);
   background-position: center;
   background-size: cover;
   height: 78vh;
@@ -193,7 +193,7 @@ input {
 /*----------------------Estilos Contact-----------------------*/
 
 .main-contact {
-  background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+  background-image: url(../images/index/skyscrapers-blue-sky-1.jpg);
   background-position: center;
   background-size: cover;
   height: 78vh;
@@ -264,7 +264,7 @@ input {
 
 /*----------------------Estilos About Us-----------------------*/
 .main-about {
-  background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+  background-image: url(../images/index/skyscrapers-blue-sky-1.jpg);
   background-position: center;
   background-size: cover;
   height: 78vh;
@@ -1094,7 +1094,7 @@ footer li {
 
   /* About Us*/
   .main-about {
-    background-image: url(../images/skyscrapers-blue-sky-1.jpg);
+    background-image: url(../images/index/skyscrapers-blue-sky-1.jpg);
     height: 78vh;
   }
   .aboutUs-container h2 {
