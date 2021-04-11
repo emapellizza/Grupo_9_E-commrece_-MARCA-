@@ -1,7 +1,7 @@
 //Validaciones del formulario de Registro
 
 const { body } = require("express-validator");
-const validateRegister = [
+const validateUser = [
     body("firstName").notEmpty().withMessage("* Debes completar el nombre"),
     body("lastName").notEmpty().withMessage("* Debes completar el apellido"),
     body("dateOfBirth").isDate().withMessage("* Debes ingresar una fecha válida"),
@@ -13,4 +13,4 @@ const validateRegister = [
     
   ];
 
-  module.exports = validateRegister;
+  module.exports = validateUser;

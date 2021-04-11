@@ -1,39 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { body } = require("express-validator");
-const multer = require("multer");
-const path = require("path");
+
+
 const productsController = require("../controllers/productsController");
-
-// Multer
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../public/images/products"));
-  },
-  filename: (req, file, cb) => {
-    const fileName = "product-" + Date.now() + path.extname(file.originalname);
-    cb(null, fileName);
-  },
-});
-
-const uploadProduct = multer({ storage });
-
-//Validaciones del formulario de Registro
-const validateRegister = [
-  body("marca").notEmpty().withMessage("* Debes seleccionar una Marca"),
-  body("modelo").notEmpty().withMessage("* Debes ingresar un modelo"),
-  body("precio").notEmpty().withMessage("* Debes ingresar un precio"),
-  body("categoria").notEmpty().withMessage("* Debes seleccionar una categoria"),
-  body("genero").notEmpty().withMessage("* Debes seleccionar un genero"),
-  body("shortDescription")
-    .notEmpty()
-    .withMessage("* Debes agregar una breve descripcion"),
-  body("longDescription")
-    .notEmpty()
-    .withMessage("* Debes agregar una descripcion"),
-  body("talles").notEmpty().withMessage("* Debes seleccionar los talles"),
-  body("colores").notEmpty().withMessage("* Debes seleccionar los colores"),
-];
+const validateRegister = require("../middlewares/valRegProduct")
+const uploadProduct = require("../middlewares/multerMiddProduct");
 
 // Listado de productos
 router.get("/", productsController.listAll);

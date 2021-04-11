@@ -9,5 +9,16 @@
     "password2": "$2b$10$vc.WeP5rugoqcHr9Pf/IGOq9NzgFUTTZ16z05WGgxfrUunCJLxFYa",
     "state": "activo",
     "id": 1
+  },
+  {
+    "imageUser": "user-1618152302943.png",
+    "firstName": "Emanuel",
+    "lastName": "Pellizza",
+    "dateOfBirth": "1991-11-28",
+    "email": "emapellizza@gmail.com",
+    "password": "$2b$10$kSFizh3LTmt0hKp6SBuy9.LjNn9I6ro8fiJy2beyJyGsZnqJiVL.y",
+    "password2": "$2b$10$6UTzXYV.E7.oGgCzqA/DFeiHUGgwJWAgW9elrVJpbxXlPwnWyIXES",
+    "state": "activo",
+    "id": 2
   }
 ]
