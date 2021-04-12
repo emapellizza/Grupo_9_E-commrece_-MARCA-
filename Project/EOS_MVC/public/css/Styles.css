@@ -93,6 +93,9 @@ input {
 .menu-header i {
   color: #977a58;
 }
+.user-header {
+  max-width: 50px;
+}
 
 /* ----------------------Estilos index-----------------------*/
 
@@ -977,9 +980,6 @@ footer li {
   }
   .busqueda-header {
     width: 40%;
-  }
-  .user-header {
-    max-width: 50px;
   }
 
   /* Footer */
