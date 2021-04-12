@@ -34,21 +34,19 @@
             />
           </div>
           <% if (locals.errors && errors.email){%>
-            <div class="text-danger"> 
-               <%=errors.email.msg%>
-            </div>
+          <div class="text-danger"><%=errors.email.msg%></div>
           <%}%>
 
-          <div>
+          <div class="forgot-pass">
             <a href="#">Olvidaste tu contraseña?</a>
           </div>
+
           <!--
           <div class="checkbox-reg-log">
             <input type="checkbox" name="conectado" id="conectado" />
             <label for="conectado">Permanecer conectado</label>
           </div>-->
-          <hr>
-          <hr>
+
           <div class="boton-reg-log boton-log">
             <button type="submit">INGRESAR</button>
           </div>

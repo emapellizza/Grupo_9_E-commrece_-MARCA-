@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="main-userList">
+      <h3>- LISTADO DE USUARIOS -</h3>
+      <% for( let i = 0; i < users.length; i++ ) { %>
+
+      <a
+        class="userList-user-container"
+        href="/users/detail/<%= users[i].id %>"
+      >
+        <div>
+          <img
+            class="userList-img profile-pic"
+            src="/images/users/<%= users[i].imageUser %>"
+            alt=""
+          />
+        </div>
+        <div class="userList-nombre">
+          <p><%= users[i].firstName %> <%= users[i].lastName %></p>
+        </div>
+      </a>
+
+      <% } %>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

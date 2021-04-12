@@ -1,14 +1,13 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const tablaJson = require('../data/jsonManager');
+const tablaJson = require("../data/jsonManager");
 const usersJson = tablaJson("users");
 
 const usersController = {
-
   listAll: function (req, res) {
-    let users = usersJson.all()
+    let users = usersJson.all();
 
-    return res.render("./products/list", { users });
+    return res.render("./users/list", { users });
   },
 
   register: function (req, res) {
@@ -19,16 +18,15 @@ const usersController = {
     // Validacion
     let errors = validationResult(req);
 
-    let userInDb = usersJson.findByField("email",req.body.email);
-    if(userInDb){
-      return res.render("users/register",{
+    let userInDb = usersJson.findByField("email", req.body.email);
+    if (userInDb) {
+      return res.render("users/register", {
         errors: {
           email: {
-            msg: "Este email ya esta registrado"
-          }
+            msg: "Este email ya esta registrado",
+          },
         },
-        oldData: req.body
-
+        oldData: req.body,
       });
     }
 
@@ -42,7 +40,7 @@ const usersController = {
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         password2: bcrypt.hashSync(req.body.confirmPassword, 10),
-        state: "activo"
+        state: "activo",
       };
 
       usersJson.create(user);
@@ -56,18 +54,22 @@ const usersController = {
     }
   },
 
-  profile:function(req,res) {
-    res.render("users/profile",{
-      user: req.session.userLogged
+  profile: function (req, res) {
+    res.render("users/profile", {
+      user: req.session.userLogged,
     });
-
   },
 
-  logout: function(req,res){
-    req.session.destroy();//borra la session
+  findById: (req, res) => {
+    let userDetail = usersJson.find(req.params.idUser);
+    //"./users/detail"
+    res.render("users/detail", { userDetail });
+  },
+
+  logout: function (req, res) {
+    req.session.destroy(); //borra la session
     return res.redirect("/");
   },
-
 };
 
 module.exports = usersController;

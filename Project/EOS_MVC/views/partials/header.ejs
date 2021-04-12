@@ -16,23 +16,29 @@
 
   <% if (locals.isLogged){ %>
   <nav class="menu-header">
-    <a href="/" class="items-menu-header">Home</a>
-    <a href="/products/cart" class="items-menu-header">Carrito</a>
+    <a href="#" class="items-menu-header">Mis Compras</a>
+    <a href="#" class="items-menu-header"
+      >Favoritos <i class="fas fa-heart"></i
+    ></a>
+    <a href="/products/cart" class="items-menu-header"
+      >Carrito <i class="fas fa-shopping-bag"></i
+    ></a>
   </nav>
-
   <ul>
     <a href="/users/profile">Ver Perfil</a>
     <hr />
     <a href="/users/logout">Salir</a>
   </ul>
-  <br />
-  <img src="/images/users/ + <% locals.imageUser %> " />
+  <img class="user-header" src="/images/users/default-user-icon.png" />
+
   <% } else {%>
+
   <nav class="menu-header">
-    <a href="/" class="items-menu-header">Home</a>
-    <a href="/users/register" class="items-menu-header">Registrarse</a>
-    <a href="/users/login" class="items-menu-header">Ingresar</a>
-    <a href="/products/cart" class="items-menu-header">Carrito</a>
+    <a href="/users/register" class="items-menu-header">Creá tu cuenta</a>
+    <a href="/users/login" class="items-menu-header">Ingresá</a>
+    <a href="/products/cart" class="items-menu-header"
+      >Carrito <i class="fas fa-shopping-bag"></i
+    ></a>
   </nav>
   <%}%>
 </header>

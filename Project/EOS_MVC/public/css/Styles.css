@@ -90,6 +90,9 @@ input {
   display: none;
   color: #977a58;
 }
+.menu-header i {
+  color: #977a58;
+}
 
 /* ----------------------Estilos index-----------------------*/
 
@@ -260,7 +263,6 @@ input {
   font-size: 20px;
   margin: 20px 0px;
 }
-
 
 /*----------------------Estilos About Us-----------------------*/
 .main-about {
@@ -629,6 +631,14 @@ input {
 .text-log {
   margin-top: 10px;
 }
+.contenedor-campos-reg-log {
+  margin-top: 1vh;
+}
+.forgot-pass {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
 
 /* --------------Estilos newProduct-------------- */
 
@@ -810,12 +820,12 @@ footer li {
 .container-product img {
   width: 100%;
   padding: 20px;
-  border-bottom: 2px solid #ddc4a7;
 }
 .product-descpription {
   text-transform: capitalize;
   padding: 10px;
   padding-top: 5px;
+  border-top: 2px solid #ddc4a7;
 }
 .product-descpription h3 {
   font-weight: 400;
@@ -857,6 +867,33 @@ footer li {
 .user-data {
   font-size: 20px;
 }
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+/*---------------------- User List -----------------------*/
+.main-userList h3 {
+  padding: 2vh 0;
+  text-align: center;
+}
+
+.userList-user-container {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  margin: 0 10vw;
+  border-top: 1px solid black;
+  padding: 5px 0;
+}
+.userList-img {
+  max-width: 50px;
+}
+
+.userList-nombre {
+  font-weight: 600;
+}
+
 /*----------------------Estilos pagina ERROR-----------------------*/
 
 .main-error {
@@ -940,6 +977,9 @@ footer li {
   }
   .busqueda-header {
     width: 40%;
+  }
+  .user-header {
+    max-width: 50px;
   }
 
   /* Footer */
@@ -1040,13 +1080,28 @@ footer li {
 
   /* Productos */
   .container-product {
-    width: 33vw;
+    width: 30vw;
+    transition: 0.1s;
   }
   .container-product:hover {
     box-shadow: 0 0 3px rgb(100, 100, 100);
   }
+  .product-descpription {
+    transition: 0.1s;
+  }
+  .container-product:hover .product-descpription {
+    background-color: #ddc4a7;
+  }
   .navbar-products {
     margin-top: 15px;
+    padding: 1vh 2vw;
+  }
+  .navbar-products h2 {
+    font-size: 30px;
+  }
+  .all-products-container {
+    padding: 0 2vw;
+    justify-content: space-between;
   }
 
   /* Error */

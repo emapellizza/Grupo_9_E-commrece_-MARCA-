@@ -20,5 +20,16 @@
     "password2": "$2b$10$6UTzXYV.E7.oGgCzqA/DFeiHUGgwJWAgW9elrVJpbxXlPwnWyIXES",
     "state": "activo",
     "id": 2
+  },
+  {
+    "imageUser": "user-1618197131739.png",
+    "firstName": "Elon",
+    "lastName": "Musk",
+    "dateOfBirth": "2000-02-02",
+    "email": "elon@musk.com",
+    "password": "$2b$10$XOZ1nBipdjkzS0qK.VT2geyFrgQlLnuBEufD1bMmOSDpFtv3N8uXO",
+    "password2": "$2b$10$58mGY2WwCBpvZ1qcPb7el.z6JbKJHO9s3RDa2/Y.cM/2sgalUtqc6",
+    "state": "activo",
+    "id": 3
   }
 ]

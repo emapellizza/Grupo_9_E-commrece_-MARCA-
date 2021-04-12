@@ -1,51 +1,46 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const tablaJson = require('../data/jsonManager');
+const tablaJson = require("../data/jsonManager");
 const userList = tablaJson("users");
 
-
 const loginController = {
+  login: function (req, res) {
+    return res.render("./users/login");
+  },
 
-    login: function (req, res) {
+  loginProcess: function (req, res) {
+    //agregar validaciones
+    //1 ver si estoy registrado
+    let userToLog = userList.findByField("email", req.body.email);
 
-        return res.render("./users/login");
-    },
-
-    loginProcess: function(req,res){
-       //agregar validaciones
-       //1 ver si estoy registrado
-       let userToLog = userList.findByField("email",req.body.email);
-      
-       if(userToLog){
-           let checkPassword = bcrypt.compareSync(req.body.password,userToLog.password);
-           if(checkPassword){
-               delete userToLog.password;//por seguridad
-               delete userToLog.password2;
-               req.session.userLogged = userToLog;//registro de 
-               return res.redirect("/");
-           
-       }
-        return res.render("./users/login",{ 
-            errors:{
-                email: {
-                    msg: "password invalida"
-                }
-            }
-        });
+    if (userToLog) {
+      let checkPassword = bcrypt.compareSync(
+        req.body.password,
+        userToLog.password
+      );
+      if (checkPassword) {
+        delete userToLog.password; //por seguridad
+        delete userToLog.password2;
+        req.session.userLogged = userToLog; //registro de
+        return res.redirect("/");
+      }
+      return res.render("./users/login", {
+        errors: {
+          email: {
+            msg: "password invalida",
+          },
+        },
+      });
     }
-    
-       return res.render("./users/login",{ 
-           errors:{
-               email: {
-                   msg: " Usuario no registrado"
-               }
-           }
-       })
 
-    },
-
-      
-
+    return res.render("./users/login", {
+      errors: {
+        email: {
+          msg: "* El usuario o la contraseña son incorrectos",
+        },
+      },
+    });
+  },
 };
 
 module.exports = loginController;
