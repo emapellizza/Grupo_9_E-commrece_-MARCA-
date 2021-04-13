@@ -6,7 +6,6 @@
     "dateOfBirth": "2021-04-07",
     "email": "pablo@perez.com",
     "password": "$2b$10$nLLCLVb1vj03O95NTgrFYe/Pk2188V5BSulApqlrjxndGmOzSxWwK",
-    "password2": "$2b$10$vc.WeP5rugoqcHr9Pf/IGOq9NzgFUTTZ16z05WGgxfrUunCJLxFYa",
     "state": "activo",
     "id": 1
   },
@@ -17,7 +16,6 @@
     "dateOfBirth": "1991-11-28",
     "email": "emapellizza@gmail.com",
     "password": "$2b$10$kSFizh3LTmt0hKp6SBuy9.LjNn9I6ro8fiJy2beyJyGsZnqJiVL.y",
-    "password2": "$2b$10$6UTzXYV.E7.oGgCzqA/DFeiHUGgwJWAgW9elrVJpbxXlPwnWyIXES",
     "state": "activo",
     "id": 2
   },
@@ -28,7 +26,6 @@
     "dateOfBirth": "2000-02-02",
     "email": "elon@musk.com",
     "password": "$2b$10$XOZ1nBipdjkzS0qK.VT2geyFrgQlLnuBEufD1bMmOSDpFtv3N8uXO",
-    "password2": "$2b$10$58mGY2WwCBpvZ1qcPb7el.z6JbKJHO9s3RDa2/Y.cM/2sgalUtqc6",
     "state": "activo",
     "id": 3
   }

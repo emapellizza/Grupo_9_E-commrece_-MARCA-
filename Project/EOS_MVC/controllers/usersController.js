@@ -39,7 +39,6 @@ const usersController = {
         dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        password2: bcrypt.hashSync(req.body.confirmPassword, 10),
         state: "activo",
       };
 
