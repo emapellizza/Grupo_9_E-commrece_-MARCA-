@@ -10,6 +10,12 @@ const usersController = {
     return res.render("./users/list", { users });
   },
 
+  show: (req, res) => {
+    let userDetail = usersJson.find(req.params.idUser);
+
+    res.render("./users/profile", { userDetail });
+  },
+
   register: function (req, res) {
     return res.render("./users/register");
   },
@@ -65,10 +71,6 @@ const usersController = {
     res.render("users/detail", { userDetail });
   },
 
-  logout: function (req, res) {
-    req.session.destroy(); //borra la session
-    return res.redirect("/");
-  },
 };
 
 module.exports = usersController;

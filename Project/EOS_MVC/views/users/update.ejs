@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="main-reg-log">
+      <div class="container-all-reg-log">
+        <h2>Editar Usuario  <%=userToEdit.lastName%> </h2>
+
+        <form
+          action="/users/edit?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="contenedor-campos-reg-log">
+            <label for="imagenUsuario" class="label-reg-log">Imagen</label>
+            <input
+              type="file"
+              id="imagenUsuario"
+              name="imagenUsuario"
+              accept=".png, .jpg, .jpeg"
+            />
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="firstName" class="label-reg-log">Nombre</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              value="<%=userToEdit.firstName %>"
+            />
+
+           
+            <% if (locals.errors && errors.firstName) { %>
+            <div class="text-danger"><%= errors.firstName.msg %></div>
+            <% } %>
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="lastName" class="label-reg-log">Apellido</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              value="<%=userToEdit.lastName%>"
+            />
+          </div>
+          <% if (locals.errors && errors.lastName) { %>
+          <div class="text-danger"><%= errors.lastName.msg %></div>
+          <% } %>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="dateOfBirth" class="label-reg-log"
+              >Fecha de Nacimiento</label
+            >
+            <input
+              type="date"
+              name="dateOfBirth"
+              id="dateOfBirth"
+              value="<%= userToEdit.dateOfBirth%>"
+            />
+          </div>
+          <% if (locals.errors && errors.dateOfBirth) { %>
+          <div class="text-danger"><%= errors.dateOfBirth.msg %></div>
+          <% } %>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="email" class="label-reg-log">Correo Electrónico</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value="<%= userToEdit.email%>"
+            />
+          </div>
+          <% if (locals.errors && errors.email) { %>
+          <div class="text-danger"><%= errors.email.msg %></div>
+          <% } %>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="password" class="label-reg-log">Contraseña</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <% if (locals.errors && errors.password) { %>
+          <div class="text-danger"><%= errors.password.msg %></div>
+          <% } %>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="confirmPassword" class="label-reg-log"
+              >Repetir Contraseña</label
+            >
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+            />
+          </div>
+          <% if (locals.errors && errors.password2) { %>
+          <div class="text-danger"><%= errors.password2.msg %></div>
+          <% } %>
+
+          <div class="checkbox-reg-log">
+            <input type="checkbox" name="newsletter" id="newsletter" />
+            <label for="newsletter" class="text-checkbox-reg-log"
+              >Suscribirse al newsletter</label
+            >
+          </div>
+
+          <div class="checkbox-reg-log">
+            <input
+              type="checkbox"
+              name="terminos-condiciones"
+              id="terminos-condiciones"
+              required
+            />
+            <label for="terminos-condiciones" class="text-checkbox-reg-log"
+              >Acepto los <a href="#">Términos y Condiciones</a></label
+            >
+          </div>
+
+          <div class="boton-reg-log">
+            <button type="submit">CREAR CUENTA</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

@@ -8,6 +8,11 @@ const loginController = {
     return res.render("./users/login");
   },
 
+  logout: function(req,res){
+    req.session.destroy();//borra la session
+    return res.redirect("/");
+  },
+
   loginProcess: function (req, res) {
     //agregar validaciones
     //1 ver si estoy registrado
@@ -20,7 +25,6 @@ const loginController = {
       );
       if (checkPassword) {
         delete userToLog.password; //por seguridad
-        delete userToLog.password2;
         req.session.userLogged = userToLog; //registro de
         return res.redirect("/");
       }

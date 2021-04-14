@@ -20,40 +20,6 @@ const productsController = {
     return res.render("./products/cart");
   },
 
-  newProduct: function (req, res) {
-    return res.render("./products/new");
-  },
-
-  saveProduct: function (req, res) {
-    // Validacion
-    let errors = validationResult(req);
-
-    if (errors.isEmpty()) {
-      // Almaceno los datos del producto
-      const product = {
-        imagen: req.file.filename,
-        marca: req.body.marca,
-        modelo: req.body.modelo,
-        precio: req.body.precio,
-        categoria: req.body.categoria,
-        genero: req.body.genero,
-        shortDescripcion: req.body.shortDescription,
-        longDescripcion: req.body.longDescription,
-        talles: req.body.talles,
-        colores: req.body.colores,
-        estado: "activo",
-      };
-
-      let productId = productsJson.create(product);
-
-      res.redirect("./detail/" + productId);
-    } else {
-      return res.render("products/new", {
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    }
-  },
 };
 
 module.exports = productsController;

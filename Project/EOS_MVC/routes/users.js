@@ -10,26 +10,16 @@ const validateRegister = require("../middlewares/valRegMiddleware");
 
 // Registro
 router.get("/register", guestMiddleware, usersController.register);
-router.post(
-  "/register",
-  uploadUser.single("imagenUsuario"),
-  validateRegister,
-  usersController.saveUser
-);
+router.post("/register",uploadUser.single("imagenUsuario"),validateRegister,usersController.saveUser);
 
 // Logeo
 router.get("/login", guestMiddleware, loginController.login);
 router.post("/login", loginController.loginProcess);
-router.get("/logout", usersController.logout);
+router.get("/logout", loginController.logout);
 
 // Perfil
 router.get("/profile", authMiddleware, usersController.profile);
 
-// ADMINS
-// Listado de Usuarios
-router.get("/list", usersController.listAll);
-
 //Detalle de usuario buscado
 router.get("/detail/:idUser", usersController.findById);
-
 module.exports = router;

@@ -28,5 +28,15 @@
     "password": "$2b$10$XOZ1nBipdjkzS0qK.VT2geyFrgQlLnuBEufD1bMmOSDpFtv3N8uXO",
     "state": "activo",
     "id": 3
+  },
+  {
+    "imageUser": "user-1618407269033.png",
+    "firstName": "administrador",
+    "lastName": "Admin",
+    "dateOfBirth": "2021-01-01",
+    "email": "admin@admin.com",
+    "password": "$2b$10$S4Z01P8PJQpp5DrPJSmeeu3t90uC.V/7NcCajLlxJs.kZk6dPz/gS",
+    "state": "activo",
+    "id": 4
   }
 ]
