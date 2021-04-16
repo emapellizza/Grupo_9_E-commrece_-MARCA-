@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Orden";
+    let alias = "Orders";
 
     let cols = {
         id_order: {
@@ -19,7 +19,7 @@ module.exports = function (sequelize,dataTypes) {
         },
         total: {
             type: dataTypes.DECIMAL(6,2)
-        }
+        },
         shipping_info: {
             type: dataTypes.VARCHAR(45)
         }
@@ -30,8 +30,18 @@ module.exports = function (sequelize,dataTypes) {
         timestamps: false
     }
 
-    const Orden = sequelize.define(alias, cols, config);
+    const Order = sequelize.define(alias, cols, config);
 
-    return Orden;
+    // Asociaciones
+    Order.associate = function (models) {
+        // Usuario_Producto
+        Order.belongsTo(models.User_product, {
+            foreignKey: "id_user_product",
+            as: "user_product"
+        })
+
+    }
+
+    return Order;
 
 }

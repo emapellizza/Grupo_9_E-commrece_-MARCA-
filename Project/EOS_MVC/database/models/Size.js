@@ -1,35 +1,35 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Colors";
+    let alias = "Sizes";
 
     let cols = {
-        id_color: {
+        id_size: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement = true
         },
-        color: {
+        talle: {
             type: dataTypes.VARCHAR(45)
         }
     }
 
     let config = {
-        tablename: "colors",
+        tablename: "sizes",
         timestamps: false
     }
 
-    const Color = sequelize.define(alias, cols, config);
+    const Size = sequelize.define(alias, cols, config);
 
-    Color.assiociate = function(models) {
-        Color.belongsToMany(models.Products, {
+    Size.associate = function(models) {
+        Size.belongsToMany(models.Product, {
             as: "products",
-            through: "product_color",
-            foreignKey: "id_color",
+            through: "product_size",
+            foreignKey: "id_size",
             otherKey: "id_product",
             timestamps: false
         })
     }
 
-    return Color;
+    return Size;
 
 }

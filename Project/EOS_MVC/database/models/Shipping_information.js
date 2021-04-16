@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Direccion_Envio";
+    let alias = "Shipping_information";
 
     let cols = {
         id_shipping_information: {
@@ -33,8 +33,16 @@ module.exports = function (sequelize,dataTypes) {
         timestamps: false
     }
 
-    const Direccion_Envio = sequelize.define(alias, cols, config);
+    const Shipping_information = sequelize.define(alias, cols, config);
 
-    return Direccion_Envio;
+    // -- Asociaciones --
+    Shipping_information.associate = function(models){
+        Shipping_information.belongsTo(models.Users, {
+            as: "users",
+            foreignKey: "id_user"
+        })
+    }
+
+    return Shipping_information;
 
 }

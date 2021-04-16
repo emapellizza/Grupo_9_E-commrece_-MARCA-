@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Usuarios";
+    let alias = "Users";
 
     let cols = {
         id_user: {
@@ -39,8 +39,25 @@ module.exports = function (sequelize,dataTypes) {
         timestamps: false
     }
 
-    const Usuarios = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
 
-    return Usuarios;
+    //Asociaciones
+    User.associate = function(models){
+        // Direcciones de envio
+        User.hasMany(models.Shipping_information, {
+            as: "shipping_information",
+            foreignKey: "id_user"
+        })
+        // Productos
+        User.belongsToMany(models.Products, {
+            as: "products",
+            through: "user_product",
+            foreignKey: "id_user",
+            otherKey: "id_product",
+            timestamps: false
+        })
+    }
+
+    return User;
 
 }

@@ -1,25 +1,25 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Talle";
+    let alias = "Genres";
 
     let cols = {
-        id_size: {
+        id_genre: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement = true
         },
-        talle: {
+        genero: {
             type: dataTypes.VARCHAR(45)
         }
     }
 
     let config = {
-        tablename: "sizes",
+        tablename: "genres",
         timestamps: false
     }
 
-    const Talle = sequelize.define(alias, cols, config);
+    const Genre = sequelize.define(alias, cols, config);
 
-    return Talle;
+    return Genre;
 
 }

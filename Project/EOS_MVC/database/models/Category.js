@@ -1,25 +1,25 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Marca";
+    let alias = "Categories";
 
     let cols = {
-        id_brand: {
+        id_category: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement = true
         },
-        marca: {
+        categoria: {
             type: dataTypes.VARCHAR(45)
         }
     }
 
     let config = {
-        tablename: "brands",
+        tablename: "categories",
         timestamps: false
     }
 
-    const Marca = sequelize.define(alias, cols, config);
+    const Category = sequelize.define(alias, cols, config);
 
-    return Marca;
+    return Category;
 
 }

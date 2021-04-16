@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Usuario_Producto";
+    let alias = "User_product";
 
     let cols = {
         id_user_product: {
@@ -27,8 +27,8 @@ module.exports = function (sequelize,dataTypes) {
         timestamps: false
     }
 
-    const Usuario_Producto = sequelize.define(alias, cols, config);
+    const User_product = sequelize.define(alias, cols, config);
 
-    return Usuario_Producto;
+    return User_product;
 
 }
