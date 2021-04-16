@@ -897,6 +897,10 @@ footer li {
   font-weight: 600;
 }
 
+.userList-eliminar {
+  margin-left: 50px;
+}
+
 /*----------------------Estilos pagina ERROR-----------------------*/
 
 .main-error {

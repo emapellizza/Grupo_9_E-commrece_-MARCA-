@@ -20,7 +20,7 @@ router.get("/",adminController.view)
 //lista productos
 router.get("/products", productsController.listAll);//admin/products
 //lista usuarios
-router.get("/Users", usersController.listAll);//admin/users
+router.get("/users", usersController.listAll);//admin/users
 
 
 // Crear un nuevo producto:

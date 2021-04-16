@@ -19,19 +19,26 @@ const loginController = {
     let userToLog = userList.findByField("email", req.body.email);
 
     if (userToLog) {
+
       let checkPassword = bcrypt.compareSync(
         req.body.password,
         userToLog.password
       );
-      if (checkPassword) {
+
+      if (checkPassword) { 
         delete userToLog.password; //por seguridad
-        req.session.userLogged = userToLog; //registro de
+        req.session.userLogged = userToLog; //login de usuario
+
+        if (userToLog.email == "admin@admin.com") {
+          return res.redirect("../admin/");
+        }
         return res.redirect("/");
-      }
+      } 
+       
       return res.render("./users/login", {
         errors: {
           email: {
-            msg: "password invalida",
+            msg: "* Password inválida",
           },
         },
       });
