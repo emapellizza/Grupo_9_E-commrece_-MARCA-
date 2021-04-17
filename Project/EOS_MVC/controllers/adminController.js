@@ -4,7 +4,7 @@ const tablaJson = require('../data/jsonManager');
 const usersJson = tablaJson("users");
 const productJson = tablaJson("products");
 
-let adminEmail = "admin@admin";
+let adminEmail = "admin@admin.com";
 
 const adminController = {
 
@@ -15,7 +15,7 @@ const adminController = {
 
     newProduct: function (req, res) {
 
-      //  let userToLog = userList.findByField("email","admin@admin");
+      //  let userToLog = userList.findByField("email","admin@admin.com");
     
         if(req.session.adminLogged){
             console.log ("SESSION DE ADMIN!!!")

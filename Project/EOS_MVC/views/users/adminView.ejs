@@ -5,11 +5,26 @@
   <body>
     <%- include("../partials/header.ejs") %>
 
-    <main class="main-reg-log">
+    <main >
   <h1>ADMIN</h1>
-        <div>
-        
-        </div>
+
+        <div>  
+          <form action="/admin/editproduct/" method="POST" class="busqueda-header">
+            <input type="text" placeholder="Product ID" name="searchproduct" />
+            <button type="submit">
+              <i class="fas fa-search logoLupa"></i>
+            </button>
+          </form>
+                </div>
+
+          <div>  
+            <form action="/admin/edituser/" method="GET" class="busqueda-header">
+              <input type="text" placeholder="User ID" name="searchuser" />
+              <button type="submit">
+                <i class="fas fa-search logoLupa"></i>
+                 </button>
+              </form>
+            </div>                
 
     </main>
 
