@@ -6,10 +6,10 @@ module.exports = function (sequelize,dataTypes) {
         id_product: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement = true
+            autoIncrement: true
         },
         image: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         id_brand: {
             type: dataTypes.INTEGER(11)
@@ -24,10 +24,10 @@ module.exports = function (sequelize,dataTypes) {
             type: dataTypes.INTEGER(11)
         },
         short_description: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         long_description: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         available: {
             type: dataTypes.TINYINT

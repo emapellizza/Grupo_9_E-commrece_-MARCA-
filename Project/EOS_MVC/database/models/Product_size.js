@@ -6,7 +6,7 @@ module.exports = function (sequelize,dataTypes) {
         id_product_size: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement = true
+            autoIncrement: true
         },
         id_product: {
             type: dataTypes.INTEGER(11)

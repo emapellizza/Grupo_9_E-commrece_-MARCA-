@@ -14,15 +14,7 @@
           method="POST"
           enctype="multipart/form-data"
         >
-          <div class="contenedor-campos-reg-log">
-            <label for="imagenUsuario" class="label-reg-log">Imagen</label>
-            <input
-              type="file"
-              id="imagenUsuario"
-              name="imagenUsuario"
-              accept=".png, .jpg, .jpeg"
-            />
-          </div>
+          
 
           <div class="contenedor-campos-reg-log">
             <label for="firstName" class="label-reg-log">Nombre</label>
@@ -61,6 +53,7 @@
               name="dateOfBirth"
               id="dateOfBirth"
               value="<%= locals.old && old.dateOfBirth ? old.dateOfBirth : ''%>"
+              required
             />
           </div>
           <% if (locals.errors && errors.dateOfBirth) { %>

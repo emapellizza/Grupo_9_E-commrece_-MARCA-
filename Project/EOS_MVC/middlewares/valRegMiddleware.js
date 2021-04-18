@@ -4,7 +4,6 @@ const { body } = require("express-validator");
 const validateUser = [
     body("firstName").notEmpty().withMessage("* Debes completar el nombre"),
     body("lastName").notEmpty().withMessage("* Debes completar el apellido"),
-    body("dateOfBirth").isDate().withMessage("* Debes ingresar una fecha válida"),
     body("email")
       .isEmail().withMessage("* Debes completar el Email con una dirección válida"),
     body("password")

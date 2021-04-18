@@ -6,10 +6,10 @@ module.exports = function (sequelize,dataTypes) {
         id_category: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement = true
+            autoIncrement: true
         },
         category: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         }
     }
 

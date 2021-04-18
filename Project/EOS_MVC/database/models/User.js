@@ -6,25 +6,25 @@ module.exports = function (sequelize,dataTypes) {
         id_user: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement = true
+            autoIncrement: true
         },
         image: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         first_name: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         last_name: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
-        date-of-birth: {
+        date_of_birth: {
             type: dataTypes.DATEONLY
         },
         email: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         password: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         admin: {
             type: dataTypes.TINYINT

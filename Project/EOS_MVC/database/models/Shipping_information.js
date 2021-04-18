@@ -6,22 +6,22 @@ module.exports = function (sequelize,dataTypes) {
         id_shipping_information: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement = true
+            autoIncrement: true
         },
         address: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         city: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         state: {
-            type: dataTypes.VARCHAR(45)  
+            type: dataTypes.STRING(45)  
         },
         postal_code: {
-            type: dataTypes.VARCHAR(45)    
+            type: dataTypes.STRING(45)    
         },
         phone_number: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         },
         id_user: {
             type: dataTypes.INTEGER(11)

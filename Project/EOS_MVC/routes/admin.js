@@ -25,7 +25,7 @@ router.get("/users", usersController.listAll);//admin/users
 
 // Crear un nuevo producto:
 router.get("/new", adminController.newProduct);
-router.post("/new",uploadProduct.single("imageProduct"),validateRegister,adminController.saveProduct);
+router.post("/new",uploadProduct.single("productImage"),validateRegister,adminController.saveProduct);
 //borrar un producto
 
 // Detalle de producto

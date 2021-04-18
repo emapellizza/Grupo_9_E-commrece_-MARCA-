@@ -6,7 +6,7 @@ module.exports = function (sequelize,dataTypes) {
         id_order: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement = true
+            autoIncrement: true
         },
         id_user_product: {
             type: dataTypes.INTEGER(11)
@@ -21,7 +21,7 @@ module.exports = function (sequelize,dataTypes) {
             type: dataTypes.DECIMAL(6,2)
         },
         shipping_info: {
-            type: dataTypes.VARCHAR(45)
+            type: dataTypes.STRING(45)
         }
     }
 

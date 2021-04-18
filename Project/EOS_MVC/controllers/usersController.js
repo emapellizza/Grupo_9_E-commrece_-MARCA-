@@ -3,12 +3,18 @@ const bcrypt = require("bcrypt");
 const tablaJson = require("../data/jsonManager");
 const usersJson = tablaJson("users");
 
-const usersController = {
 
+const usersController = {
 
   listAll: function (req, res) {
     if(req.session.adminLogged){
+
+    // con JSON: 
     let users = usersJson.all();
+
+    //con DB
+      
+
 
     return res.render("./users/list", { users });
     }
@@ -35,7 +41,7 @@ const usersController = {
       return res.render("users/register", {
         errors: {
           email: {
-            msg: "Este email ya esta registrado",
+            msg: "* Este email ya esta registrado",
           },
         },
         oldData: req.body,
@@ -45,20 +51,21 @@ const usersController = {
     if (errors.isEmpty()) {
       // Almaceno los datos del producto
       const user = {
-        imageUser: req.file.filename,
+        imageUser: "",
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
-        phone: req.body.telefono,
+        phone: req.body.phone,
         password: bcrypt.hashSync(req.body.password, 10),
         admin: "false",
-        state: "true",
+        active: "true",
       };
 
       usersJson.create(user);
 
       res.redirect("profile");
+
     } else {
       return res.render("users/register", {
         errors: errors.mapped(),
@@ -71,8 +78,8 @@ const usersController = {
   
     if(req.session.adminLogged){
      return(res.redirect("/admin")); 
-    }
-
+    } 
+    
     res.render("users/profile", {
       user: req.session.userLogged,
     });
