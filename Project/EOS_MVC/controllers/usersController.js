@@ -4,10 +4,16 @@ const tablaJson = require("../data/jsonManager");
 const usersJson = tablaJson("users");
 
 const usersController = {
+
+
   listAll: function (req, res) {
+    if(req.session.adminLogged){
     let users = usersJson.all();
 
     return res.render("./users/list", { users });
+    }
+    else
+    return res.redirect("/");
   },
 
   show: (req, res) => {

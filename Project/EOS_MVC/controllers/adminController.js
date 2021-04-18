@@ -60,7 +60,6 @@ const adminController = {
 
     updateUser : function (req,res){
 
-
       if(req.session.adminLogged){
         let userId = req.params.idUser;
         //busco el id en la lista 
