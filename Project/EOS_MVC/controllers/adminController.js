@@ -15,7 +15,7 @@ const adminController = {
 
     newProduct: function (req, res) {
 
-      //  let userToLog = userList.findByField("email","admin@admin.com");
+      //let userToLog = userList.findByField("email","admin@admin.com");
     
         if(req.session.adminLogged){
             console.log ("SESSION DE ADMIN!!!")
