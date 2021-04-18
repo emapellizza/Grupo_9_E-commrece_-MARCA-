@@ -60,23 +60,32 @@ const adminController = {
 
     updateUser : function (req,res){
 
-      let userId = req.params.idUser;
-      //busco el id en la lista 
-      let userToEdit = usersJson.find(userId);
 
-      res.render("./users/update",{userToEdit: userToEdit});
-
+      if(req.session.adminLogged){
+        let userId = req.params.idUser;
+        //busco el id en la lista 
+        let userToEdit = usersJson.find(userId);
+  
+        res.render("./users/update",{userToEdit: userToEdit});
+      }
+      else
+       return res.redirect("/");
 
     },
 
     updateProduct: function (req,res){
+
+
+      if(req.session.adminLogged){
 
       let prodId = req.params.idProduct;
 
       let productToEdit = productJson.find(prodId)
       
       res.render("./products/update",{productToEdit :productToEdit});
-
+      }
+      else
+       return res.redirect("/");
     },
 
 };
