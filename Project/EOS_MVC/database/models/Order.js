@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Orders";
+    let alias = "Order";
 
     let cols = {
         id_order: {
@@ -11,7 +11,7 @@ module.exports = function (sequelize,dataTypes) {
         id_user_product: {
             type: dataTypes.INTEGER(11)
         },
-        fecha: {
+        date: {
             type: dataTypes.DATE
         },
         items: {

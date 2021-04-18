@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Users";
+    let alias = "User";
 
     let cols = {
         id_user: {
@@ -8,16 +8,16 @@ module.exports = function (sequelize,dataTypes) {
             primaryKey: true,
             autoIncrement = true
         },
-        imagen: {
+        image: {
             type: dataTypes.VARCHAR(45)
         },
-        nombre: {
+        first_name: {
             type: dataTypes.VARCHAR(45)
         },
-        apellido: {
+        last_name: {
             type: dataTypes.VARCHAR(45)
         },
-        f_nacimiento: {
+        date-of-birth: {
             type: dataTypes.DATEONLY
         },
         email: {
@@ -29,7 +29,7 @@ module.exports = function (sequelize,dataTypes) {
         admin: {
             type: dataTypes.TINYINT
         },
-        activo: {
+        active: {
             type: dataTypes.TINYINT
         }
     }

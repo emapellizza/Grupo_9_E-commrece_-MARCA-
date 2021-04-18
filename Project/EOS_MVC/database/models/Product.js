@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Products";
+    let alias = "Product";
 
     let cols = {
         id_product: {
@@ -8,13 +8,13 @@ module.exports = function (sequelize,dataTypes) {
             primaryKey: true,
             autoIncrement = true
         },
-        imagen: {
+        image: {
             type: dataTypes.VARCHAR(45)
         },
-        id_marca: {
+        id_brand: {
             type: dataTypes.INTEGER(11)
         },
-        precio: {
+        price: {
             type: dataTypes.DECIMAL(6,2)
         },
         id_category: {
@@ -29,7 +29,7 @@ module.exports = function (sequelize,dataTypes) {
         long_description: {
             type: dataTypes.VARCHAR(45)
         },
-        disponible: {
+        available: {
             type: dataTypes.TINYINT
         }
     }
@@ -70,7 +70,7 @@ module.exports = function (sequelize,dataTypes) {
         // Marca
         Product.belongsTo(models.Brands, {
             as: "brands",
-            foreignKey: "id_marca" /* DEBERIA SER EN INGLES */
+            foreignKey: "id_brand" 
         })
         // Categoria
         Product.belongsTo(models.Categories, {

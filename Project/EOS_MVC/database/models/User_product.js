@@ -14,10 +14,10 @@ module.exports = function (sequelize,dataTypes) {
         id_product: {
             type: dataTypes.INTEGER(11)
         },
-        cantidad: {
+        quantity: {
             type: dataTypes.INTEGER(11)
         },
-        precio: {
+        price: {
             type: dataTypes.DECIMAL(6,2)
         }
     }

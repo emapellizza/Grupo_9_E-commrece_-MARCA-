@@ -8,19 +8,19 @@ module.exports = function (sequelize,dataTypes) {
             primaryKey: true,
             autoIncrement = true
         },
-        direccion: {
+        address: {
             type: dataTypes.VARCHAR(45)
         },
-        localidad: {
+        city: {
             type: dataTypes.VARCHAR(45)
         },
-        provincia: {
+        state: {
             type: dataTypes.VARCHAR(45)  
         },
-        codigo_postal: {
+        postal_code: {
             type: dataTypes.VARCHAR(45)    
         },
-        numero_telefono: {
+        phone_number: {
             type: dataTypes.VARCHAR(45)
         },
         id_user: {

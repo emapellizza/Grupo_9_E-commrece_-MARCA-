@@ -1,6 +1,6 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Brands";
+    let alias = "Brand";
 
     let cols = {
         id_brand: {
@@ -8,7 +8,7 @@ module.exports = function (sequelize,dataTypes) {
             primaryKey: true,
             autoIncrement = true
         },
-        marca: {
+        brand: {
             type: dataTypes.VARCHAR(45)
         }
     }
