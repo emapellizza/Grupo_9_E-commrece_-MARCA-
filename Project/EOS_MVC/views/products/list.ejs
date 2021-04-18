@@ -24,17 +24,17 @@
         <article class="container-product">
           <a href="/products/detail/<%= i %> ">
             <img
-              src="/images/products/<%= products[i].imagen %>"
+              src="/images/products/<%= products[i].image %>"
               alt="imagen producto"
             />
             <div class="product-descpription">
               <h3>
                 <strong
-                  ><%= products[i].marca + " " + products[i].modelo %></strong
+                  ><%= products[i].brand + " " + products[i].model %></strong
                 >
               </h3>
-              <p><%=products[i].shortDescripcion %></p>
-              <p><strong>$<%=products[i].precio %></strong></p>
+              <p><%=products[i].shortDescription %></p>
+              <p><strong>$<%=products[i].price %></strong></p>
             </div>
           </a>
         </article>

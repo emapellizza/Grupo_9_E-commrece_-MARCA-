@@ -50,8 +50,10 @@ const usersController = {
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
         email: req.body.email,
+        phone: req.body.telefono,
         password: bcrypt.hashSync(req.body.password, 10),
-        state: "activo",
+        admin: "false",
+        state: "true",
       };
 
       usersJson.create(user);

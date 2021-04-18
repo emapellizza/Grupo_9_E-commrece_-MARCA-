@@ -562,7 +562,6 @@ input {
 .main-reg-log form input {
   background-color: white;
   border: solid 1px grey;
-  margin-top: 5px;
   border-radius: 5px;
   padding: 0 5px;
   height: 30px;

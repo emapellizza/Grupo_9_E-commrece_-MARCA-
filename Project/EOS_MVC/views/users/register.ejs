@@ -81,6 +81,19 @@
           <% } %>
 
           <div class="contenedor-campos-reg-log">
+            <label for="phone" class="label-reg-log">Telefono</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              value="<%= locals.old && old.phone ? old.phone : ''%>"
+            />
+          </div>
+          <% if (locals.errors && errors.phone) { %>
+          <div class="text-danger"><%= errors.phone.msg %></div>
+          <% } %>
+
+          <div class="contenedor-campos-reg-log">
             <label for="password" class="label-reg-log">Contraseña</label>
             <input type="password" name="password" id="password" />
           </div>

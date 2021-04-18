@@ -17,19 +17,19 @@
         >
           
           <div class="contenedor-campos-newProduct">
-            <label for="imagenProducto">• Imagen/es</label>
+            <label for="imageProduct">• Imagen/es</label>
             <input
               type="file"
-              id="imagenProducto"
-              name="imagenProducto"
+              id="imageProduct"
+              name="imageProduct"
               accept=".png, .jpg, .jpeg"
               multiple
             />
           </div>
    
           <div class="contenedor-campos-newProduct">
-            <label for="marca">• Marca</label>
-            <select name="marca" id="marca" >
+            <label for="brand">• Marca</label>
+            <select name="brand" id="brand" >
               <option disabled selected>Seleccionar</option>
               <option value="Nike">Nike</option>
               <option value="Adidas">Adidas</option>
@@ -39,56 +39,56 @@
               <option value="Under Armour">Under Armour</option>
             </select>
 
-            <% if (locals.errors && errors.marca) { %>
-              <div class="text-danger"><%= errors.marca.msg %></div>
+            <% if (locals.errors && errors.brand) { %>
+              <div class="text-danger"><%= errors.brand.msg %></div>
             <% } %>
           </div>
   
           <div class="contenedor-campos-newProduct">
-            <label for="modelo">• Modelo</label>
-            <input type="text" name="modelo" id="modelo"
-            value="<%= locals.old && old.modelo ? old.modelo : ''%>"/>
+            <label for="model">• Modelo</label>
+            <input type="text" name="model" id="model"
+            value="<%= locals.old && old.model ? old.model : ''%>"/>
 
-            <% if (locals.errors && errors.modelo) { %>
-              <div class="text-danger"><%= errors.modelo.msg %></div>
+            <% if (locals.errors && errors.model) { %>
+              <div class="text-danger"><%= errors.model.msg %></div>
             <% } %>
           </div>
 
   
           <div class="contenedor-campos-newProduct">
-            <label for="precio">• Precio</label>
-            <input type="number" name="precio" min="0" id="precio" 
-            value="<%= locals.old && old.precio ? old.precio : ''%>"placeholder="$$$$"/>
+            <label for="price">• Precio</label>
+            <input type="number" name="price" min="0" id="price" 
+            value="<%= locals.old && old.price ? old.price : ''%>"placeholder="$$$$"/>
             
-            <% if (locals.errors && errors.precio) { %>
-              <div class="text-danger"><%= errors.precio.msg %></div>
+            <% if (locals.errors && errors.price) { %>
+              <div class="text-danger"><%= errors.price.msg %></div>
             <% } %>
           </div>
   
           <div class="contenedor-campos-newProduct">
-            <label for="categoria">• Categoria</label>
-            <select name="categoria" id="categoria">
+            <label for="category">• Categoria</label>
+            <select name="category" id="category">
                 <option disabled selected>Seleccionar</option>
                 <option value="indumentaria">Indumentaria</option>
                 <option value="calzado">Calzado</option>
                 <option value="accesorios">Accesorios</option>
             </select>
-            <% if (locals.errors && errors.categoria) { %>
-              <div class="text-danger"><%= errors.categoria.msg %></div>
+            <% if (locals.errors && errors.category) { %>
+              <div class="text-danger"><%= errors.category.msg %></div>
             <% } %>
           </div>
   
           <div class="contenedor-campos-newProduct">
-            <label for="genero">• Género</label>
-            <select name="genero" id="genero">
+            <label for="genre">• Género</label>
+            <select name="genre" id="genre">
               <option disabled selected>Seleccionar</option>
               <option value="masculino">Masculino</option>
               <option value="femenino">Femenino</option>
               <option value="unisex">Unisex</option>
             </select>
 
-            <% if (locals.errors && errors.genero) { %>
-              <div class="text-danger"><%= errors.genero.msg %></div>
+            <% if (locals.errors && errors.genre) { %>
+              <div class="text-danger"><%= errors.genre.msg %></div>
             <% } %>
           </div>
 
@@ -111,8 +111,8 @@
           </div>
   
           <div class="contenedor-campos-newProduct">
-            <label for="talles">• Talles</label>
-            <select name="talles" id="talles">
+            <label for="size">• Talle</label>
+            <select name="size" id="size">
                 <option disabled selected>Seleccionar</option>
                 <option value="S">S</option>
                 <option value="M">M</option>
@@ -120,17 +120,17 @@
                 <option value="Unico">Unico</option>
             </select>
 
-            <% if (locals.errors && errors.talles) { %>
-              <div class="text-danger"><%= errors.talles.msg %></div>
+            <% if (locals.errors && errors.size) { %>
+              <div class="text-danger"><%= errors.size.msg %></div>
             <% } %>
           </div>
   
           <div class="contenedor-campos-newProduct">
-            <label for="colores">• Colores</label>
-            <input type="text" name="colores" id="colores" />
+            <label for="color">• Color</label>
+            <input type="text" name="color" id="color" />
 
-            <% if (locals.errors && errors.colores) { %>
-              <div class="text-danger"><%= errors.colores.msg %></div>
+            <% if (locals.errors && errors.color) { %>
+              <div class="text-danger"><%= errors.color.msg %></div>
             <% } %>
           </div>
   

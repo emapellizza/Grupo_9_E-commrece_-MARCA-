@@ -25,11 +25,11 @@ router.get("/users", usersController.listAll);//admin/users
 
 // Crear un nuevo producto:
 router.get("/new", adminController.newProduct);
-router.post("/new",uploadProduct.single("imagenProducto"),validateRegister,adminController.saveProduct);
+router.post("/new",uploadProduct.single("imageProduct"),validateRegister,adminController.saveProduct);
 //borrar un producto
 
 // Detalle de producto
-router.get("/detail/:idProduct", productsController.show);//amdin/detail/1
+router.get("/detail/:idProduct", productsController.show);//admin/detail/1
 //Rutas para actualizar un producto:
 router.get("/editproduct/:idProduct", adminController.updateProduct);
 router.put("/editproduct/:idProduct", adminController.saveProduct);

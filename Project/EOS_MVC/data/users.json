@@ -6,7 +6,9 @@
     "dateOfBirth": "2021-04-07",
     "email": "pablo@perez.com",
     "password": "$2b$10$nLLCLVb1vj03O95NTgrFYe/Pk2188V5BSulApqlrjxndGmOzSxWwK",
-    "state": "activo",
+    "phone": "1148986541",
+    "active": "true",
+    "admin": "false",
     "id": 1
   },
   {
@@ -16,7 +18,9 @@
     "dateOfBirth": "1991-11-28",
     "email": "emapellizza@gmail.com",
     "password": "$2b$10$kSFizh3LTmt0hKp6SBuy9.LjNn9I6ro8fiJy2beyJyGsZnqJiVL.y",
-    "state": "activo",
+    "phone": "1152369854",
+    "active": "true",
+    "admin": "false",
     "id": 2
   },
   {
@@ -26,17 +30,21 @@
     "dateOfBirth": "2000-02-02",
     "email": "elon@musk.com",
     "password": "$2b$10$XOZ1nBipdjkzS0qK.VT2geyFrgQlLnuBEufD1bMmOSDpFtv3N8uXO",
-    "state": "activo",
+    "phone": "1178459856",
+    "active": "true",
+    "admin": "false",
     "id": 3
   },
   {
     "imageUser": "user-1618407269033.png",
-    "firstName": "administrador",
-    "lastName": "Admin",
+    "firstName": "Admin",
+    "lastName": "",
     "dateOfBirth": "2021-01-01",
     "email": "admin@admin.com",
     "password": "$2b$10$S4Z01P8PJQpp5DrPJSmeeu3t90uC.V/7NcCajLlxJs.kZk6dPz/gS",
-    "state": "activo",
+    "phone": "1158585252",
+    "active": "true",
+    "admin": "true",
     "id": 4
   }
 ]

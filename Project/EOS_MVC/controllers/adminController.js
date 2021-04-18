@@ -4,8 +4,6 @@ const tablaJson = require('../data/jsonManager');
 const usersJson = tablaJson("users");
 const productJson = tablaJson("products");
 
-let adminEmail = "admin@admin.com";
-
 const adminController = {
 
     view: function(req,res){
@@ -34,17 +32,17 @@ const adminController = {
         if (errors.isEmpty()) {
           // Almaceno los datos del producto
           const product = {
-            imagen: req.file.filename,
-            marca: req.body.marca,
-            modelo: req.body.modelo,
-            precio: req.body.precio,
-            categoria: req.body.categoria,
-            genero: req.body.genero,
-            shortDescripcion: req.body.shortDescription,
-            longDescripcion: req.body.longDescription,
-            talles: req.body.talles,
-            colores: req.body.colores,
-            estado: "activo",
+            image: req.file.filename,
+            brand: req.body.marca,
+            model: req.body.modelo,
+            price: req.body.precio,
+            category: req.body.categoria,
+            genre: req.body.genero,
+            shortDescription: req.body.shortDescription,
+            longDescription: req.body.longDescription,
+            size: req.body.talles,
+            color: req.body.colores,
+            active: "true",
           };
     
           let productId = productsJson.create(product);

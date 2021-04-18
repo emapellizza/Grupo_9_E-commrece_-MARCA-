@@ -6,18 +6,18 @@
     <%- include("../partials/header.ejs") %>
     <main class="main-productDetail">
       <article class="container-productDetail">
-        <img src="/images/products/<%= productDetail.imagen %>" alt="" />
+        <img src="/images/products/<%= productDetail.image %>" alt="" />
         <div class="container-caract-productDetail">
-          <h3><%= productDetail.marca + " " + productDetail.modelo %></h3>
+          <h3><%= productDetail.brand + " " + productDetail.model %></h3>
           <div>
             <p>Talles disponibles:</p>
-            <p><%= productDetail.talles%></p>
+            <p><%= productDetail.size%></p>
           </div>
           <div>
             <p>Colores disponibles:</p>
-            <p><%= productDetail.colores%></p>
+            <p><%= productDetail.color%></p>
           </div>
-          <p class="precio-productDetail">$<%= productDetail.precio%></p>
+          <p class="precio-productDetail">$<%= productDetail.price%></p>
 
           <div class="boton-contenedor">
             <input
@@ -31,7 +31,7 @@
 
       <article class="container-productDetail-bottom">
         <h4>• Descripción •</h4>
-        <p><%= productDetail.longDescripcion%></p>
+        <p><%= productDetail.longDescription%></p>
       </article>
     </main>
 
