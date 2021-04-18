@@ -9,21 +9,23 @@ let adminEmail = "admin@admin.com";
 const adminController = {
 
     view: function(req,res){
+
+      if(req.session.adminLogged){
+        return res.render("./users/adminView");
+      }
+      else
+       return res.redirect("/");
      
-     return res.render("./users/adminView");
     },
 
     newProduct: function (req, res) {
 
-      //let userToLog = userList.findByField("email","admin@admin.com");
-    
-        if(req.session.adminLogged){
-            console.log ("SESSION DE ADMIN!!!")
-            return res.render("./products/new");//formulario nuevo producto
-        }
-        
-        return res.redirect("/")//sy no soy admin me lleva al home
-      },
+      if(req.session.adminLogged){
+        return res.render("./products/new");//formulario nuevo producto
+      }
+      else
+       return res.redirect("/");
+     },
     
       saveProduct: function (req, res) {
         // Validacion

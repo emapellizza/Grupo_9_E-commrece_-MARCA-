@@ -60,6 +60,11 @@ const usersController = {
   },
 
   profile: function (req, res) {
+  
+    if(req.session.adminLogged){
+     return(res.redirect("/admin")); 
+    }
+
     res.render("users/profile", {
       user: req.session.userLogged,
     });

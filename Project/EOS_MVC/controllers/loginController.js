@@ -18,20 +18,21 @@ const loginController = {
     //1 ver si estoy registrado
     let userToLog = userList.findByField("email", req.body.email);
 
+    if (userToLog.email == "admin@admin.com") {
+      let checkPassword = bcrypt.compareSync(req.body.password,userToLog.password);
+      if (checkPassword) { 
+        delete userToLog.password; //por seguridad
+        req.session.adminLogged = userToLog;
+        return res.redirect("../admin/");
+      }  
+    }
+   
+ 
     if (userToLog) {
-
-      let checkPassword = bcrypt.compareSync(
-        req.body.password,
-        userToLog.password
-      );
-
+      let checkPassword = bcrypt.compareSync(req.body.password,userToLog.password);
       if (checkPassword) { 
         delete userToLog.password; //por seguridad
         req.session.userLogged = userToLog; //login de usuario
-
-        if (userToLog.email == "admin@admin.com") {
-          return res.redirect("../admin/");
-        }
         return res.redirect("/");
       } 
        
