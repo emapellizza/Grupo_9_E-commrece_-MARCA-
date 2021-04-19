@@ -35,17 +35,29 @@
               </h3>
               <p><%=products[i].shortDescription %></p>
               <p><strong>$<%=products[i].price %></strong></p>
-            </div>
-            <div>
-              <%if(locals.isAdminLogged){%>
-              <form  method="POST" action="/admin/editproduct/<%= products[i].id %>?_method=PUT">
-                <button type ="submit">Editar</button>
-              </form>
-              <br>
-              <form  method="POST" action="/admin/products/delete/<%= products[i].id %>?_method=DELETE">
-                <button type ="submit">Eliminar</button>
-              </form>
-            <%}%>
+
+              <div class="container-edit-product-button">
+                <% if(locals.isAdminLogged){ %>
+
+                <form
+                  method="POST"
+                  action="/admin/editproduct/<%= products[i].id %>?_method=PUT"
+                >
+                  <button type="submit" class="edit-product-button">
+                    Editar
+                  </button>
+                </form>
+
+                <form
+                  method="POST"
+                  action="/admin/products/delete/<%= products[i].id %>?_method=DELETE"
+                >
+                  <button type="submit" class="edit-product-button">
+                    Eliminar
+                  </button>
+                </form>
+                <% } %>
+              </div>
             </div>
           </a>
         </article>

@@ -31,6 +31,13 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+button:active {
+  outline: 0;
+}
+button:focus {
+  outline: 0;
+}
+
 /*----------------------Header-----------------------*/
 
 .header {
@@ -833,6 +840,27 @@ footer li {
   font-weight: 400;
 }
 
+.container-edit-product-button {
+  display: flex;
+  flex-direction: column;
+}
+.edit-product-button {
+  font-weight: 600;
+  border: 1px solid #977a58;
+  background-color: #977a5813;
+  border-radius: 15px;
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+}
+.edit-product-button:hover {
+  background-color: black;
+  color: #977a58;
+}
+.edit-product-button:active {
+  transform: translateY(2px);
+}
+
 /*---------------------- Detalle de usuario -----------------------*/
 .container-userDetail {
   display: flex;
@@ -901,9 +929,7 @@ footer li {
   background-color: red;
 }
 
-
-
-/*----------------------Estilos pagina ERROR-----------------------*/
+/*---------------------- ERROR -----------------------*/
 
 .main-error {
   margin: 15vh 12vw 25vh 12vw;
