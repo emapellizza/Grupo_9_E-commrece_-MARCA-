@@ -91,6 +91,38 @@ const usersController = {
     res.render("users/detail", { userDetail });
   },
 
+  updateUser : function (req,res){
+
+    if(req.session.adminLogged){
+      let userId = req.params.idUser;
+      //busco el id en la lista 
+      let userToEdit = usersJson.find(userId);
+
+      res.send("actualizado usuario"+" "+userToEdit.id)
+      
+    }
+    else
+     return res.redirect("/");
+
+  },
+
+  
+  delete: function(req,res){
+    
+    if(req.session.adminLogged){
+      
+    let userToDelete = usersJson.find(req.params.idUser);
+     userToDelete.active = "false";
+      res.send("borrado usuario"+" "+userToDelete.id+" "+userToDelete.active)
+
+     //res.redirect("/admin");
+      
+      }
+      else
+       return res.redirect("/");
+
+  },
+
 };
 
 module.exports = usersController;

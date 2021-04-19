@@ -12,37 +12,33 @@ const adminController = require("../controllers/adminController");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require ("../middlewares/authMiddleware");
 
-
-                               
+                            
 //vista administrador
 router.get("/",adminController.view)
 
-//lista productos
-router.get("/products", productsController.listAll);//admin/products
-//lista usuarios
-router.get("/users", usersController.listAll);//admin/users
-
-
-// Crear un nuevo producto:
-router.get("/new", adminController.newProduct);
-router.post("/new",uploadProduct.single("productImage"),validateRegister,adminController.saveProduct);
-//borrar un producto
-
-// Detalle de producto
-router.get("/detail/:idProduct", productsController.show);//admin/detail/1
+////////////rutas de productos//////////
+//Detalle de producto
+router.get("/detail/:idProduct", productsController.show);
+//cear un nuevo producto:
+router.get("/new", productsController.newProduct);
+router.post("/new",uploadProduct.single("productImage"),validateRegister,productsController.saveProduct);
 //Rutas para actualizar un producto:
-router.get("/editproduct/:idProduct", adminController.updateProduct);
-router.put("/editproduct/:idProduct", adminController.saveProduct);
+router.get("/editproduct/:idProduct", productsController.updateProduct);
+router.put("/editproduct/:idProduct", productsController.updateProduct);
+//borrar un producto
+router.delete("/products/delete/:idProduct",productsController.delete)
+//lista productos
+router.get("/products", productsController.listAll);
 
+///////rutas usuarios///////
 //detalle usuario
 router.get("/profile",authMiddleware, usersController.profile);
 ///update usuario
-router.get("/edituser/:idUser",adminController.updateUser);
-router.put("/edituser/:idUser",usersController.saveUser)
-
-
+router.get("/edituser/:idUser",usersController.updateUser);
+router.put("/edituser/:idUser",usersController.updateUser)
 //borrar usuario
-
-
+router.delete("/users/delete/:idUser",usersController.delete)
+//lista usuarios
+router.get("/users", usersController.listAll);//admin/users
 
 module.exports = router;

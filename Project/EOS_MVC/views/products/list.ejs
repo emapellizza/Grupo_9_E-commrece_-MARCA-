@@ -36,6 +36,14 @@
               <p><%=products[i].shortDescription %></p>
               <p><strong>$<%=products[i].price %></strong></p>
             </div>
+            <div>
+              <%if(locals.isAdminLogged){%>
+                <%console.log("!!!!!!!!!!is admin logged!!!!!!!!")%>
+              <form  method="POST" action="/admin/editproduct/<%= products[i].id %>?_method=PUT">
+                <button type ="submit">Editar</button>
+              </form>
+            <%}%>
+            </div>
           </a>
         </article>
         <% } %>

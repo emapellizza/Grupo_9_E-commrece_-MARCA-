@@ -898,7 +898,10 @@ footer li {
 
 .userList-eliminar {
   margin-left: 50px;
+  background-color: red;
 }
+
+
 
 /*----------------------Estilos pagina ERROR-----------------------*/
 
