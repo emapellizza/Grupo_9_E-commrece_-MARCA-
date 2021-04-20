@@ -656,6 +656,7 @@ input {
   padding: 10px 0;
 }
 .titulo-newProduct {
+  text-transform: uppercase;
   text-align: center;
   padding-top: 8px;
 }
