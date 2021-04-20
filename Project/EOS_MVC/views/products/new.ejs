@@ -14,6 +14,7 @@
           action="/products/new" 
           method="POST" 
           enctype="multipart/form-data"
+          id="formNewProduct"
         >
           
           <div class="contenedor-campos-newProduct">
@@ -47,7 +48,7 @@
           <div class="contenedor-campos-newProduct">
             <label for="model">• Modelo</label>
             <input type="text" name="model" id="model"
-            value="<%= locals.old && old.model ? old.model : ''%>"/>
+            value="<%= locals.old && old.model ? old.model : ''%>" placeholder="Modelo"/>
 
             <% if (locals.errors && errors.model) { %>
               <div class="text-danger"><%= errors.model.msg %></div>
@@ -58,7 +59,7 @@
           <div class="contenedor-campos-newProduct">
             <label for="price">• Precio</label>
             <input type="number" name="price" min="0" id="price" 
-            value="<%= locals.old && old.price ? old.price : ''%>"placeholder="$$$$"/>
+            value="<%= locals.old && old.price ? old.price : ''%>" placeholder="$$$$"/>
             
             <% if (locals.errors && errors.price) { %>
               <div class="text-danger"><%= errors.price.msg %></div>
@@ -127,7 +128,7 @@
   
           <div class="contenedor-campos-newProduct">
             <label for="color">• Color</label>
-            <input type="text" name="color" id="color" />
+            <input type="text" name="color" id="color" placeholder="Color"/>
 
             <% if (locals.errors && errors.color) { %>
               <div class="text-danger"><%= errors.color.msg %></div>

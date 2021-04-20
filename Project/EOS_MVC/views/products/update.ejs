@@ -30,13 +30,13 @@
           <div class="contenedor-campos-newProduct">
             <label for="marcaProducto">• Marca</label>
             <select name="marcaProducto" id="marcaProducto">
-              <option disabled selected>Seleccionar</option>
-              <option value="Nike">Nike</option>
-              <option value="Adidas">Adidas</option>
-              <option value="Puma">Puma</option>
-              <option value="New Balance">New Balance</option>
-              <option value="Vans">Vans</option>
-              <option value="Under Armour">Under Armour</option>
+              
+              <option value="Nike" <% if (productToEdit.brand == "Nike") { %> selected <%}%>> Nike </option>
+              <option value="Adidas" <% if (productToEdit.brand == "Adidas") { %> selected <%}%>>Adidas</option>
+              <option value="Puma" <% if (productToEdit.brand == "Puma") { %> selected <%}%>>Puma</option>
+              <option value="New Balance" <% if (productToEdit.brand == "New Balance") { %> selected <%}%>>New Balance</option>
+              <option value="Vans" <% if (productToEdit.brand == "Vans") { %> selected <%}%>>Vans</option>
+              <option value="Under Armour" <% if (productToEdit.brand == "Under Armour") { %> selected <%}%>>Under Armour</option>
             </select>
           </div>
 
@@ -46,7 +46,7 @@
               type="text"
               name="modeloProducto"
               id="modeloProducto"
-              value="<%= productToEdit.modelo %>"
+              value="<%= productToEdit.model %>"
             />
           </div>
 
@@ -57,7 +57,7 @@
               name="precioProducto"
               min="0"
               id="precioProducto"
-              value="<%= productToEdit.precio %>"
+              value="<%= productToEdit.price %>"
               placeholder="$$$$"
             />
           </div>
@@ -90,9 +90,8 @@
               cols="1"
               rows="2"
               maxlength="60"
-              placeholder="Descripción breve del producto"
             >
-<%= productToEdit.shortDescripcion %>
+<%= productToEdit.shortDescription  %> 
             </textarea>
           </div>
 
@@ -103,9 +102,8 @@
               id="longDescripcion"
               cols="10"
               rows="10"
-              placeholder="Descripción del producto"
             >
-<%= productToEdit.longDescripcion %></textarea
+<%= productToEdit.longDescription  %></textarea
             >
           </div>
 
@@ -126,7 +124,7 @@
               type="text"
               name="coloresProducto"
               id="coloresProducto"
-              value="<%= productToEdit.colores %>"
+              value="<%= productToEdit.color %>"
             />
           </div>
 

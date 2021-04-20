@@ -38,15 +38,21 @@
 
               <div class="container-edit-product-button">
                 <% if(locals.isAdminLogged){ %>
-
-                <form
+                <a href="/admin/products/edit/<%= products[i].id %>">
+                  <button type="submit" class="edit-product-button">
+                    Editar
+                  </button>
+                </a>
+                <!--  
+                  <form
                   method="POST"
                   action="/admin/editproduct/<%= products[i].id %>?_method=PUT"
-                >
+                  >
                   <button type="submit" class="edit-product-button">
                     Editar
                   </button>
                 </form>
+              -->
 
                 <form
                   method="POST"

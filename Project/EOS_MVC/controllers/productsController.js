@@ -48,49 +48,42 @@ const productsController = {
         errors: errors.mapped(),
         old: req.body,
       });
-    };
+    }
   },
 
   newProduct: function (req, res) {
-
-    if(req.session.adminLogged){
-      return res.render("./products/new");//formulario nuevo producto
-    }
-    else
-     return res.redirect("/");
-   },
-
-
-  updateProduct: function (req,res){
-
-    if(req.session.adminLogged){
-
-    let prodId = req.params.idProduct;
-
-    let productToEdit = productsJson.find(prodId)
-    
-    res.send("editado producto"+""+productToEdit.id)
-    }
-    else
-     return res.redirect("/");
+    if (req.session.adminLogged) {
+      return res.render("./products/new"); //formulario nuevo producto
+    } else return res.redirect("/");
   },
 
-  delete: function(req,res){
-    
-    if(req.session.adminLogged){
-     
+  updateProduct: function (req, res) {
+    if (req.session.adminLogged) {
+      let prodId = req.params.idProduct;
+
+      let productToEdit = productsJson.find(prodId);
+
+      res.render("./products/update", { productToEdit: productToEdit });
+    } else {
+      return res.redirect("/");
+    }
+  },
+
+  delete: function (req, res) {
+    if (req.session.adminLogged) {
       productToDelete = productsJson.find(req.params.idProduct);
       productToDelete.active = "false";
-       res.send("borrado PRODUCTO"+" "+productToDelete.id+" "+productToDelete.active)
- 
+      res.send(
+        "borrado PRODUCTO" +
+          " " +
+          productToDelete.id +
+          " " +
+          productToDelete.active
+      );
+
       //res.redirect("/admin");
-       
-       }
-       else
-        return res.redirect("/");
-
+    } else return res.redirect("/");
   },
-
 };
 
 module.exports = productsController;
