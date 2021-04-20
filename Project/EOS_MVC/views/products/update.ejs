@@ -66,20 +66,18 @@
           <div class="contenedor-campos-newProduct">
             <label for="categoriaProducto">• Categoria</label>
             <select name="categoriaProducto" id="categoriaProducto">
-              <option disabled selected>Seleccionar</option>
-              <option value="indumentaria">Indumentaria</option>
-              <option value="calzado">Calzado</option>
-              <option value="accesorios">Accesorios</option>
+              <option value="indumentaria" <% if (productToEdit.category == "indumentaria") { %> selected <%}%>>Indumentaria</option>
+              <option value="calzado" <% if (productToEdit.category == "calzado") { %> selected <%}%>>Calzado</option>
+              <option value="accesorios" <% if (productToEdit.category == "accesorios") { %> selected <%}%>>Accesorios</option>
             </select>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="generoProducto">• Género</label>
             <select name="generoProducto" id="generoProducto">
-              <option disabled selected>Seleccionar</option>
-              <option value="masculino">Masculino</option>
-              <option value="femenino">Femenino</option>
-              <option value="unisex">Unisex</option>
+              <option value="masculino" <% if (productToEdit.genre == "masculino") { %> selected <%}%>>Masculino</option>
+              <option value="femenino" <% if (productToEdit.genre == "femenino") { %> selected <%}%>>Femenino</option>
+              <option value="unisex" <% if (productToEdit.genre == "unisex") { %> selected <%}%>>Unisex</option>
             </select>
           </div>
 
