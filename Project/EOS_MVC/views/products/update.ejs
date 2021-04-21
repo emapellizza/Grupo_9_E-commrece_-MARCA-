@@ -13,7 +13,7 @@
         <p><%= error.msg %></p>
         <% }) }%>
         <form
-          action="/admin/products/edit/?_method=PUT"
+          action="/admin/products/edit/<%= productToEdit.id %>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
         >

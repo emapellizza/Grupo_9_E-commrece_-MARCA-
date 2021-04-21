@@ -98,7 +98,8 @@ const usersController = {
       //busco el id en la lista 
       let userToEdit = usersJson.find(userId);
 
-      res.send("actualizado usuario"+" "+userToEdit.id)
+     
+      res.render("./users/update",{userToEdit});
       
     }
     else
