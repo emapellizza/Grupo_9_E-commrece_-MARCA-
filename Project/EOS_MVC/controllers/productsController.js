@@ -28,15 +28,15 @@ const productsController = {
       // Almaceno los datos del producto
       const product = {
         image: req.file.filename,
-        brand: req.body.marca,
-        model: req.body.modelo,
-        price: req.body.precio,
-        category: req.body.categoria,
-        genre: req.body.genero,
+        brand: req.body.brand,
+        model: req.body.model,
+        price: req.body.price,
+        category: req.body.category,
+        genre: req.body.genre,
         shortDescription: req.body.shortDescription,
         longDescription: req.body.longDescription,
-        size: req.body.talles,
-        color: req.body.colores,
+        size: req.body.size,
+        color: req.body.color,
         active: "true",
       };
 
