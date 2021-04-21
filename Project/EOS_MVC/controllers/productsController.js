@@ -42,7 +42,7 @@ const productsController = {
 
       let productId = productsJson.create(product);
 
-      res.redirect("./detail/" + productId);
+      return res.redirect("./detail/" + productId);
     } else {
       return res.render("products/new", {
         errors: errors.mapped(),

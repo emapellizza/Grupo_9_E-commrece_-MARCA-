@@ -141,5 +141,19 @@
     "color": "Negro",
     "active": "true",
     "id": 10
+  },
+  {
+    "image": "product-1619041393416.jpg",
+    "brand": "Vans",
+    "model": "Classic",
+    "price": "1200",
+    "category": "indumentaria",
+    "genre": "masculino",
+    "shortDescription": "Remera Vans Classic",
+    "longDescription": "Remera Vans escote redondo con ribb. Grifa de marca en ruedo de manga. Estampa VANS a un color en delantero.",
+    "size": "M",
+    "color": "Negro",
+    "active": "true",
+    "id": 11
   }
 ]
