@@ -1139,7 +1139,7 @@ footer li {
   }
   .all-products-container {
     padding: 0 2vw;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   /* Error */
