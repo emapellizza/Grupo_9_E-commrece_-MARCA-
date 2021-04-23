@@ -55,6 +55,28 @@ let model = function(tableName) {
 
             return row.id;
         },
+
+        update(row) {
+            let file = this.readFile();
+            let updatedRows = file.map(oneRow => {
+                if (oneRow.id == row.id) {
+                    return row;
+                }
+
+                return oneRow;
+            }); 
+
+            this.writeFile(updatedRows);
+
+            return row.id;
+        },
+
+        delete(id) {
+            let rows = this.readFile();
+            let updatedRows = rows.filter(oneRow => oneRow.id != id); 
+
+            this.writeFile(updatedRows);
+        }
         
 
     }

@@ -18,19 +18,19 @@
           enctype="multipart/form-data"
         >
           <div class="contenedor-campos-newProduct">
-            <label for="imagenProducto">• Imagen/es</label>
+            <label for="productImage">• Imagen/es</label>
             <input
               type="file"
-              id="imagenProducto"
-              name="imagenProducto"
+              id="productImage"
+              name="productImage"
               accept=".png, .jpg, .jpeg"
               multiple
             />
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="marcaProducto">• Marca</label>
-            <select name="marcaProducto" id="marcaProducto">
+            <label for="brand">• Marca</label>
+            <select name="brand" id="brand">
               
               <option value="Nike" <% if (productToEdit.brand == "Nike") { %> selected <%}%>> Nike </option>
               <option value="Adidas" <% if (productToEdit.brand == "Adidas") { %> selected <%}%>>Adidas</option>
@@ -42,30 +42,30 @@
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="modeloProducto">• Modelo</label>
+            <label for="model">• Modelo</label>
             <input
               type="text"
-              name="modeloProducto"
-              id="modeloProducto"
+              name="model"
+              id="model"
               value="<%= productToEdit.model %>"
             />
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="precioProducto">• Precio</label>
+            <label for="price">• Precio</label>
             <input
               type="number"
-              name="precioProducto"
+              name="price"
               min="0"
-              id="precioProducto"
+              id="price"
               value="<%= productToEdit.price %>"
               placeholder="$$$$"
             />
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="categoriaProducto">• Categoria</label>
-            <select name="categoriaProducto" id="categoriaProducto">
+            <label for="category">• Categoria</label>
+            <select name="category" id="category">
               <option value="indumentaria" <% if (productToEdit.category == "indumentaria") { %> selected <%}%>>Indumentaria</option>
               <option value="calzado" <% if (productToEdit.category == "calzado") { %> selected <%}%>>Calzado</option>
               <option value="accesorios" <% if (productToEdit.category == "accesorios") { %> selected <%}%>>Accesorios</option>
@@ -73,8 +73,8 @@
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="generoProducto">• Género</label>
-            <select name="generoProducto" id="generoProducto">
+            <label for="genre">• Género</label>
+            <select name="genergenreoProducto" id="genre">
               <option value="masculino" <% if (productToEdit.genre == "masculino") { %> selected <%}%>>Masculino</option>
               <option value="femenino" <% if (productToEdit.genre == "femenino") { %> selected <%}%>>Femenino</option>
               <option value="unisex" <% if (productToEdit.genre == "unisex") { %> selected <%}%>>Unisex</option>
@@ -82,10 +82,10 @@
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="shortDescripcion">• Descripción Breve</label>
+            <label for="shortDescription">• Descripción Breve</label>
             <textarea
-              name="shortDescripcion"
-              id="shortDescripcion"
+              name="shortDescription"
+              id="shortDescription"
               cols="1"
               rows="2"
               maxlength="60"
@@ -95,10 +95,10 @@
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="longDescripcion">• Descripción Completa</label>
+            <label for="longDescription">• Descripción Completa</label>
             <textarea
-              name="longDescripcion"
-              id="longDescripcion"
+              name="longDescription"
+              id="longDescription"
               cols="10"
               rows="10"
             >
@@ -107,8 +107,8 @@
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="tallesProducto">• Talles</label>
-            <select name="tallesProducto" id="tallesProducto">
+            <label for="size">• Talles</label>
+            <select name="size" id="size">
               <option disabled selected>Seleccionar</option>
               <option value="S">S</option>
               <option value="M">M</option>
@@ -118,17 +118,17 @@
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <label for="coloresProducto">• Colores</label>
+            <label for="color">• Colores</label>
             <input
               type="text"
-              name="coloresProducto"
-              id="coloresProducto"
+              name="color"
+              id="color"
               value="<%= productToEdit.color %>"
             />
           </div>
 
           <div class="contenedor-campos-newProduct">
-            <button type="submit" class="boton-newProduct">CONTINUAR</button>
+            <button type="submit" class="boton-newProduct">ACTUALIZAR</button>
           </div>
           <!--    METODO DELETE   -->
         </form>

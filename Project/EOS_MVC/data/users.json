@@ -46,5 +46,17 @@
     "active": "true",
     "admin": "true",
     "id": 4
+  },
+  {
+    "imageUser": "",
+    "firstName": "Laura",
+    "lastName": "Lila",
+    "dateOfBirth": "2021-04-01",
+    "email": "laura@gomez.com",
+    "phone": "1122334455",
+    "password": "$2b$10$2ZE.wn2AE1c/2N2x67AO8un0bDFh4CZNiL0PpSwaO8le09rIoZ0s6",
+    "admin": "false",
+    "active": "true",
+    "id": 5
   }
 ]

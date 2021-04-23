@@ -4,6 +4,7 @@ const tablaJson = require("../data/jsonManager");
 const usersJson = tablaJson("users");
 
 
+
 const usersController = {
 
   listAll: function (req, res) {
@@ -12,9 +13,7 @@ const usersController = {
     // con JSON: 
     let users = usersJson.all();
 
-    //con DB
-      
-
+    
 
     return res.render("./users/list", { users });
     }
