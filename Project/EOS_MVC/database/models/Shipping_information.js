@@ -37,7 +37,7 @@ module.exports = function (sequelize,dataTypes) {
 
     // -- Asociaciones --
     Shipping_information.associate = function(models){
-        Shipping_information.belongsTo(models.Users, {
+        Shipping_information.belongsTo(models.User, {
             as: "users",
             foreignKey: "id_user"
         })

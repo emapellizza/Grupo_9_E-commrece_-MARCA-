@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const tablaJson = require("../data/jsonManager");
 const usersJson = tablaJson("users");
 
-
+const db = require("../database/models")
 
 const usersController = {
 

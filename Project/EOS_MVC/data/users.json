@@ -58,5 +58,17 @@
     "admin": "false",
     "active": "true",
     "id": 5
+  },
+  {
+    "imageUser": "",
+    "firstName": "Mariano",
+    "lastName": "Suarez",
+    "dateOfBirth": "2021-04-07",
+    "email": "marianosuarez@hotmail.com",
+    "phone": "1122334455",
+    "password": "$2b$10$5YnBl7X3JkHhbfcePbXDausJ.2LB894b.v6Iy9/SMbfB64W2RqHjy",
+    "admin": "false",
+    "active": "true",
+    "id": 6
   }
 ]

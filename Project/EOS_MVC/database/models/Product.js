@@ -44,7 +44,7 @@ module.exports = function (sequelize,dataTypes) {
     //Asociaciones
     Product.assiociate = function(models) {
         // Usuarios
-        Product.belongsToMany(models.Users, {
+        Product.belongsToMany(models.User, {
             as: "users",
             through: "user_product",
             foreignKey: "id_product",
@@ -52,7 +52,7 @@ module.exports = function (sequelize,dataTypes) {
             timestamps: false
         })
         // Colores
-        Product.belongsToMany(models.Colors, {
+        Product.belongsToMany(models.Color, {
             as: "colors",
             through: "product_color",
             foreignKey: "id_product",
@@ -60,7 +60,7 @@ module.exports = function (sequelize,dataTypes) {
             timestamps: false
         })
         // Talles
-        Product.belongsToMany(models.Sizes, {
+        Product.belongsToMany(models.Size, {
             as: "sizes",
             through: "product_size",
             foreignKey: "id_product",
@@ -68,17 +68,17 @@ module.exports = function (sequelize,dataTypes) {
             timestamps: false
         })
         // Marca
-        Product.belongsTo(models.Brands, {
+        Product.belongsTo(models.Brand, {
             as: "brands",
             foreignKey: "id_brand" 
         })
         // Categoria
-        Product.belongsTo(models.Categories, {
+        Product.belongsTo(models.Category, {
             as: "categories",
             foreignKey: "id_category"
         })
          // Categoria
-        Product.belongsTo(models.Genres, {
+        Product.belongsTo(models.Genre, {
             as: "genres",
             foreignKey: "id_genre"
         })
