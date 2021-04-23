@@ -109,11 +109,10 @@
           <div class="contenedor-campos-newProduct">
             <label for="size">• Talles</label>
             <select name="size" id="size">
-              <option disabled selected>Seleccionar</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="Unico">Unico</option>
+              <option value="S" <% if (productToEdit.size == "S") { %> selected <%}%>> S </option>
+              <option value="M" <% if (productToEdit.size == "M") { %> selected <%}%>> M </option>
+              <option value="L" <% if (productToEdit.size == "L") { %> selected <%}%>> L </option>
+              <option value="Unico" <% if (productToEdit.size == "Unico") { %> selected <%}%>> Unico </option>
             </select>
           </div>
 
