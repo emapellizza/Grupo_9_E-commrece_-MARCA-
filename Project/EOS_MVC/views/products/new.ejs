@@ -26,12 +26,13 @@
               accept=".png, .jpg, .jpeg"
               multiple
             />
+            <div class="text-danger" id="errorImagen"></div>
           </div>
    
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
             <select name="brand" id="brand" >
-              <option disabled selected>Seleccionar</option>
+              <option value="Seleccionar" disabled selected>Seleccionar</option>
               <option value="Nike">Nike</option>
               <option value="Adidas">Adidas</option>
               <option value="Puma">Puma</option>
@@ -40,9 +41,11 @@
               <option value="Under Armour">Under Armour</option>
             </select>
 
-            <% if (locals.errors && errors.brand) { %>
-              <div class="text-danger"><%= errors.brand.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorMarca">
+              <% if (locals.errors && errors.brand) { %>
+                <%= errors.brand.msg %>
+              <% } %>
+            </div>
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -50,9 +53,11 @@
             <input type="text" name="model" id="model"
             value="<%= locals.old && old.model ? old.model : ''%>" placeholder="Modelo"/>
 
-            <% if (locals.errors && errors.model) { %>
-              <div class="text-danger"><%= errors.model.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorModelo">
+              <% if (locals.errors && errors.model) { %>
+                <%= errors.model.msg %>
+              <% } %>
+            </div>
           </div>
 
   
@@ -61,9 +66,11 @@
             <input type="number" name="price" min="0" id="price" 
             value="<%= locals.old && old.price ? old.price : ''%>" placeholder="$$$$"/>
             
-            <% if (locals.errors && errors.price) { %>
-              <div class="text-danger"><%= errors.price.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorPrecio">
+              <% if (locals.errors && errors.price) { %>
+                <%= errors.price.msg %>
+              <% } %>
+            </div>
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -74,9 +81,13 @@
                 <option value="calzado">Calzado</option>
                 <option value="accesorios">Accesorios</option>
             </select>
-            <% if (locals.errors && errors.category) { %>
-              <div class="text-danger"><%= errors.category.msg %></div>
-            <% } %>
+
+            <div class="text-danger" id="errorCategoria">
+              <% if (locals.errors && errors.category) { %>
+                <%= errors.category.msg %>
+              <% } %>
+            </div>  
+            
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -88,27 +99,33 @@
               <option value="unisex">Unisex</option>
             </select>
 
-            <% if (locals.errors && errors.genre) { %>
-              <div class="text-danger"><%= errors.genre.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorGenero">
+              <% if (locals.errors && errors.genre) { %>
+                <%= errors.genre.msg %>
+              <% } %>
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="shortDescription">• Descripción Breve</label>
-            <textarea name="shortDescription" id="shortDescription" cols="1" rows="1" maxlength="60" placeholder="Descripción breve del producto" ></textarea>
+            <textarea name="shortDescription" id="shortDescription" cols="1" rows="1" maxlength="60" placeholder="Descripción breve que se mostrará en la previsualizacion del producto" ></textarea>
 
-            <% if (locals.errors && errors.shortDescription) { %>
-              <div class="text-danger"><%= errors.shortDescription.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorDescCort">
+              <% if (locals.errors && errors.shortDescription) { %>
+                <%= errors.shortDescription.msg %>
+              <% } %>
+            </div>
           </div>
   
           <div class="contenedor-campos-newProduct">
             <label for="longDescription">• Descripción Completa</label>
-            <textarea name="longDescription" id="longDescription" cols="10" rows="10" placeholder="Descripción del producto" ></textarea>
+            <textarea name="longDescription" id="longDescription" cols="10" rows="10" placeholder="Descripción completa que se mostrará en el detalle del producto" ></textarea>
 
-            <% if (locals.errors && errors.longDescription) { %>
-              <div class="text-danger"><%= errors.longDescription.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorDescLarg">
+              <% if (locals.errors && errors.longDescription) { %>
+                <%= errors.longDescription.msg %>
+              <% } %>
+            </div>
           </div>
   
           <div class="contenedor-campos-newProduct">
@@ -121,18 +138,22 @@
                 <option value="Unico">Unico</option>
             </select>
 
-            <% if (locals.errors && errors.size) { %>
-              <div class="text-danger"><%= errors.size.msg %></div>
-            <% } %>
+            <div class="text-danger" id="erroresTalle">
+              <% if (locals.errors && errors.size) { %>
+                <%= errors.size.msg %>
+              <% } %>
+            </div>
           </div>
   
           <div class="contenedor-campos-newProduct">
             <label for="color">• Color</label>
             <input type="text" name="color" id="color" placeholder="Color"/>
 
-            <% if (locals.errors && errors.color) { %>
-              <div class="text-danger"><%= errors.color.msg %></div>
-            <% } %>
+            <div class="text-danger" id="erroresColor">
+              <% if (locals.errors && errors.color) { %>
+                <%= errors.color.msg %>
+              <% } %>
+            </div>
           </div>
   
           <div class="contenedor-campos-newProduct">

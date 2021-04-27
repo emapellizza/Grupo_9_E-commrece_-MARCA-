@@ -38,6 +38,17 @@ button:focus {
   outline: 0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /*----------------------Header-----------------------*/
 
 .header {
@@ -528,7 +539,8 @@ input {
 
 /* --------------Estilos Register/login-------------- */
 .text-danger {
-  color: red;
+  padding-top: 3px;
+  color: #d63b3b;
   align-self: flex-start;
   font-size: 15px;
 }
@@ -568,7 +580,7 @@ input {
 
 .main-reg-log form input {
   background-color: white;
-  border: solid 1px grey;
+  border: 0;
   border-radius: 5px;
   padding: 0 5px;
   height: 30px;
@@ -676,8 +688,8 @@ input {
 }
 .container-newProduct form input,
 select {
+  border: 0;
   background-color: white;
-  border: solid 1px grey;
   margin-top: 5px;
   border-radius: 5px;
   padding: 0 5px;
@@ -694,8 +706,9 @@ select {
 .contenedor-campos-newProduct textarea {
   margin: 6px 0;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 0;
   padding: 10px;
+  max-width: 100%;
 }
 .boton-newProduct {
   margin-top: 2vh;
@@ -953,8 +966,8 @@ footer li {
 }
 
 /*---------------------- ESTILOS DINAMICOS -----------------------*/
-.red-border {
-  border: 1px solid red;
+.borde-rojo {
+  border: 1px red solid;
 }
 
 /*-------------------------------------------------*/
