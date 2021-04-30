@@ -72,22 +72,22 @@ const productsController = {
   updatedProduct: function (req, res) {
     if (req.session.adminLogged) {
       // Validacion
-    let errors = validationResult(req);
-    const productToUpdate = productsJson.find(req.params.idProduct);
-    if (errors.isEmpty()) {
-      // Almaceno los datos del producto
-      
-        productToUpdate.image = req.file.filename
-        productToUpdate.brand = req.body.brand
-        productToUpdate.model = req.body.model
-        productToUpdate.price = req.body.price
-        productToUpdate.category = req.body.category
-        productToUpdate.genre = req.body.genre
-        productToUpdate.shortDescription = req.body.shortDescription
-        productToUpdate.longDescription = req.body.longDescription
-        productToUpdate.size = req.body.size
-        productToUpdate.color = req.body.color
-        productToUpdate.active = "true"
+      let errors = validationResult(req);
+      const productToUpdate = productsJson.find(req.params.idProduct);
+      if (errors.isEmpty()) {
+        // Almaceno los datos del producto
+
+        // productToUpdate.image = req.file.filename
+        productToUpdate.brand = req.body.brand;
+        productToUpdate.model = req.body.model;
+        productToUpdate.price = req.body.price;
+        productToUpdate.category = req.body.category;
+        productToUpdate.genre = req.body.genre;
+        productToUpdate.shortDescription = req.body.shortDescription;
+        productToUpdate.longDescription = req.body.longDescription;
+        productToUpdate.size = req.body.size;
+        productToUpdate.color = req.body.color;
+        productToUpdate.active = "true";
       }
 
       let productId = productsJson.update(productToUpdate);
@@ -99,7 +99,6 @@ const productsController = {
         old: req.body,
       });
     }
-    
   },
 
   delete: function (req, res) {

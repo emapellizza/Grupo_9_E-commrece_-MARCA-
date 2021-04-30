@@ -1,15 +1,10 @@
 window.addEventListener("load", function () {
-  // Selectores!
-  // Body
-  const body = document.querySelector("body");
   // Formulario
-  let form = document.getElementById("formNewProduct");
+  let formUpdateProduct = document.getElementById("formUpdateProduct");
+
   // Campos Formulario
   let imagen = document.querySelector("#productImage");
   let errorImagen = document.querySelector("#errorImagen");
-
-  let marca = document.querySelector("#brand");
-  let errorMarca = document.querySelector("#errorMarca");
 
   let modelo = document.querySelector("#model");
   let errorModelo = document.querySelector("#errorModelo");
@@ -17,55 +12,42 @@ window.addEventListener("load", function () {
   let precio = document.querySelector("#price");
   let errorPrecio = document.querySelector("#errorPrecio");
 
-  let categoria = document.querySelector("#category");
-  let errorCategoria = document.querySelector("#errorCategoria");
-
-  let genero = document.querySelector("#genre");
-  let errorGenero = document.querySelector("#errorGenero");
-
   let descCorta = document.querySelector("#shortDescription");
   let errorDescCort = document.querySelector("#errorDescCort");
 
   let descLarga = document.querySelector("#longDescription");
   let errorDescLarg = document.querySelector("#errorDescLarg");
 
-  let talle = document.querySelector("#size");
-  let erroresTalle = document.querySelector("#erroresTalle");
-
   let color = document.querySelector("#color");
   let erroresColor = document.querySelector("#erroresColor");
 
-  // Logica
-
-  form.addEventListener("submit", function (e) {
+  formUpdateProduct.addEventListener("submit", function (e) {
+    e.preventDefault();
+    console.log("HOLA");
     let errores = 0;
-    // Valudacion imagen
-    let obtenerExtension = function (nombreArchivo) {
-      return nombreArchivo.split(".").pop();
-    };
-    let nombreArchivo = imagen.value;
-    if (
-      obtenerExtension(nombreArchivo) == "jpg" ||
-      obtenerExtension(nombreArchivo) == "jpeg" ||
-      obtenerExtension(nombreArchivo) == "png"
-    ) {
-      errorImagen.innerHTML = "";
-    } else {
+
+    // Validacion imagen
+    let nombreImagen = imagen.value;
+
+    function obtenerExtension(nombreImagen) {
+      return nombreImagen.split(".").pop();
+    }
+    let extensionImagen = obtenerExtension(nombreImagen);
+
+    let aprobada = false;
+
+    let extAceptadas = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
+
+    if (extAceptadas.indexOf(extensionImagen) === -1 || nombreImagen == "") {
       errores = errores + 1;
       errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
+    } else {
+      errorImagen.innerHTML = "";
     }
 
-    // Validacion marca
-    if (marca.value == "Seleccionar") {
-      errores = errores + 1;
-      errorMarca.innerHTML = "* Debes seleccionar una marca";
-    } else {
-      errorMarca.innerHTML = "";
-    }
     // Validacion modelo
     if (modelo.value == "") {
       errores = errores + 1;
-
       errorModelo.innerHTML = "* Debes seleccionar un modelo";
     } else if (modelo.value.length < 2) {
       errores = errores + 1;
@@ -79,20 +61,6 @@ window.addEventListener("load", function () {
       errorPrecio.innerHTML = "* El precio no puede ser $0";
     } else {
       errorPrecio.innerHTML = "";
-    }
-    // Validacion categoria
-    if (categoria.value == "Seleccionar") {
-      errores = errores + 1;
-      errorCategoria.innerHTML = "* Debes seleccionar una categoria";
-    } else {
-      errorCategoria.innerHTML = "";
-    }
-    // Validacion genero
-    if (genero.value == "Seleccionar") {
-      errores = errores + 1;
-      errorGenero.innerHTML = "* Debes seleccionar un genero";
-    } else {
-      errorGenero.innerHTML = "";
     }
     // Validacion descripcion corta
     if (descCorta.value == "") {
@@ -114,13 +82,6 @@ window.addEventListener("load", function () {
     } else {
       errorDescLarg.innerHTML = "";
     }
-    // Validacion talle
-    if (talle.value == "Seleccionar") {
-      errores = errores + 1;
-      erroresTalle.innerHTML = "* Debes seleccionar un talle";
-    } else {
-      erroresTalle.innerHTML = "";
-    }
     // Validacion color
     if (color.value == "") {
       errores = errores + 1;
@@ -135,7 +96,6 @@ window.addEventListener("load", function () {
     // Si hay errores no envío
     if (errores > 0) {
       e.preventDefault();
-      alert(nombreArchivo + obtenerExtension(imagen.value));
     }
   });
 });
