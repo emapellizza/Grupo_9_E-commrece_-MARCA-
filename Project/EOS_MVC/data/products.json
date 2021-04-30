@@ -6,11 +6,10 @@
     "image": "product-1619135080115.jpg",
     "brand": "Vans",
     "model": "Old Skool",
-    "price": "12999",
+    "price": "10000",
     "category": "calzado",
-    "shortDescription": "Zapatillas Vans Old Skool.  \r\n             \r\n            ",
+    "shortDescription": "Zapatillas Vans Old Skool.",
     "longDescription": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.",
-    "size": "M",
     "color": "Negro",
     "active": "true",
     "id": 1

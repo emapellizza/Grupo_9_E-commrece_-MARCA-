@@ -7,15 +7,15 @@
 
     <main class="main-newProduct">
       <div class="container-newProduct">
+
         <h2 class="titulo-newProduct">Editar <i><%= productToEdit.brand + " " + productToEdit.model  %></i> 
         </h2>
-        <% if (locals.errors) { errors.forEach(error => { %>
-        <p><%= error.msg %></p>
-        <% }) }%>
+
         <form
           action="/admin/products/edit/<%= productToEdit.id %>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
+          id="formUpdateProduct"
         >
           <div class="contenedor-campos-newProduct">
             <label for="productImage">• Imagen/es</label>
@@ -26,12 +26,12 @@
               accept=".png, .jpg, .jpeg"
               multiple
             />
+            <div class="text-danger" id="errorImagen"></div>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
             <select name="brand" id="brand">
-              
               <option value="Nike" <% if (productToEdit.brand == "Nike") { %> selected <%}%>> Nike </option>
               <option value="Adidas" <% if (productToEdit.brand == "Adidas") { %> selected <%}%>>Adidas</option>
               <option value="Puma" <% if (productToEdit.brand == "Puma") { %> selected <%}%>>Puma</option>
@@ -39,6 +39,10 @@
               <option value="Vans" <% if (productToEdit.brand == "Vans") { %> selected <%}%>>Vans</option>
               <option value="Under Armour" <% if (productToEdit.brand == "Under Armour") { %> selected <%}%>>Under Armour</option>
             </select>
+
+            <div class="text-danger" id="errorMarca">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -49,6 +53,10 @@
               id="model"
               value="<%= productToEdit.model %>"
             />
+
+            <div class="text-danger" id="errorModelo">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -61,6 +69,9 @@
               value="<%= productToEdit.price %>"
               placeholder="$$$$"
             />
+            <div class="text-danger" id="errorPrecio">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -70,6 +81,10 @@
               <option value="calzado" <% if (productToEdit.category == "calzado") { %> selected <%}%>>Calzado</option>
               <option value="accesorios" <% if (productToEdit.category == "accesorios") { %> selected <%}%>>Accesorios</option>
             </select>
+
+            <div class="text-danger" id="errorCategoria">
+
+            </div>  
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -79,6 +94,10 @@
               <option value="femenino" <% if (productToEdit.genre == "femenino") { %> selected <%}%>>Femenino</option>
               <option value="unisex" <% if (productToEdit.genre == "unisex") { %> selected <%}%>>Unisex</option>
             </select>
+
+            <div class="text-danger" id="errorGenero">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -89,9 +108,11 @@
               cols="1"
               rows="2"
               maxlength="60"
-            >
-<%= productToEdit.shortDescription  %> 
-            </textarea>
+            ><%= productToEdit.shortDescription  %></textarea>
+
+            <div class="text-danger" id="errorDescCort">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -101,19 +122,32 @@
               id="longDescription"
               cols="10"
               rows="10"
-            >
-<%= productToEdit.longDescription  %></textarea
-            >
+            ><%= productToEdit.longDescription  %></textarea>
+
+            <div class="text-danger" id="errorDescLarg">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="size">• Talles</label>
             <select name="size" id="size">
+<<<<<<< HEAD
               <option value="S" <% if (productToEdit.size == "S") { %> selected <%}%>> S </option>
               <option value="M" <% if (productToEdit.size == "M") { %> selected <%}%>> M </option>
               <option value="L" <% if (productToEdit.size == "L") { %> selected <%}%>> L </option>
               <option value="Unico" <% if (productToEdit.size == "Unico") { %> selected <%}%>> Unico </option>
+=======
+              <option value="S" <% if (productToEdit.size == "S") { %> selected <%}%>>S</option>
+              <option value="M" <% if (productToEdit.size == "M") { %> selected <%}%>>M</option>
+              <option value="L" <% if (productToEdit.size == "L") { %> selected <%}%>>L</option>
+              <option value="unico" <% if (productToEdit.size == "Unico") { %> selected <%}%>>Unico</option>
+>>>>>>> prodFront
             </select>
+
+            <div class="text-danger" id="erroresTalle">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -124,6 +158,10 @@
               id="color"
               value="<%= productToEdit.color %>"
             />
+
+            <div class="text-danger" id="erroresColor">
+
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
