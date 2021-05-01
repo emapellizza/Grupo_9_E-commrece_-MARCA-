@@ -22,8 +22,6 @@ window.addEventListener("load", function () {
   let erroresColor = document.querySelector("#erroresColor");
 
   formUpdateProduct.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("HOLA");
     let errores = 0;
 
     // Validacion imagen
@@ -33,8 +31,6 @@ window.addEventListener("load", function () {
       return nombreImagen.split(".").pop();
     }
     let extensionImagen = obtenerExtension(nombreImagen);
-
-    let aprobada = false;
 
     let extAceptadas = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
 
