@@ -14,6 +14,9 @@ module.exports = function (sequelize,dataTypes) {
         id_brand: {
             type: dataTypes.INTEGER(11)
         },
+        model: {
+            type: dataTypes.STRING(45)
+        },
         price: {
             type: dataTypes.DECIMAL(6,2)
         },
@@ -42,11 +45,11 @@ module.exports = function (sequelize,dataTypes) {
     const Product = sequelize.define(alias, cols, config);
 
     //Asociaciones
-    Product.assiociate = function(models) {
+    Product.associate = function(models) {
         // Usuarios
         Product.belongsToMany(models.User, {
             as: "users",
-            through: "user_product",
+            through: "cart",
             foreignKey: "id_product",
             otherKey: "id_user",
             timestamps: false
@@ -54,7 +57,7 @@ module.exports = function (sequelize,dataTypes) {
         // Colores
         Product.belongsToMany(models.Color, {
             as: "colors",
-            through: "product_color",
+            through: "stock",
             foreignKey: "id_product",
             otherKey: "id_color",
             timestamps: false
@@ -62,7 +65,7 @@ module.exports = function (sequelize,dataTypes) {
         // Talles
         Product.belongsToMany(models.Size, {
             as: "sizes",
-            through: "product_size",
+            through: "stock",
             foreignKey: "id_product",
             otherKey: "id_size",
             timestamps: false
@@ -77,7 +80,7 @@ module.exports = function (sequelize,dataTypes) {
             as: "categories",
             foreignKey: "id_category"
         })
-         // Categoria
+         // Género
         Product.belongsTo(models.Genre, {
             as: "genres",
             foreignKey: "id_genre"

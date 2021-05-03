@@ -11,17 +11,17 @@
 
       <a
         class="userList-user-container"
-        href="/users/detail/<%= users[i].id %>"
+        href="/users/detail/<%= users[i].id_user %>"
       >
         <div>
           <img
             class="userList-img profile-pic"
-            src="/images/users/<%= users[i].imageUser %>"
+            src="/images/users/<%= users[i].image %>"
             alt=""
           />
         </div>
         <div class="userList-nombre">
-          <p><%= users[i].firstName %> <%= users[i].lastName %></p>
+          <p><%= users[i].first_name %> <%= users[i].last_name %></p>
         </div>
         <!--<div class="userList-eliminar">ELIMINAR</div>------>>
         <div>

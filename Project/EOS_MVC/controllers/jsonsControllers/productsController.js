@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const tablaJson = require("../data/jsonManager");
+const tablaJson = require("../../data/jsonManager");
 
 const productsJson = tablaJson("products");
 
@@ -71,12 +71,13 @@ const productsController = {
 
   updatedProduct: function (req, res) {
     if (req.session.adminLogged) {
+
       // Validacion
     let errors = validationResult(req);
     const productToUpdate = productsJson.find(req.params.idProduct);
     if (errors.isEmpty()) {
+
       // Almaceno los datos del producto
-      
         productToUpdate.image = req.file.filename
         productToUpdate.brand = req.body.brand
         productToUpdate.model = req.body.model

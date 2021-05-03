@@ -1,9 +1,9 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "User_product";
+    let alias = "Cart";
 
     let cols = {
-        id_user_product: {
+        id_cart: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
@@ -23,12 +23,19 @@ module.exports = function (sequelize,dataTypes) {
     }
 
     let config = {
-        tablename: "user_product",
+        tablename: "cart",
         timestamps: false
     }
 
-    const User_product = sequelize.define(alias, cols, config);
+    const Cart = sequelize.define(alias, cols, config);
 
-    return User_product;
+    Cart.associate = function(models){
+        Cart.hasMany(models.Order, {
+            as: "orders",
+            foreignKey: "id_cart"
+        });
+    }
+
+    return Cart;
 
 }
