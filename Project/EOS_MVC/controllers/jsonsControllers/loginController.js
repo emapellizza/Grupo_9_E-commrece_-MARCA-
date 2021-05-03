@@ -9,6 +9,7 @@ const loginController = {
   },
 
   logout: function(req,res){
+    res.clearCookie("userEmail");//borra la cookie
     req.session.destroy();//borra la session
     return res.redirect("/");
   },
@@ -30,6 +31,11 @@ const loginController = {
       if (checkPassword) {
           delete userToLog.password; //por seguridad
           req.session.userLogged = userToLog; //login de usuario
+         
+          if(req.body.conectado){///conectado es el name del checkbox para permanecer en session con las cookies
+            res.cookie("userEmail",req.body.email,{maxAge:(1000 * 60) * 10})
+            //dura dos minutos//1000ms * 60 = 1min *2 dos minutos
+          }
           return res.redirect("/");
       }
       
