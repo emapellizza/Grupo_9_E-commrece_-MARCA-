@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const db = require("../../database/models");
 
 const dbUserController = {
@@ -13,19 +14,29 @@ const dbUserController = {
 
 
     saveUser: function (req, res) {
-        
-      db.User.create({
-        first_name: req.body.firstName,
-        last_name: req.body.lastName,
-        date_of_birth: req.body.dateOfBirth,
-        email: req.body.email,
-        phone: req.body.phone,
-        password: req.body.password,           
-            
-      });            
-    
+
+      let errors = validationResult(req);
+      
+      if (errors.isEmpty()) { 
+
+        db.User.create({
+          first_name: req.body.firstName,
+          last_name: req.body.lastName,
+          date_of_birth: req.body.dateOfBirth,
+          email: req.body.email,
+          phone: req.body.phone,
+          password: req.body.password,           
+              
+        });            
+      
         return res.redirect("/");
-    
+      
+      } else {
+        return res.render("./register", {
+          errors: errors.mapped(),
+          old: req.body,
+        });
+      }
     },
 
     findById: (req, res) => {      

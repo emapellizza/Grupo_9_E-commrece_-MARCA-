@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const db = require("../../database/models");
 
 const dbProductController = {
@@ -41,21 +42,32 @@ const dbProductController = {
     },
 
     saveProduct: function (req, res) {
-            
-      db.Product.create({
-        image: req.file.filename,
-        id_brand: req.body.brand,
-        model: req.body.model,
-        price: req.body.price,
-        id_category: req.body.category,
-        id_genre: req.body.genre,
-        short_description: req.body.shortDescription,
-        long_description: req.body.longDescription,
-            
-      });
-   
+
+      let errors = validationResult(req);
+
+      if (errors.isEmpty()) { 
+              
+        db.Product.create({
+          image: req.file.filename,
+          id_brand: req.body.brand,
+          model: req.body.model,
+          price: req.body.price,
+          id_category: req.body.category,
+          id_genre: req.body.genre,
+          short_description: req.body.shortDescription,
+          long_description: req.body.longDescription,
+              
+        });
+    
         return res.redirect("/");
-     
-}}
+
+      } else {
+          return res.render("products/new", {
+            errors: errors.mapped(),
+            old: req.body,
+          });
+      }
+    }
+}
 
 module.exports = dbProductController;

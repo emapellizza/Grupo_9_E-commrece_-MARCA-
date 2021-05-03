@@ -29,22 +29,11 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
-<<<<<<< HEAD
             <select name="brand" id="brand" >
               <option disabled selected>Seleccionar</option>
               <% for (let i = 0; i < marca.length; i++) { %>}
                 <option value="<%= marca[i].id_brand %>"><%= marca[i].brand %></option>
               <% } %>
-=======
-            <select name="brand" id="brand">
-              <option value="Seleccionar" disabled selected>Seleccionar</option>
-              <option value="Nike">Nike</option>
-              <option value="Adidas">Adidas</option>
-              <option value="Puma">Puma</option>
-              <option value="New Balance">New Balance</option>
-              <option value="Vans">Vans</option>
-              <option value="Under Armour">Under Armour</option>
->>>>>>> 0f3d4237249482919a52923088b9d0b418359bc0
             </select>
 
             <div class="text-danger" id="errorMarca">
@@ -130,12 +119,8 @@
               rows="10"
               placeholder="Descripción completa que se mostrará en el detalle del producto"
             ></textarea>
-
-            <div class="text-danger" id="errorDescLarg">
-              <% if (locals.errors && errors.longDescription) { %> <%=
-              errors.longDescription.msg %> <% } %>
-            </div>
           </div>
+          
 
           <div class="contenedor-campos-newProduct">
             <button type="submit" class="boton-newProduct">CONTINUAR</button>

@@ -8,8 +8,7 @@ const validateUser = [
       .isEmail().withMessage("* Debes completar el Email con una dirección válida"),
     body("password")
       .notEmpty().withMessage(" Debes completar la contraseña").bail()
-      .isLength({ min: 6, max: 16 }).withMessage("* La contraseña debe tener entre 6 y 16 caracteres"),
-    
+      .isLength({ min: 6, max: 16 }).withMessage("* La contraseña debe tener entre 6 y 16 caracteres")    
   ];
 
   module.exports = validateUser;
