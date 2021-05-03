@@ -32,7 +32,7 @@ const dbUserController = {
         return res.redirect("/");
       
       } else {
-        return res.render("./register", {
+        return res.render("users/register", {
           errors: errors.mapped(),
           old: req.body,
         });

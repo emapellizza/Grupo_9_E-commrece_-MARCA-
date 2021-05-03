@@ -14,7 +14,7 @@ router.get("/", mainController.index);
 
 // Registro
 router.get("/register", guestMiddleware, usersController.register);
-router.post("/register", dbUserController.saveUser);
+router.post("/register", validateRegister, dbUserController.saveUser);
 
 // Logeo
 router.get("/login", guestMiddleware, loginController.login);

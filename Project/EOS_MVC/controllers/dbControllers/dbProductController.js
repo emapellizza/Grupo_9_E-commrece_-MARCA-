@@ -14,7 +14,7 @@ const dbProductController = {
 
     show: (req, res) => {
       
-      db.Product.finByPk(req.params.idProduct)
+      db.Product.findByPk(req.params.idProduct)
         .then(function(productDetail){
           return  res.render("./products/detail", { productDetail: productDetail });
       })    
@@ -34,7 +34,7 @@ const dbProductController = {
         let pedidoGenero = db.Genre.findAll();
 
         Promise.all([pedidoMarca,pedidoCategoria,pedidoGenero])
-          .then(function([marca,categoria,marca]){
+          .then(function([marca,categoria,genero]){
             return res.render("./products/new", {marca:marca, categoria:categoria, genero:genero}); 
           });
 
