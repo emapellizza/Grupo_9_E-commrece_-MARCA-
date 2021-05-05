@@ -33,6 +33,7 @@ const loginController = {
           req.session.userLogged = userToLog; //login de usuario
          
           if(req.body.conectado){///conectado es el name del checkbox para permanecer en session con las cookies
+            console.log(req.body.conectado);
             res.cookie("userEmail",req.body.email,{maxAge:(1000 * 60) * 10})
             //dura dos minutos//1000ms * 60 = 1min *2 dos minutos
           }

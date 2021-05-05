@@ -9,12 +9,8 @@ const usersController = {
 
   listAll: function (req, res) {
     if(req.session.adminLogged){
-
     // con JSON: 
     let users = usersJson.all();
-
-    
-
     return res.render("./users/list", { users });
     }
     else
@@ -96,17 +92,45 @@ const usersController = {
       let userId = req.params.idUser;
       //busco el id en la lista 
       let userToEdit = usersJson.find(userId);
-
      
       res.render("./users/update",{userToEdit});
       
     }
     else
      return res.redirect("/");
-
   },
 
-  
+  updatedUser: function(req,res){
+    console.log("entro en UPDATEDUSER")
+    //res.redirect("../detail/" + userId);
+    if (req.session.adminLogged) {
+      // Validacion
+      let errors = validationResult(req);
+      const userToUpdate = usersJson.find(req.params.idUser);
+      if (errors.isEmpty()) {
+        // Almaceno los datos del user
+       // userToUpdate.imageUser = req.body.imagenUsuario;
+        userToUpdate.firstName = req.body.firstName;
+        userToUpdate.lastName = req.body.lastName;
+        userToUpdate.dateOfBirth = req.body.dateOfBirth;
+        userToUpdate.email = req.body.email;
+        userToUpdate.password = req.body.password;
+        userToUpdate.phone = req.body.phone;
+        userToUpdate.active = "true";
+      }
+
+      let userId = usersJson.update(userToUpdate);
+     
+      res.redirect("../detail/" + userId);
+    } else {
+      return res.render("users/update", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    }
+  },
+
+
   delete: function(req,res){
     
     if(req.session.adminLogged){

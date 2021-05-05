@@ -9,10 +9,11 @@
       <div class="container-all-reg-log">
         <h2>Editar Usuario  <%=userToEdit.lastName%> </h2>
 
-        <form
-          action="/edituser/<%=userToEdit.id%>?_method=PUT"
+        <form  
+          action="/admin/users/edit/<%=userToEdit.id%>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
+          id="formUpdateUser"
         >
           <div class="contenedor-campos-reg-log">
             <label for="imagenUsuario" class="label-reg-log">Imagen</label>
@@ -22,6 +23,7 @@
               name="imagenUsuario"
               accept=".png, .jpg, .jpeg"
             />
+            <div class="text-danger" id="errorImagen"></div>
           </div>
 
           <div class="contenedor-campos-reg-log">
@@ -32,11 +34,8 @@
               id="firstName"
               value="<%=userToEdit.firstName %>"
             />
+            <div class="text-danger" id="errorfirstName">
 
-           
-            <% if (locals.errors && errors.firstName) { %>
-            <div class="text-danger"><%= errors.firstName.msg %></div>
-            <% } %>
           </div>
 
           <div class="contenedor-campos-reg-log">
@@ -47,10 +46,9 @@
               id="lastName"
               value="<%=userToEdit.lastName%>"
             />
+            <div class="text-danger" id="errorlastName"></div>
           </div>
-          <% if (locals.errors && errors.lastName) { %>
-          <div class="text-danger"><%= errors.lastName.msg %></div>
-          <% } %>
+         
 
           <div class="contenedor-campos-reg-log">
             <label for="dateOfBirth" class="label-reg-log"
@@ -62,10 +60,9 @@
               id="dateOfBirth"
               value="<%= userToEdit.dateOfBirth%>"
             />
+            <div class="text-danger" id="errorbdate"></div>
           </div>
-          <% if (locals.errors && errors.dateOfBirth) { %>
-          <div class="text-danger"><%= errors.dateOfBirth.msg %></div>
-          <% } %>
+        
 
           <div class="contenedor-campos-reg-log">
             <label for="email" class="label-reg-log">Correo Electrónico</label>
@@ -75,18 +72,16 @@
               id="email"
               value="<%= userToEdit.email%>"
             />
+            <div class="text-danger" id="errorEmail"></div>
           </div>
-          <% if (locals.errors && errors.email) { %>
-          <div class="text-danger"><%= errors.email.msg %></div>
-          <% } %>
+        
 
           <div class="contenedor-campos-reg-log">
             <label for="password" class="label-reg-log">Contraseña</label>
             <input type="password" name="password" id="password" />
+            <div class="text-danger" id="errorpassword"></div>
           </div>
-          <% if (locals.errors && errors.password) { %>
-          <div class="text-danger"><%= errors.password.msg %></div>
-          <% } %>
+    
 
           <div class="contenedor-campos-reg-log">
             <label for="confirmPassword" class="label-reg-log"
@@ -97,10 +92,9 @@
               name="confirmPassword"
               id="confirmPassword"
             />
+            <div class="text-danger" id="econfirmPassword"></div>
           </div>
-          <% if (locals.errors && errors.password2) { %>
-          <div class="text-danger"><%= errors.password2.msg %></div>
-          <% } %>
+      
 
           <div class="checkbox-reg-log">
             <input type="checkbox" name="newsletter" id="newsletter" />
@@ -121,9 +115,8 @@
             >
           </div>
 
-          <div class="boton-reg-log">
-            <button type="submit">CREAR CUENTA</button>
-          </div>
+            <button type="submit" class="boton-reg-log">ACTUALIZAR</button>
+          
         </form>
       </div>
     </main>

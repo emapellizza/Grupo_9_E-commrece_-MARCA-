@@ -5,7 +5,7 @@ function userLoggedMiddleware(req,res,next){
     res.locals.isLogged == false;
     res.locals.isAdminLogged == false;
    
-    let cookieEmail = req.cookies.userEmail;
+    let cookieEmail = req.cookies.userEmail;//userEmail es el name del chebox
     let userFromCookie = usersJson.findByField("email",cookieEmail);
     
     if(userFromCookie){
