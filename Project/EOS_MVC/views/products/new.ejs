@@ -64,9 +64,10 @@
               placeholder="$$$$"
             />
 
-            <% if (locals.errors && errors.price) { %>
-            <div class="text-danger"><%= errors.price.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorPrecio">
+              <% if (locals.errors && errors.price) { %> <%= errors.price.msg %>
+              <% } %>
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
@@ -129,6 +130,11 @@
               rows="10"
               placeholder="Descripción completa que se mostrará en el detalle del producto"
             ></textarea>
+
+            <div class="text-danger" id="errorDescLarg">
+              <% if (locals.errors && errors.longDescription) { %> <%=
+              errors.longDescription.msg %> <% } %>
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct" id="erroresNewProd">

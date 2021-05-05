@@ -728,6 +728,14 @@ select {
 .boton-newProduct button:active {
   transform: translateY(2px);
 }
+#erroresNewProd {
+  margin-top: 10px;
+  border-radius: 5px;
+  display: none;
+  padding: 5px 0;
+  background-color: #d63b3b;
+  text-align: center;
+}
 /* -----------------------Estilos Footer----------------------- */
 footer {
   border-top: 1px solid #977a5885;
