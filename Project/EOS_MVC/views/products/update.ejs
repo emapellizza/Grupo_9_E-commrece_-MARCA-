@@ -89,7 +89,7 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="genre">• Género</label>
-            <select name="genergenreoProducto" id="genre">
+            <select name="genre" id="genre">
               <option value="masculino" <% if (productToEdit.genre == "masculino") { %> selected <%}%>>Masculino</option>
               <option value="femenino" <% if (productToEdit.genre == "femenino") { %> selected <%}%>>Femenino</option>
               <option value="unisex" <% if (productToEdit.genre == "unisex") { %> selected <%}%>>Unisex</option>
@@ -129,32 +129,8 @@
             </div>
           </div>
 
-          <div class="contenedor-campos-newProduct">
-            <label for="size">• Talles</label>
-            <select name="size" id="size">
-              <option value="S" <% if (productToEdit.size == "S") { %> selected <%}%>>S</option>
-              <option value="M" <% if (productToEdit.size == "M") { %> selected <%}%>>M</option>
-              <option value="L" <% if (productToEdit.size == "L") { %> selected <%}%>>L</option>
-              <option value="unico" <% if (productToEdit.size == "Unico") { %> selected <%}%>>Unico</option>
-            </select>
-
-            <div class="text-danger" id="erroresTalle">
-
-            </div>
-          </div>
-
-          <div class="contenedor-campos-newProduct">
-            <label for="color">• Colores</label>
-            <input
-              type="text"
-              name="color"
-              id="color"
-              value="<%= productToEdit.color %>"
-            />
-
-            <div class="text-danger" id="erroresColor">
-
-            </div>
+          <div class="contenedor-campos-newProduct" id="erroresNewProd">
+            <p>ERROR: debes rellenar el formulario correctamente</p>
           </div>
 
           <div class="contenedor-campos-newProduct">

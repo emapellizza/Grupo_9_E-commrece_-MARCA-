@@ -160,6 +160,10 @@ window.addEventListener("load", (e) => {
   //    }
   // });
   formNewProduct.addEventListener("submit", (e) => {
+    if (imagenAprobada != true) {
+      e.preventDefault();
+      errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
+    }
     if (
       !campos.marca ||
       !campos.modelo ||
