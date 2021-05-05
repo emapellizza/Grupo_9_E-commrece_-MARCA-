@@ -29,10 +29,12 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
-            <select name="brand" id="brand" >
+            <select name="brand" id="brand">
               <option disabled selected>Seleccionar</option>
               <% for (let i = 0; i < marca.length; i++) { %>}
-                <option value="<%= marca[i].id_brand %>"><%= marca[i].brand %></option>
+              <option value="<%= marca[i].id_brand %>">
+                <%= marca[i].brand %>
+              </option>
               <% } %>
             </select>
 
@@ -44,8 +46,7 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="model">• Modelo</label>
-            <input type="text" name="model" id="model"
-            placeholder="Modelo"/>
+            <input type="text" name="model" id="model" placeholder="Modelo" />
 
             <div class="text-danger" id="errorModelo">
               <% if (locals.errors && errors.model) { %> <%= errors.model.msg %>
@@ -55,20 +56,27 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="price">• Precio</label>
-            <input type="number" name="price" min="0" id="price" 
-            placeholder="$$$$"/>
-            
+            <input
+              type="number"
+              name="price"
+              min="0"
+              id="price"
+              placeholder="$$$$"
+            />
+
             <% if (locals.errors && errors.price) { %>
-              <div class="text-danger"><%= errors.price.msg %></div>
+            <div class="text-danger"><%= errors.price.msg %></div>
             <% } %>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="category">• Categoria</label>
             <select name="category" id="category">
-                <option disabled selected>Seleccionar</option>
-                <% for (let i = 0; i < categoria.length; i++) { %>}
-                <option value="<%= categoria[i].id_category %>"><%= categoria[i].category %></option>
+              <option disabled selected>Seleccionar</option>
+              <% for (let i = 0; i < categoria.length; i++) { %>}
+              <option value="<%= categoria[i].id_category %>">
+                <%= categoria[i].category %>
+              </option>
               <% } %>
             </select>
 
@@ -83,7 +91,9 @@
             <select name="genre" id="genre">
               <option disabled selected>Seleccionar</option>
               <% for (let i = 0; i < genero.length; i++) { %>}
-                <option value="<%= genero[i].id_genre %>"><%= genero[i].genre %></option>
+              <option value="<%= genero[i].id_genre %>">
+                <%= genero[i].genre %>
+              </option>
               <% } %>
             </select>
 
@@ -120,7 +130,10 @@
               placeholder="Descripción completa que se mostrará en el detalle del producto"
             ></textarea>
           </div>
-          
+
+          <div class="contenedor-campos-newProduct" id="erroresNewProd">
+            <p>ERROR: debes rellenar el formulario correctamente</p>
+          </div>
 
           <div class="contenedor-campos-newProduct">
             <button type="submit" class="boton-newProduct">CONTINUAR</button>
