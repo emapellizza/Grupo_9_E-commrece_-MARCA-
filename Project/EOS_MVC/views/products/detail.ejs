@@ -8,7 +8,7 @@
       <article class="container-productDetail">
         <img src="/images/products/<%= productDetail.image %>" alt="" />
         <div class="container-caract-productDetail">
-          <h3><%= productDetail.brand + " " + productDetail.model %></h3>
+          <h3><%= productDetail.brands.brand + " " + productDetail.model %></h3>
           <div>
             <p>Talles disponibles:</p>
             <p><%= productDetail.size%></p>
@@ -31,7 +31,7 @@
 
       <article class="container-productDetail-bottom">
         <h4>• Descripción •</h4>
-        <p><%= productDetail.longDescription%></p>
+        <p><%= productDetail.long_description%></p>
       </article>
     </main>
 

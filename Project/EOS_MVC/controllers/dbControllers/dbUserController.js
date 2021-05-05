@@ -46,7 +46,19 @@ const dbUserController = {
           return res.render("users/detail", { userDetail: userDetail });
         })   
       
-    }
+    },
+
+    
+  profile: function (req, res) {
+    
+    if(req.session.adminLogged){
+     return(res.redirect("/admin")); 
+    } 
+    
+    res.render("users/profile", {
+      user: req.session.userLogged,
+    });
+  },
 }
 
 module.exports = dbUserController;

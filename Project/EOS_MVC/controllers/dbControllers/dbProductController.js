@@ -5,7 +5,7 @@ const dbProductController = {
 
     listAll: function (req, res) {
             
-      db.Product.findAll()
+      db.Product.findAll({include: [{association: "brands"}]})
         .then(function(products){
           return res.render("./products/list", { products: products });
         })           
@@ -14,7 +14,9 @@ const dbProductController = {
 
     show: (req, res) => {
       
-      db.Product.findByPk(req.params.idProduct)
+      db.Product.findByPk(req.params.idProduct, {
+        include: [{association: "brands"}]
+      })
         .then(function(productDetail){
           return  res.render("./products/detail", { productDetail: productDetail });
       })    
@@ -66,6 +68,18 @@ const dbProductController = {
             errors: errors.mapped(),
             old: req.body,
           });
+      }
+    },
+
+    updateProduct: function (req, res) {
+      if (req.session.adminLogged) {
+        let prodId = req.params.idProduct;
+  
+        let productToEdit = db.Product.findAll(prodId);
+  
+        res.render("./products/update", { productToEdit: productToEdit });
+      } else {
+        return res.redirect("/");
       }
     }
 }

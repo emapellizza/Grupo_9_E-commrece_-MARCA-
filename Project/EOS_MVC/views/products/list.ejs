@@ -19,10 +19,10 @@
       </section>
 
       <section class="all-products-container">
-        <% for (let i = 1; i< products.length; i++) { %>
-
+        <% for (let i = 0; i< products.length; i++) {%>
+          
         <article class="container-product">
-          <a href="/products/detail/<%= i %> ">
+          <a href="/products/detail/<%= products[i].id_product %> ">
             <img
               src="/images/products/<%= products[i].image %>"
               alt="imagen producto"
@@ -30,15 +30,15 @@
             <div class="product-descpription">
               <h3>
                 <strong
-                  ><%= products[i].brand + " " + products[i].model %></strong
+                  ><%= products[i].brands.brand + " " + products[i].model %></strong
                 >
               </h3>
-              <p><%=products[i].shortDescription %></p>
+              <p><%=products[i].short_description %></p>
               <p><strong>$<%=products[i].price %></strong></p>
 
               <div class="container-edit-product-button">
                 <% if(locals.isAdminLogged){ %>
-                <a href="/admin/products/edit/<%= products[i].id %>">
+                <a href="/admin/products/edit/<%= products[i].id_product %>">
                   <button type="submit" class="edit-product-button">
                     Editar
                   </button>
