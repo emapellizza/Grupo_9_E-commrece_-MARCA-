@@ -732,8 +732,8 @@ select {
   margin-top: 10px;
   border-radius: 5px;
   display: none;
-  padding: 5px 0;
-  background-color: #d63b3b;
+  padding: 10px 0;
+  background-color: #ff000057;
   text-align: center;
 }
 /* -----------------------Estilos Footer----------------------- */

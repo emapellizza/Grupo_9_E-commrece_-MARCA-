@@ -6,6 +6,7 @@ window.addEventListener("load", (e) => {
   let textareas = document.querySelectorAll("#formNewProduct textarea");
   let selects = document.querySelectorAll("#formNewProduct select");
 
+  // Campos errores
   let errorImagen = document.querySelector("#errorImagen");
   let errorModelo = document.querySelector("#errorModelo");
   let errorPrecio = document.querySelector("#errorPrecio");
@@ -17,6 +18,7 @@ window.addEventListener("load", (e) => {
 
   const campos = {
     // falta imagen
+    imagen: false,
     marca: false,
     modelo: false,
     precio: false,
@@ -26,7 +28,6 @@ window.addEventListener("load", (e) => {
     descLarga: false,
   };
   /* VALIDACION IMAGEN */
-  let imagenAprobada = false;
   imagen.addEventListener("blur", function () {
     let nombreImagen = imagen.value;
 
@@ -37,10 +38,10 @@ window.addEventListener("load", (e) => {
     let extAceptadas = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
 
     if (extAceptadas.indexOf(extensionImagen) === -1) {
-      imagenAprobada = false;
+      campos.imagen = false;
       errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
     } else {
-      imagenAprobada = true;
+      campos.imagen = true;
       errorImagen.innerHTML = "";
     }
   });
@@ -160,11 +161,35 @@ window.addEventListener("load", (e) => {
   //    }
   // });
   formNewProduct.addEventListener("submit", (e) => {
-    if (imagenAprobada != true) {
+    let textError = "* Este campo no es valido";
+    losefocus();
+    if (!campos.imagen) {
+      errorImagen.innerHTML = textError;
       e.preventDefault();
-      errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
+    }
+    if (!campos.marca) {
+      errorMarca.innerHTML = textError;
+    }
+    if (!campos.modelo) {
+      errorModelo.innerHTML = textError;
+    }
+    if (!campos.precio) {
+      errorPrecio.innerHTML = textError;
+    }
+    if (!campos.categoria) {
+      errorCategoria.innerHTML = textError;
+    }
+    if (!campos.genero) {
+      errorGenero.innerHTML = textError;
+    }
+    if (!campos.descCorta) {
+      errorDescCort.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.descLarga) {
+      errorDescLarg.innerHTML = "* Este campo no es valido";
     }
     if (
+      !campos.imagen ||
       !campos.marca ||
       !campos.modelo ||
       !campos.precio ||
