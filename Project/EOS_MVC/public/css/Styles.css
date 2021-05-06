@@ -128,7 +128,7 @@ input {
 }
 /* Estilo para JS */
 .active {
-  transform: translate(-680px);
+  transform: translate(-700px);
 }
 
 .cont-menu-hamburguesa nav a {
