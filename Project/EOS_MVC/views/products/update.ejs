@@ -7,15 +7,13 @@
 
     <main class="main-newProduct">
       <div class="container-newProduct">
-
-        <h2 class="titulo-newProduct">Editar <i><%= productToEdit.brand + " " + productToEdit.model  %></i> 
-        </h2>
+        <h2 class="titulo-newProduct">EDITAR <%= prod.brands.brand + " " + prod.model %></h2>
 
         <form
-          action="/admin/products/edit/<%= productToEdit.id %>?_method=PUT"
+          action="/admin/products/edit/<%= prod.id_product %>"
           method="POST"
           enctype="multipart/form-data"
-          id="formUpdateProduct"
+          id="formNewProduct"
         >
           <div class="contenedor-campos-newProduct">
             <label for="productImage">• Imagen/es</label>
@@ -32,30 +30,32 @@
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
             <select name="brand" id="brand">
-              <option value="Nike" <% if (productToEdit.brand == "Nike") { %> selected <%}%>> Nike </option>
-              <option value="Adidas" <% if (productToEdit.brand == "Adidas") { %> selected <%}%>>Adidas</option>
-              <option value="Puma" <% if (productToEdit.brand == "Puma") { %> selected <%}%>>Puma</option>
-              <option value="New Balance" <% if (productToEdit.brand == "New Balance") { %> selected <%}%>>New Balance</option>
-              <option value="Vans" <% if (productToEdit.brand == "Vans") { %> selected <%}%>>Vans</option>
-              <option value="Under Armour" <% if (productToEdit.brand == "Under Armour") { %> selected <%}%>>Under Armour</option>
+              <% for (let i = 0; i < marca.length; i++) { %>
+                <% if (marca[i].id_brand == prod.id_brand) { %>
+                  <option value="<%= marca[i].id_brand %>" selected>
+                     <%= marca[i].brand %>
+                  </option>
+                <% } else { %>
+                  <option value="<%= marca[i].id_brand %>">
+                    <%= marca[i].brand %>
+                  </option>
+                <% } %>      
+              <% } %>  
             </select>
 
             <div class="text-danger" id="errorMarca">
-
+              <% if (locals.errors && errors.brand) { %> <%= errors.brand.msg %>
+              <% } %>
             </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="model">• Modelo</label>
-            <input
-              type="text"
-              name="model"
-              id="model"
-              value="<%= productToEdit.model %>"
-            />
+            <input type="text" name="model" id="model" value="<%= prod.model %>" />
 
             <div class="text-danger" id="errorModelo">
-
+              <% if (locals.errors && errors.model) { %> <%= errors.model.msg %>
+              <% } %>
             </div>
           </div>
 
@@ -66,37 +66,56 @@
               name="price"
               min="0"
               id="price"
-              value="<%= productToEdit.price %>"
-              placeholder="$$$$"
+              value="<%= prod.price %>"
             />
-            <div class="text-danger" id="errorPrecio">
 
+            <div class="text-danger" id="errorPrecio">
+              <% if (locals.errors && errors.price) { %> <%= errors.price.msg %>
+              <% } %>
             </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="category">• Categoria</label>
             <select name="category" id="category">
-              <option value="indumentaria" <% if (productToEdit.category == "indumentaria") { %> selected <%}%>>Indumentaria</option>
-              <option value="calzado" <% if (productToEdit.category == "calzado") { %> selected <%}%>>Calzado</option>
-              <option value="accesorios" <% if (productToEdit.category == "accesorios") { %> selected <%}%>>Accesorios</option>
+              <% for (let i = 0; i < categoria.length; i++) { %>
+                <% if (categoria[i].id_category == prod.id_category) { %>
+                  <option value="<%= categoria[i].id_category %>" selected>
+                     <%= categoria[i].category %>
+                  </option>
+                <% } else { %>
+                  <option value="<%= categoria[i].id_category %>">
+                    <%= categoria[i].category %>
+                  </option>
+                <% } %>      
+              <% } %>  
             </select>
 
             <div class="text-danger" id="errorCategoria">
-
-            </div>  
+              <% if (locals.errors && errors.category) { %> <%=
+              errors.category.msg %> <% } %>
+            </div>
           </div>
 
           <div class="contenedor-campos-newProduct">
             <label for="genre">• Género</label>
             <select name="genre" id="genre">
-              <option value="masculino" <% if (productToEdit.genre == "masculino") { %> selected <%}%>>Masculino</option>
-              <option value="femenino" <% if (productToEdit.genre == "femenino") { %> selected <%}%>>Femenino</option>
-              <option value="unisex" <% if (productToEdit.genre == "unisex") { %> selected <%}%>>Unisex</option>
+              <% for (let i = 0; i < genero.length; i++) { %>
+                <% if (genero[i].id_genre == prod.id_genre) { %>
+                  <option value="<%= genero[i].id_genre %>" selected>
+                     <%= genero[i].genre %>
+                  </option>
+                <% } else { %>
+                  <option value="<%= genero[i].id_genre %>">
+                    <%= genero[i].genre %>
+                  </option>
+                <% } %>      
+              <% } %>  
             </select>
 
             <div class="text-danger" id="errorGenero">
-
+              <% if (locals.errors && errors.genre) { %> <%= errors.genre.msg %>
+              <% } %>
             </div>
           </div>
 
@@ -106,12 +125,14 @@
               name="shortDescription"
               id="shortDescription"
               cols="1"
-              rows="2"
+              rows="1"
               maxlength="60"
-            ><%= productToEdit.shortDescription  %></textarea>
+              value="<%= prod.short_description %>"
+            ></textarea>
 
             <div class="text-danger" id="errorDescCort">
-
+              <% if (locals.errors && errors.shortDescription) { %> <%=
+              errors.shortDescription.msg %> <% } %>
             </div>
           </div>
 
@@ -122,10 +143,12 @@
               id="longDescription"
               cols="10"
               rows="10"
-            ><%= productToEdit.longDescription  %></textarea>
+              value="<%= prod.long_description %>"
+            ></textarea>
 
             <div class="text-danger" id="errorDescLarg">
-
+              <% if (locals.errors && errors.longDescription) { %> <%=
+              errors.longDescription.msg %> <% } %>
             </div>
           </div>
 
@@ -136,7 +159,6 @@
           <div class="contenedor-campos-newProduct">
             <button type="submit" class="boton-newProduct">ACTUALIZAR</button>
           </div>
-          <!--    METODO DELETE   -->
         </form>
       </div>
     </main>

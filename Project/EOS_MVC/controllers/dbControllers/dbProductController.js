@@ -73,15 +73,26 @@ const dbProductController = {
 
     updateProduct: function (req, res) {
       if (req.session.adminLogged) {
-        let prodId = req.params.idProduct;
-  
-        let productToEdit = db.Product.findAll(prodId);
-  
-        res.render("./products/update", { productToEdit: productToEdit });
+
+        let productToEdit = db.Product.findByPk(req.params.idProduct, {
+          include: [{association: "brands"}]
+        });
+        let pedidoMarca = db.Brand.findAll();
+        let pedidoCategoria = db.Category.findAll();
+        let pedidoGenero = db.Genre.findAll();
+
+        Promise.all([productToEdit, pedidoMarca,pedidoCategoria,pedidoGenero])
+          .then(function([prod, marca, categoria, genero]){
+            return res.render("./products/update", {prod:prod, marca:marca, categoria:categoria, genero:genero}); 
+          });
+          
+        
       } else {
         return res.redirect("/");
       }
-    }
+    },
+
+    
 }
 
 module.exports = dbProductController;
