@@ -1,12 +1,11 @@
 [
   {
     "imageUser": "",
-    "firstName": "Pablo",
+    "firstName": "pablo juan",
     "lastName": "Perez",
-    "dateOfBirth": "2021-04-07",
+    "dateOfBirth": "2021-04-14",
     "email": "pablo@perez.com",
-    "password": "$2b$10$nLLCLVb1vj03O95NTgrFYe/Pk2188V5BSulApqlrjxndGmOzSxWwK",
-    "phone": "1148986541",
+    "password": "",
     "active": "true",
     "admin": "false",
     "id": 1
@@ -17,8 +16,7 @@
     "lastName": "Pellizza",
     "dateOfBirth": "1991-11-28",
     "email": "emapellizza@gmail.com",
-    "password": "$2b$10$kSFizh3LTmt0hKp6SBuy9.LjNn9I6ro8fiJy2beyJyGsZnqJiVL.y",
-    "phone": "1152369854",
+    "password": "",
     "active": "true",
     "admin": "false",
     "id": 2

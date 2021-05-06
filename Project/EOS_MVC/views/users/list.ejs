@@ -23,18 +23,18 @@
         <div class="userList-nombre">
           <p><%= users[i].firstName %> <%= users[i].lastName %></p>
         </div>
-        <!--<div class="userList-eliminar">ELIMINAR</div>------>>
-        <div>
-          <form  method="POST" action="/admin/users/edit/<%= users[i].id %>?_method=PUT">
-            <button class= "userList-eliminar" type ="submit">Editar</button>
-          </form>
+      
+        
+        
+          <div> <a href="/admin/users/edit/<%= users[i].id %>">
+             <button type="submit" class= "userList-eliminar" >Editar</button>
+                </a>
 
-          <form  method="POST" action="/admin/users/delete/<%= users[i].id %>?_method=DELETE">
-            <button class= "userList-eliminar" type ="submit">Eliminar</button>
-          </form>
-
-
-        </div>
+                <a href="/admin/users/delete/<%= users[i].id %>">
+                  <button class= "userList-eliminar" type ="submit">Eliminar</button>
+                </a>
+          </div>
+       
       </a>
     
       <% } %>
