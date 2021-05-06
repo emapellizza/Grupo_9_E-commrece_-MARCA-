@@ -10,8 +10,31 @@
     </button>
   </form>
 
-  <section class="menu-hamburguesa-footer">
-    <i class="fas fa-bars"></i>
+  <!-- Menu Hamburguesa -->
+  <section class="menu-hamburguesa-header">
+    <div class="container-icomo-hamburguesa" id="icono-menu">
+      <a href="#"><i class="fas fa-bars"></i></a>
+    </div>
+
+    <div class="cont-menu-hamburguesa active" id="menu-hamburguesa">
+      <div class="icono-cerrar">
+        <a href="#">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+      <nav>
+        <a href="/users/register" class="items-menu-header"
+          ><span class="dorado">● </span>Creá tu cuenta</a
+        >
+        <a href="/users/login" class="items-menu-header"
+          ><span class="dorado">● </span>Ingresá</a
+        >
+        <a href="/products/cart" class="items-menu-header"
+          ><span class="dorado">● </span>Carrito
+          <i class="fas fa-shopping-bag"></i
+        ></a>
+      </nav>
+    </div>
   </section>
 
   <% if (locals.isLogged || locals.isAdminLogged){ %>
