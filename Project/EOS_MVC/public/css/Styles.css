@@ -1198,8 +1198,7 @@ footer li {
     font-size: 30px;
   }
   .all-products-container {
-    padding: 0 2vw;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
   /* Error */
