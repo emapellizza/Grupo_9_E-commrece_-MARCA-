@@ -7,7 +7,9 @@
 
     <main class="main-newProduct">
       <div class="container-newProduct">
-        <h2 class="titulo-newProduct">EDITAR <%= prod.brands.brand + " " + prod.model %></h2>
+        <h2 class="titulo-newProduct">
+          EDITAR <%= prod.brands.brand + " " + prod.model %>
+        </h2>
 
         <form
           action="/admin/products/edit/<%= prod.id_product %>"
@@ -30,17 +32,16 @@
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
             <select name="brand" id="brand">
-              <% for (let i = 0; i < marca.length; i++) { %>
-                <% if (marca[i].id_brand == prod.id_brand) { %>
-                  <option value="<%= marca[i].id_brand %>" selected>
-                     <%= marca[i].brand %>
-                  </option>
-                <% } else { %>
-                  <option value="<%= marca[i].id_brand %>">
-                    <%= marca[i].brand %>
-                  </option>
-                <% } %>      
-              <% } %>  
+              <% for (let i = 0; i < marca.length; i++) { %> <% if
+              (marca[i].id_brand == prod.id_brand) { %>
+              <option value="<%= marca[i].id_brand %>" selected>
+                <%= marca[i].brand %>
+              </option>
+              <% } else { %>
+              <option value="<%= marca[i].id_brand %>">
+                <%= marca[i].brand %>
+              </option>
+              <% } %> <% } %>
             </select>
 
             <div class="text-danger" id="errorMarca">
@@ -51,7 +52,12 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="model">• Modelo</label>
-            <input type="text" name="model" id="model" value="<%= prod.model %>" />
+            <input
+              type="text"
+              name="model"
+              id="model"
+              value="<%= prod.model %>"
+            />
 
             <div class="text-danger" id="errorModelo">
               <% if (locals.errors && errors.model) { %> <%= errors.model.msg %>
@@ -78,17 +84,16 @@
           <div class="contenedor-campos-newProduct">
             <label for="category">• Categoria</label>
             <select name="category" id="category">
-              <% for (let i = 0; i < categoria.length; i++) { %>
-                <% if (categoria[i].id_category == prod.id_category) { %>
-                  <option value="<%= categoria[i].id_category %>" selected>
-                     <%= categoria[i].category %>
-                  </option>
-                <% } else { %>
-                  <option value="<%= categoria[i].id_category %>">
-                    <%= categoria[i].category %>
-                  </option>
-                <% } %>      
-              <% } %>  
+              <% for (let i = 0; i < categoria.length; i++) { %> <% if
+              (categoria[i].id_category == prod.id_category) { %>
+              <option value="<%= categoria[i].id_category %>" selected>
+                <%= categoria[i].category %>
+              </option>
+              <% } else { %>
+              <option value="<%= categoria[i].id_category %>">
+                <%= categoria[i].category %>
+              </option>
+              <% } %> <% } %>
             </select>
 
             <div class="text-danger" id="errorCategoria">
@@ -100,17 +105,16 @@
           <div class="contenedor-campos-newProduct">
             <label for="genre">• Género</label>
             <select name="genre" id="genre">
-              <% for (let i = 0; i < genero.length; i++) { %>
-                <% if (genero[i].id_genre == prod.id_genre) { %>
-                  <option value="<%= genero[i].id_genre %>" selected>
-                     <%= genero[i].genre %>
-                  </option>
-                <% } else { %>
-                  <option value="<%= genero[i].id_genre %>">
-                    <%= genero[i].genre %>
-                  </option>
-                <% } %>      
-              <% } %>  
+              <% for (let i = 0; i < genero.length; i++) { %> <% if
+              (genero[i].id_genre == prod.id_genre) { %>
+              <option value="<%= genero[i].id_genre %>" selected>
+                <%= genero[i].genre %>
+              </option>
+              <% } else { %>
+              <option value="<%= genero[i].id_genre %>">
+                <%= genero[i].genre %>
+              </option>
+              <% } %> <% } %>
             </select>
 
             <div class="text-danger" id="errorGenero">
@@ -127,8 +131,9 @@
               cols="1"
               rows="1"
               maxlength="60"
-              value="<%= prod.short_description %>"
-            ></textarea>
+            >
+<%= prod.short_description %></textarea
+            >
 
             <div class="text-danger" id="errorDescCort">
               <% if (locals.errors && errors.shortDescription) { %> <%=
@@ -143,8 +148,9 @@
               id="longDescription"
               cols="10"
               rows="10"
-              value="<%= prod.long_description %>"
-            ></textarea>
+            >
+<%= prod.long_description %></textarea
+            >
 
             <div class="text-danger" id="errorDescLarg">
               <% if (locals.errors && errors.longDescription) { %> <%=
