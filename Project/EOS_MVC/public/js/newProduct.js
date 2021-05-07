@@ -161,26 +161,24 @@ window.addEventListener("load", (e) => {
   //    }
   // });
   formNewProduct.addEventListener("submit", (e) => {
-    let textError = "* Este campo no es valido";
-    losefocus();
     if (!campos.imagen) {
-      errorImagen.innerHTML = textError;
+      errorImagen.innerHTML = "* Este campo no es valido";
       e.preventDefault();
     }
     if (!campos.marca) {
-      errorMarca.innerHTML = textError;
+      errorMarca.innerHTML = "* Este campo no es valido";
     }
     if (!campos.modelo) {
-      errorModelo.innerHTML = textError;
+      errorModelo.innerHTML = "* Este campo no es valido";
     }
     if (!campos.precio) {
-      errorPrecio.innerHTML = textError;
+      errorPrecio.innerHTML = "* Este campo no es valido";
     }
     if (!campos.categoria) {
-      errorCategoria.innerHTML = textError;
+      errorCategoria.innerHTML = "* Este campo no es valido";
     }
     if (!campos.genero) {
-      errorGenero.innerHTML = textError;
+      errorGenero.innerHTML = "* Este campo no es valido";
     }
     if (!campos.descCorta) {
       errorDescCort.innerHTML = "* Este campo no es valido";
