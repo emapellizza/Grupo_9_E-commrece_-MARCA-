@@ -19,44 +19,46 @@
       </section>
 
       <section class="all-products-container">
-        <% for (let i = 0; i< products.length; i++) {%>
+        <% for (let i = 0; i< products.length; i++) { %>
+          <% if (products[i].available == true) { %>
 
-        <article class="container-product">
-          <a href="/products/detail/<%= products[i].id_product %> ">
-            <img
-              src="/images/products/<%= products[i].image %>"
-              alt="imagen producto"
-            />
-            <div class="product-descpription">
-              <h3>
-                <strong
-                  ><%= products[i].brands.brand + " " + products[i].model
-                  %></strong
-                >
-              </h3>
-              <p><%=products[i].short_description %></p>
-              <p><strong>$<%=products[i].price %></strong></p>
+            <article class="container-product">
+              <a href="/products/detail/<%= products[i].id_product %> ">
+                <img
+                  src="/images/products/<%= products[i].image %>"
+                  alt="imagen producto"
+                />
+                <div class="product-descpription">
+                  <h3>
+                    <strong
+                      ><%= products[i].brands.brand + " " + products[i].model
+                      %></strong
+                    >
+                  </h3>
+                  <p><%=products[i].short_description %></p>
+                  <p><strong>$<%=products[i].price %></strong></p>
 
-              <div class="container-edit-product-button">
-                <% if(locals.isAdminLogged){ %>
-                <a href="/admin/products/edit/<%= products[i].id_product %>">
-                  <button type="submit" class="edit-product-button">
-                    Editar
-                  </button>
-                </a>
-                <form
-                  method="POST"
-                  action="/admin/products/delete/<%= products[i].id %>?_method=DELETE"
-                >
-                  <button type="submit" class="edit-product-button">
-                    Eliminar
-                  </button>
-                </form>
-                <% } %>
-              </div>
-            </div>
-          </a>
-        </article>
+                  <div class="container-edit-product-button">
+                    <% if(locals.isAdminLogged){ %>
+                    <a href="/admin/products/edit/<%= products[i].id_product %>">
+                      <button type="submit" class="edit-product-button">
+                        Editar
+                      </button>
+                    </a>
+                    <form
+                      method="POST"
+                      action="/admin/products/delete/<%= products[i].id %>?_method=DELETE"
+                    >
+                      <button type="submit" class="edit-product-button">
+                        Eliminar
+                      </button>
+                    </form>
+                    <% } %>
+                  </div>
+                </div>
+              </a>
+            </article>
+          <% } %>
         <% } %>
       </section>
     </main>

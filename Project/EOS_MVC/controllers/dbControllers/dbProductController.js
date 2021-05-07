@@ -80,15 +80,44 @@ const dbProductController = {
         let pedidoMarca = db.Brand.findAll();
         let pedidoCategoria = db.Category.findAll();
         let pedidoGenero = db.Genre.findAll();
+        
 
         Promise.all([productToEdit, pedidoMarca,pedidoCategoria,pedidoGenero])
           .then(function([prod, marca, categoria, genero]){
             return res.render("./products/update", {prod:prod, marca:marca, categoria:categoria, genero:genero}); 
           });
-          
-        
+                  
       } else {
         return res.redirect("/");
+      }
+    },
+
+    updatedProduct: function (req, res) {
+
+      let errors = validationResult(req);
+
+      if (errors.isEmpty()) { 
+              
+        db.Product.update({
+          image: req.file.filename,
+          id_brand: req.body.brand,
+          model: req.body.model,
+          price: req.body.price,
+          id_category: req.body.category,
+          id_genre: req.body.genre,
+          short_description: req.body.shortDescription,
+          long_description: req.body.longDescription,
+          available: req.body.available,
+              
+        });
+    
+        return res.redirect("/");
+
+      } else {
+          return res.render("products/new", {
+            errors: errors.mapped(),
+            old: req.body,
+          });
       }
     },
 

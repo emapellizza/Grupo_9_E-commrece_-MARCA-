@@ -131,9 +131,8 @@
               cols="1"
               rows="1"
               maxlength="60"
-            >
-<%= prod.short_description %></textarea
-            >
+              > <%= prod.short_description %>
+            </textarea>
 
             <div class="text-danger" id="errorDescCort">
               <% if (locals.errors && errors.shortDescription) { %> <%=
@@ -148,14 +147,26 @@
               id="longDescription"
               cols="10"
               rows="10"
-            >
-<%= prod.long_description %></textarea
-            >
+              > <%= prod.long_description %>
+            </textarea>
 
             <div class="text-danger" id="errorDescLarg">
               <% if (locals.errors && errors.longDescription) { %> <%=
               errors.longDescription.msg %> <% } %>
             </div>
+          </div>
+
+          <div class="contenedor-campos-newProduct">
+            <label for="available">• Estado</label>
+            <select name="available" id="available">
+              <% if (prod.available == "1" ) { %>
+                <option value= 1 selected>Activo</option>
+                <option value= 0 >Inactivo</option>
+                <% } else { %>
+                  <option value="1" >Activo</option>
+                <option value="0" selected>Inactivo</option>
+              <% } %>
+            </select>
           </div>
 
           <div class="contenedor-campos-newProduct" id="erroresNewProd">
