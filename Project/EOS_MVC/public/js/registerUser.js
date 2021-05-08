@@ -79,17 +79,6 @@ window.addEventListener("load", function () {
         errorbdate.innerHTML = "";
       }
 
-      // Validacion Email
-      if (email.value == "") {
-        errores = errores + 1;
-        errorEmail.innerHTML = "* Deve ingresar una direccion de Email";
-      } else if (email.value.length < 4) {
-        errores = errores + 1;
-        errorEmail.innerHTML = "* ingrese Email valido ej: usuario@email.com";
-      } else {
-        errorEmail.innerHTML = "";
-      }
-
       // Validacion telefono
       if (phone.value == "") {
         errores = errores + 1;
@@ -100,6 +89,28 @@ window.addEventListener("load", function () {
       } else {
         errorPhone.innerHTML = "";
       }
+       // Validacion Email
+      
+       if (!check) {
+        errores = errores + 1;
+        errorEmail.innerHTML = "* email invalido ej:algo@algo.com";
+      } else {
+        errorEmail.innerHTML = "";
+      }
+
+      // validacion confirmar password
+      if (password.value == "" || confirmPassword.value == ""){
+        errores = errores + 1;
+        errorpassword.innerHTML = "* Debes introducir una contrasena";
+        econfirmPassword.innerHTML = "* Debes introducir una contrasena";
+      } else if(confirmPassword.value != password.value){
+        errores = errores +1;
+        errorpassword.innerHTML = "* contrasena distintas";
+        econfirmPassword.innerHTML= "* contrasena distintas";
+    } else {
+      errorpassword.innerHTML="";
+      econfirmPassword.innerHTML="";
+    }
       
 
   

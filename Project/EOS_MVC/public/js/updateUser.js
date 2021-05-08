@@ -1,18 +1,4 @@
-/*
-      
-      if (password.value == "") {
-        errores = errores + 1;
-        errorpassword.innerHTML = "* Debes introducir una contrasena";
-      } else if (password.value.length < 6) {
-        errores = errores + 1;
-        errorpassword.innerHTML = "* debe tener al menos 6 digitos";
-      } else {
-        errorpassword.innerHTML = "";
-
-*/
-
-
-  window.addEventListener("load", function () {
+window.addEventListener("load", function () {
     // Formulario
     let formUpdateUser = document.getElementById("formUpdateUser");
   
@@ -31,6 +17,9 @@
   
     let email = document.querySelector("#email");
     let errorEmail = document.querySelector("#errorEmail");
+    let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.\w{2,4}+)*$/;
+    let check = mailformat.test(email.value);
+    
 
     let phone = document.querySelector("#phone");
     let errorPhone = document.querySelector("#errorPhone");
@@ -41,6 +30,7 @@
     let confirmPassword = document.querySelector("#confirmPassword");
     let econfirmPassword = document.querySelector("#econfirmPassword");
   
+
     formUpdateUser.addEventListener("submit", function (e) {
       let errores = 0;
   
@@ -93,19 +83,8 @@
         errorbdate.innerHTML = "";
       }
 
-      // Validacion Email
-      if (email.value == "") {
-        errores = errores + 1;
-        errorEmail.innerHTML = "* Deve ingresar una direccion de Email";
-      } else if (email.value.length < 4) {
-        errores = errores + 1;
-        errorEmail.innerHTML = "* ingrese Email valido ej: usuario@email.com";
-      } else {
-        errorEmail.innerHTML = "";
-      }
-
-      // Validacion telefono
-      if (phone.value == "") {
+       // Validacion telefono
+       if (phone.value == "") {
         errores = errores + 1;
         errorPhone.innerHTML = "* Debes introducir un numero de  telefono";
       } else if (phone.value.length < 8) {
@@ -114,9 +93,29 @@
       } else {
         errorPhone.innerHTML = "";
       }
+      // Validacion Email
       
+      if (!check) {
+        errores = errores + 1;
+        errorEmail.innerHTML = "* email invalido ej:algo@algo.com";
+      } else {
+        errorEmail.innerHTML = "";
+      }
 
-  
+      // validacion confirmar password
+      if (password.value == "" || confirmPassword.value == ""){
+        errores = errores + 1;
+        errorpassword.innerHTML = "* Debes introducir una contrasena";
+        econfirmPassword.innerHTML = "* Debes introducir una contrasena";
+      } else if(confirmPassword.value != password.value){
+        errores = errores +1;
+        errorpassword.innerHTML = "* contrasena distintas";
+        econfirmPassword.innerHTML= "* contrasena distintas";
+    } else {
+      errorpassword.innerHTML="";
+      econfirmPassword.innerHTML="";
+    }
+      
     // Si hay errores no envío
       if (errores > 0) {
         e.preventDefault();
