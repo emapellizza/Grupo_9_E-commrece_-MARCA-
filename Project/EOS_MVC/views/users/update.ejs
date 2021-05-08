@@ -74,6 +74,19 @@
             />
             <div class="text-danger" id="errorEmail"></div>
           </div>
+
+          
+          <div class="contenedor-campos-reg-log">
+            <label for="phone" class="label-reg-log">Telefono</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              value="<%= userToEdit.phone %>"
+            />
+            <div class="text-danger" id="errorPhone"></div>
+          </div>
+        
         
 
           <div class="contenedor-campos-reg-log">
@@ -96,26 +109,7 @@
           </div>
       
 
-          <div class="checkbox-reg-log">
-            <input type="checkbox" name="newsletter" id="newsletter" />
-            <label for="newsletter" class="text-checkbox-reg-log"
-              >Suscribirse al newsletter</label
-            >
-          </div>
-
-          <div class="checkbox-reg-log">
-            <input
-              type="checkbox"
-              name="terminos-condiciones"
-              id="terminos-condiciones"
-              required
-            />
-            <label for="terminos-condiciones" class="text-checkbox-reg-log"
-              >Acepto los <a href="#">Términos y Condiciones</a></label
-            >
-          </div>
-
-            <button type="submit" class="boton-reg-log">ACTUALIZAR</button>
+            <button type="submit" class="boton-newProduct">ACTUALIZAR</button>
           
         </form>
       </div>

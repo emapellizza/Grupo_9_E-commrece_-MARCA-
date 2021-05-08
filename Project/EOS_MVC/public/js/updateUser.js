@@ -1,4 +1,18 @@
-window.addEventListener("load", function () {
+/*
+      
+      if (password.value == "") {
+        errores = errores + 1;
+        errorpassword.innerHTML = "* Debes introducir una contrasena";
+      } else if (password.value.length < 6) {
+        errores = errores + 1;
+        errorpassword.innerHTML = "* debe tener al menos 6 digitos";
+      } else {
+        errorpassword.innerHTML = "";
+
+*/
+
+
+  window.addEventListener("load", function () {
     // Formulario
     let formUpdateUser = document.getElementById("formUpdateUser");
   
@@ -24,7 +38,6 @@ window.addEventListener("load", function () {
     let password = document.querySelector("#password");
     let errorpassword = document.querySelector("#errorpassword");
 
-
     let confirmPassword = document.querySelector("#confirmPassword");
     let econfirmPassword = document.querySelector("#econfirmPassword");
   
@@ -47,66 +60,69 @@ window.addEventListener("load", function () {
       } else {
         errorImagen.innerHTML = "";
       }
-  
+     
       // Validacion nombre
       if (firstName.value == "") {
+        
         errores = errores + 1;
         errorfirstName.innerHTML = "* Debes escribir un Nombre";
-      } else if (firstName.value.length < 2) {
+      } else if (firstName.value.length < 4) {
         errores = errores + 1;
         errorfirstName.innerHTML = "* El Nombre debe ser más largo";
       } else {
         errorfirstName.innerHTML = "";
       } 
 
-       // Validacion lastName
+       // Validacion Apellido
        if (lastName.value == "") {
+       
         errores = errores + 1;
         errorlastName.innerHTML = "* Debes escribir un Apellido";
-      } else if (lastName.value.length < 2) {
+      } else if (lastName.value.length < 4) {
         errores = errores + 1;
         errorlastName.innerHTML = "* El Apellido debe ser más largo";
       } else {
         errorlastName.innerHTML = "";
-      }
-   
+      } 
 
-      // Validacion fecha de nacimiento
-     /* if (bdate.value == "") {
+      //validacion fecha
+      if (bdate.value == "") {
         errores = errores + 1;
-        errorbdate.innerHTML = "* Debes ingresar una descripción breve";
-      } else if (bdatea.value.length < 10) {
-        errores = errores + 1;
-        errorbdate.innerHTML = "* Ingresa una descripcion mas extensa";
-      } else {
+        errorbdate.innerHTML = "* Debes seleccionar una fecha";
+      }else {
         errorbdate.innerHTML = "";
-      }*/
+      }
 
       // Validacion Email
       if (email.value == "") {
         errores = errores + 1;
         errorEmail.innerHTML = "* Deve ingresar una direccion de Email";
-      } else if (email.value.length < 20) {
+      } else if (email.value.length < 4) {
         errores = errores + 1;
         errorEmail.innerHTML = "* ingrese Email valido ej: usuario@email.com";
       } else {
         errorEmail.innerHTML = "";
       }
+
       // Validacion telefono
       if (phone.value == "") {
         errores = errores + 1;
-        erroresPhone.innerHTML = "* Debes introducir un numero de  telefono";
+        errorPhone.innerHTML = "* Debes introducir un numero de  telefono";
       } else if (phone.value.length < 8) {
         errores = errores + 1;
-        erroresPhone.innerHTML = "* Debes introducir un telefono válido";
+        errorPhone.innerHTML = "* Debes introducir un telefono válido";
       } else {
-        erroresPhone.innerHTML = "";
+        errorPhone.innerHTML = "";
       }
+      
+
   
-      // Si hay errores no envío
+    // Si hay errores no envío
       if (errores > 0) {
         e.preventDefault();
       }
     });
   });
   
+
+ 

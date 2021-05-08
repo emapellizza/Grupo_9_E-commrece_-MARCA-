@@ -6,14 +6,14 @@ const loginController = require("../controllers/loginController");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const uploadUser = require("../middlewares/multerMiddleware");
-const validateRegister = require("../middlewares/valRegMiddleware");
+//const validateRegister = require("../middlewares/valRegMiddleware");
 const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.index);
 
 // Registro
 router.get("/register", guestMiddleware, usersController.register);
-router.post("/register",uploadUser.single("userImage"),validateRegister,usersController.saveUser);
+router.post("/register",uploadUser.single("userImage"),usersController.saveUser);
 
 // Logeo
 router.get("/login", guestMiddleware, loginController.login);
