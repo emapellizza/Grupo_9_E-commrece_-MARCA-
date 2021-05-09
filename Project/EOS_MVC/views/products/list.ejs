@@ -20,7 +20,7 @@
 
       <section class="all-products-container">
         <% for (let i = 0; i< products.length; i++) { %>
-          <% if (products[i].available == true) { %>
+          <% if (products[i].available == "Yes") { %>
 
             <article class="container-product">
               <a href="/products/detail/<%= products[i].id_product %> ">
@@ -47,11 +47,12 @@
                     </a>
                     <form
                       method="POST"
-                      action="/admin/products/delete/<%= products[i].id %>?_method=DELETE"
+                      action="/admin/products/delete/<%=products[i].id_product %>?_method=DELETE"
                     >
                       <button type="submit" class="edit-product-button">
                         Eliminar
                       </button>
+                 
                     </form>
                     <% } %>
                   </div>

@@ -32,10 +32,10 @@ router.post(
 //Rutas para actualizar un producto:
 router.get("/products/edit/:idProduct", dbProductController.updateProduct);
 router.put("/products/edit/:idProduct", uploadProduct.single("productImage"),
-productsController.updatedProduct);
+dbProductController.updatedProduct);
 
 //borrar un producto
-router.delete("/products/delete/:idProduct", productsController.delete);
+router.delete("/products/delete/:idProduct", dbProductController.delete);
 
 //lista productos
 router.get("/products", dbProductController.listAll);

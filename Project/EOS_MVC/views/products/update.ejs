@@ -12,7 +12,7 @@
         </h2>
 
         <form
-          action="/admin/products/edit/<%= prod.id_product %>"
+          action="/admin/products/edit/<%= prod.id_product %>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
           id="formNewProduct"
@@ -159,12 +159,12 @@
           <div class="contenedor-campos-newProduct">
             <label for="available">• Estado</label>
             <select name="available" id="available">
-              <% if (prod.available == "1" ) { %>
-                <option value= 1 selected>Activo</option>
-                <option value= 0 >Inactivo</option>
+              <% if (prod.available == "Yes" ) { %>
+                <option value= "Yes" selected>Activo</option>
+                <option value= "No" >Inactivo</option>
                 <% } else { %>
-                  <option value="1" >Activo</option>
-                <option value="0" selected>Inactivo</option>
+                  <option value="Yes" >Activo</option>
+                <option value="No" selected>Inactivo</option>
               <% } %>
             </select>
           </div>

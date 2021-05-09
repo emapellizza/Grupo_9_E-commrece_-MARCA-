@@ -58,6 +58,7 @@ const dbProductController = {
           id_genre: req.body.genre,
           short_description: req.body.shortDescription,
           long_description: req.body.longDescription,
+          available: "Yes"
               
         });
     
@@ -108,8 +109,8 @@ const dbProductController = {
           short_description: req.body.shortDescription,
           long_description: req.body.longDescription,
           available: req.body.available,
-              
-        });
+          }, { where: { id_product: req.params.idProduct}}
+        );
     
         return res.redirect("/");
 
@@ -120,6 +121,19 @@ const dbProductController = {
           });
       }
     },
+
+    delete: function (req, res) {
+      if (req.session.adminLogged) {
+
+        db.Product.destroy({
+          where: { id_product: req.params.idProduct}
+           
+        });
+
+        return res.redirect("/");
+           
+      };
+    }
 
     
 }
