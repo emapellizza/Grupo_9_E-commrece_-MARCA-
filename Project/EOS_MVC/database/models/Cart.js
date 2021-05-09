@@ -17,8 +17,14 @@ module.exports = function (sequelize,dataTypes) {
         quantity: {
             type: dataTypes.INTEGER(11)
         },
+        size: {
+            type: dataTypes.INTEGER(11)
+        },
+        color: {
+            type: dataTypes.INTEGER(11)
+        },
         price: {
-            type: dataTypes.DECIMAL(6,2)
+            type: dataTypes.INTEGER(11)
         }
     }
 

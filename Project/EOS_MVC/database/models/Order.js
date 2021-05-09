@@ -21,7 +21,7 @@ module.exports = function (sequelize,dataTypes) {
             type: dataTypes.DECIMAL(6,2)
         },
         shipping_info: {
-            type: dataTypes.STRING(45)
+            type: dataTypes.INTEGER(11)
         }
     }
 

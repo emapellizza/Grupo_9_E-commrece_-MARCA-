@@ -47,7 +47,7 @@ router.get("/profile", authMiddleware, usersController.profile);
 router.get("/users/edit/:idUser", usersController.updateUser);
 router.put("/users/edit/:idUser", usersController.updateUser);
 //borrar usuario
-router.delete("/users/delete/:idUser", usersController.delete);
+router.delete("/users/delete/:idUser", dbUserController.delete);
 //lista usuarios
 router.get("/users", dbUserController.listAll); //admin/users
 

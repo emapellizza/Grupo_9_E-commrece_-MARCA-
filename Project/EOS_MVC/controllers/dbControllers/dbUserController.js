@@ -59,6 +59,19 @@ const dbUserController = {
       user: req.session.userLogged,
     });
   },
+
+  delete: function (req, res) {
+    if (req.session.adminLogged) {
+
+      db.User.destroy({
+        where: { id_user: req.params.idUser}
+         
+      });
+
+      return res.redirect("/");
+         
+    };
+  }
 }
 
 module.exports = dbUserController;

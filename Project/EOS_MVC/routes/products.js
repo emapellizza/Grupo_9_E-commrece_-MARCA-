@@ -12,5 +12,8 @@ router.get("/cart", dbProductController.productCart);
 // Detalle de producto
 router.get("/detail/:idProduct", dbProductController.show);
 
+// Agregar producto al Carrito
+router.post("/detail/", dbProductController.productToCart);
+
 
 module.exports = router;

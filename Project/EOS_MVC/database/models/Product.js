@@ -33,7 +33,7 @@ module.exports = function (sequelize,dataTypes) {
             type: dataTypes.STRING(45)
         },
         available: {
-            type: dataTypes.TINYINT
+            type: dataTypes.STRING(3)
         }
     }
 

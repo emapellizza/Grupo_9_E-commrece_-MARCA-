@@ -15,7 +15,7 @@ const dbProductController = {
     show: (req, res) => {
       
       db.Product.findByPk(req.params.idProduct, {
-        include: [{association: "brands"}]
+        include: [{association: "brands"}, {association: "colors"}, {association: "sizes"}]
       })
         .then(function(productDetail){
           return  res.render("./products/detail", { productDetail: productDetail });
@@ -133,7 +133,28 @@ const dbProductController = {
         return res.redirect("/");
            
       };
-    }
+    },
+
+    productToCart: function (req, res) {
+
+      if (req.session.userLogged) {
+        let user = req.session.userLogged;
+
+        db.Cart.create({
+          
+          id_user: user.id_user,
+          id_product: req.params.idProduct,
+          quantity: req.body.quantity,
+          color: req.body.color,
+          size: req.body.size,
+          
+        });
+
+        return res.redirect("/");
+           
+      };
+    },
+
 
     
 }
