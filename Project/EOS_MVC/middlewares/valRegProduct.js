@@ -9,12 +9,7 @@ const validateProduct = [
   body("genre").notEmpty().withMessage("* Debes seleccionar un genero"),
   body("shortDescription")
     .notEmpty()
-    .withMessage("* Debes agregar una breve descripcion"),
-  body("longDescription")
-    .notEmpty()
-    .withMessage("* Debes agregar una descripcion"),
-  body("size").notEmpty().withMessage("* Debes seleccionar los talles"),
-  body("color").notEmpty().withMessage("* Debes seleccionar los colores"),
+    .withMessage("* Debes agregar una breve descripcion")
 ];
 
 module.exports = validateProduct;

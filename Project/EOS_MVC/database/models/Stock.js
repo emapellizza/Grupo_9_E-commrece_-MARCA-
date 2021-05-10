@@ -1,9 +1,9 @@
 module.exports = function (sequelize,dataTypes) {
 
-    let alias = "Product_color";
+    let alias = "Stock";
 
     let cols = {
-        id_product_color: {
+        id_stock: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
@@ -13,16 +13,22 @@ module.exports = function (sequelize,dataTypes) {
         },
         id_color: {
             type: dataTypes.INTEGER(11)
+        },
+        id_size: {
+            type: dataTypes.INTEGER(11)
+        },
+        quantity: {
+            type: dataTypes.INTEGER(11)
         }
     }
 
     let config = {
-        tablename: "product_color",
+        tablename: "stock",
         timestamps: false
     }
 
-    const Product_color = sequelize.define(alias, cols, config);
+    const Stock = sequelize.define(alias, cols, config);
 
-    return Product_color;
+    return Stock;
 
 }

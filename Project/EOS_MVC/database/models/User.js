@@ -41,21 +41,19 @@ module.exports = function (sequelize,dataTypes) {
 
     const User = sequelize.define(alias, cols, config);
 
-    //Asociaciones
     User.associate = function(models){
-        // Direcciones de envio
+        
         User.hasMany(models.Shipping_information, {
             as: "shipping_information",
             foreignKey: "id_user"
-        })
-        // Productos
+        });
         User.belongsToMany(models.Product, {
             as: "products",
-            through: "user_product",
+            through: "cart",
             foreignKey: "id_user",
             otherKey: "id_product",
             timestamps: false
-        })
+        });
     }
 
     return User;

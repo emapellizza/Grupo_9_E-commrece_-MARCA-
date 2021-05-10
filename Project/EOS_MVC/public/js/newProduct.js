@@ -1,139 +1,202 @@
-window.addEventListener("load", function () {
-  // Formulario
+window.addEventListener("load", (e) => {
+  // Selectores
   let formNewProduct = document.getElementById("formNewProduct");
+  let imagen = document.getElementById("productImage");
+  let inputs = document.querySelectorAll("#formNewProduct input");
+  let textareas = document.querySelectorAll("#formNewProduct textarea");
+  let selects = document.querySelectorAll("#formNewProduct select");
 
-  // Campos Formulario
-  let imagen = document.querySelector("#productImage");
+  // Campos errores
   let errorImagen = document.querySelector("#errorImagen");
-
-  let marca = document.querySelector("#brand");
-  let errorMarca = document.querySelector("#errorMarca");
-
-  let modelo = document.querySelector("#model");
   let errorModelo = document.querySelector("#errorModelo");
-
-  let precio = document.querySelector("#price");
   let errorPrecio = document.querySelector("#errorPrecio");
-
-  let categoria = document.querySelector("#category");
+  let errorDescCort = document.querySelector("#errorDescCort");
+  let errorDescLarg = document.querySelector("#errorDescLarg");
+  let errorMarca = document.querySelector("#errorMarca");
   let errorCategoria = document.querySelector("#errorCategoria");
-
-  let genero = document.querySelector("#genre");
   let errorGenero = document.querySelector("#errorGenero");
 
-  let descCorta = document.querySelector("#shortDescription");
-  let errorDescCort = document.querySelector("#errorDescCort");
-
-  let descLarga = document.querySelector("#longDescription");
-  let errorDescLarg = document.querySelector("#errorDescLarg");
-
-  let talle = document.querySelector("#size");
-  let erroresTalle = document.querySelector("#erroresTalle");
-
-  let color = document.querySelector("#color");
-  let erroresColor = document.querySelector("#erroresColor");
-
-  formNewProduct.addEventListener("submit", function (e) {
-    let errores = 0;
-
-    // Validacion imagen
+  const campos = {
+    // falta imagen
+    imagen: false,
+    marca: false,
+    modelo: false,
+    precio: false,
+    categoria: false,
+    genero: false,
+    descCorta: false,
+    descLarga: false,
+  };
+  /* VALIDACION IMAGEN */
+  imagen.addEventListener("blur", function () {
     let nombreImagen = imagen.value;
 
     function obtenerExtension(nombreImagen) {
       return nombreImagen.split(".").pop();
     }
     let extensionImagen = obtenerExtension(nombreImagen);
-
-    let aprobada = false;
-
     let extAceptadas = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
 
-    if (extAceptadas.indexOf(extensionImagen) === -1 || nombreImagen == "") {
-      errores = errores + 1;
+    if (extAceptadas.indexOf(extensionImagen) === -1) {
+      campos.imagen = false;
       errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
     } else {
+      campos.imagen = true;
       errorImagen.innerHTML = "";
     }
+  });
 
-    // Validacion marca
-    if (marca.value == "Seleccionar") {
-      errores = errores + 1;
-      errorMarca.innerHTML = "* Debes seleccionar una marca";
-    } else {
-      errorMarca.innerHTML = "";
+  const validarInputs = (e) => {
+    switch (e.target.name) {
+      // Validacion Modelo
+      case "model":
+        if (e.target.value == "") {
+          errorModelo.innerHTML = "* Debes ingresar un modelo";
+          campos.modelo = false;
+        } else if (e.target.value.length < 2) {
+          errorModelo.innerHTML = "* El modelo debe ser válido";
+          campos.modelo = false;
+        } else {
+          errorModelo.innerHTML = "";
+          campos.modelo = true;
+        }
+        break;
+      // Validacion Precio
+      case "price":
+        if (e.target.value == 0) {
+          errorPrecio.innerHTML = "* El precio no puede ser $0";
+          campos.precio = false;
+        } else if (e.target.value > 0 && e.target.value < 5) {
+          errorPrecio.innerHTML = "* El precio debe ser mayor que $5";
+          campos.precio = false;
+        } else {
+          errorPrecio.innerHTML = "";
+          campos.precio = true;
+        }
+        break;
     }
-    // Validacion modelo
-    if (modelo.value == "") {
-      errores = errores + 1;
+  };
+  const validarTextareas = (e) => {
+    switch (e.target.name) {
+      // Validacion Desc Corta
+      case "shortDescription":
+        if (e.target.value == "") {
+          errorDescCort.innerHTML = "* Debes ingresar una descripción breve";
+          campos.descCorta = false;
+        } else if (e.target.value.length < 10) {
+          errorDescCort.innerHTML = "* Ingresa una descripcion mas extensa";
+          campos.descCorta = false;
+        } else {
+          errorDescCort.innerHTML = "";
+          campos.descCorta = true;
+        }
+        break;
+      case "longDescription":
+        // Validacion descripcion larga
+        if (e.target.value == "") {
+          errorDescLarg.innerHTML = "* Debes ingresar una descripción completa";
+          campos.descLarga = false;
+        } else if (e.target.value.length < 20) {
+          errorDescLarg.innerHTML = "* Ingresa una descripcion mas extensa";
+          campos.descLarga = false;
+        } else {
+          errorDescLarg.innerHTML = "";
+          campos.descLarga = true;
+        }
 
-      errorModelo.innerHTML = "* Debes seleccionar un modelo";
-    } else if (modelo.value.length < 2) {
-      errores = errores + 1;
-      errorModelo.innerHTML = "* El modelo debe ser más largo";
-    } else {
-      errorModelo.innerHTML = "";
+        break;
     }
-    // Validacion Precio
-    if (precio.value <= 0) {
-      errores = errores + 1;
-      errorPrecio.innerHTML = "* El precio no puede ser $0";
-    } else {
-      errorPrecio.innerHTML = "";
+  };
+  const validarSelects = (e) => {
+    switch (e.target.name) {
+      case "brand":
+        if (e.target.value == "Seleccionar") {
+          errorMarca.innerHTML = "* Debes seleccionar una marca";
+          campos.marca = false;
+        } else {
+          errorMarca.innerHTML = "";
+          campos.marca = true;
+        }
+        break;
+      case "category":
+        if (e.target.value == "Seleccionar") {
+          errorCategoria.innerHTML = "* Debes seleccionar una categoria";
+          campos.categoria = false;
+        } else {
+          errorCategoria.innerHTML = "";
+          campos.categoria = true;
+        }
+        break;
+      case "genre":
+        if (e.target.value == "Seleccionar") {
+          errorGenero.innerHTML = "* Debes seleccionar un genero";
+          campos.genero = false;
+        } else {
+          errorGenero.innerHTML = "";
+          campos.genero = true;
+        }
+        break;
     }
-    // Validacion categoria
-    if (categoria.value == "Seleccionar") {
-      errores = errores + 1;
-      errorCategoria.innerHTML = "* Debes seleccionar una categoria";
-    } else {
-      errorCategoria.innerHTML = "";
-    }
-    // Validacion genero
-    if (genero.value == "Seleccionar") {
-      errores = errores + 1;
-      errorGenero.innerHTML = "* Debes seleccionar un genero";
-    } else {
-      errorGenero.innerHTML = "";
-    }
-    // Validacion descripcion corta
-    if (descCorta.value == "") {
-      errores = errores + 1;
-      errorDescCort.innerHTML = "* Debes ingresar una descripción breve";
-    } else if (descCorta.value.length < 10) {
-      errores = errores + 1;
-      errorDescCort.innerHTML = "* Ingresa una descripcion mas extensa";
-    } else {
-      errorDescCort.innerHTML = "";
-    }
-    // Validacion descripcion larga
-    if (descLarga.value == "") {
-      errores = errores + 1;
-      errorDescLarg.innerHTML = "* Debes ingresar una descripción completa";
-    } else if (descLarga.value.length < 20) {
-      errores = errores + 1;
-      errorDescLarg.innerHTML = "* Ingresa una descripcion mas extensa";
-    } else {
-      errorDescLarg.innerHTML = "";
-    }
-    // Validacion talle
-    if (talle.value == "Seleccionar") {
-      errores = errores + 1;
-      erroresTalle.innerHTML = "* Debes seleccionar un talle";
-    } else {
-      erroresTalle.innerHTML = "";
-    }
-    // Validacion color
-    if (color.value == "") {
-      errores = errores + 1;
-      erroresColor.innerHTML = "* Debes introducir un color";
-    } else if (color.value.length < 3) {
-      errores = errores + 1;
-      erroresColor.innerHTML = "* Debes introducir un color válido";
-    } else {
-      erroresColor.innerHTML = "";
-    }
+  };
 
-    // Si hay errores no envío
-    if (errores > 0) {
+  inputs.forEach((input) => {
+    input.addEventListener("keyup", validarInputs);
+    input.addEventListener("blur", validarInputs);
+  });
+
+  textareas.forEach((textA) => {
+    textA.addEventListener("keyup", validarTextareas);
+    textA.addEventListener("blur", validarTextareas);
+  });
+
+  selects.forEach((select) => {
+    select.addEventListener("keyup", validarSelects);
+    select.addEventListener("blur", validarSelects);
+  });
+
+  // window.addEventListener("keydown", function (e) {
+  //    tecla = e.key;
+  //    if (tecla == "x") {
+  //       alert(imagenAprobada);
+  //    }
+  // });
+  formNewProduct.addEventListener("submit", (e) => {
+    if (!campos.imagen) {
+      errorImagen.innerHTML = "* Este campo no es valido";
+      e.preventDefault();
+    }
+    if (!campos.marca) {
+      errorMarca.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.modelo) {
+      errorModelo.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.precio) {
+      errorPrecio.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.categoria) {
+      errorCategoria.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.genero) {
+      errorGenero.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.descCorta) {
+      errorDescCort.innerHTML = "* Este campo no es valido";
+    }
+    if (!campos.descLarga) {
+      errorDescLarg.innerHTML = "* Este campo no es valido";
+    }
+    if (
+      !campos.imagen ||
+      !campos.marca ||
+      !campos.modelo ||
+      !campos.precio ||
+      !campos.categoria ||
+      !campos.genero ||
+      !campos.descCorta ||
+      !campos.descLarga
+    ) {
+      document.getElementById("erroresNewProd").style.display = "block";
       e.preventDefault();
     }
   });

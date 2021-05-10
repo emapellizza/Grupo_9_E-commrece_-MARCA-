@@ -35,12 +35,11 @@ module.exports = function (sequelize,dataTypes) {
 
     const Shipping_information = sequelize.define(alias, cols, config);
 
-    // -- Asociaciones --
     Shipping_information.associate = function(models){
         Shipping_information.belongsTo(models.User, {
             as: "users",
             foreignKey: "id_user"
-        })
+        });
     }
 
     return Shipping_information;

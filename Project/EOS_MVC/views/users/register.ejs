@@ -33,10 +33,10 @@
               type="text"
               name="firstName"
               id="firstName"
-              value="<%= locals.old && old.firstName ? old.firstName : ''%>"
             />
-            <div class="text-danger" id="errorfirstName">
-
+            <% if (locals.errors && errors.firstName) { %>
+              <div class="text-danger"><%= errors.firstName.msg %></div>
+            <% } %>        
           </div>
 
           <div class="contenedor-campos-reg-log">
@@ -45,12 +45,12 @@
               type="text"
               name="lastName"
               id="lastName"
-              value="<%= locals.old && old.lastName ? old.lastName : ''%>"
             />
-            <div class="text-danger" id="errorlastName"></div>
-          
+            <% if (locals.errors && errors.lastName) { %>
+              <div class="text-danger"><%= errors.lastName.msg %></div>
+            <% } %>
           </div>
-         
+          
 
           <div class="contenedor-campos-reg-log">
             <label for="dateOfBirth" class="label-reg-log"
@@ -60,22 +60,26 @@
               type="date"
               name="dateOfBirth"
               id="dateOfBirth"
-              value="<%= locals.old && old.dateOfBirth ? old.dateOfBirth : ''%>"
+              required
             />
-            <div class="text-danger" id="errorbdate"></div>  
+            <% if (locals.errors && errors.dateOfBirth) { %>
+              <div class="text-danger"><%= errors.dateOfBirth.msg %></div>
+            <% } %>
           </div>
-       
+          
+
           <div class="contenedor-campos-reg-log">
             <label for="email" class="label-reg-log">Correo Electrónico</label>
             <input
               type="email"
               name="email"
               id="email"
-              value="<%= locals.old && old.email ? old.email : ''%>"
             />
-            <div class="text-danger" id="errorEmail"></div>
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
           </div>
-        
+          
 
           <div class="contenedor-campos-reg-log">
             <label for="phone" class="label-reg-log">Telefono</label>
@@ -83,20 +87,20 @@
               type="text"
               name="phone"
               id="phone"
-              value="<%= locals.old && old.phone ? old.phone : ''%>"
             />
-            <div class="text-danger" id="errorPhone"></div>
-          
+            <% if (locals.errors && errors.phone) { %>
+              <div class="text-danger"><%= errors.phone.msg %></div>
+            <% } %>
           </div>
-        
-
+          
           <div class="contenedor-campos-reg-log">
             <label for="password" class="label-reg-log">Contraseña</label>
             <input type="password" name="password" id="password" />
-            <div class="text-danger" id="errorpassword"></div>
-         
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger"><%= errors.password.msg %></div>
+            <% } %>
           </div>
-       
+         
 
           <div class="contenedor-campos-reg-log">
             <label for="confirmPassword" class="label-reg-log"
@@ -110,7 +114,7 @@
             <div class="text-danger" id="econfirmPassword"></div>
          
           </div>
-       
+          
 
           <div class="checkbox-reg-log">
             <input type="checkbox" name="newsletter" id="newsletter" />

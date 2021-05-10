@@ -1,4 +1,4 @@
-const tablaJson = require("../data/jsonManager");
+const tablaJson = require("../../data/jsonManager");
 const messagesJson = tablaJson("messages");
 
 

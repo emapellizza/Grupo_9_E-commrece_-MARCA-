@@ -8,30 +8,63 @@
       <article class="container-productDetail">
         <img src="/images/products/<%= productDetail.image %>" alt="" />
         <div class="container-caract-productDetail">
-          <h3><%= productDetail.brand + " " + productDetail.model %></h3>
-          <div>
-            <p>Talles disponibles:</p>
-            <p><%= productDetail.size%></p>
-          </div>
-          <div>
-            <p>Colores disponibles:</p>
-            <p><%= productDetail.color%></p>
-          </div>
+          <h3><%= productDetail.brands.brand + " " + productDetail.model %></h3>
+
           <p class="precio-productDetail">$<%= productDetail.price%></p>
 
-          <div class="boton-contenedor">
-            <input
-              class="finalizar-compra"
-              type="button"
-              value="AGREGAR AL CARRITO"
-            />
-          </div>
+          <form 
+            action="/products/detail"
+            method="POST"
+            id="formNewCart">
+            <div >
+              <label for="size">• Talles Disponibles</label>
+              <select name="size" id="size">
+                <option disabled selected>Seleccionar</option>
+                <% for (let i = 0; i < productDetail.sizes.length; i++) { %>}
+                <option value="<%= productDetail.sizes[i].id_size %>">
+                  <%= productDetail.sizes[i].size %>
+                </option>
+                <% } %>
+              </select>
+            </div>
+            <div >
+              <label for="color">• Colores Disponibles</label>
+              <select name="color" id="color">
+                <option disabled selected>Seleccionar</option>
+                <% for (let i = 0; i < productDetail.colors.length; i++) { %>}
+                <option value="<%= productDetail.colors[i].id_color %>">
+                  <%= productDetail.colors[i].color %>
+                </option>
+                <% } %>
+              </select>
+            </div>
+            <div >
+              <label for="quantity">• Cantidad</label>
+              <select name="quantity" id="quantity">
+                <option disabled selected>Seleccionar</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div class="boton-contenedor">
+              <input
+                class="finalizar-compra"
+                type="submit"
+                value="AGREGAR AL CARRITO"
+              />
+            </div>
+          </form>
         </div>
+      
       </article>
 
       <article class="container-productDetail-bottom">
         <h4>• Descripción •</h4>
-        <p><%= productDetail.longDescription%></p>
+        <p><%= productDetail.long_description%></p>
       </article>
     </main>
 

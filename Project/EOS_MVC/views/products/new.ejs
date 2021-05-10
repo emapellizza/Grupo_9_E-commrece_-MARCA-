@@ -30,13 +30,12 @@
           <div class="contenedor-campos-newProduct">
             <label for="brand">• Marca</label>
             <select name="brand" id="brand">
-              <option value="Seleccionar" disabled selected>Seleccionar</option>
-              <option value="Nike">Nike</option>
-              <option value="Adidas">Adidas</option>
-              <option value="Puma">Puma</option>
-              <option value="New Balance">New Balance</option>
-              <option value="Vans">Vans</option>
-              <option value="Under Armour">Under Armour</option>
+              <option disabled selected>Seleccionar</option>
+              <% for (let i = 0; i < marca.length; i++) { %>}
+              <option value="<%= marca[i].id_brand %>">
+                <%= marca[i].brand %>
+              </option>
+              <% } %>
             </select>
 
             <div class="text-danger" id="errorMarca">
@@ -47,13 +46,7 @@
 
           <div class="contenedor-campos-newProduct">
             <label for="model">• Modelo</label>
-            <input
-              type="text"
-              name="model"
-              id="model"
-              value="<%= locals.old && old.model ? old.model : ''%>"
-              placeholder="Modelo"
-            />
+            <input type="text" name="model" id="model" placeholder="Modelo" />
 
             <div class="text-danger" id="errorModelo">
               <% if (locals.errors && errors.model) { %> <%= errors.model.msg %>
@@ -68,7 +61,6 @@
               name="price"
               min="0"
               id="price"
-              value="<%= locals.old && old.price ? old.price : ''%>"
               placeholder="$$$$"
             />
 
@@ -82,9 +74,11 @@
             <label for="category">• Categoria</label>
             <select name="category" id="category">
               <option disabled selected>Seleccionar</option>
-              <option value="indumentaria">Indumentaria</option>
-              <option value="calzado">Calzado</option>
-              <option value="accesorios">Accesorios</option>
+              <% for (let i = 0; i < categoria.length; i++) { %>}
+              <option value="<%= categoria[i].id_category %>">
+                <%= categoria[i].category %>
+              </option>
+              <% } %>
             </select>
 
             <div class="text-danger" id="errorCategoria">
@@ -97,9 +91,11 @@
             <label for="genre">• Género</label>
             <select name="genre" id="genre">
               <option disabled selected>Seleccionar</option>
-              <option value="masculino">Masculino</option>
-              <option value="femenino">Femenino</option>
-              <option value="unisex">Unisex</option>
+              <% for (let i = 0; i < genero.length; i++) { %>}
+              <option value="<%= genero[i].id_genre %>">
+                <%= genero[i].genre %>
+              </option>
+              <% } %>
             </select>
 
             <div class="text-danger" id="errorGenero">
@@ -141,30 +137,8 @@
             </div>
           </div>
 
-          <div class="contenedor-campos-newProduct">
-            <label for="size">• Talle</label>
-            <select name="size" id="size">
-              <option disabled selected>Seleccionar</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="Unico">Unico</option>
-            </select>
-
-            <div class="text-danger" id="erroresTalle">
-              <% if (locals.errors && errors.size) { %> <%= errors.size.msg %>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="contenedor-campos-newProduct">
-            <label for="color">• Color</label>
-            <input type="text" name="color" id="color" placeholder="Color" />
-
-            <div class="text-danger" id="erroresColor">
-              <% if (locals.errors && errors.color) { %> <%= errors.color.msg %>
-              <% } %>
-            </div>
+          <div class="contenedor-campos-newProduct" id="erroresNewProd">
+            <p>ERROR: debes rellenar el formulario correctamente</p>
           </div>
 
           <div class="contenedor-campos-newProduct">

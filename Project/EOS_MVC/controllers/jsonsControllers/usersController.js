@@ -1,17 +1,17 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const tablaJson = require("../data/jsonManager");
+const tablaJson = require("../../data/jsonManager");
 const usersJson = tablaJson("users");
-
-const db = require("../database/models")
 
 const usersController = {
 
   listAll: function (req, res) {
     if(req.session.adminLogged){
-    // con JSON: 
-    let users = usersJson.all();
-    return res.render("./users/list", { users });
+
+      db.User.findAll()
+            .then(function(users){
+                return res.render("./users/list", { users });
+            })
     }
     else
     return res.redirect("/");
@@ -45,6 +45,7 @@ const usersController = {
 
     if (errors.isEmpty()) {
       // Almaceno los datos del producto
+      
       const user = {
         imageUser: "",
         firstName: req.body.firstName,

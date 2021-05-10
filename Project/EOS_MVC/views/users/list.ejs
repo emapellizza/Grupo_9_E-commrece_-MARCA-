@@ -11,24 +11,27 @@
 
       <a
         class="userList-user-container"
-        href="/users/detail/<%= users[i].id %>"
+        href="/users/detail/<%= users[i].id_user %>"
       >
         <div>
           <img
             class="userList-img profile-pic"
-            src="/images/users/<%= users[i].imageUser %>"
+            src="/images/users/<%= users[i].image %>"
             alt=""
           />
         </div>
         <div class="userList-nombre">
-          <p><%= users[i].firstName %> <%= users[i].lastName %></p>
+          <p><%= users[i].first_name %> <%= users[i].last_name %></p>
         </div>
-      
-        
-        
-          <div> <a href="/admin/users/edit/<%= users[i].id %>">
-             <button type="submit" class= "userList-eliminar" >Editar</button>
-                </a>
+        <!--<div class="userList-eliminar">ELIMINAR</div>------>>
+        <div>
+          <form  method="POST" action="/admin/users/edit/<%= users[i].id_user %>?_method=PUT">
+            <button class= "userList-eliminar" type ="submit">Editar</button>
+          </form>
+
+          <form  method="POST" action="/admin/users/delete/<%= users[i].id_user %>?_method=DELETE">
+            <button class= "userList-eliminar" type ="submit">Eliminar</button>
+          </form>
 
                 <a href="/admin/users/delete/<%= users[i].id %>">
                   <button class= "userList-eliminar" type ="submit">Eliminar</button>

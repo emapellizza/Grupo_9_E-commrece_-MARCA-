@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const tablaJson = require("../data/jsonManager");
+const tablaJson = require("../../data/jsonManager");
 const userList = tablaJson("users");
 
 const loginController = {
