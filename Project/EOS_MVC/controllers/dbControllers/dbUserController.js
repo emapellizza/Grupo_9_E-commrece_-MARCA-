@@ -8,7 +8,7 @@ const dbUserController = {
       db.User.findAll()
         .then(function(users){
           return res.render("./users/list", { users: users });
-        })           
+        })        
         
     },
 
@@ -20,6 +20,7 @@ const dbUserController = {
       if (errors.isEmpty()) { 
 
         db.User.create({
+          image: req.file.filename,
           first_name: req.body.firstName,
           last_name: req.body.lastName,
           date_of_birth: req.body.dateOfBirth,

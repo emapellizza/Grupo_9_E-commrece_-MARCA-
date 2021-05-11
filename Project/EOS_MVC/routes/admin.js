@@ -46,17 +46,22 @@ router.delete("/products/delete/:idProduct", dbProductController.delete);
 router.get("/products", dbProductController.listAll);
 
 ///////rutas usuarios///////
+
 //lista usuarios
-router.get("/users", usersController.listAll); //admin/users
+router.get("/users", dbUserController.listAll); 
+
 //detalle usuario
 router.get("/profile", authMiddleware, usersController.profile);
 router.get("/users/detail/:idUser", usersController.findById);
+
 ///update usuario
 router.get("/users/edit/:idUser", usersController.updateUser);
-router.put("/users/edit/:idUser",uploadUser.single("imagenUsuario"),
+router.put("/users/edit/:idUser",uploadUser.single("userImage"),
   usersController.updatedUser);
+
 //borrar usuario
 router.delete("/users/delete/:idUser", dbUserController.delete);
+
 //lista usuarios
 router.get("/users", dbUserController.listAll); //admin/users
 

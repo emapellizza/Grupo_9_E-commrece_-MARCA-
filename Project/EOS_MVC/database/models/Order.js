@@ -35,7 +35,7 @@ module.exports = function (sequelize,dataTypes) {
     
     Order.associate = function (models) {
         Order.belongsTo(models.Cart, {
-            as: "cart",
+            as: "carts",
             foreignKey: "id_cart",
         })
 

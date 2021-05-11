@@ -387,7 +387,9 @@ input {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-
+#hided {
+  display: none;
+}
 .precio-productDetail {
   font-size: 35px;
   font-weight: 600;

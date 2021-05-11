@@ -1,11 +1,6 @@
 [
   {
     "imageUser": "",
-    "firstName": "pablo juan",
-    "lastName": "Perez",
-    "dateOfBirth": "2021-04-14",
-    "email": "pablo@perez.com",
-    "password": "",
     "active": "true",
     "admin": "false",
     "id": 1

@@ -17,6 +17,14 @@
             method="POST"
             id="formNewCart">
             <div >
+              <div id="hided">
+                <select name="id_product" id="id_product">
+                  <option value="<%= productDetail.id_product%>" selected>1</option>
+                </select>
+                <select name="price" id="price">
+                  <option value="<%= productDetail.price%>" selected>1</option>
+                </select>
+            </div>
               <label for="size">• Talles Disponibles</label>
               <select name="size" id="size">
                 <option disabled selected>Seleccionar</option>

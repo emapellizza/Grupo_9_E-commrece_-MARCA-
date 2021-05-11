@@ -143,7 +143,8 @@ const dbProductController = {
         db.Cart.create({
           
           id_user: user.id_user,
-          id_product: req.params.idProduct,
+          id_product: req.body.id_product,
+          price: req.body.price,
           quantity: req.body.quantity,
           color: req.body.color,
           size: req.body.size,
@@ -154,8 +155,6 @@ const dbProductController = {
            
       };
     },
-
-
     
 }
 
