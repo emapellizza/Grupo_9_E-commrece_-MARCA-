@@ -40,18 +40,18 @@ INSERT INTO `brands` VALUES (1,'Vans'),(2,'Under Armour'),(3,'Nike'),(4,'Adidas'
 UNLOCK TABLES;
 
 --
--- Table structure for table `cart`
+-- Table structure for table `carts`
 --
 
-DROP TABLE IF EXISTS `cart`;
+DROP TABLE IF EXISTS `carts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cart` (
+CREATE TABLE `carts` (
   `id_cart` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) DEFAULT NULL,
   `id_product` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
   `color` int(11) DEFAULT NULL,
   `size` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_cart`),
@@ -59,16 +59,17 @@ CREATE TABLE `cart` (
   KEY `id_productUser_idx` (`id_product`),
   CONSTRAINT `id_products` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cart`
+-- Dumping data for table `carts`
 --
 
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+INSERT INTO `carts` VALUES (1,NULL,NULL,NULL,2,1,7),(2,NULL,2,10999,1,1,7),(3,NULL,17,2199,2,1,1),(4,NULL,2,10999,2,1,7);
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -159,7 +160,7 @@ CREATE TABLE `orders` (
   `shipping_info` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_order`),
   KEY `id_carts_idx` (`id_cart`),
-  CONSTRAINT `id_carts` FOREIGN KEY (`id_cart`) REFERENCES `cart` (`id_cart`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `id_cart` FOREIGN KEY (`id_cart`) REFERENCES `carts` (`id_cart`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -206,7 +207,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'product-1620168174381.jpg',1,'Old Skool',10999,2,3,'Zapatillas Vans Old Skool','Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.','Yes'),(3,'product-1620169046677.JPG',3,'Sportwear',5999,1,1,'Pantalon Nike W NSW FEM','Estilo de sujeción con los pantalones de tiro alto Nike Sportswear. Los coloridos paneles laterales están inspirados en el tapicería mexicana para crear el aspecto de un diseño floral en punto de cruz. Suave y de sujeción. La tela de punto doble brinda una sensación de textura suave','Yes'),(4,'product-1620169264827.JPG',5,'Ess Heather',7999,1,2,'Remera Puma Essencial Heather','La remera Puma Ess Heather posee un diseño elegante y de tendencia urbana inspirada en el deporte. Regular fit, presenta un ajuste perfecto que te ofrece libertad de movimientos.','Yes'),(5,'product-1620169332032.jpg',4,'Superstars',12999,2,3,'Zapatillas Adidas Original Superstar','La leyenda de las zapatillas ADIDAS Superstar ha perdurado por más de cinco décadas, inspirando nuevas maneras de expresión personal en el camino.','Yes'),(6,'product-1620169643947.JPG',2,'Tech 2.0',3799,1,2,'Remera Under Armour Tech 2.0','La remera Under Armour Tech 2.0 SS posee tecnología UA Tech para un secado más rápido, siendo ultra suave y con una sensación más natural para prevenir el crecimiento de microbios que causan el mal olor. Posee un ajuste aerodinámico que acompaña tus movimientos sin distracciones. Una excusa menos para dar el máximo.','Yes'),(7,'product-1620169698811.jpg',2,'Charged Pursuit 2',17999,2,3,'Zapatillas Under Armour Charged Pursuit 2','Para tus días de running son perfectas las Zapatillas Under Armour Charged Pursuit 2 por su diseño te harán rendir mejor en entrenamiento y carrera, mientras amortigua tus pisadas gracias a su media suela en espuma que te da estabilidad y firmeza a la hora de correr.','Yes'),(8,'product-1620169750268.jpeg',6,'574',13499,2,1,'Zapatillas New Balance 574 Mujer Serpent Luxe','Las zapatillas New Balance 574 son famosas por su estilo clásico, materiales duraderos y ligeros, y por su comodidad. Las zapatillas New Balance 574 Serpent Luxe de mujer mantiene todas las características de las originales y añade una llamativa capellada en mesh y gamuza sintética en colores contrastantes con detalles de serpiente.','Yes'),(9,'product-1620169845959.JPG',3,'Heritage',3399,1,2,'Remera Nike Heritage Hombre','La remera Nike Heritage tiene una huella mas elegante, hecha para que tu estilo sea aun mas notable. Confeccionada con algodón 100% brindando al cuerpo una mayor sensacion de comodidad y suavidad.','Yes'),(10,'product-1620169899366.jpg',3,'AIR FORCE 1 REACT',19999,2,2,'Zapatillas Nike AIR FORCE 1 REACT','Entra en un nuevo mundo AF1 con el Nike Air Force 1 React, una cuota de rubor en el diseño de contracultura, con un icónico estilo del básquetbol de Nike.','Yes'),(11,'product-1620169960844.JPG',2,'Huddle Snapback',1999,3,3,'Gorra Under Armour Huddle Snapback','Posee un ajuste reforzado, que mantiene la forma con una visera ligeramente más alta y plana para un diseño moderno. Ajuste regulable.','Yes'),(17,'product-1620598159751.jpg',1,'Classic',2099,1,1,'Remera Classic ','Remera básica de mujer ','Yes');
+INSERT INTO `products` VALUES (2,'product-1620168174381.jpg',1,'Old Skool',10999,2,3,'Zapatillas Vans Old Skool','Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.','Yes'),(3,'product-1620169046677.JPG',3,'Sportwear',5999,1,1,'Pantalon Nike W NSW FEM','Estilo de sujeción con los pantalones de tiro alto Nike Sportswear. Los coloridos paneles laterales están inspirados en el tapicería mexicana para crear el aspecto de un diseño floral en punto de cruz. Suave y de sujeción. La tela de punto doble brinda una sensación de textura suave','Yes'),(4,'product-1620169264827.JPG',5,'Ess Heather',7999,1,2,'Remera Puma Essencial Heather','La remera Puma Ess Heather posee un diseño elegante y de tendencia urbana inspirada en el deporte. Regular fit, presenta un ajuste perfecto que te ofrece libertad de movimientos.','Yes'),(5,'product-1620169332032.jpg',4,'Superstars',12999,2,3,'Zapatillas Adidas Original Superstar','La leyenda de las zapatillas ADIDAS Superstar ha perdurado por más de cinco décadas, inspirando nuevas maneras de expresión personal en el camino.','Yes'),(6,'product-1620169643947.JPG',2,'Tech 2.0',3799,1,2,'Remera Under Armour Tech 2.0','La remera Under Armour Tech 2.0 SS posee tecnología UA Tech para un secado más rápido, siendo ultra suave y con una sensación más natural para prevenir el crecimiento de microbios que causan el mal olor. Posee un ajuste aerodinámico que acompaña tus movimientos sin distracciones. Una excusa menos para dar el máximo.','Yes'),(7,'product-1620169698811.jpg',2,'Charged Pursuit 2',17999,2,3,'Zapatillas Under Armour Charged Pursuit 2','Para tus días de running son perfectas las Zapatillas Under Armour Charged Pursuit 2 por su diseño te harán rendir mejor en entrenamiento y carrera, mientras amortigua tus pisadas gracias a su media suela en espuma que te da estabilidad y firmeza a la hora de correr.','Yes'),(8,'product-1620169750268.jpeg',6,'574',13499,2,1,'Zapatillas New Balance 574 Mujer Serpent Luxe','Las zapatillas New Balance 574 son famosas por su estilo clásico, materiales duraderos y ligeros, y por su comodidad. Las zapatillas New Balance 574 Serpent Luxe de mujer mantiene todas las características de las originales y añade una llamativa capellada en mesh y gamuza sintética en colores contrastantes con detalles de serpiente.','Yes'),(9,'product-1620169845959.JPG',3,'Heritage',3399,1,2,'Remera Nike Heritage Hombre','La remera Nike Heritage tiene una huella mas elegante, hecha para que tu estilo sea aun mas notable. Confeccionada con algodón 100% brindando al cuerpo una mayor sensacion de comodidad y suavidad.','Yes'),(10,'product-1620169899366.jpg',3,'AIR FORCE 1 REACT',19999,2,2,'Zapatillas Nike AIR FORCE 1 REACT','Entra en un nuevo mundo AF1 con el Nike Air Force 1 React, una cuota de rubor en el diseño de contracultura, con un icónico estilo del básquetbol de Nike.','Yes'),(11,'product-1620169960844.JPG',2,'Huddle Snapback',1999,3,3,'Gorra Under Armour Huddle Snapback','Posee un ajuste reforzado, que mantiene la forma con una visera ligeramente más alta y plana para un diseño moderno. Ajuste regulable.','Yes'),(17,'product-1620685089633.jpg',1,'Classic',2199,1,1,'   Remera Classic \r\n            \r\n           ','   Remera básica de mujer \r\n            \r\n            \r\n            ','Yes');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,7 +317,7 @@ CREATE TABLE `users` (
   `active` tinyint(4) DEFAULT '1',
   `admin` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -338,4 +339,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-09 20:55:28
+-- Dump completed on 2021-05-12 20:54:35
