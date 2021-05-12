@@ -16,6 +16,22 @@ window.addEventListener("load", (e) => {
   let errorCategoria = document.querySelector("#errorCategoria");
   let errorGenero = document.querySelector("#errorGenero");
 
+  imagen.addEventListener("change", (e) => {
+    let reader = new FileReader();
+
+    // Leemos el archivo subido y se lo pasamor al reader
+    reader.readAsDataURL(e.target.files[0]);
+    // Le decimos que cuando este listo ejecute el código interno
+    reader.onload = function () {
+      let preview = document.getElementById("preview");
+      let image = document.createElement("img");
+
+      image.src = reader.result;
+      preview.innerHTML = "";
+      preview.append(image);
+    };
+  });
+
   const campos = {
     // falta imagen
     imagen: false,

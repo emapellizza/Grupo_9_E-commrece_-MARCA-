@@ -15,16 +15,18 @@
           action="/admin/products/edit/<%= prod.id_product %>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
-          id="formNewProduct"
+          id="formUpdateProduct"
         >
           <div class="contenedor-campos-newProduct">
             <label for="productImage">• Imagen/es</label>
+            <div id="preview">
+              <img src="/images/products/<%= prod.image %>" alt="" />
+            </div>
             <input
               type="file"
               id="productImage"
               name="productImage"
               accept=".png, .jpg, .jpeg"
-              
             />
             <div class="text-danger" id="errorImagen"></div>
           </div>
@@ -131,7 +133,8 @@
               cols="1"
               rows="1"
               maxlength="60"
-              > <%= prod.short_description %>
+            >
+<%= prod.short_description %>
             </textarea>
 
             <div class="text-danger" id="errorDescCort">
@@ -147,7 +150,8 @@
               id="longDescription"
               cols="10"
               rows="10"
-              > <%= prod.long_description %>
+            >
+<%= prod.long_description %>
             </textarea>
 
             <div class="text-danger" id="errorDescLarg">
@@ -160,11 +164,11 @@
             <label for="available">• Estado</label>
             <select name="available" id="available">
               <% if (prod.available == "Yes" ) { %>
-                <option value= "Yes" selected>Activo</option>
-                <option value= "No" >Inactivo</option>
-                <% } else { %>
-                  <option value="Yes" >Activo</option>
-                <option value="No" selected>Inactivo</option>
+              <option value="Yes" selected>Activo</option>
+              <option value="No">Inactivo</option>
+              <% } else { %>
+              <option value="Yes">Activo</option>
+              <option value="No" selected>Inactivo</option>
               <% } %>
             </select>
           </div>

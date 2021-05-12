@@ -15,14 +15,23 @@ window.addEventListener("load", (e) => {
   let errorCategoria = document.querySelector("#errorCategoria");
   let errorGenero = document.querySelector("#errorGenero");
 
-  const campos = {
-    // falta imagen
-    modelo: false,
-    precio: false,
-    descCorta: false,
-    descLarga: false,
-  };
-  /* VALIDACION IMAGEN */
+  imagen.addEventListener("change", (e) => {
+    let reader = new FileReader();
+
+    // Leemos el archivo subido y se lo pasamor al reader
+    reader.readAsDataURL(e.target.files[0]);
+    // Le decimos que cuando este listo ejecute el código interno
+    reader.onload = function () {
+      let preview = document.getElementById("preview");
+      let image = document.createElement("img");
+
+      image.src = reader.result;
+      preview.innerHTML = "";
+      preview.append(image);
+    };
+  });
+
+  /* Validacion Imagen */
   let imagenAprobada = false;
   imagen.addEventListener("blur", function () {
     let nombreImagen = imagen.value;
@@ -158,17 +167,11 @@ window.addEventListener("load", (e) => {
   // });
 
   formUpdateProduct.addEventListener("submit", (e) => {
-    if (imagenAprobada != true) {
+    if (imagen.value == "") {
+      errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
       e.preventDefault();
     }
-
-    if (
-      !campos.modelo ||
-      !campos.precio ||
-      !campos.descCorta ||
-      !campos.descLarga
-    ) {
-      document.getElementById("erroresNewProd").style.display = "block";
+    if (imagenAprobada != true) {
       e.preventDefault();
     }
   });

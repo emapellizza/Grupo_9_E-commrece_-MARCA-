@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const validateRegister = require("../middlewares/valRegProduct");
-const uploadProduct = require("../middlewares/multerMiddleware");
+const uploadProduct = require("../middlewares/multerMiddProduct");
 const uploadUser = require("../middlewares/multerMiddProduct");
 const dbUserController = require("../controllers/dbControllers/dbUserController");
 const productsController = require("../controllers/jsonsControllers/productsController");
@@ -12,9 +12,6 @@ const loginController = require("../controllers/jsonsControllers/loginController
 const adminController = require("../controllers/jsonsControllers/adminController");
 //para la session
 const authMiddleware = require("../middlewares/authMiddleware");
-
-
-
 
 //vista administrador
 router.get("/", adminController.view);
@@ -37,8 +34,11 @@ router.post(
 
 //Rutas para actualizar un producto:
 router.get("/products/edit/:idProduct", dbProductController.updateProduct);
-router.put("/products/edit/:idProduct", uploadProduct.single("productImage"),
-dbProductController.updatedProduct);
+router.put(
+  "/products/edit/:idProduct",
+  uploadProduct.single("productImage"),
+  dbProductController.updatedProduct
+);
 
 //borrar un producto
 router.delete("/products/delete/:idProduct", dbProductController.delete);
@@ -49,7 +49,7 @@ router.get("/products", dbProductController.listAll);
 ///////rutas usuarios///////
 
 //lista usuarios
-router.get("/users", dbUserController.listAll); 
+router.get("/users", dbUserController.listAll);
 
 //detalle usuario
 router.get("/profile", authMiddleware, usersController.profile);
@@ -57,8 +57,11 @@ router.get("/users/detail/:idUser", usersController.findById);
 
 ///update usuario
 router.get("/users/edit/:idUser", usersController.updateUser);
-router.put("/users/edit/:idUser",uploadUser.single("userImage"),
-  usersController.updatedUser);
+router.put(
+  "/users/edit/:idUser",
+  uploadUser.single("userImage"),
+  usersController.updatedUser
+);
 
 //borrar usuario
 router.delete("/users/delete/:idUser", dbUserController.delete);
