@@ -12,6 +12,9 @@ const dbUserController = {
         
     },
 
+    register: function (req, res) {
+      return res.render("./users/register");
+    },
 
     saveUser: function (req, res) {
 

@@ -1,12 +1,6 @@
 [
   {
     "imageUser": "",
-    "active": "true",
-    "admin": "false",
-    "id": 1
-  },
-  {
-    "imageUser": "",
     "firstName": "Emanuel",
     "lastName": "Pellizza",
     "dateOfBirth": "1991-11-28",

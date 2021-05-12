@@ -13,7 +13,7 @@ const mainController = require("../controllers/jsonsControllers/mainController")
 router.get("/", mainController.index);
 
 // Registro
-router.get("/register", guestMiddleware, usersController.register);
+router.get("/register", guestMiddleware, dbUserController.register);
 router.post("/register", validateRegister, uploadUser.single("userImage"), dbUserController.saveUser);
 
 // Logeo
@@ -26,4 +26,5 @@ router.get("/profile", authMiddleware, usersController.profile);
 
 //Detalle de usuario buscado
 router.get("/detail/:idUser", dbUserController.findById);
+
 module.exports = router;
