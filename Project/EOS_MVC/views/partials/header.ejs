@@ -15,13 +15,22 @@
     <div class="container-icomo-hamburguesa" id="icono-menu">
       <a href="#"><i class="fas fa-bars"></i></a>
     </div>
-
     <div class="cont-menu-hamburguesa active" id="menu-hamburguesa">
       <div class="icono-cerrar">
         <a href="#">
           <i class="fas fa-times"></i>
         </a>
       </div>
+      <% if (locals.isLogged || locals.isAdminLogged){ %>
+      <nav>
+        <a href="#">Mis Compras</a>
+        <a href="#">Favoritos <i class="fas fa-heart"></i></a>
+        <a href="/products/cart">Carrito <i class="fas fa-shopping-bag"></i></a>
+        <a href="/users/profile">Panel Administrador</a>
+        <a href="/users/detail/1">Ver Perfil</a>
+        <a href="/users/logout">Salir</a>
+      </nav>
+      <% } else {%>
       <nav>
         <a href="/users/register" class="items-menu-header"
           ><span class="dorado">● </span>Creá tu cuenta</a
@@ -34,34 +43,46 @@
           <i class="fas fa-shopping-bag"></i
         ></a>
       </nav>
+      <%}%>
     </div>
   </section>
 
   <% if (locals.isLogged || locals.isAdminLogged){ %>
   <nav class="menu-header">
-    <a href="#" class="items-menu-header">Mis Compras</a>
-    <a href="#" class="items-menu-header"
-      >Favoritos <i class="fas fa-heart"></i
-    ></a>
-    <a href="/products/cart" class="items-menu-header"
-      >Carrito <i class="fas fa-shopping-bag"></i
-    ></a>
+    <div class="items-menu-header">
+      <a href="#">Mis Compras</a>
+    </div>
+    <div class="items-menu-header">
+      <a href="#">Favoritos <i class="fas fa-heart"></i></a>
+    </div>
+    <div class="items-menu-header">
+      <a href="/products/cart">Carrito <i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="items-menu-header contenedor-menu-usuario">
+      <div class="user-header">
+        <i class="fas fa-user icono-usuario"></i>
+        <i class="fas fa-angle-down icono"></i>
+      </div>
+      <div class="menu-usuario" id="menu-usuario">
+        <a href="/users/profile">Panel Administrador</a>
+        <a href="/users/detail/1">Ver Perfil</a>
+        <a href="/users/logout">Salir</a>
+      </div>
+    </div>
   </nav>
-  <ul>
-    <a href="/users/profile">Ver Perfil</a>
-    <hr />
-    <a href="/users/logout">Salir</a>
-  </ul>
-  <img class="user-header" src="/images/users/default-user-icon.png" />
 
   <% } else {%>
 
   <nav class="menu-header">
-    <a href="/users/register" class="items-menu-header">Creá tu cuenta</a>
-    <a href="/users/login" class="items-menu-header">Ingresá</a>
-    <a href="/products/cart" class="items-menu-header"
-      >Carrito <i class="fas fa-shopping-bag"></i
-    ></a>
+    <div class="items-menu-header">
+      <a href="/users/register">Creá tu cuenta</a>
+    </div>
+    <div class="items-menu-header">
+      <a href="/users/login">Ingresá</a>
+    </div>
+    <div class="items-menu-header">
+      <a href="/products/cart">Carrito <i class="fas fa-shopping-bag"></i></a>
+    </div>
   </nav>
   <%}%>
 </header>
