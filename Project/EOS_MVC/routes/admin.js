@@ -4,8 +4,6 @@ const router = express.Router();
 const validateRegister = require("../middlewares/valRegProduct");
 const uploadProduct = require("../middlewares/multerMiddProduct");
 const uploadUser = require("../middlewares/multerMiddProduct");
-const dbUserController = require("../controllers/dbControllers/dbUserController");
-const productsController = require("../controllers/jsonsControllers/productsController");
 const dbProductController = require("../controllers/dbControllers/dbProductController");
 const usersController = require("../controllers/jsonsControllers/usersController");
 const loginController = require("../controllers/jsonsControllers/loginController");
@@ -49,7 +47,7 @@ router.get("/products", dbProductController.listAll);
 ///////rutas usuarios///////
 
 //lista usuarios
-router.get("/users", dbUserController.listAll);
+router.get("/users", usersController.listAll);
 
 //detalle usuario
 router.get("/profile", authMiddleware, usersController.profile);
@@ -64,9 +62,9 @@ router.put(
 );
 
 //borrar usuario
-router.delete("/users/delete/:idUser", dbUserController.delete);
+router.delete("/users/delete/:idUser", usersController.delete);
 
 //lista usuarios
-router.get("/users", dbUserController.listAll); //admin/users
+router.get("/users", usersController.listAll); //admin/users
 
 module.exports = router;

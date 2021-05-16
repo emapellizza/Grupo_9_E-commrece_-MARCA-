@@ -142,7 +142,7 @@ const dbProductController = {
 
         db.Cart.create({
           
-          id_user: user.id_user,
+          id_user: user.id,
           id_product: req.body.id_product,
           price: req.body.price,
           quantity: req.body.quantity,

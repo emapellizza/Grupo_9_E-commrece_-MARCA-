@@ -2,19 +2,17 @@ const express = require("express");
 const router = express.Router();
 
 const usersController = require("../controllers/jsonsControllers/usersController");
-const dbUserController = require("../controllers/dbControllers/dbUserController");
 const loginController = require("../controllers/jsonsControllers/loginController");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
-const uploadUser = require("../middlewares/multerMiddleware");
 const validateRegister = require("../middlewares/valRegMiddleware");
 const mainController = require("../controllers/jsonsControllers/mainController");
 
 router.get("/", mainController.index);
 
 // Registro
-router.get("/register", guestMiddleware, dbUserController.register);
-router.post("/register", validateRegister, uploadUser.single("userImage"), dbUserController.saveUser);
+router.get("/register", guestMiddleware, usersController.register);
+router.post("/register", validateRegister, usersController.saveUser);
 
 // Logeo
 router.get("/login", guestMiddleware, loginController.login);
@@ -25,6 +23,6 @@ router.get("/logout", loginController.logout);
 router.get("/profile", authMiddleware, usersController.profile);
 
 //Detalle de usuario buscado
-router.get("/detail/:idUser", dbUserController.findById);
+router.get("/detail/:idUser", usersController.findById);
 
 module.exports = router;

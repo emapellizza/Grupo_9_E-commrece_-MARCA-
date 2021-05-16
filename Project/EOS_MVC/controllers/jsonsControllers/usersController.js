@@ -2,16 +2,16 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const tablaJson = require("../../data/jsonManager");
 const usersJson = tablaJson("users");
+const db = require("../../database/models");
 
 const usersController = {
 
   listAll: function (req, res) {
     if(req.session.adminLogged){
 
-      db.User.findAll()
-            .then(function(users){
-                return res.render("./users/list", { users });
-            })
+    let users = usersJson.all()
+    return res.render("./users/list", { users });
+      
     }
     else
     return res.redirect("/");
@@ -47,7 +47,7 @@ const usersController = {
       // Almaceno los datos del producto
       
       const user = {
-        imageUser: "",
+        
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         dateOfBirth: req.body.dateOfBirth,
@@ -57,6 +57,17 @@ const usersController = {
         admin: "false",
         active: "true",
       };
+
+      db.User.create({
+          
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        date_of_birth: req.body.dateOfBirth,
+        email: req.body.email,
+        phone: req.body.phone,
+        password: req.body.password,           
+            
+      }); 
 
       usersJson.create(user);
 
@@ -119,6 +130,8 @@ const usersController = {
         userToUpdate.phone = req.body.phone;
         userToUpdate.active = "true";
       }
+
+        
 
       let userId = usersJson.update(userToUpdate);
      

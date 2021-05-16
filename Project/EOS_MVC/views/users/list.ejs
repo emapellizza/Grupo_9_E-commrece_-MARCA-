@@ -11,17 +11,11 @@
 
       <a
         class="userList-user-container"
-        href="/users/detail/<%= users[i].id_user %>"
+        href="/users/detail/<%= users[i].id %>"
       >
-        <div>
-          <img
-            class="userList-img profile-pic"
-            src="/images/users/<%= users[i].image %>"
-            alt=""
-          />
-        </div>
+        
         <div class="userList-nombre">
-          <p><%= users[i].first_name %> <%= users[i].last_name %></p>
+          <p><%= users[i].firstName %> <%= users[i].lastName %></p>
         </div>
         <!--<div class="userList-eliminar">ELIMINAR</div>------>>
         <div>
@@ -33,10 +27,6 @@
             <button class= "userList-eliminar" type ="submit">Eliminar</button>
           </form>
 
-                <a href="/admin/users/delete/<%= users[i].id %>">
-                  <button class= "userList-eliminar" type ="submit">Eliminar</button>
-                </a>
-          </div>
        
       </a>
     

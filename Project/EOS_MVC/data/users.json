@@ -1,29 +1,5 @@
 [
   {
-    "imageUser": "",
-    "firstName": "Emanuel",
-    "lastName": "Pellizza",
-    "dateOfBirth": "1991-11-28",
-    "email": "emapellizza@gmail.com",
-    "password": "",
-    "active": "true",
-    "admin": "false",
-    "id": 2
-  },
-  {
-    "imageUser": "",
-    "firstName": "Elon",
-    "lastName": "Musk",
-    "dateOfBirth": "2000-02-02",
-    "email": "elon@musk.com",
-    "password": "$2b$10$XOZ1nBipdjkzS0qK.VT2geyFrgQlLnuBEufD1bMmOSDpFtv3N8uXO",
-    "phone": "1178459856",
-    "active": "true",
-    "admin": "false",
-    "id": 3
-  },
-  {
-    "imageUser": "",
     "firstName": "Admin",
     "lastName": "",
     "dateOfBirth": "2021-01-01",
@@ -32,30 +8,28 @@
     "phone": "1158585252",
     "active": "true",
     "admin": "true",
-    "id": 4
+    "id": 1
   },
   {
-    "imageUser": "",
-    "firstName": "Laura",
-    "lastName": "Lila",
-    "dateOfBirth": "2021-04-01",
-    "email": "laura@gomez.com",
-    "phone": "1122334455",
-    "password": "$2b$10$2ZE.wn2AE1c/2N2x67AO8un0bDFh4CZNiL0PpSwaO8le09rIoZ0s6",
-    "admin": "false",
-    "active": "true",
-    "id": 5
-  },
-  {
-    "imageUser": "",
     "firstName": "Mariano",
     "lastName": "Suarez",
     "dateOfBirth": "2021-04-07",
-    "email": "marianosuarez@hotmail.com",
+    "email": "mariano@suarez.com",
     "phone": "1122334455",
     "password": "$2b$10$5YnBl7X3JkHhbfcePbXDausJ.2LB894b.v6Iy9/SMbfB64W2RqHjy",
     "admin": "false",
     "active": "true",
-    "id": 6
+    "id": 12
+  },
+  {
+    "firstName": "Laura",
+    "lastName": "Gomez",
+    "dateOfBirth": "2000-01-01",
+    "email": "laura@gomez.com",
+    "phone": "1122334455",
+    "password": "$2b$10$FIuD28/6pIDxSSzBuoszxuRiqvC7zjrzeb1WtrqDbpz2QM20u2ZBa",
+    "admin": "false",
+    "active": "true",
+    "id": 13
   }
 ]

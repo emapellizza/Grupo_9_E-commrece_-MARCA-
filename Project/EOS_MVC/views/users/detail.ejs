@@ -8,12 +8,12 @@
       <article class="container-userDetail">
         <div class="userDetail-name-img">
           <div class="userDetail-name">
-            <h4><%= userDetail.first_name %></h4>
-            <h4><%= userDetail.last_name %></h4>
+            <h4><%= userDetail.firstName %></h4>
+            <h4><%= userDetail.lastName %></h4>
           </div>
           <img
             class="profile-pic"
-            src="/images/users/<%= userDetail.image %>"
+            src="/images/users/<%= userDetail.imageUser %>"
             alt=""
           />
         </div>
@@ -21,7 +21,7 @@
         <div class="userDetail-more">
           <div class="userDetail-row">
             <p class="grey-title">Fecha de nacimiento</p>
-            <p class="user-data"><%= userDetail.date_of_birth%></p>
+            <p class="user-data"><%= userDetail.dateOfBirth%></p>
           </div>
           <div class="userDetail-row">
             <p class="grey-title">Email</p>
