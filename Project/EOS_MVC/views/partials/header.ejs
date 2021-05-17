@@ -21,14 +21,24 @@
           <i class="fas fa-times"></i>
         </a>
       </div>
-      <% if (locals.isLogged || locals.isAdminLogged){ %>
+      <% if (locals.isAdminLogged){ %>
       <nav>
-        <a href="#">Mis Compras</a>
-        <a href="#">Favoritos <i class="fas fa-heart"></i></a>
-        <a href="/products/cart">Carrito <i class="fas fa-shopping-bag"></i></a>
         <a href="/users/profile">Panel Administrador</a>
         <a href="/users/detail/1">Ver Perfil</a>
-        <a href="/users/logout">Salir</a>
+        <a href="/users/logout">Cerrar sesión</a>
+      </nav>
+      <% } else if (locals.isLogged) {%>
+      <nav>
+        <a href="#"><span class="dorado">● </span>Mis Compras</a>
+        <a href="#"
+          ><span class="dorado">● </span>Favoritos <i class="fas fa-heart"></i
+        ></a>
+        <a href="/products/cart"
+          ><span class="dorado">● </span>Carrito
+          <i class="fas fa-shopping-bag"></i
+        ></a>
+        <a href="/users/profile"><span class="dorado">● </span>Ver Perfil</a>
+        <a href="/users/logout">Cerrar sesión</a>
       </nav>
       <% } else {%>
       <nav>
@@ -47,7 +57,26 @@
     </div>
   </section>
 
-  <% if (locals.isLogged || locals.isAdminLogged){ %>
+  <% if (locals.isAdminLogged){ %>
+  <nav class="menu-header">
+    <div>
+      <p>Logeado como <strong>ADMIN</strong></p>
+    </div>
+    <div class="items-menu-header contenedor-menu-usuario">
+      <div class="user-header">
+        <i class="fas fa-user icono-usuario"></i>
+        <i class="fas fa-angle-down icono"></i>
+      </div>
+      <div class="menu-usuario" id="menu-usuario">
+        <a href="/users/profile">Panel Administrador</a>
+        <a href="/users/detail/1">Ver Perfil</a>
+        <a href="/users/logout">Cerrar sesión</a>
+      </div>
+    </div>
+  </nav>
+
+  <% } else if (locals.isLogged ){%>
+
   <nav class="menu-header">
     <div class="items-menu-header">
       <a href="#">Mis Compras</a>
@@ -64,13 +93,11 @@
         <i class="fas fa-angle-down icono"></i>
       </div>
       <div class="menu-usuario" id="menu-usuario">
-        <a href="/users/profile">Panel Administrador</a>
-        <a href="/users/detail/1">Ver Perfil</a>
-        <a href="/users/logout">Salir</a>
+        <a href="/users/profile">Ver Perfil</a>
+        <a href="/users/logout">Cerrar sesión</a>
       </div>
     </div>
   </nav>
-
   <% } else {%>
 
   <nav class="menu-header">
