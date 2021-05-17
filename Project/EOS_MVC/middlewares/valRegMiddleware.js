@@ -6,6 +6,8 @@ const validateUser = [
     body("lastName").notEmpty().withMessage("* Debes completar el apellido"),
     body("email")
       .isEmail().withMessage("* Debes completar el Email con una dirección válida"),
+    body("phone")
+      .notEmpty().withMessage("* Debes completar el número telefónico"),
     body("password")
       .notEmpty().withMessage(" Debes completar la contraseña").bail()
       .isLength({ min: 6, max: 16 }).withMessage("* La contraseña debe tener entre 6 y 16 caracteres")    

@@ -27,9 +27,31 @@
     "dateOfBirth": "2000-01-01",
     "email": "laura@gomez.com",
     "phone": "1122334455",
-    "password": "$2b$10$FIuD28/6pIDxSSzBuoszxuRiqvC7zjrzeb1WtrqDbpz2QM20u2ZBa",
+    "password": "$2b$10$5YnBl7X3JkHhbfcePbXDausJ.2LB894b.v6Iy9/SMbfB64W2RqHjy",
     "admin": "false",
     "active": "true",
     "id": 13
+  },
+  {
+    "firstName": "Pablo",
+    "lastName": "Perez",
+    "dateOfBirth": "2003-12-22",
+    "email": "pablo@perez.com",
+    "phone": "1122334455",
+    "password": "$2b$10$sGlnhYIHgwCbQSW0w4tWNu7rhyIk/i6m6Rk61UCh.xAWDXtNmCaoK",
+    "admin": "false",
+    "active": "true",
+    "id": 14
+  },
+  {
+    "firstName": "Diego",
+    "lastName": "Maradona",
+    "dateOfBirth": "1980-12-22",
+    "email": "diego@maradona.com",
+    "phone": "1122334455",
+    "password": "$2b$10$HrU44L.I05IE.z3Rd8MLgO73U6529AJW0WlDm6q1scxOS13zDKEE2",
+    "admin": "false",
+    "active": "true",
+    "id": 15
   }
 ]

@@ -57,6 +57,8 @@ const usersController = {
         admin: "false",
         active: "true",
       };
+      
+      usersJson.create(user);
 
       db.User.create({
           
@@ -68,8 +70,6 @@ const usersController = {
         password: req.body.password,           
             
       }); 
-
-      usersJson.create(user);
 
       res.redirect("profile");
 
@@ -100,7 +100,7 @@ const usersController = {
 
   updateUser : function (req,res){
 
-    if(req.session.adminLogged){
+    if(req.session.adminLogged || req.session.userLogged){
       let userId = req.params.idUser;
       //busco el id en la lista 
       let userToEdit = usersJson.find(userId);
@@ -113,15 +113,18 @@ const usersController = {
   },
 
   updatedUser: function(req,res){
-    console.log("entro en UPDATEDUSER")
-    //res.redirect("../detail/" + userId);
+
+    let errors = validationResult(req);
+
+    
     if (req.session.adminLogged) {
       // Validacion
       let errors = validationResult(req);
       const userToUpdate = usersJson.find(req.params.idUser);
+
       if (errors.isEmpty()) {
         // Almaceno los datos del user
-       // userToUpdate.imageUser = req.body.imagenUsuario;
+        userToUpdate.imageUser = req.body.imagenUsuario;
         userToUpdate.firstName = req.body.firstName;
         userToUpdate.lastName = req.body.lastName;
         userToUpdate.dateOfBirth = req.body.dateOfBirth;
@@ -133,9 +136,9 @@ const usersController = {
 
         
 
-      let userId = usersJson.update(userToUpdate);
+      usersJson.update(userToUpdate);
      
-      res.redirect("../detail/" + userId);
+      res.redirect("/");
     } else {
       return res.render("users/update", {
         errors: errors.mapped(),

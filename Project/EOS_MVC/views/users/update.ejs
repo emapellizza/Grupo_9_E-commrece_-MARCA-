@@ -7,10 +7,10 @@
 
     <main class="main-reg-log">
       <div class="container-all-reg-log">
-        <h2>Editar Usuario  <%=userToEdit.lastName%> </h2>
+        <h2>Editar Usuario <%=userToEdit.firstName%> <%=userToEdit.lastName%> </h2>
 
         <form  
-          action="/admin/users/edit/<%=userToEdit.id%>?_method=PUT"
+          action="/users/edit/<%=userToEdit.id%>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
           id="formUpdateUser"
@@ -34,8 +34,10 @@
               id="firstName"
               value="<%=userToEdit.firstName %>"
             />
-            <div class="text-danger" id="errorfirstName">
-
+            <div class="text-danger" id="errorfirstName"></div>
+            <% if (locals.errors && errors.firstName) { %>
+              <div class="text-danger"><%= errors.firstName.msg %></div>
+            <% } %>
           </div>
 
           <div class="contenedor-campos-reg-log">
@@ -47,6 +49,9 @@
               value="<%=userToEdit.lastName%>"
             />
             <div class="text-danger" id="errorlastName"></div>
+            <% if (locals.errors && errors.lastName) { %>
+              <div class="text-danger"><%= errors.lastName.msg %></div>
+            <% } %>
           </div>
          
 
@@ -61,6 +66,9 @@
               value="<%= userToEdit.dateOfBirth%>"
             />
             <div class="text-danger" id="errorbdate"></div>
+            <% if (locals.errors && errors.dateOfBirth) { %>
+              <div class="text-danger"><%= errors.dateOfBirth.msg %></div>
+            <% } %>
           </div>
         
 
@@ -73,6 +81,9 @@
               value="<%= userToEdit.email%>"
             />
             <div class="text-danger" id="errorEmail"></div>
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
           </div>
 
           
@@ -85,6 +96,9 @@
               value="<%= userToEdit.phone %>"
             />
             <div class="text-danger" id="errorPhone"></div>
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
           </div>
         
         
@@ -93,6 +107,9 @@
             <label for="password" class="label-reg-log">Contraseña</label>
             <input type="password" name="password" id="password" />
             <div class="text-danger" id="errorpassword"></div>
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger"><%= errors.password.msg %></div>
+            <% } %>
           </div>
     
 

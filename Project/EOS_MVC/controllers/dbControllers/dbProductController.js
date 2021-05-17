@@ -23,11 +23,6 @@ const dbProductController = {
      
     },
 
-    productCart: function (req, res) {
-      return res.render("./products/cart");
-    },
-
-    
     newProduct: function (req, res) {
       if (req.session.adminLogged) {
 
@@ -62,7 +57,7 @@ const dbProductController = {
               
         });
     
-        return res.redirect("/");
+        return res.redirect("./list");
 
       } else {
           return res.render("products/new", {
@@ -155,6 +150,10 @@ const dbProductController = {
            
       };
     },
+
+    productCart: function (req, res) {
+      return res.render("./products/cart");
+    }
     
 }
 

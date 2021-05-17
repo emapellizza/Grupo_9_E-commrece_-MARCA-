@@ -8,8 +8,8 @@
       <article class="container-userDetail">
         <div class="userDetail-name-img">
           <div class="userDetail-name">
-            <h4><%= user.first_name %></h4>
-            <h4><%= user.last_name %></h4>
+            <h4><%= user.firstName %></h4>
+            <h4><%= user.lastName %></h4>
           </div>
           <img
             class="profile-pic"
@@ -21,7 +21,7 @@
         <div class="userDetail-more">
           <div class="userDetail-row">
             <p class="grey-title">Fecha de nacimiento</p>
-            <p class="user-data"><%= user.date_of_birth%></p>
+            <p class="user-data"><%= user.dateOfBirth%></p>
           </div>
           <div class="userDetail-row">
             <p class="grey-title">Email</p>
@@ -32,16 +32,14 @@
             <p class="user-data"><%= user.phone%></p>
           </div>
           <div class="userDetail-row">
-            <p class="grey-title">Contraseña</p>
-            <p class="user-data">**********</p>
-          </div>
-          <div class="userDetail-row">
             <p class="grey-title">Historial de compras</p>
             <a href="#" class="user-data">Ir al historial</a>
           </div>
         </div>
         <div class="boton-reg-log">
-          <button>Guardar Cambios</button>
+          <a href="/users/edit/<%= user.id %>">
+            <button>Actualizar</button>
+          </a>  
         </div>
       </article>
     </main>
