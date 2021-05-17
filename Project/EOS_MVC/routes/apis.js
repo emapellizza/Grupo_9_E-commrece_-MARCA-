@@ -10,7 +10,6 @@ router.get("/users/:id", apiUsers.showId);
 
 //Productos
 router.get("/products/", apiProducts.products);
-router.get("/products/show/:id", apiProducts.showId);
-router.get("/products/stock", apiProducts.stock);
+router.get("/products/:id", apiProducts.showId);
 
 module.exports = router;

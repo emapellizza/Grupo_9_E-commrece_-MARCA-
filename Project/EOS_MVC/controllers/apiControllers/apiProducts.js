@@ -2,7 +2,6 @@ const db = require("../../database/models");
 
 const apiProducts = {
   products: function (req, res) {
-    //return res.json("hola");
     db.Product.findAll().then((product) => {
       return res.status(200).json({
         total: product.length,
@@ -20,16 +19,6 @@ const apiProducts = {
       });
     });
   },
-
-  // stock: function (req, res) {
-  //   db.Stock.findAll().then((stock) => {
-  //     return res.status(200).json({
-  //       total: stock.length,
-  //       data: stock,
-  //       status: 200,
-  //     });
-  //   });
-  // },
 };
 
 module.exports = apiProducts;
