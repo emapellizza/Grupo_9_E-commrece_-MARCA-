@@ -59,7 +59,7 @@ CREATE TABLE `carts` (
   KEY `id_productUser_idx` (`id_product`),
   CONSTRAINT `id_products` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `products` (
   CONSTRAINT `id_brand` FOREIGN KEY (`id_brand`) REFERENCES `brands` (`id_brand`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_category` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id_category`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_genre` FOREIGN KEY (`id_genre`) REFERENCES `genres` (`id_genre`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,7 +326,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,'ADMIN',NULL,NULL,'admin@admin.com','admin123',NULL,1,1),(12,NULL,'Mariano','Suarez','1983-03-27','mariano@suarez.com','111111',NULL,1,0),(13,NULL,'Laura','Gomez','2000-01-01','laura@gomez.com','111111',NULL,1,0),(14,NULL,'Pablo','Perez','2003-12-22','pablo@perez.com','111111',NULL,1,0),(15,NULL,'Diego','Maradona','1980-12-22','diego@maradona.com','111111',NULL,1,0);
+INSERT INTO `users` VALUES (1,NULL,'ADMIN',NULL,NULL,'admin@admin.com','admin123',NULL,1,1),(12,NULL,'Mariano','Suarez','1983-03-27','mariano@suarez.com','111111',NULL,1,0),(13,NULL,'Laura','Gomez','2000-01-01','laura@gomez.com','111111',NULL,1,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -339,4 +339,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-17  0:16:17
+-- Dump completed on 2021-05-18  0:15:46
