@@ -15,6 +15,19 @@ window.addEventListener("load", (e) => {
   let errorCategoria = document.querySelector("#errorCategoria");
   let errorGenero = document.querySelector("#errorGenero");
 
+  let errores = document.getElementById("erroresNewProd");
+
+  let campos = {
+    imagen: true,
+    modelo: true,
+    precio: true,
+    marca: true,
+    categoria: true,
+    descCorta: true,
+    descLarga: true,
+    genero: true,
+  };
+
   imagen.addEventListener("change", (e) => {
     let reader = new FileReader();
 
@@ -162,17 +175,24 @@ window.addEventListener("load", (e) => {
   // window.addEventListener("keydown", function (e) {
   //   tecla = e.key;
   //   if (tecla == "x") {
-  //     alert(imagenAprobada);
+
   //   }
   // });
 
   formUpdateProduct.addEventListener("submit", (e) => {
-    if (imagen.value == "") {
+    if (imagen.value == "" || imagenAprobada != true) {
       errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
+      campos.imagen = false;
       e.preventDefault();
+    } else {
+      campos.imagen = true;
     }
-    if (imagenAprobada != true) {
-      e.preventDefault();
+    console.log(campos);
+    for (let campo in campos) {
+      if (campos[campo] != true) {
+        e.preventDefault();
+        alert("Debes corregir el campo " + campo);
+      }
     }
   });
 });
