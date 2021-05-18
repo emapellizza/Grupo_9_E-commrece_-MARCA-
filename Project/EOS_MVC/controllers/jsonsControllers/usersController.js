@@ -120,11 +120,12 @@ const usersController = {
     if (req.session.adminLogged) {
       // Validacion
       let errors = validationResult(req);
+
       const userToUpdate = usersJson.find(req.params.idUser);
 
       if (errors.isEmpty()) {
         // Almaceno los datos del user
-        userToUpdate.imageUser = req.body.imagenUsuario;
+        userToUpdate.image = req.file.filename;
         userToUpdate.firstName = req.body.firstName;
         userToUpdate.lastName = req.body.lastName;
         userToUpdate.dateOfBirth = req.body.dateOfBirth;
@@ -134,9 +135,19 @@ const usersController = {
         userToUpdate.active = "true";
       }
 
-        
-
       usersJson.update(userToUpdate);
+
+      db.User.update({
+        image: req.file.filename,
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        date_of_birth: req.body.dateOfBirth,
+        email: req.body.email,
+        phone: req.body.phone,
+        password: req.body.password, 
+        }, { where: { id_user: req.params.idUser}}
+      );
+
      
       res.redirect("/");
     } else {
@@ -152,11 +163,14 @@ const usersController = {
     
     if(req.session.adminLogged){
       
-    let userToDelete = usersJson.find(req.params.idUser);
-     userToDelete.active = "false";
-      res.send("borrado usuario"+" "+userToDelete.id+" "+userToDelete.active)
-
-     //res.redirect("/admin");
+      usersJson.delete(req.params.idUser);
+      
+      db.User.destroy({
+        where: { id_user: req.params.idUser}
+       
+      });
+      
+      res.redirect("/admin");
       
       }
       else

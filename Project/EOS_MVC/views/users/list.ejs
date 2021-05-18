@@ -16,7 +16,7 @@
         
         <div class="userList-nombre">
           <p><%= users[i].firstName %> <%= users[i].lastName %></p>
-          <form  method="POST" action="/admin/users/delete/<%= users[i].id_user %>?_method=DELETE">
+          <form  method="POST" action="/admin/users/delete/<%= users[i].id %>?_method=DELETE">
             <button class= "userList-eliminar" type ="submit">Eliminar</button>
           </form>
           
