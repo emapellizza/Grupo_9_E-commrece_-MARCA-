@@ -8,5 +8,6 @@ router.get("/faq", mainController.faq);
 router.get("/contact", mainController.contact);
 router.post("/contact", mainController.newMessage);
 router.get("/messageOk", mainController.messageOk);
+router.get("/stores", mainController.stores);
 
 module.exports = router;
