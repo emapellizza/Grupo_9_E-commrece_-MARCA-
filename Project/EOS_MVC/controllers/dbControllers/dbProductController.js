@@ -128,9 +128,10 @@ const dbProductController = {
       db.Product.destroy({
         where: { id_product: req.params.idProduct },
       });
+   }
+  },
 
-<<<<<<< HEAD
-    productCart: function (req, res) {
+  productCart: function (req, res) {
 
       if (req.session.userLogged) {
         let user = req.session.userLogged;
@@ -142,11 +143,7 @@ const dbProductController = {
 
         
       }
-=======
-      return res.redirect("/");
->>>>>>> 293e76d9614a672bc2b846f5a051a2a9bab57a17
-    }
-  },
+    },
 
   productToCart: function (req, res) {
     if (req.session.userLogged) {
