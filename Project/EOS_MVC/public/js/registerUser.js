@@ -118,9 +118,9 @@ window.addEventListener("load", (e) => {
 
       // Validacion email
       
-      case "email":
+     case "email":
         //let check = mailformat.test(e.target.value);
-        if (e.target.value="") {
+        if (e.target.value=="") {
           errorEmail.innerHTML = "* Debes ingresar un email ej: algo@algo.com";
           campos.email = false;
         } else {
@@ -131,7 +131,11 @@ window.addEventListener("load", (e) => {
 
         // validacion confirmar password
       case "password":
-        if (e.target.value="") {
+        if(password.value != confirmPassword.value){
+          econfirmPassword.innerHTML = "* las contrasenas no son iguales";
+          campos.confirmPassword = false;
+        }
+        if (e.target.value=="") {
           errorPassword.innerHTML = "* Debes ingresar password";
           campos.password = false;
         } else if(e.target.value.length <6){
@@ -148,7 +152,7 @@ window.addEventListener("load", (e) => {
             econfirmPassword.innerHTML = "* las contrasenas no son iguales";
             campos.confirmPassword = false;
           }
-          else if (e.target.value="") {
+          else if (e.target.value=="") {
             econfirmPassword.innerHTML = "* Debes ingresar password";
             campos.confirmPassword = false;
           } else if(e.target.value.length <6){
