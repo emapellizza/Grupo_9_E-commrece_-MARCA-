@@ -667,6 +667,15 @@ input {
   font-size: 20px;
 }
 
+#erroresRegUser {
+  margin-top: 10px;
+  border-radius: 5px;
+  display: none;
+  padding: 10px 0;
+  background-color: #ff000057;
+  text-align: center;
+}
+
 .main-reg-log form input {
   background-color: white;
   border: 0;
@@ -1051,6 +1060,7 @@ footer li {
   background-color: red;
 }
 
+
 /*---------------------- ERROR -----------------------*/
 
 .main-error {
@@ -1072,6 +1082,8 @@ footer li {
 .main-error a {
   color: #977a58;
 }
+
+
 
 /*---------------------- ESTILOS DINAMICOS -----------------------*/
 .borde-rojo {

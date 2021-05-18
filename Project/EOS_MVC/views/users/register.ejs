@@ -12,10 +12,22 @@
         <form
           action="/users/register"
           method="POST"
-          
+          enctype="multipart/form-data"
           id="registerUser"
         >
-       
+        <div class="contenedor-campos-reg-log">
+          <label for="userImage" class="label-reg-log">Imagen</label>
+          <input
+            type="file"
+            id="userImage"
+            name="userImage"
+            accept=".png, .jpg, .jpeg"
+          />
+          <div class="text-danger" id="errorImagen"> 
+            
+          </div>
+        </div>
+          
 
           <div class="contenedor-campos-reg-log">
             <label for="firstName" class="label-reg-log">Nombre</label>
@@ -24,9 +36,7 @@
               name="firstName"
               id="firstName"
             />
-            <% if (locals.errors && errors.firstName) { %>
-              <div class="text-danger"><%= errors.firstName.msg %></div>
-            <% } %>        
+            <div class="text-danger" id="errorfirstName"> </div> 
           </div>
 
           <div class="contenedor-campos-reg-log">
@@ -36,9 +46,7 @@
               name="lastName"
               id="lastName"
             />
-            <% if (locals.errors && errors.lastName) { %>
-              <div class="text-danger"><%= errors.lastName.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorlastName"> </div>
           </div>
           
 
@@ -50,11 +58,8 @@
               type="date"
               name="dateOfBirth"
               id="dateOfBirth"
-              required
             />
-            <% if (locals.errors && errors.dateOfBirth) { %>
-              <div class="text-danger"><%= errors.dateOfBirth.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorbdate"> </div>
           </div>
           
 
@@ -65,9 +70,7 @@
               name="email"
               id="email"
             />
-            <% if (locals.errors && errors.email) { %>
-              <div class="text-danger"><%= errors.email.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorEmail"> </div>
           </div>
           
 
@@ -78,17 +81,14 @@
               name="phone"
               id="phone"
             />
-            <% if (locals.errors && errors.phone) { %>
-              <div class="text-danger"><%= errors.phone.msg %></div>
-            <% } %>
+            <div class="text-danger" id="errorPhone"></div>
           </div>
           
           <div class="contenedor-campos-reg-log">
             <label for="password" class="label-reg-log">Contraseña</label>
             <input type="password" name="password" id="password" />
-            <% if (locals.errors && errors.password) { %>
-              <div class="text-danger"><%= errors.password.msg %></div>
-            <% } %>
+
+            <div class="text-danger" id="errorPassword"> </div>
           </div>
          
 
@@ -101,8 +101,7 @@
               name="confirmPassword"
               id="confirmPassword"
             />
-            <div class="text-danger" id="econfirmPassword"></div>
-         
+            <div class="text-danger" id="econfirmPassword"> </div>
           </div>
           
 
@@ -123,6 +122,10 @@
             <label for="terminos-condiciones" class="text-checkbox-reg-log"
               >Acepto los <a href="#">Términos y Condiciones</a></label
             >
+          </div>
+
+          <div class="contenedor-campos-reg-log" id="erroresRegUser">
+            <p>ERROR: debes rellenar el formulario correctamente</p>
           </div>
 
           <div class="boton-reg-log">
