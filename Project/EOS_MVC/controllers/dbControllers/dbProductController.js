@@ -152,7 +152,17 @@ const dbProductController = {
     },
 
     productCart: function (req, res) {
-      return res.render("./products/cart");
+
+      if (req.session.userLogged) {
+        let user = req.session.userLogged;
+
+        db.Cart.findAll()
+          .then(function(userCart){
+            return res.render("./products/cart", { userCart: userCart });
+        })    
+
+        
+      }
     }
     
 }
