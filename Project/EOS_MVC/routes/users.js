@@ -7,13 +7,13 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const validateRegister = require("../middlewares/valRegMiddleware");
 const mainController = require("../controllers/jsonsControllers/mainController");
-const uploadUser = require("../middlewares/multerMiddProduct");
+const uploadUser = require("../middlewares/multerMiddleware");
 
 router.get("/", mainController.index);
 
 // Registro
 router.get("/register", guestMiddleware, usersController.register);
-router.post("/register", validateRegister, usersController.saveUser);
+router.post("/register", validateRegister, uploadUser.single("userImage"), usersController.saveUser);
 
 // Logeo
 router.get("/login", guestMiddleware, loginController.login);
@@ -37,6 +37,7 @@ router.put(
 
   //Recordar contraseña
   router.get("/password", usersController.password);
+  router.post("/password", usersController.passwordCheck);
 
   //Mis compras
   router.get("/history", usersController.history);

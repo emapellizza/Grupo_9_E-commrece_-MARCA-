@@ -31,6 +31,24 @@ const usersController = {
     return res.render("./users/password");
   },
 
+  passwordCheck: function (req, res) {
+
+    let passwordSearched = usersJson.findByField("email", req.body.email);
+
+    if (passwordSearched) {
+
+      return res.redirect("./login");
+
+    }  
+    return res.render("./users/password", {
+      errors: {
+      email: {
+      msg: "* Esta dirección no se encuentra registrada",
+      },
+      },
+    });
+  },
+
   history: function (req, res) {
     return res.render("./users/history");
   },

@@ -6,8 +6,8 @@ const uploadProduct = require("../middlewares/multerMiddProduct");
 const uploadUser = require("../middlewares/multerMiddProduct");
 const dbProductController = require("../controllers/dbControllers/dbProductController");
 const usersController = require("../controllers/jsonsControllers/usersController");
-const loginController = require("../controllers/jsonsControllers/loginController");
 const adminController = require("../controllers/jsonsControllers/adminController");
+
 //para la session
 const authMiddleware = require("../middlewares/authMiddleware");
 
