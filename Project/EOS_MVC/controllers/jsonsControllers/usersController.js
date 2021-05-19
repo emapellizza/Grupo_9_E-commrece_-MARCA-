@@ -27,6 +27,18 @@ const usersController = {
     return res.render("./users/register");
   },
 
+  password: function (req, res) {
+    return res.render("./users/password");
+  },
+
+  history: function (req, res) {
+    return res.render("./users/history");
+  },
+
+  favs: function (req, res) {
+    return res.render("./users/favs");
+  },
+
   saveUser: function (req, res) {
     // Validacion
     let errors = validationResult(req);

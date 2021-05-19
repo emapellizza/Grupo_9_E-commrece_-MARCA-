@@ -35,6 +35,14 @@ router.put(
     usersController.updatedUser
   );
 
+  //Recordar contraseña
+  router.get("/password", usersController.password);
+
+  //Mis compras
+  router.get("/history", usersController.history);
+
+  //Favoritos
+  router.get("/favs", usersController.favs);
 
 
 module.exports = router;

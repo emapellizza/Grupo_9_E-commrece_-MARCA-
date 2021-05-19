@@ -29,7 +29,10 @@ const mainController = {
   },
   messageOk: function (req, res) {
     return res.render("messageOk");
-  }
+  },
+  stores: function (req, res) {
+    return res.render("stores");
+  },
 };
 
 module.exports = mainController;

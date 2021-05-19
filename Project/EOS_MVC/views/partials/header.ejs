@@ -29,8 +29,8 @@
       </nav>
       <% } else if (locals.isLogged) {%>
       <nav>
-        <a href="#"><span class="dorado">● </span>Mis Compras</a>
-        <a href="#"
+        <a href="/users/history"><span class="dorado">● </span>Mis Compras</a>
+        <a href="/users/favs"
           ><span class="dorado">● </span>Favoritos <i class="fas fa-heart"></i
         ></a>
         <a href="/products/cart"
@@ -79,10 +79,10 @@
 
   <nav class="menu-header">
     <div class="items-menu-header">
-      <a href="#">Mis Compras</a>
+      <a href="/users/history">Mis Compras</a>
     </div>
     <div class="items-menu-header">
-      <a href="#">Favoritos <i class="fas fa-heart"></i></a>
+      <a href="/users/favs">Favoritos <i class="fas fa-heart"></i></a>
     </div>
     <div class="items-menu-header">
       <a href="/products/cart">Carrito <i class="fas fa-shopping-bag"></i></a>
