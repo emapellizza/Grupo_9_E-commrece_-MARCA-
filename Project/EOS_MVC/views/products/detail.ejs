@@ -29,9 +29,10 @@
                 <% } %>
               </select>
             </div>
-            <div >
+
+            <div>
               <label for="color">• Colores Disponibles</label>
-              <select name="color" id="color">
+              <select name="color" id="color" disabled>
                 <option disabled selected>Seleccionar</option>
                 <% for (let i = 0; i < productDetail.colors.length; i++) { %>}
                 <option value="<%= productDetail.colors[i].id_color %>">
@@ -40,9 +41,10 @@
                 <% } %>
               </select>
             </div>
-            <div >
+
+            <div>
               <label for="quantity">• Cantidad</label>
-              <select name="quantity" id="quantity">
+              <select name="quantity" id="quantity" disabled>
                 <option disabled selected>Seleccionar</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -61,7 +63,6 @@
             </div>
           </form>
         </div>
-      
       </article>
 
       <article class="container-productDetail-bottom">
