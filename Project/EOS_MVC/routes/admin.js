@@ -14,6 +14,9 @@ const authMiddleware = require("../middlewares/authMiddleware");
 //vista administrador
 router.get("/", adminController.view);
 
+//vista administrador
+router.get("/messages", adminController.messages);
+
 ////////////rutas de productos//////////
 
 //lista productos

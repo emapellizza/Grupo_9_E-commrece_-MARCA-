@@ -37,7 +37,13 @@ const usersController = {
 
     if (passwordSearched) {
 
-      return res.redirect("./login");
+      return res.render("./users/login", {
+        errors: {
+        email: {
+        msg: "* Te enviamos un correo a tu casilla con tu contraseña, por favor logueate.",
+        },
+        },
+      });
 
     }  
     return res.render("./users/password", {

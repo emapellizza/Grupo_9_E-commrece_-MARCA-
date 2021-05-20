@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="all-products-main">
+      <section class="navbar-products">
+        <div>
+          <h2>LISTADO DE MENSAJES</h2>
+        </div>
+      </section>
+
+        <% for( let i = 0; i < messages.length; i++ ) { %>
+               
+          <div class="userList-nombre">
+            <p><%= messages[i].id%> <%=messages[i].name  %></p>
+            <p><a href="<%= messages[i].email %>"><%= messages[i].email %></a></p>
+            <p><%= messages[i].message %></p>
+          </div>
+      
+      
+        <% } %>
+      
+    </main>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

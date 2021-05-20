@@ -1054,11 +1054,19 @@ footer li {
 
 .userList-nombre {
   font-weight: 600;
+  margin: 50px 0;
 }
 
 .userList-eliminar {
   margin-left: 50px;
   background-color: red;
+}
+
+/*---------------------- ADMIN VIEW -----------------------*/
+
+.admin-items {
+  font-weight: 600;
+  margin: 50px 0;
 }
 
 
