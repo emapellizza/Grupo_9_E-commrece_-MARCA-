@@ -7,7 +7,8 @@ const dbProductController = require("../controllers/dbControllers/dbProductContr
 router.get("/", dbProductController.listAll);
 
 // Carrito
-router.get("/cart", dbProductController.productCart);
+router.get("/cart", dbProductController.cart);
+
 
 // Detalle de producto
 router.get("/detail/:idProduct", dbProductController.show);

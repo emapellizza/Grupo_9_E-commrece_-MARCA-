@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const db = require("../../database/models");
+const usersController = require("../jsonsControllers/usersController");
 
 const dbProductController = {
   listAll: function (req, res) {
@@ -131,16 +132,26 @@ const dbProductController = {
    }
   },
 
-  productCart: function (req, res) {
+  cart: function (req, res) {
 
       if (req.session.userLogged) {
+
         let user = req.session.userLogged;
+        let pedidoUsuario = db.User.findByPk(user.id);
+        let pedidoProducto = db.Product.findAll();
+        let pedidoCarritos = db.Cart.findAll();
 
-        db.Cart.findAll()
-          .then(function(userCart){
-            return res.render("./products/cart", { userCart: userCart });
-        })    
-
+        Promise.all([
+          pedidoUsuario,
+          pedidoProducto,
+          pedidoCarritos,
+        ]).then(function ([ usuario, producto, carrito ]) {
+          return res.render("./products/cart", {
+            usuario: usuario,
+            producto: producto,
+            carrito: carrito,
+          });
+        });
         
       }
     },
@@ -160,11 +171,8 @@ const dbProductController = {
 
       return res.redirect("/");
     }
-  },
+  }
 
-  productCart: function (req, res) {
-    return res.render("./products/cart");
-  },
 };
 
 module.exports = dbProductController;
