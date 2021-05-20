@@ -31,49 +31,5 @@
     "admin": "false",
     "active": "true",
     "id": 13
-  },
-  {
-    "firstName": "Diego",
-    "lastName": "Maradona",
-    "dateOfBirth": "1976-08-23",
-    "email": "diego@maradona.com",
-    "phone": "4455667788",
-    "password": "$2b$10$DdJouPtz5/7Djw6UBC1GMOMk41IJvxS33GqYGQiSGMeYIYoxILRuy",
-    "admin": "false",
-    "active": "true",
-    "id": 14
-  },
-  {
-    "firstName": "Elon",
-    "lastName": "Musk",
-    "dateOfBirth": "1956-04-23",
-    "email": "elon@musk.com",
-    "phone": "1122334455",
-    "password": "$2b$10$aV50M/OmOn9o0FJQOCYt..YyIke7LXjM5mbfwj2LpRmv2a6HICUGu",
-    "admin": "false",
-    "active": "true",
-    "id": 15
-  },
-  {
-    "firstName": "Pablo",
-    "lastName": "Perez",
-    "dateOfBirth": "1995-01-23",
-    "email": "pablo@perez.com",
-    "phone": "32112345",
-    "password": "$2b$10$ZTKnKm43hghtnWSkNi95k.MXsOACsG72WfKsO5B3qStac8vNhz5Ee",
-    "admin": "false",
-    "active": "true",
-    "id": 16
-  },
-  {
-    "firstName": "David",
-    "lastName": "Nalbandian",
-    "dateOfBirth": "1982-04-12",
-    "email": "david@nalbandian.com",
-    "phone": "9988776655",
-    "password": "$2b$10$433G/Saaeox0TMa/e7g1E.PM/SQEYJ9GxIRONx4zVsYpw9bIBSy5S",
-    "admin": "false",
-    "active": "true",
-    "id": 17
   }
 ]

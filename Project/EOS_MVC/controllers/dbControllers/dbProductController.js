@@ -135,13 +135,23 @@ const dbProductController = {
   cart: function (req, res) {
 
       if (req.session.userLogged) {
+
         let user = req.session.userLogged;
+        let pedidoUsuario = db.User.findByPk(user.id);
+        let pedidoProducto = db.Product.findAll();
+        let pedidoCarritos = db.Cart.findAll();
 
-        db.Cart.findAll()
-          .then(function(carts){
-            return res.render("./products/cart", { carts: carts });
-        })   
-
+        Promise.all([
+          pedidoUsuario,
+          pedidoProducto,
+          pedidoCarritos,
+        ]).then(function ([ usuario, producto, carrito ]) {
+          return res.render("./products/cart", {
+            usuario: usuario,
+            producto: producto,
+            carrito: carrito,
+          });
+        });
         
       }
     },
