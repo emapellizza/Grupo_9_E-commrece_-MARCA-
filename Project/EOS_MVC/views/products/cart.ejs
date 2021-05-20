@@ -15,83 +15,26 @@
 
           <% for (let i = 0; i< carrito.length; i++) {  %>
             <% let productoComprado = carrito[i].id_product %>
-             
-                <% if (producto[i].id_product = productoComprado)  %>
+              
+                <% if (producto[i].id_product = productoComprado) { %>
 
                   <article class="producto-carrito">
-                    <p><%= producto[i].model %></p>
-                    <p><%= producto[i].price %></p>
+                    <img
+                      class="img-producto"
+                      src="/images/products/<% producto[i].image %>"
+                      alt="image"
+                    />
+                    <div class="descripcion-producto-carrito">
+                      <h4 class="articulo"><%= producto[i].short_description %></h4>
+                      <p class="talle-carrito">Cantidad: <%= carrito[i].quantity %></p>
+                      <p class="precio"><%= producto[i].price %></p>
+                    </div>
+                  </article>
+                  
+                 <div class="linea-separadora"></div>
+               
+              <% } %><% } %>         
 
-
-
-
-
-              </article>
-            
-              <% } %>
-              
-        
-<!-- 
-          <article class="producto-carrito">
-            <img
-              class="img-producto"
-              src="/images/index/zapatillasVans.jfif"
-              alt="zapatillas vans"
-            />
-            <div class="descripcion-producto-carrito">
-              <h4 class="articulo">Zapatillas Vans Old Skool</h4>
-              <p class="talle-carrito">Talle 43</p>
-
-              <div class="unidades-producto">
-                <form method="GET">
-                  <label>Unidades</label>
-                  <select name="" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </form>
-              </div>
-
-              <p class="precio">$ 10.900</p>
-            </div>
-          </article>
-
-          <div class="linea-separadora"></div>
-
-          <article class="producto-carrito">
-            <img
-              class="img-producto"
-              src="/images/index/camperaNike.jfif"
-              alt="zapatillas vans"
-            />
-            <div class="descripcion-producto-carrito">
-              <h4 class="articulo">Campera Nike Sportswear</h4>
-              <p class="talle-carrito">Talle M</p>
-
-              <div class="unidades-producto">
-                <form method="GET">
-                  <label>Unidades</label>
-                  <select name="" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </form>
-              </div>
-
-              <p class="precio">$ 4999</p>
-            </div>
-          </article>
-
-          <div class="linea-separadora"></div>
-        </section>
-
-        <div class="vl"></div>
 
         <section class="contenedor-detalle-compra">
           <p class="detalle">Detalle</p>
@@ -132,8 +75,8 @@
       </div>
       <div class="linea-separadora"></div>
 
-      <!-- Ver Mas -->
-      <!-- <section>
+      Ver Mas 
+      <section>
         <p class="ver-mas-titulo">Podria interesarte</p>
         <div class="ver-mas-productos">
           <div class="articulo-vermas">
@@ -164,8 +107,8 @@
               <p>$7500</p>
             </a>
           </div>
-        </div> -->
-      <!-- </section> --> 
+        </div> 
+      </section> 
     </main>
 
 
