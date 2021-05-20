@@ -276,29 +276,34 @@ input {
 
 .faq-container {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 10px 10px 20px 10px;
-  text-align: center;
   border-radius: 5px;
+  color: white;
 }
 
 .faq-container h2 {
   width: 70%;
   color: white;
-  padding: 25px 5% 0 5%;
+  padding: 10px 0;
   text-transform: uppercase;
   font-size: 25px;
   margin: auto;
+  text-align: center;
 }
+.cont-pregunta {
+  border-top: 1px solid #977a58;
+  width: 100%;
+  padding: 1vh 0;
+}
+.cont-pregunta h5 {
+  font-size: 20px;
+  padding-bottom: 1vh;
 
-.faq-container li,
-.faq-container p {
-  width: 80%;
-  color: white;
-  padding: 8px;
-  font-size: 18px;
-  margin: auto;
-  text-align: justify;
+  text-transform: uppercase;
+}
+.cont-pregunta p {
+  font-style: italic;
 }
 
 /*----------------------Estilos Contact-----------------------*/
@@ -406,6 +411,13 @@ input {
   padding: 10px 5% 20px 5%;
   font-size: 18px;
   margin: auto;
+  font-weight: 300;
+}
+.aboutUs-container strong {
+  font-weight: 600;
+}
+.aboutUs-container p a {
+  color: #cb1e40;
 }
 
 /*----------------------Estilos ProductDetail-----------------------*/
@@ -716,7 +728,6 @@ input {
   width: 100%;
   max-width: 600px;
 }
-
 
 .boton-reg-log button {
   align-self: center;
@@ -1062,13 +1073,48 @@ footer li {
   background-color: red;
 }
 
-/*---------------------- ADMIN VIEW -----------------------*/
-
-.admin-items {
-  font-weight: 600;
-  margin: 50px 0;
+/*---------------------- STORES -----------------------*/
+.big-map {
+  display: none;
 }
 
+/*---------------------- ADMIN VIEW -----------------------*/
+.main-admin {
+  padding: 0 2vw;
+}
+.main-admin h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 2vh 0;
+}
+.admin-box {
+  padding: 3vh 0;
+  border-top: 1px solid black;
+}
+.admin-box h5 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.admin-box div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-box div a {
+  margin: 5px 0;
+}
+.admin-box div button {
+  background-color: rgb(0, 0, 0);
+  color: #977a58;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 180px;
+  text-transform: uppercase;
+}
+.admin-box div button:hover {
+  background-color: #977a58;
+  color: black;
+}
 
 /*---------------------- ERROR -----------------------*/
 
@@ -1091,8 +1137,6 @@ footer li {
 .main-error a {
   color: #977a58;
 }
-
-
 
 /*---------------------- ESTILOS DINAMICOS -----------------------*/
 .borde-rojo {
@@ -1149,6 +1193,7 @@ footer li {
   .menu-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
     width: 40%;
     height: 100%;
@@ -1351,6 +1396,15 @@ footer li {
     margin-top: 2vh;
     padding: 15px 45px;
   }
+  /* Stores */
+  .cont-pregunta {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .main-admin {
+    max-width: 70%;
+    margin: auto;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1380,7 +1434,7 @@ footer li {
   .menu-header {
     text-align: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: center;
     width: 30%;
     margin-left: 3vw;
@@ -1391,7 +1445,6 @@ footer li {
     color: black;
     font-weight: 400;
     height: 100%;
-    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1455,5 +1508,30 @@ footer li {
   /* Produc Detail*/
   .main-productDetail .boton-contenedor .finalizar-compra {
     width: 80%;
+  }
+  /* STORES */
+  .stores .aboutUs-container {
+    height: 100%;
+    max-height: 80vh;
+  }
+  .small-map {
+    display: none;
+  }
+  .big-map {
+    display: block;
+  }
+  /* Admin */
+  .cont-prod-users {
+    display: flex;
+    max-width: 50%;
+    justify-content: center;
+    margin: auto;
+  }
+  .admin-box {
+    border-top: none;
+    padding: 0 3vw;
+  }
+  .admin-box h5 {
+    text-align: center;
   }
 }

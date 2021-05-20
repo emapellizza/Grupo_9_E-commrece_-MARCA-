@@ -13,15 +13,17 @@
         class="userList-user-container"
         href="/users/detail/<%= users[i].id %>"
       >
-        
         <div class="userList-nombre">
           <p><%= users[i].firstName %> <%= users[i].lastName %></p>
-          <form  method="POST" action="/admin/users/delete/<%= users[i].id %>?_method=DELETE">
-            <button class= "userList-eliminar" type ="submit">Eliminar</button>
+          <form
+            method="POST"
+            action="/admin/users/delete/<%= users[i].id %>?_method=DELETE"
+          >
+            <button class="userList-eliminar" type="submit">Eliminar</button>
           </form>
-          
+        </div>
       </a>
-    
+
       <% } %>
     </main>
 
