@@ -107,7 +107,14 @@ const usersController = {
             
       }); 
 
-      res.redirect("profile");
+
+      return res.render("./users/login", {
+        errors: {
+        email: {
+        msg: "* Usuario creado correctamente, por favor.",
+        },
+        },
+      });
 
     } else {
       return res.render("users/register", {
