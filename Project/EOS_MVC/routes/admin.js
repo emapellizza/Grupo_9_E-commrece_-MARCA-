@@ -3,7 +3,6 @@ const router = express.Router();
 
 const validateRegister = require("../middlewares/valRegProduct");
 const uploadProduct = require("../middlewares/multerMiddProduct");
-const uploadUser = require("../middlewares/multerMiddProduct");
 const dbProductController = require("../controllers/dbControllers/dbProductController");
 const usersController = require("../controllers/jsonsControllers/usersController");
 const adminController = require("../controllers/jsonsControllers/adminController");
@@ -55,14 +54,6 @@ router.get("/users", usersController.listAll);
 //detalle usuario
 router.get("/profile", authMiddleware, usersController.profile);
 router.get("/users/detail/:idUser", usersController.findById);
-
-///update usuario
-router.get("/users/edit/:idUser", usersController.updateUser);
-router.put(
-  "/users/edit/:idUser",
-  uploadUser.single("userImage"),
-  usersController.updatedUser
-);
 
 //borrar usuario
 router.delete("/users/delete/:idUser", usersController.delete);
