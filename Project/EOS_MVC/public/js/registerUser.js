@@ -1,7 +1,6 @@
 window.addEventListener("load", (e) => {
   // Selectores
   let registerUser = document.getElementById("registerUser");
-  let imagen = document.getElementById("userImage");
   let inputs = document.querySelectorAll("#registerUser input");
 
   // Campos errores
@@ -10,32 +9,28 @@ window.addEventListener("load", (e) => {
   let errorlastName = document.querySelector("#errorlastName");
   let errorbdate = document.querySelector("#errorbdate");
   let errorEmail = document.querySelector("#errorEmail");
-       //para validacion de formato de mail
- // let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.\w{2,4}+)*$/;
-  
+  //para validacion de formato de mail
+  // let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.\w{2,4}+)*$/;
 
   let errorPhone = document.querySelector("#errorPhone");
   let errorPassword = document.querySelector("#errorPassword");
   let econfirmPassword = document.querySelector("#econfirmPassword");
+  // imagen.addEventListener("change", (e) => {
+  //   let reader = new FileReader();
 
-  imagen.addEventListener("change", (e) => {
-    let reader = new FileReader();
+  //   // Leemos el archivo subido y se lo pasamor al reader
+  //   reader.readAsDataURL(e.target.files[0]);
+  //   // Le decimos que cuando este listo ejecute el código interno
+  //   reader.onload = function () {
+  //     let preview = document.getElementById("preview");
+  //     let image = document.createElement("img");
 
-    // Leemos el archivo subido y se lo pasamor al reader
-    reader.readAsDataURL(e.target.files[0]);
-    // Le decimos que cuando este listo ejecute el código interno
-    reader.onload = function () {
-      let preview = document.getElementById("preview");
-      let image = document.createElement("img");
-
-      image.src = reader.result;
-      preview.innerHTML = "";
-      preview.append(image);
-    };
-  });
-
+  //     image.src = reader.result;
+  //     preview.innerHTML = "";
+  //     preview.append(image);
+  //   };
+  // });
   const campos = {
-    imagen: false,
     firstName: false,
     lastName: false,
     bdate: false,
@@ -45,6 +40,7 @@ window.addEventListener("load", (e) => {
     confirmPassword: false,
   };
   /* VALIDACION IMAGEN */
+  /*
   imagen.addEventListener("blur", function () {
     let nombreImagen = imagen.value;
 
@@ -62,7 +58,7 @@ window.addEventListener("load", (e) => {
       errorImagen.innerHTML = "";
     }
   });
-
+  */
   const validarInputs = (e) => {
     switch (e.target.name) {
       // Validacion firstName
@@ -78,19 +74,19 @@ window.addEventListener("load", (e) => {
           campos.firstName = true;
         }
         break;
-    // Validacion lastname
+      // Validacion lastname
       case "lastName":
-      if (e.target.value == "") {
-        errorlastName.innerHTML = "* Debes ingresar un apellido";
-        campos.lastName = false;
-      } else if (e.target.value.length < 3) {
-        errorlastName.innerHTML = "* El apellido debe ser mas largo";
-        campos.lastName = false;
-      } else {
-        errorlastName.innerHTML = "";
-        campos.lastName = true;
-      }
-      break;
+        if (e.target.value == "") {
+          errorlastName.innerHTML = "* Debes ingresar un apellido";
+          campos.lastName = false;
+        } else if (e.target.value.length < 3) {
+          errorlastName.innerHTML = "* El apellido debe ser mas largo";
+          campos.lastName = false;
+        } else {
+          errorlastName.innerHTML = "";
+          campos.lastName = true;
+        }
+        break;
       // Validacion telefono
       case "phone":
         if (e.target.value == "") {
@@ -117,10 +113,10 @@ window.addEventListener("load", (e) => {
         break;
 
       // Validacion email
-      
-     case "email":
+
+      case "email":
         //let check = mailformat.test(e.target.value);
-        if (e.target.value=="") {
+        if (e.target.value == "") {
           errorEmail.innerHTML = "* Debes ingresar un email ej: algo@algo.com";
           campos.email = false;
         } else {
@@ -129,42 +125,43 @@ window.addEventListener("load", (e) => {
         }
         break;
 
-        // validacion confirmar password
+      // validacion confirmar password
       case "password":
-        if(password.value != confirmPassword.value){
+        if (password.value != confirmPassword.value) {
           econfirmPassword.innerHTML = "* las contrasenas no son iguales";
           campos.confirmPassword = false;
         }
-        if (e.target.value=="") {
+        if (e.target.value == "") {
           errorPassword.innerHTML = "* Debes ingresar password";
           campos.password = false;
-        } else if(e.target.value.length <6){
-          errorPassword.innerHTML = "* la contrasena debe tener al menos 6 digitos";
+        } else if (e.target.value.length < 6) {
+          errorPassword.innerHTML =
+            "* la contrasena debe tener al menos 6 digitos";
           campos.password = true;
-        }else{
+        } else {
           errorPassword.innerHTML = "";
           campos.password = true;
         }
         break;
 
-        case "confirmPassword":
-          if(password.value != confirmPassword.value){
-            econfirmPassword.innerHTML = "* las contrasenas no son iguales";
-            campos.confirmPassword = false;
-          }
-          else if (e.target.value=="") {
-            econfirmPassword.innerHTML = "* Debes ingresar password";
-            campos.confirmPassword = false;
-          } else if(e.target.value.length <6){
-            econfirmPassword.innerHTML = "* la contrasena debe tener al menos 6 digitos";
-            campos.confirmPassword = true;
-          }else{
-            econfirmPassword.innerHTML = "";
-            campos.confirmPassword = true;
-          }
-          break;
+      case "confirmPassword":
+        if (password.value != confirmPassword.value) {
+          econfirmPassword.innerHTML = "* las contrasenas no son iguales";
+          campos.confirmPassword = false;
+        } else if (e.target.value == "") {
+          econfirmPassword.innerHTML = "* Debes ingresar password";
+          campos.confirmPassword = false;
+        } else if (e.target.value.length < 6) {
+          econfirmPassword.innerHTML =
+            "* la contrasena debe tener al menos 6 digitos";
+          campos.confirmPassword = true;
+        } else {
+          econfirmPassword.innerHTML = "";
+          campos.confirmPassword = true;
+        }
+        break;
 
-       /* if (e.target.value == "" || confirmPassword.value == ""){
+      /* if (e.target.value == "" || confirmPassword.value == ""){
 
           errorPassword.innerHTML = "* Debes introducir una contrasena";
           econfirmPassword.innerHTML = "* Debes introducir una contrasena";
@@ -176,19 +173,20 @@ window.addEventListener("load", (e) => {
         errorpassword.innerHTML="";
         econfirmPassword.innerHTML="";
       }*/
-    } 
+    }
   };
-  
+
   inputs.forEach((input) => {
     input.addEventListener("keyup", validarInputs);
     input.addEventListener("blur", validarInputs);
   });
 
   registerUser.addEventListener("submit", (e) => {
-    if (!campos.imagen) {
-      errorImagen.innerHTML = "* Este campo no es valido";
-      e.preventDefault();
-    }
+    // if (!campos.imagen) {
+    //   errorImagen.innerHTML = "* Este campo no es valido";
+    //   e.preventDefault();
+    // }
+
     if (!campos.lastName) {
       errorlastName.innerHTML = "* Este campo no es valido";
     }
@@ -210,18 +208,18 @@ window.addEventListener("load", (e) => {
     if (!campos.bdate) {
       errorbdate.innerHTML = "* Este campo no es valido";
     }
-   
+
     if (
-      !campos.imagen ||
-      !campos.lastName ||
       !campos.firstName ||
+      !campos.lastName ||
+      !campos.bdate ||
       !campos.phone ||
       !campos.email ||
       !campos.password ||
-      !campos.confirmPasword ||
-      !campos.bdate
-    ) {                               
+      !campos.confirmPassword
+    ) {
       document.getElementById("erroresRegUser").style.display = "block";
+      console.log(campos);
       e.preventDefault();
     }
   });

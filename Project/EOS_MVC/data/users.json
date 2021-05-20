@@ -42,5 +42,16 @@
     "admin": "false",
     "active": "true",
     "id": 14
+  },
+  {
+    "firstName": "Mariano",
+    "lastName": "Pedrini",
+    "dateOfBirth": "1996-07-07",
+    "email": "mariano@pedrini.com",
+    "phone": "11222222",
+    "password": "$2b$10$/ys9MlJsXfUWM9cGEfzKBeWrfi.g6K05.97jdRt4eco450sWLPuGy",
+    "admin": "false",
+    "active": "true",
+    "id": 15
   }
 ]
