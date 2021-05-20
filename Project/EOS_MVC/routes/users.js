@@ -28,7 +28,7 @@ router.get("/detail/:idUser", usersController.findById);
 
 //Actualizar cuenta
 router.get("/edit/:idUser", usersController.updateUser);
-router.put(
+router.post(
     "/edit/:idUser", 
     validateRegister,
     uploadUser.single("userImage"),

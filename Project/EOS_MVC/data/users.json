@@ -31,5 +31,16 @@
     "admin": "false",
     "active": "true",
     "id": 13
+  },
+  {
+    "firstName": "Elon",
+    "lastName": "Musk",
+    "dateOfBirth": "2000-01-01",
+    "email": "elon@musk.com",
+    "phone": "3322114455",
+    "password": "$2b$10$m33p/j45J/OimHXi7cSLaeblPk3pJCq2dcdy0JKf.aaN3b.U.ba0i",
+    "admin": "false",
+    "active": "true",
+    "id": 14
   }
 ]

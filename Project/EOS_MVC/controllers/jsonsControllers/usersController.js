@@ -175,7 +175,7 @@ const usersController = {
         userToUpdate.email = req.body.email;
         userToUpdate.password = req.body.password;
         userToUpdate.phone = req.body.phone;
-        userToUpdate.active = "true";
+        userToUpdate.active = "1";
       }
 
       usersJson.update(userToUpdate);

@@ -12,6 +12,26 @@
 
       <div class="container-productos-detallecompra">
         <section class="container-productos-carrito">
+
+          <% for (let i = 0; i< carrito.length; i++) {  %>
+            <% let productoComprado = carrito[i].id_product %>
+             
+                <% if (producto[i].id_product = productoComprado)  %>
+
+                  <article class="producto-carrito">
+                    <p><%= producto[i].model %></p>
+                    <p><%= producto[i].price %></p>
+
+
+
+
+
+              </article>
+            
+              <% } %>
+              
+        
+<!-- 
           <article class="producto-carrito">
             <img
               class="img-producto"
@@ -113,7 +133,7 @@
       <div class="linea-separadora"></div>
 
       <!-- Ver Mas -->
-      <section>
+      <!-- <section>
         <p class="ver-mas-titulo">Podria interesarte</p>
         <div class="ver-mas-productos">
           <div class="articulo-vermas">
@@ -144,9 +164,10 @@
               <p>$7500</p>
             </a>
           </div>
-        </div>
-      </section>
+        </div> -->
+      <!-- </section> --> 
     </main>
+
 
     <%- include("../partials/footer.ejs") %> 
 
