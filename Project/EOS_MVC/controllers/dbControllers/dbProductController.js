@@ -171,7 +171,38 @@ const dbProductController = {
 
       return res.redirect("/");
     }
-  }
+  },
+
+  order: function (req, res) {
+    if (req.session.userLogged) {
+
+      let user = req.session.userLogged;
+        let pedidoUsuario = db.User.findByPk(user.id);
+        let pedidoOrdenes = db.Order.findAll();
+       
+
+        Promise.all([
+          pedidoUsuario,
+          pedidoOrdenes,
+        ]).then(function ([ usuario, orden ]) {
+          return res.render("./products/order", {
+            usuario: usuario,
+            orden: orden
+          });
+        });
+      
+   }
+  },
+
+  orderDone: function (req, res) {
+    if (req.session.userLogged) {
+
+      db.Order.create({
+
+      });
+      
+   };
+  },
 
 };
 

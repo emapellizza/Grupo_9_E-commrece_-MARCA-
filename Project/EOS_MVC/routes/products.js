@@ -16,5 +16,11 @@ router.get("/detail/:idProduct", dbProductController.show);
 // Agregar producto al Carrito
 router.post("/detail/", dbProductController.productToCart);
 
+// Procesar compra
+router.get("/order", dbProductController.order);
+
+// Finalizar compra
+router.get("/order", dbProductController.orderDone);
+
 
 module.exports = router;
