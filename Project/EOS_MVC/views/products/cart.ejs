@@ -21,14 +21,25 @@
                   <article class="producto-carrito">
                     <img
                       class="img-producto"
-                      src="/images/products/<% producto[i].image %>"
+                      src="/images/products/<%= producto[i].image %>"
                       alt="image"
                     />
                     <div class="descripcion-producto-carrito">
                       <h4 class="articulo"><%= producto[i].short_description %></h4>
                       <p class="talle-carrito">Cantidad: <%= carrito[i].quantity %></p>
                       <p class="talle-carrito">Precio: <%= producto[i].price %></p>
-                      <p class="precio"><%= producto[i].price %> * <%= carrito[i].quantity %></p>
+
+                      <div class="talle-carrito">
+                        <form
+                          method="POST"
+                          action="/products/cart/delete/?_method=DELETE"
+                        >
+                          <input name="id_cart" id="id_cart" type="hidden" value="<%= carrito[i].id_cart %>">
+                          <button class="userList-eliminar" type="submit">Eliminar</button>
+                        </form>
+                      </div>
+
+                      <p class="precio"><%= carrito[i].subtotal %></p>
                     </div>
                   </article>
                   

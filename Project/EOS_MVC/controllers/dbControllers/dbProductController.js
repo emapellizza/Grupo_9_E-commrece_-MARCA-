@@ -160,6 +160,11 @@ const dbProductController = {
     if (req.session.userLogged) {
       let user = req.session.userLogged;
 
+      let price = req.body.price;
+      let quantity = req.body.quantity;
+
+      let subtotal = price * quantity;
+
       db.Cart.create({
         id_user: user.id,
         id_product: req.body.id_product,
@@ -167,6 +172,18 @@ const dbProductController = {
         quantity: req.body.quantity,
         color: req.body.color,
         size: req.body.size,
+        subtotal: subtotal,
+      });
+
+      return res.redirect("/");
+    }
+  },
+
+  deleteCart: function (req, res) {
+    if (req.session.userLogged) {
+      
+      db.Cart.destroy({
+        where: { id_cart: req.body.id_cart }
       });
 
       return res.redirect("/");
