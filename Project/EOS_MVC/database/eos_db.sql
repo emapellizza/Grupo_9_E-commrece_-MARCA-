@@ -54,12 +54,13 @@ CREATE TABLE `carts` (
   `quantity` int(11) DEFAULT NULL,
   `color` int(11) DEFAULT NULL,
   `size` int(11) DEFAULT NULL,
+  `subtotal` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_cart`),
   KEY `id_user_idx` (`id_user`),
   KEY `id_productUser_idx` (`id_product`),
   CONSTRAINT `id_products` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `id_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +69,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (2,12,2,10999,1,1,7),(3,12,17,2199,2,1,1);
+INSERT INTO `carts` VALUES (37,12,2,10999,2,1,9,21998);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,15 +154,12 @@ DROP TABLE IF EXISTS `orders`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cart` int(11) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `items` int(11) DEFAULT NULL,
   `total` int(11) DEFAULT NULL,
   `shipping_info` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_order`),
-  KEY `id_carts_idx` (`id_cart`),
-  CONSTRAINT `id_cart` FOREIGN KEY (`id_cart`) REFERENCES `carts` (`id_cart`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_order`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,6 +168,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,NULL,NULL,NULL,NULL),(2,NULL,NULL,NULL,NULL),(3,NULL,NULL,NULL,NULL),(4,NULL,NULL,NULL,NULL),(5,NULL,NULL,NULL,NULL),(6,NULL,NULL,NULL,NULL),(7,NULL,NULL,NULL,NULL),(8,NULL,NULL,NULL,NULL),(9,NULL,NULL,NULL,NULL),(10,NULL,NULL,NULL,NULL),(11,NULL,NULL,NULL,NULL),(12,NULL,NULL,NULL,NULL),(13,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,11 +312,11 @@ CREATE TABLE `users` (
   `date_of_birth` date DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `phone` int(10) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
   `active` tinyint(4) DEFAULT '1',
   `admin` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,4 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-18  0:15:46
+-- Dump completed on 2021-05-21 18:06:55
