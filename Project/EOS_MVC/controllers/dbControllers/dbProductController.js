@@ -204,6 +204,8 @@ const dbProductController = {
 
       });
 
+      
+
     return res.redirect("./products/order");
       
    };
@@ -230,6 +232,10 @@ const dbProductController = {
         postal_code: req.body.postal_code,
         phone_number: req.body.phone,
            
+      });
+
+      db.Cart.destroy({
+        where: { id_user: user.id }
       });
       
       return res.render("./products/thanks",);
