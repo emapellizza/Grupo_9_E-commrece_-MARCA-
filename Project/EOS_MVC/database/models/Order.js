@@ -8,17 +8,14 @@ module.exports = function (sequelize,dataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        id_cart: {
+        user: {
             type: dataTypes.INTEGER(11)
         },
         date: {
             type: dataTypes.DATE
         },
-        items: {
-            type: dataTypes.INTEGER(11)
-        },
         total: {
-            type: dataTypes.DECIMAL(6,2)
+            type: dataTypes.INTEGER(11)
         },
         shipping_info: {
             type: dataTypes.INTEGER(11)

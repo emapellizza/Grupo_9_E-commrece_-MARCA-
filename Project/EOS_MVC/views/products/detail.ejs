@@ -9,7 +9,7 @@
         <img src="/images/products/<%= productDetail.image %>" alt="" />
         <div class="container-caract-productDetail">
           <h3><%= productDetail.brands.brand + " " + productDetail.model %></h3>
-
+          
           <p class="precio-productDetail">$<%= productDetail.price%></p>
 
           <form 
@@ -69,6 +69,41 @@
         <h4>• Descripción •</h4>
         <p><%= productDetail.long_description%></p>
       </article>
+
+      <section>
+        <p class="ver-mas-titulo">Quienes compraron este articulo tambien vieron estos modelos </p>
+        <div class="ver-mas-productos">
+          <div class="articulo-vermas">
+            <a href="/products/detail/3">
+              <img src="/images/products/product-1620169046677.jpg" alt="" />
+              <p>Nike Sportwear</p>
+              <p>$5.999</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="/products/detail/4">
+              <img src="/images/products/product-1620169264827.jpg" alt="" />
+              <p>Puma Ess Heather</p>
+              <p>$7.999</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="/products/detail/5">
+              <img src="/images/products/product-1620169332032.jpg" alt="" />
+              <p>Adidas Superstars</p>
+              <p>$12.999</p>
+            </a>
+          </div>
+          <div class="articulo-vermas">
+            <a href="/products/detail/6">
+              <img src="/images/products/product-1620169643947.jpg" alt="" />
+              <p>Under Armour Tech 2.0</p>
+              <p>$3.799</p>
+            </a>
+          </div>
+        </div> 
+      </section> 
+
     </main>
 
     <%- include("../partials/footer.ejs") %>

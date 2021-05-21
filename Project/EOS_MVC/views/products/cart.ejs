@@ -21,13 +21,27 @@
                   <article class="producto-carrito">
                     <img
                       class="img-producto"
-                      src="/images/products/<% producto[i].image %>"
+                      src="/images/products/<%= producto[i].image %>"
                       alt="image"
                     />
                     <div class="descripcion-producto-carrito">
                       <h4 class="articulo"><%= producto[i].short_description %></h4>
                       <p class="talle-carrito">Cantidad: <%= carrito[i].quantity %></p>
-                      <p class="precio"><%= producto[i].price %></p>
+                      <p class="talle-carrito">Precio: <%= producto[i].price %></p>
+                                      
+
+                      <div class="talle-carrito">
+                        <form
+                          method="POST"
+                          action="/products/cart/delete/?_method=DELETE"
+                        >
+                          <input name="id_cart" id="id_cart" type="hidden" value="<%= carrito[i].id_cart %>">
+                          <button class="userList-eliminar" type="submit">Eliminar</button>
+                        </form>
+                      </div>
+
+                      
+                      <p class="precio"><%= carrito[i].subtotal %></p>
                     </div>
                   </article>
                   
@@ -36,75 +50,50 @@
               <% } %><% } %>         
 
 
-        <section class="contenedor-detalle-compra">
-          <p class="detalle">Detalle</p>
-          <div class="linea-separadora-detalle"></div>
-          <div class="subtotal">
-            <p>Subtotal</p>
-            <p>$ 15.899</p>
-          </div>
-          <div class="envio">
-            <p>Envío</p>
-            <p>$ 400</p>
-          </div>
-
-          <div class="boton-descuento">
-            <input
-              class="cupon-descuento"
-              type="text"
-              placeholder="INGRESA CUPÓN DE DESCUENTO"
-              minlength="4"
-              maxlength="8"
-            />
-          </div>
-
-          <div class="linea-separadora-detalle"></div>
-          <div class="total-compra">
-            <p>TOTAL</p>
-            <p class="precio-total">$ 16299</p>
-          </div>
-          <div class="linea-separadora-detalle"></div>
+        
           <div class="boton-contenedor">
-            <input
-              class="finalizar-compra"
-              type="button"
-              value="FINALIZAR COMPRA"
-            />
+            <a href="/products/order">
+              <input
+                class="finalizar-compra"
+                type="button"
+                value="FINALIZAR COMPRA"
+              />
+            </a>
           </div>
-        </section>
+       
       </div>
       <div class="linea-separadora"></div>
 
-      Ver Mas 
+      
       <section>
-        <p class="ver-mas-titulo">Podria interesarte</p>
+        <p class="ver-mas-titulo">Tambien podría interesarte</p>
         <div class="ver-mas-productos">
           <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/index/buzo-underarmour.jfif" alt="" />
-              <p>Buzo Under Armour</p>
-              <p>$6199</p>
+            <a href="/products/detail/7">
+              <img src="/images/products/product-1620169698811.jpg" alt="" />
+              <p>Under Armour Charged Pursuit 2</p>
+              <p>$17.999</p>
             </a>
           </div>
           <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/index/medias-nike.jfif" alt="" />
-              <p>Medias Nike</p>
-              <p>$1399</p>
+            <a href="/products/detail/8">
+              <img src="/images/products/product-1620169750268.jpeg" alt="" />
+              <p>New Balance 574</p>
+              <p>$13.499</p>
             </a>
           </div>
           <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/index/remera-nike.jfif" alt="" />
-              <p>Remera Nike</p>
-              <p>$3.999</p>
+            <a href="/products/detail/9">
+              <img src="/images/products/product-1620169845959.jpg" alt="" />
+              <p>Nike Heritage</p>
+              <p>$3.399</p>
             </a>
           </div>
           <div class="articulo-vermas">
-            <a href="#">
-              <img src="/images/index/pantalon-nike.jpeg" alt="" />
-              <p>Pantalon Nike</p>
-              <p>$7500</p>
+            <a href="/products/detail/11">
+              <img src="/images/products/product-1620169960844.jpg" alt="" />
+              <p>Under Armour Huddle Snapback</p>
+              <p>$1.999</p>
             </a>
           </div>
         </div> 

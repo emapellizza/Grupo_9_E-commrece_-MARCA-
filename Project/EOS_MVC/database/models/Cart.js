@@ -25,6 +25,9 @@ module.exports = function (sequelize,dataTypes) {
         },
         price: {
             type: dataTypes.INTEGER(11)
+        },
+        subtotal: {
+            type: dataTypes.INTEGER(11)
         }
     }
 

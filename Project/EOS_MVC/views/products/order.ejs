@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main class="main-reg-log">
+
+      <div class="container-all-reg-log">  
+
+        <h2>FORMA DE PAGO</h2>
+
+        <form action="" method="POST" id="formOrder">
+                   
+
+          <div class="contenedor-campos-reg-log">
+            <label for="payment">Forma de Pago</label>
+            <select name="payment" id="payment">
+              <option disabled selected>Seleccionar</option>
+              <option value="Visa">Visa</option>
+              <option value="Mastercard">Mastercard</option>
+              <option value="American Express">American Express</option>
+              <option value="Visa Electron">Visa Electron</option>
+                      
+            </select>
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="plastico" class="label-reg-log">Número de la tarjeta</label>
+            <input type="number" name="plastico" id="plastico" />
+
+            
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="titular" class="label-reg-log">Titular</label>
+            <input type="text" name="titular" id="titular" />
+           
+          </div>
+
+        </form>
+     
+
+        <h2>DIRECCION DE ENVIO</h2>
+
+        <form action="/products/order" method="POST" id="formOrder">
+          <div class="contenedor-campos-reg-log">
+            <label for="address" class="label-reg-log">Dirección</label>
+            <input type="text" name="address" id="address" />
+
+          </div>
+          
+
+          <div class="contenedor-campos-reg-log">
+            <label for="city" class="label-reg-log">Ciudad</label>
+            <input type="text" name="city" id="city" />
+
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="state">Provincia</label>
+            <select name="state" id="state">
+              <option disabled selected>Seleccionar</option>
+              <option value="Buenos Aires">Buenos Aires</option>
+              <option value="Capital Federal">Capital Federal</option>
+              <option value="Catamarca">Catamarca</option>
+              <option value="Chaco">Chaco</option>
+              <option value="Córdoba">Córdoba</option>
+              <option value="Corrientes">Corrientes</option>
+              <option value="Entre Ríos">Entre Ríos</option>
+              <option value="Formosa">Formosa</option>
+              <option value="Jujuy">Jujuy</option>
+              <option value="La Pampa">La Pampa</option>
+              <option value="La Rioja">La Rioja</option>
+              <option value="Mendoza">Mendoza</option>
+              <option value="Misiones">Misiones</option>
+              <option value="Neuquén">Neuquén</option>
+              <option value="Río Negro">Río Negro</option>
+              <option value="Salta">Salta</option>
+              <option value="San Luis">San Luis</option>
+              <option value="Santa Cruz">Santa Cruz</option>
+              <option value="Santa Fe">Santa Fe</option>
+              <option value="Santiago del Estero">Santiago del Estero</option>
+              <option value="Tierra del Fuego">Tierra del Fuego</option>
+              <option value="Tucumán">Tucumán</option>             
+            </select>
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="postal_code" class="label-reg-log">Código Postal</label>
+            <input type="number" name="postal_code" id="postal_code" />
+
+            
+          </div>
+
+          <div class="contenedor-campos-reg-log">
+            <label for="phone" class="label-reg-log">Telefono</label>
+            <input type="text" name="phone" id="phone" />
+
+           
+          </div>
+
+
+          <div class="checkbox-reg-log">
+            <input type="checkbox" name="newsletter" id="newsletter" />
+            <label for="newsletter" class="text-checkbox-reg-log"
+              >Deseo recibir correos con promociones y novedades.</label
+            >
+          </div>
+
+          <div class="checkbox-reg-log">
+            <input
+              type="checkbox"
+              name="terminos-condiciones"
+              id="terminos-condiciones"
+              required
+            />
+            <label for="terminos-condiciones" class="text-checkbox-reg-log"
+              >Acepto los <a href="#">Términos y Condiciones</a></label
+            >
+          </div>
+          
+
+          <div class="boton-reg-log">
+            <button type="submit">COMPRAR</button>
+          </div>
+        </form>
+      </div>
+
+    </main>
+
+
+    <%- include("../partials/footer.ejs") %> 
+
+  </body>
+</html>
