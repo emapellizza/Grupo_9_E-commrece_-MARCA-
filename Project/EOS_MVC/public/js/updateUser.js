@@ -1,11 +1,11 @@
 window.addEventListener("load", (e) => {
   // Selectores
   let formUpdateUser = document.getElementById("formUpdateUser");
-  let imagen = document.getElementById("userImage");
+  //let imagen = document.getElementById("userImage");
   let inputs = document.querySelectorAll("#formUpdateUser input");
 
   // Campos errores
-  let errorImagen = document.querySelector("#errorImagen");
+ // let errorImagen = document.querySelector("#errorImagen");
   let errorfirstName = document.querySelector("#errorfirstName");
   let errorlastName = document.querySelector("#errorlastName");
   let errorbdate = document.querySelector("#errorbdate");
@@ -18,24 +18,24 @@ window.addEventListener("load", (e) => {
   let errorPassword = document.querySelector("#errorPassword");
   let econfirmPassword = document.querySelector("#econfirmPassword");
 
-  imagen.addEventListener("change", (e) => {
-    let reader = new FileReader();
+  // imagen.addEventListener("change", (e) => {
+  //   let reader = new FileReader();
 
-    // Leemos el archivo subido y se lo pasamor al reader
-    reader.readAsDataURL(e.target.files[0]);
-    // Le decimos que cuando este listo ejecute el código interno
-    reader.onload = function () {
-      let preview = document.getElementById("preview");
-      let image = document.createElement("img");
+  //   // Leemos el archivo subido y se lo pasamor al reader
+  //   reader.readAsDataURL(e.target.files[0]);
+  //   // Le decimos que cuando este listo ejecute el código interno
+  //   reader.onload = function () {
+  //     let preview = document.getElementById("preview");
+  //     let image = document.createElement("img");
 
-      image.src = reader.result;
-      preview.innerHTML = "";
-      preview.append(image);
-    };
-  });
+  //     image.src = reader.result;
+  //     preview.innerHTML = "";
+  //     preview.append(image);
+  //   };
+  // });
 
   const campos = {
-    imagen: false,
+//    imagen: false,
     firstName: false,
     lastName: false,
     bdate: false,
@@ -45,23 +45,23 @@ window.addEventListener("load", (e) => {
     confirmPassword: false,
   };
   /* VALIDACION IMAGEN */
-  imagen.addEventListener("blur", function () {
-    let nombreImagen = imagen.value;
+  // imagen.addEventListener("blur", function () {
+  //   let nombreImagen = imagen.value;
 
-    function obtenerExtension(nombreImagen) {
-      return nombreImagen.split(".").pop();
-    }
-    let extensionImagen = obtenerExtension(nombreImagen);
-    let extAceptadas = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
+  //   function obtenerExtension(nombreImagen) {
+  //     return nombreImagen.split(".").pop();
+  //   }
+  //   let extensionImagen = obtenerExtension(nombreImagen);
+  //   let extAceptadas = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
 
-    if (extAceptadas.indexOf(extensionImagen) === -1) {
-      campos.imagen = false;
-      errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
-    } else {
-      campos.imagen = true;
-      errorImagen.innerHTML = "";
-    }
-  });
+  //   if (extAceptadas.indexOf(extensionImagen) === -1) {
+  //     campos.imagen = false;
+  //     errorImagen.innerHTML = "* Debes seleccionar una imagen JPG, JPEG o PNG";
+  //   } else {
+  //     campos.imagen = true;
+  //     errorImagen.innerHTML = "";
+  //   }
+  // });
 
   const validarInputs = (e) => {
     switch (e.target.name) {
@@ -172,10 +172,10 @@ window.addEventListener("load", (e) => {
   });
 
   formUpdateUser.addEventListener("submit", (e) => {
-    if (!campos.imagen) {
-      errorImagen.innerHTML = "* Este campo no es valido";
-      e.preventDefault();
-    }
+    // if (!campos.imagen) {
+    //   errorImagen.innerHTML = "* Este campo no es valido";
+    //   e.preventDefault();
+    // }
     if (!campos.lastName) {
       errorlastName.innerHTML = "* Este campo no es valido";
     }
@@ -199,7 +199,7 @@ window.addEventListener("load", (e) => {
     }
    
     if (
-      !campos.imagen ||
+     // !campos.imagen ||
       !campos.lastName ||
       !campos.firstName ||
       !campos.phone ||

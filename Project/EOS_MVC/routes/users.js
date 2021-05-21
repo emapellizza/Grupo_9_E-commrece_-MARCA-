@@ -28,12 +28,7 @@ router.get("/detail/:idUser", usersController.findById);
 
 //Actualizar cuenta
 router.get("/edit/:idUser", usersController.updateUser);
-router.put(
-    "/edit/:idUser", 
-    validateRegister,
-    uploadUser.single("userImage"),
-    usersController.updatedUser
-  );
+router.put("/edit/:idUser",usersController.updatedUser);
 
   //Recordar contraseña
   router.get("/password", usersController.password);

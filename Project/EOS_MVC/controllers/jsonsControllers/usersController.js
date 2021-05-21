@@ -157,31 +157,23 @@ const usersController = {
 
   updatedUser: function(req,res){
 
-    let errors = validationResult(req);
-
-    
-    if (req.session.adminLogged) {
-      // Validacion
-      let errors = validationResult(req);
-
       const userToUpdate = usersJson.find(req.params.idUser);
 
-      if (errors.isEmpty()) {
         // Almaceno los datos del user
-        userToUpdate.image = req.file.filename;
-        userToUpdate.firstName = req.body.firstName;
-        userToUpdate.lastName = req.body.lastName;
-        userToUpdate.dateOfBirth = req.body.dateOfBirth;
-        userToUpdate.email = req.body.email;
-        userToUpdate.password = req.body.password;
-        userToUpdate.phone = req.body.phone;
-        userToUpdate.active = "1";
-      }
-
-      usersJson.update(userToUpdate);
+       // userToUpdate.image = req.file.filename;
+        // userToUpdate.firstName = req.body.firstName;
+        // userToUpdate.lastName = req.body.lastName;
+        // userToUpdate.dateOfBirth = req.body.dateOfBirth;
+        // userToUpdate.email = req.body.email;
+        // userToUpdate.password = req.body.password;
+        // userToUpdate.confirmPassword = req.body.confirmPassword;
+        // userToUpdate.phone = req.body.phone;
+        // userToUpdate.active = "true";
+      
+   // let userUpdated = usersJson.update(userToUpdate);
 
       db.User.update({
-        image: req.file.filename,
+       // image: req.file.filename,
         first_name: req.body.firstName,
         last_name: req.body.lastName,
         date_of_birth: req.body.dateOfBirth,
@@ -190,15 +182,11 @@ const usersController = {
         password: req.body.password, 
         }, { where: { id_user: req.params.idUser}}
       );
-
+    let userID = req.params.idUser;
      
-      res.redirect("/");
-    } else {
-      return res.render("users/update", {
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    }
+      //res.redirect("/");
+      res.redirect("users/detail/" + userID);
+    
   },
 
 
