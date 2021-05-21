@@ -175,7 +175,9 @@ const dbProductController = {
         subtotal: subtotal,
       });
 
-      return res.redirect("/");
+      
+
+      return res.redirect("./");
     }
   },
 
@@ -186,40 +188,62 @@ const dbProductController = {
         where: { id_cart: req.body.id_cart }
       });
 
-      return res.redirect("/");
+      return res.redirect("../");
     }
+  },
+
+  productToOrder: function (req, res) {
+    if (req.session.userLogged) {
+      let user = req.session.userLogged;
+
+
+
+      db.Order.create({
+        id_user: user.id,
+        
+
+      });
+
+    return res.redirect("./products/order");
+      
+   };
   },
 
   order: function (req, res) {
     if (req.session.userLogged) {
 
-      let user = req.session.userLogged;
-        let pedidoUsuario = db.User.findByPk(user.id);
-        let pedidoOrdenes = db.Order.findAll();
-       
-
-        Promise.all([
-          pedidoUsuario,
-          pedidoOrdenes,
-        ]).then(function ([ usuario, orden ]) {
-          return res.render("./products/order", {
-            usuario: usuario,
-            orden: orden
-          });
-        });
-      
+    return res.render("./products/order",);
+              
    }
   },
 
   orderDone: function (req, res) {
     if (req.session.userLogged) {
 
-      db.Order.create({
+      let user = req.session.userLogged;
 
+      db.Shipping_information.create({
+        id_user: user.id,
+        address:req.body.address,
+        city: req.body.city,
+        state: req.body.state,
+        postal_code: req.body.postal_code,
+        phone_number: req.body.phone,
+           
       });
       
+      return res.render("./products/thanks",);
    };
   },
+
+  thanks: function (req, res) {
+    if (req.session.userLogged) {
+
+    return res.render("./products/thanks",);
+              
+   }
+  },
+
 
 };
 

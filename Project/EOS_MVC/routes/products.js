@@ -1,3 +1,4 @@
+  
 const express = require("express");
 const router = express.Router();
 
@@ -25,7 +26,9 @@ router.delete("/cart/delete", dbProductController.deleteCart);
 router.get("/order", dbProductController.order);
 
 // Finalizar compra
-router.get("/order", dbProductController.orderDone);
+router.post("/order", dbProductController.orderDone);
 
+//Fin
+router.get("/thanks", dbProductController.thanks);
 
 module.exports = router;

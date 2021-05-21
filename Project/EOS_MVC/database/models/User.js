@@ -23,6 +23,9 @@ module.exports = function (sequelize,dataTypes) {
         email: {
             type: dataTypes.STRING(45)
         },
+        phone: {
+            type: dataTypes.STRING(45)
+        },
         password: {
             type: dataTypes.STRING(45)
         },
