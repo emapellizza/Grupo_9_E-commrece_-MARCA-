@@ -1193,7 +1193,7 @@ footer li {
   }
   .menu-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0 20px;
     width: 40%;
@@ -1484,10 +1484,7 @@ footer li {
   }
 
   /* Error*/
-  .main-error {
-    margin: 15vh 30vw 25vh 35vw;
-    max-width: 400px;
-  }
+
   .main-error img {
     width: 150px;
   }
